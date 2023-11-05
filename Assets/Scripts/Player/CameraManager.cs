@@ -1,35 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Enums;
 using Cinemachine;
 public class CameraManager : MonoBehaviour
 {
     [SerializeField] private float orbitTime = 1.0f;
     [SerializeField] private float orbitAmount = 45.0f;
     private bool Rotating = false;
-    [SerializeField] private CinemachineVirtualCamera virtualCamera;
+    [SerializeField] private CinemachineVirtualCamera explorationVCamera;
+    [SerializeField] private CinemachineVirtualCamera combatVCamera;
     private CinemachineOrbitalTransposer orbitalTransposer;
 
     private void Awake()
     {
-        orbitalTransposer = virtualCamera.GetCinemachineComponent<CinemachineOrbitalTransposer>();
+        orbitalTransposer = explorationVCamera.GetCinemachineComponent<CinemachineOrbitalTransposer>();
     }
 
     private IEnumerator Start()
     {
         yield return new WaitForEndOfFrame();
         InputComponent.Instance.cameraRotationTrigger += HandleCameraRotation;
+        GameManager.Instance.onGameStateChangeTrigger += HandleCameraChange;
     }
 
     private void OnEnable()
     {
         if (InputComponent.Instance == null) return;
         InputComponent.Instance.cameraRotationTrigger += HandleCameraRotation;
+        GameManager.Instance.onGameStateChangeTrigger += HandleCameraChange;
+
     }
 
     private void OnDisable()
     {
         InputComponent.Instance.cameraRotationTrigger -= HandleCameraRotation;
+        GameManager.Instance.onGameStateChangeTrigger -= HandleCameraChange;
+
     }
 
     private void HandleCameraRotation(float value)
@@ -66,5 +73,20 @@ public class CameraManager : MonoBehaviour
         }
         orbitalTransposer.m_XAxis.Value = rotationValue;
         Rotating = false;
+    }
+
+    public void HandleCameraChange(GameState gameState)
+    {
+        explorationVCamera.gameObject.SetActive(false);
+        combatVCamera.gameObject.SetActive(false);
+        switch (gameState)
+        {
+            case GameState.exploration:
+                explorationVCamera.gameObject.SetActive(true);
+                break;
+            case GameState.combatPreparation:
+                combatVCamera.gameObject.SetActive(true);
+                break;
+        }
     }
 }
