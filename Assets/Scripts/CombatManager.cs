@@ -5,8 +5,8 @@ using Enums;
 public class CombatManager : MonoBehaviour
 {
     public static CombatManager Instance;
-
-    [SerializeField] private List<EnemyData> enemiesInCombat = new List<EnemyData>();
+    [SerializeField] private bool isPlayerTurn = true;
+    [SerializeField] private List<EntityData> enemiesInCombat = new List<EntityData>();
 
     public delegate void CombatStartEvent();
     public delegate void CombatEndEvent(CombatResult restult); // value is the result of the combat
@@ -18,10 +18,11 @@ public class CombatManager : MonoBehaviour
         Instance = this;
     }
 
-    public void EnterCombat(List<EnemyData> enemyList)
+    public void EnterCombat(List<EntityData> enemyList)
     {
         enemiesInCombat = enemyList;
         onCombatStart?.Invoke();
+        GameManager.Instance.ChangeGameState(GameState.combatPreparation);
         // todo OnCombatStart
         // Transition
         // Camera change.

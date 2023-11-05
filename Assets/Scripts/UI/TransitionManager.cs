@@ -41,5 +41,6 @@ public class TransitionManager : MonoBehaviour
         transitionScreen.SetActive(true);
         yield return new WaitForSeconds(2.0f);
         transitionScreen.SetActive(false);
+        GameManager.Instance.ChangeGameState(Enums.GameState.combatReady);
     }
 }

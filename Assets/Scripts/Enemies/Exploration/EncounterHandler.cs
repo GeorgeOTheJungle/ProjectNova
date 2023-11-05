@@ -5,7 +5,7 @@ using Enums;
 public class EncounterHandler : MonoBehaviour, IInteractable
 {
     [Header("Encounter Handler"), Space(10)]
-    [SerializeField] private List<EnemyData> enemyDatas = new List<EnemyData>();
+    [SerializeField] private List<EntityData> enemyDatas = new List<EntityData>();
     public void OnInteraction()
     {
         // Tell the combat manager to enter combat mode and give the list to them. Also register to a combat event for when the combat

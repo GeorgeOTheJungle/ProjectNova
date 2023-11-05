@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     public GameState _gameState;
 
-    public delegate void GameStateChange();
+    public delegate void GameStateChange(GameState state);
 
     public GameStateChange onGameStateChangeTrigger;
     // Enemy interaction triggers combat manager
@@ -23,14 +23,12 @@ public class GameManager : MonoBehaviour
         _gameState = GameState.exploration;
     }
 
-    public void EnterCombatState()
+    public void ChangeGameState(GameState state)
     {
-        _gameState = GameState.combat;
+        _gameState = state;
+        onGameStateChangeTrigger?.Invoke(_gameState);
+
     }
 
-    public void EnterExplorationState()
-    {
-        _gameState = GameState.exploration;
-    }
 }
 

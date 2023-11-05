@@ -5,6 +5,8 @@ namespace Structs
     public struct Stats
     {
         public int health;
+        public int energy;
+        public int ammo;
 
         public int physicalDamage;
         public int physicalArmor;
