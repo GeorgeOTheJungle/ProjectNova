@@ -19,6 +19,7 @@ public class CameraManager : MonoBehaviour
 
     private IEnumerator Start()
     {
+        combatVCamera.gameObject.SetActive(false);
         yield return new WaitForEndOfFrame();
         InputComponent.Instance.cameraRotationTrigger += HandleCameraRotation;
         GameManager.Instance.onGameStateChangeTrigger += HandleCameraChange;

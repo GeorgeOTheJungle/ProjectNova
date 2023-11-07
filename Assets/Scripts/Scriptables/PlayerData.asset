@@ -13,15 +13,17 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   entityName: Catherine
+  enemyID: 0
   stats:
     health: 100
     energy: 50
-    ammo: 10
+    ammo: 1
     physicalDamage: 5
     physicalArmor: 5
     magicDamage: 5
     magicArmor: 5
     accuracy: 5
+    critRate: 0
     xpYield: 0
   soon: Soon
   entityAnimator: {fileID: 0}

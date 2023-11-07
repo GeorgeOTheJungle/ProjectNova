@@ -1,3 +1,4 @@
+using Enums;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,24 +17,32 @@ public class TransitionManager : MonoBehaviour
     {
         transitionScreen.SetActive(false);
         yield return new WaitForEndOfFrame();
-        CombatManager.Instance.onCombatStart += CombatTransition;
+        CombatManager.Instance.onCombatStart += HandleStartingCombatTransition;
+        CombatManager.Instance.onCombatFinish += HandleEndingCombatTransition;
     }
 
     private void OnEnable()
     {
         if (CombatManager.Instance == null) return;
-        CombatManager.Instance.onCombatStart += CombatTransition;
+        CombatManager.Instance.onCombatStart += HandleStartingCombatTransition;
+        CombatManager.Instance.onCombatFinish += HandleEndingCombatTransition;
     }
 
     private void OnDisable()
     {
-        CombatManager.Instance.onCombatStart -= CombatTransition;
+        CombatManager.Instance.onCombatStart -= HandleStartingCombatTransition;
+        CombatManager.Instance.onCombatFinish -= HandleEndingCombatTransition;
 
     }
 
-    public void CombatTransition()
+    public void HandleStartingCombatTransition()
     {
         StartCoroutine(CombatTransitionAnimation());
+    }
+
+    public void HandleEndingCombatTransition(CombatResult result)
+    {
+        StartCoroutine(EndingCombatTransitionAnimation());
     }
 
     private IEnumerator CombatTransitionAnimation()
@@ -42,5 +51,13 @@ public class TransitionManager : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
         transitionScreen.SetActive(false);
         GameManager.Instance.ChangeGameState(Enums.GameState.combatReady);
+    }
+
+    private IEnumerator EndingCombatTransitionAnimation()
+    {
+        transitionScreen.SetActive(true);
+        yield return new WaitForSeconds(2.0f);
+        transitionScreen.SetActive(false);
+        GameManager.Instance.ChangeGameState(Enums.GameState.exploration);
     }
 }

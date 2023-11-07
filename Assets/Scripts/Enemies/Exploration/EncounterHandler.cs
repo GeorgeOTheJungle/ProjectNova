@@ -5,12 +5,12 @@ using Enums;
 public class EncounterHandler : MonoBehaviour, IInteractable
 {
     [Header("Encounter Handler"), Space(10)]
-    [SerializeField] private List<EntityData> enemyDatas = new List<EntityData>();
+    [SerializeField] private EntityData enemyData;
     public void OnInteraction()
     {
         // Tell the combat manager to enter combat mode and give the list to them. Also register to a combat event for when the combat
         // ended.
-        CombatManager.Instance.EnterCombat(enemyDatas);
+        CombatManager.Instance.EnterCombat(enemyData.enemyID);
     }
 
     public void OnPlayerEnter()
@@ -26,6 +26,6 @@ public class EncounterHandler : MonoBehaviour, IInteractable
     
     private void HandleCombatResults(CombatResult result)
     {
-
+        if (result == CombatResult.victory) gameObject.SetActive(false);
     }
 }

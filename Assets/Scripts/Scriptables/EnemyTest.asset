@@ -12,14 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86f776940a0ace54ab2dd37b9fc2828f, type: 3}
   m_Name: EnemyTest
   m_EditorClassIdentifier: 
-  enemyName: Test dummy
+  entityName: Dummy Test
+  enemyID: 0
   stats:
     health: 100
-    physicalDamage: 1
+    energy: 0
+    ammo: 0
+    physicalDamage: 35
     physicalArmor: 1
-    magicDamage: 1
+    magicDamage: 35
     magicArmor: 1
     accuracy: 1
+    critRate: 0
     xpYield: 1
   soon: Soon
-  enemyAnimator: {fileID: 0}
+  entityAnimator: {fileID: 0}

@@ -15,6 +15,7 @@ namespace Structs
         public int magicArmor;
 
         public int accuracy;
+        public int critRate;
         public int xpYield;
     }
 }

@@ -47,6 +47,8 @@ public class CharacterMovement : MonoBehaviour
 
     private void HandleMovementInput(Vector3 value)
     {
+        // Check if we are in exploration
+        if (GameManager.Instance._gameState != Enums.GameState.exploration) return;
         // Input
         input = new Vector3(value.x, input.y, value.z);
         input.Normalize();

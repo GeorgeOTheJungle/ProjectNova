@@ -47,6 +47,7 @@ public class InteractComponent : MonoBehaviour
 
     private void HandleInteraction()
     {
+        if (GameManager.Instance._gameState != Enums.GameState.exploration) return;
         if(targetInteractable == null) return;
         targetInteractable.OnInteraction();
         playerAnimatorController.InteractAnimation();
