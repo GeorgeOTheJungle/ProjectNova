@@ -7,7 +7,6 @@ public class ScrollingUI : MonoBehaviour
 {
     [Header("Skills"), Space(10)]
     [SerializeField] private List<Skill> avaliablePlayerSkills = new List<Skill>();
-    [SerializeField] private Skill[] allSPlayerSkills;
     [Header("References: "), Space(10)]
     [SerializeField] private Image middleSkillDisplay;
     [SerializeField] private Image leftSkillDisplay;
@@ -21,11 +20,8 @@ public class ScrollingUI : MonoBehaviour
 
     private void Start()
     {
-        foreach(var skill in allSPlayerSkills)
-        {
-            if (skill.unlocked) avaliablePlayerSkills.Add(skill);
-        }
-
+        avaliablePlayerSkills.Clear();
+        avaliablePlayerSkills = SkillManager.Instance.GetAvaliableSkills();
         playerSkillLenght = avaliablePlayerSkills.Count - 1;
         Scroll(0);
     }

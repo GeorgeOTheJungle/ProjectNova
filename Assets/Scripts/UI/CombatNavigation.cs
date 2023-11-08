@@ -72,42 +72,15 @@ public class CombatNavigation : MonoBehaviour
 
             }
         }
-        firstSelected[buttonIndex].Select();
+
+        if(menuIndex!= 2) firstSelected[buttonIndex].Select();
     }
-
-    //public void OpenActionWindow()
-    //{      
-    //    actionsWindow.SetActive(true);
-    //    commandsWindow.SetActive(false);
-
-    //    EventSystem.current.SetSelectedGameObject(actionSelectedButton);
-    //}
-
-    //public void OpenCommandWindow()
-    //{
-    //    commandsWindow.SetActive(true);
-    //    actionsWindow.SetActive(false);
-
-    //    //Check player ammo
-    //    if(CombatPlayer.Instance.playerStats.ammo == 0)
-    //    {
-    //        shootCommandGO.SetActive(false);
-    //        punchCommandGO.SetActive(true);
-    //        commandSelectedButton = punchCommandGO;
-    //    } else
-    //    {
-    //        shootCommandGO.SetActive(true);
-    //        punchCommandGO.SetActive(false);
-    //        commandSelectedButton = shootCommandGO;
-    //    }
-
-
-    //    EventSystem.current.SetSelectedGameObject(commandSelectedButton);
-    //}
 
     private void HandleReturnToLastWindow()
     {
-        OpenWindow(lastWindow);
+        currentWindow--;
+        if (currentWindow < 0) currentWindow = 0;
+        OpenWindow(currentWindow);
     }
 
     public void StartCombatWindows()
