@@ -12,19 +12,27 @@ public class CombatPlayer : MonoBehaviour, IDamageable
 
     public Stats playerStats;
 
-    [SerializeField] private Animator animator;
+    [SerializeField] private CombatPlayerAnimatorController animator;
     [SerializeField] private GameObject commandsVisuals;
     [SerializeField] private GameObject firstCommandSelected;
 
-    [SerializeField] private Skill currentAction;
+    private Skill currentAction; // READ ONLY
 
+    [Header("Particle Visuals:"),Space(10)]
+    [SerializeField] private ParticleSystem buffParticles;
     private bool isGuarding;
     private CombatNavigation combatNavigation;
     private CombatUI combatUI;
+
+    private const string ENTRANCE_ANIMATION = "Entrance";
+    private const string HIT_ANIMATION = "Hit";
+    private const string END_GUARD_ANIMATION = "endGuard";
+
     private void Awake()
     {
         Instance = this;
         combatNavigation = GetComponentInChildren<CombatNavigation>();
+        animator = GetComponent<CombatPlayerAnimatorController>();
         combatUI = GameObject.FindGameObjectWithTag("CombatUI").GetComponent<CombatUI>();
     }
 
@@ -67,21 +75,23 @@ public class CombatPlayer : MonoBehaviour, IDamageable
 
     }
 
+
     public void OnPlayerTurn()
     {
-        Debug.Log("Its player turn");
         if (isGuarding)
         {
-            animator.SetTrigger("endGuard");
+            animator.PlayAnimation(END_GUARD_ANIMATION);
             isGuarding = false;
         }
-
+        currentAction = null;
         StartCoroutine(TurnCommandsVisuals(true, 0.0f));
     }
+
     private IEnumerator DelayEntrance()
     {
         yield return new WaitForSeconds(0.25f);
-        animator.Play("Entrance");
+        animator.PlayAnimation(ENTRANCE_ANIMATION);
+       // animator.Play("Entrance");
     }
 
     private IEnumerator TurnCommandsVisuals(bool active,float delay)
@@ -116,13 +126,13 @@ public class CombatPlayer : MonoBehaviour, IDamageable
         combatUI.UpdateCombatStats();
 
         // Do visuals
-        animator.Play(currentAction.animationKey);
+        Debug.Log("Performing action: " + currentAction.skillName);
+        animator.PlayAnimation(currentAction.animationKey);
 
         // Perform action
         if (currentAction.baseDamage >= 0)
         {
             combatNavigation.OnSkillSelected();
-            CombatManager.Instance.OnActionFinished();
         }
         else
         {
@@ -131,6 +141,21 @@ public class CombatPlayer : MonoBehaviour, IDamageable
         }
     }
 
+    #region Non Aggresive Skills
+    public void Heal()
+    {
+        playerStats.health += CalculateHealing(Mathf.CeilToInt(currentAction.baseDamage));
+        if (playerStats.health > entityData.stats.health) playerStats.health = entityData.stats.health;
+        combatUI.UpdateCombatStats();
+    }
+
+    public void Buff()
+    {
+        buffParticles.Play();
+        playerStats.buffBonus = currentAction.baseDamage;
+    }
+
+    #endregion
     public void Reload()
     {
         playerStats.ammo = entityData.stats.ammo;
@@ -152,11 +177,14 @@ public class CombatPlayer : MonoBehaviour, IDamageable
     #endregion
 
     #region Damage Logic
+
+    private const string GUARD_HIT_ANIMATION = "GuardHit";
+
     public void ReceiveDamage(int damage,bool isMagic)
     {
         playerStats.health -= CalculateDamageReceived(damage, isMagic);
-        if (isGuarding == false) animator.Play("Hit");
-        else animator.SetTrigger("guardHit");
+        if (isGuarding == false) animator.PlayAnimation(HIT_ANIMATION);
+        else animator.PlayAnimation(GUARD_HIT_ANIMATION);
         if (playerStats.health < 0)
         {
             playerStats.health = 0;
@@ -191,21 +219,21 @@ public class CombatPlayer : MonoBehaviour, IDamageable
 
     public int GetDamage(bool isMagic)
     {
-        int baseDamage = isMagic ? playerStats.magicDamage : playerStats.physicalDamage;
-        int skillDamage = currentAction.baseDamage;
+        int baseDamage = isMagic ? playerStats.magicDamage : playerStats.physicalDamage ;
+        float skillDamage = currentAction.baseDamage;
 
         bool isCrit = Random.Range(0.0f, 1.0f) < 0.05f + currentAction.critChance;
-        float totalDamage = (baseDamage + skillDamage) * (isCrit?2.5f:1);
+        float buffDamage = baseDamage * playerStats.buffBonus;
+        float totalDamage = ((baseDamage + skillDamage) + buffDamage) * (isCrit?2.5f:1);
+        Debug.Log("Damage sent to entity is: " + totalDamage);
         return Mathf.CeilToInt(totalDamage);
     }
     #endregion
-}
 
-/*
- * ANIMATION LIST:
- * - Entrance
- * - Atk_[Number]
- * - Spc Atk_[Number]
- * - Hit
- * - Death
- */
+    private int CalculateHealing(int baseHealing)
+    {
+        float healAmount = baseHealing + (playerStats.magicDamage * 0.2f);
+        return Mathf.CeilToInt(healAmount);
+    }
+
+}

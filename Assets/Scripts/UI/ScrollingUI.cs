@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,12 @@ public class ScrollingUI : MonoBehaviour
     [SerializeField] private Image leftSkillDisplay;
     [SerializeField] private Image rightSkillDisplay;
 
+    [SerializeField] private TextMeshPro actionText;
+    [SerializeField] private Button skillButton;
+
+    [SerializeField] private GameObject[] unavaliableIcons;
+
+    private bool canSelectSkill = false;
     private int lastSkill;
     private int currentSkill;
     private int nextSkill;
@@ -40,6 +47,11 @@ public class ScrollingUI : MonoBehaviour
     {
         currentSkill += dir;
 
+        foreach(var icon in unavaliableIcons)
+        {
+            icon.SetActive(false);
+        }
+
         // Calculate sprites
         if (currentSkill < 0) currentSkill = playerSkillLenght;
         else if (currentSkill > playerSkillLenght) currentSkill = 0;
@@ -50,9 +62,40 @@ public class ScrollingUI : MonoBehaviour
         nextSkill = currentSkill + 1;
         if(nextSkill > playerSkillLenght) nextSkill = 0;
 
+
+        //Update text and UI
+        actionText.SetText(avaliablePlayerSkills[currentSkill].skillName);
+
         // Assign sprites
         leftSkillDisplay.sprite = avaliablePlayerSkills[lastSkill].smallIcon;
         middleSkillDisplay.sprite = avaliablePlayerSkills[currentSkill].largeIcon;
         rightSkillDisplay.sprite = avaliablePlayerSkills[nextSkill].smallIcon;
+        canSelectSkill = true;
+        switch (avaliablePlayerSkills[currentSkill].resourceType)
+        {
+            case Enums.ResourceType.ammo:
+                if (CombatPlayer.Instance.HasAmmo(avaliablePlayerSkills[currentSkill].resourceAmount) == false)
+                {
+                    unavaliableIcons[0].SetActive(true);
+                    canSelectSkill = false;
+                }
+                break;
+            case Enums.ResourceType.energy:
+                if (CombatPlayer.Instance.HasEnergy(avaliablePlayerSkills[currentSkill].resourceAmount) == false)
+                {
+                    unavaliableIcons[1].SetActive(true);
+                    canSelectSkill = false;
+
+                }
+                break;
+        }
+
+
+    }
+
+    public void UseSkill()
+    {
+        if (canSelectSkill == false) return;
+        CombatPlayer.Instance.PerformAction(avaliablePlayerSkills[currentSkill]);
     }
 }

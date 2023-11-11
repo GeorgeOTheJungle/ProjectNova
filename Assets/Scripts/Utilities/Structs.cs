@@ -14,6 +14,8 @@ namespace Structs
         public int magicDamage;
         public int magicArmor;
 
+        public float buffBonus;
+
         public int accuracy;
         public int critRate;
         public int xpYield;

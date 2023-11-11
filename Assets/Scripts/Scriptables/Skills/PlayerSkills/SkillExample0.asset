@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: SkillExample0
   m_EditorClassIdentifier: 
   unlocked: 1
-  skillName: skill_0
-  baseDamage: 0
+  skillName: Triple shot
+  baseDamage: 1
   critChance: 0
-  resourceType: 0
-  resourceAmount: 0
-  animationKey: 
+  resourceType: 2
+  resourceAmount: 5
+  animationKey: TripleShot
   smallIcon: {fileID: 1651433977, guid: c7e3ae9abd9a9ef439fa900586ab321d, type: 3}
   largeIcon: {fileID: -1651739352, guid: 3224aa7800b2c5f40af292498410a2ac, type: 3}

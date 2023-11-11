@@ -8,7 +8,7 @@ public class Skill : ScriptableObject
     [Header("Skill data"), Space(10)]
     public bool unlocked;
     public string skillName; // Use it for UI.
-    public int baseDamage;
+    public float baseDamage;
     public float critChance;
     public ResourceType resourceType;
     public int resourceAmount;

@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: SkillExample2
   m_EditorClassIdentifier: 
   unlocked: 1
-  skillName: skill_2
+  skillName: Shoot&Reload
   baseDamage: 0
   critChance: 0
   resourceType: 0
   resourceAmount: 0
-  animationKey: 
+  animationKey: ShootAndReload
   smallIcon: {fileID: -1338334708, guid: c7e3ae9abd9a9ef439fa900586ab321d, type: 3}
   largeIcon: {fileID: -384587725, guid: 3224aa7800b2c5f40af292498410a2ac, type: 3}

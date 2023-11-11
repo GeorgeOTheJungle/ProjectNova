@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b85157119d06342a2aa45366ec1399, type: 3}
   m_Name: SkillExample4
   m_EditorClassIdentifier: 
-  unlocked: 0
-  skillName: skill_4
-  baseDamage: 0
+  unlocked: 1
+  skillName: Infusion_Fire
+  baseDamage: 15
   critChance: 0
-  resourceType: 0
-  resourceAmount: 0
-  animationKey: 
+  resourceType: 2
+  resourceAmount: 25
+  animationKey: Infused_Fire
   smallIcon: {fileID: 609978833, guid: c7e3ae9abd9a9ef439fa900586ab321d, type: 3}
   largeIcon: {fileID: 1526145115, guid: 3224aa7800b2c5f40af292498410a2ac, type: 3}

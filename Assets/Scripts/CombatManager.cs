@@ -63,11 +63,13 @@ public class CombatManager : MonoBehaviour
 
         if (isPlayerTurn)
         {
+            
             // Means the enemy already attacked so it should make the on Round and apply effects.
             OnRoundFinished();
         }
         else
         {
+            Debug.Log("Entity turn!");
             currentEntity.PerformAttack();
         }
     }
@@ -81,7 +83,9 @@ public class CombatManager : MonoBehaviour
     private IEnumerator RoundFinishedAnimation()
     {
         // Tell any effect to do its effect.
+        Debug.Log("Round finished! Applying effects");
         yield return new WaitForSeconds(0.5f);
+        Debug.Log("Player turn!");
         CombatPlayer.Instance.OnPlayerTurn();
     }
 

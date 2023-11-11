@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 
 public class Entity : MonoBehaviour, IDamageable
 {
+    [SerializeField] private bool invencible;
     [SerializeField] private EntityData data;
     [SerializeField] private Stats entityStats;
     [SerializeField] private Animator animator;
@@ -81,19 +82,18 @@ public class Entity : MonoBehaviour, IDamageable
 
     public void ReceiveDamage(int damage, bool isMagic)
     {
-        entityStats.health -= damage;
+        if(invencible == false) entityStats.health -= damage;
         healthText.SetText($"{entityStats.health} / {maxHealth}");
         animator.Play("Hit");
     }
 
     public void PerformAttack()
     {
-        Debug.Log("Its entity turn");
         currentSkill = null;
         int skillSelect = Random.Range(0, skillList.Length);
         currentSkill = skillList[skillSelect];
         animator.Play(currentSkill.animationKey);
-        CombatManager.Instance.OnActionFinished();
+       // CombatManager.Instance.OnActionFinished();
     }
     // Damage calculation for enemies is SkillDamage + a percentage of the skill damage based on its stat
     public int GetDamage(bool isMagic)

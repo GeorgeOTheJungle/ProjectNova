@@ -73,7 +73,8 @@ public class CombatNavigation : MonoBehaviour
             }
         }
 
-        if(menuIndex!= 2) firstSelected[buttonIndex].Select();
+        if (menuIndex != 2) firstSelected[buttonIndex].Select();
+        else firstSelected[3].Select();
     }
 
     private void HandleReturnToLastWindow()
@@ -92,8 +93,10 @@ public class CombatNavigation : MonoBehaviour
 
     public void OnSkillSelected()
     {
-        commandsWindow.SetActive(false);
-        actionsWindow.SetActive(false);
+        foreach (GameObject menu in menuWindows)
+        {
+            menu.SetActive(false);
+        }
         actionText.SetText(string.Empty);
         actionText.gameObject.SetActive(false);
     }
