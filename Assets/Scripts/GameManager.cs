@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
 
     public void ChangeGameState(GameState state)
     {
+        Debug.Log("Changing game state to:" + state);
         _gameState = state;
         onGameStateChangeTrigger?.Invoke(_gameState);
 

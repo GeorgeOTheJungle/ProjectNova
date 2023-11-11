@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Structs
 {
 
@@ -14,10 +16,18 @@ namespace Structs
         public int magicDamage;
         public int magicArmor;
 
-        public float buffBonus;
+        public float defenseBonus; // For guarding
+        public float buffBonus; // Buffing
 
         public int accuracy;
         public int critRate;
         public int xpYield;
+    }
+
+    [System.Serializable]
+    public struct Encounter
+    {
+        public List<Entity> entites;
+        public List<EntityData> entitiesData;
     }
 }

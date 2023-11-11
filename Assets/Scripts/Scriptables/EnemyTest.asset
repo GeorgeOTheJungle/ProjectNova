@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EnemyTest
   m_EditorClassIdentifier: 
   entityName: Dummy Test
-  enemyID: 0
+  entityID: 0
   stats:
     health: 100
     energy: 0
@@ -22,8 +22,10 @@ MonoBehaviour:
     physicalArmor: 1
     magicDamage: 35
     magicArmor: 1
+    defenseBonus: 0
+    buffBonus: 0
     accuracy: 1
     critRate: 0
     xpYield: 1
   soon: Soon
-  entityAnimator: {fileID: 0}
+  entityAnimator: {fileID: 9100000, guid: e63d7bd22e7dc0f488ecac979acd74c1, type: 2}

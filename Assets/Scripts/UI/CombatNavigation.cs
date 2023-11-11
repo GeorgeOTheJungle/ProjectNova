@@ -26,9 +26,12 @@ public class CombatNavigation : MonoBehaviour
 
     [SerializeField] private TextMeshPro actionText;
 
+    private PlayerEntity playerEntity;
+
     private void Awake()
     {
         Instance = this;
+        playerEntity = GetComponentInParent<PlayerEntity>();
     }
 
     private void Update()
@@ -42,7 +45,7 @@ public class CombatNavigation : MonoBehaviour
     int currentWindow;
     public void OpenWindow(int menuIndex)
     {
-        lastWindow = currentWindow;
+        
         currentWindow = menuIndex;
         buttonIndex = menuIndex;
         foreach (GameObject menu in menuWindows)
@@ -59,7 +62,7 @@ public class CombatNavigation : MonoBehaviour
             actionsWindow.SetActive(false);
 
             //Check player ammo
-            if (CombatPlayer.Instance.playerStats.ammo == 0)
+            if (playerEntity.HasAmmo(1) == false)
             {
                 shootCommandGO.SetActive(false);
                 punchCommandGO.SetActive(true);
@@ -105,5 +108,15 @@ public class CombatNavigation : MonoBehaviour
     {
         if (actionText.IsActive() == false) return;
         actionText.SetText(text);
+    }
+
+  
+    public void HideAllWindows()
+    {
+        for(int i = 0;i < menuWindows.Length; i++)
+        {
+            if (menuWindows[i].activeSelf) lastWindow = i;
+            menuWindows[i].SetActive(false);  
+        }
     }
 }

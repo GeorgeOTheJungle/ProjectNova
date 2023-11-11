@@ -5,17 +5,6 @@ using UnityEngine;
 public class AnimationEventCall : EventCall
 {
 
-    public override void DealPhysicalDamage()
-    {
-        CombatManager.Instance.DealDamageToCurrentEntity(CombatPlayer.Instance.GetDamage(false), false);
-
-    }
-
-    public override void DealMagicDamage()
-    {
-        CombatManager.Instance.DealDamageToCurrentEntity(CombatPlayer.Instance.GetDamage(true), true);
-    }
-
     public void OnGuard()
     {
         CombatPlayer.Instance.GuardFromDamage();
@@ -45,12 +34,17 @@ public class AnimationEventCall : EventCall
     {
         if (!animator) return;
         animator.Play(IDLE_ANIMATION);
-        CombatManager.Instance.OnActionFinished();
+        CombatManager.Instance.OnTurnFinished();
     }
 
     public override void OnAnimationFinish()
     {
         if (!animator) return;
         animator.Play(IDLE_ANIMATION);
+    }
+
+    public override void DealDamageCall()
+    {
+        m_entity.AttackEntity();
     }
 }

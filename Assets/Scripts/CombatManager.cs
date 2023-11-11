@@ -2,42 +2,110 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Enums;
+using System.Linq;
+using Structs;
+
 public class CombatManager : MonoBehaviour
 {
     public static CombatManager Instance;
-    [SerializeField] private bool isPlayerTurn = true;
-    [SerializeField] public List<Entity> enemiesInCombat = new List<Entity>();
+    [Header("Combat manager: "), Space(10)]
+    [SerializeField] private Entity playerEntity;
+
+    [Header("Entity Slots: "), Space(10)]
+    [SerializeField] private Entity singleEntity;
+
+    public List<Entity> entityList = new List<Entity>(); // This list is for targeting
+    // TODO IF YOU ARE GOING TO MAKE A SPEED STAT THEN YOU NEED A DIFFERENT LIST THAT CONTAINS THE ACTUAL ORDER
+
+    [Header("Combat settings: "), Space(10)]
+    [SerializeField] private int entityTurn = 0;
     [SerializeField] private float nextTurnDelay = 0.75f;
+
     private Entity currentEntity;
     public delegate void CombatCleanupEvent();
     public delegate void CombatStartEvent();
     public delegate void CombatEndEvent(CombatResult restult); // value is the result of the combat
 
-    public CombatStartEvent onCombatStart;
+    public CombatStartEvent onCombatStart; // This calls the transition manager!
     public CombatEndEvent onCombatFinish;
-    public CombatCleanupEvent onCombatCleanup;  
+    public CombatCleanupEvent onCombatCleanup;
+
+    private int entityListLenght;
+    private int totalEnemies;
     private void Awake()
     {
         Instance = this;
     }
 
-    public void EnterCombat(int index)
+    // TODO maybe sort them by speed stat?
+    public void EnterCombat(List<EntityData> listOfEnemies)
     {
-        currentEntity = enemiesInCombat[index];
+        entityList.Clear();
+        entityList.Add(playerEntity);
+
+        totalEnemies = listOfEnemies.Count;
+
+        //Check total enemies to assign an array (1, 2 or 3 enemies in total is supported)
+        switch (totalEnemies)
+        {
+            case 1:
+                singleEntity.SetEntityData(listOfEnemies[0]);
+                entityList.Add(singleEntity);
+                
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+        }
+
+        
+        
+        // Set Enemy list
+        // Tell each enemy to set itself with the entity Data
+
+        //foreach(EntityData entity in listOfEnemies)
+        //{
+        //    entityList.Add(entity);
+        //}
+        //currentEntity = enemiesInCombat[index];
+        entityListLenght = entityList.Count - 1;
         onCombatStart?.Invoke();
         GameManager.Instance.ChangeGameState(GameState.combatPreparation);
-        isPlayerTurn = true;
+        //isPlayerTurn = true;
     }
 
-    public void DealDamageToCurrentEntity(int damage,bool isMagic)
+    // TODO Remove this function from here! Player should be able to target enemies by itself, same for enemies.
+    public void DealDamageToTargetEntity(int targetEntity,int damage,DamageType damageType)
     {
+        entityList[targetEntity].OnDamageTaken(damage, damageType);
+    }
+
+    public void DealDamageToCurrentEntity(int damage,DamageType damageType)
+    {
+        // THIS IS OBSOLETE
         if (currentEntity == null) return;
-        currentEntity.ReceiveDamage(damage,isMagic);
+      //  currentEntity.OnDamageTaken(damage,isMagic);
     }
 
-    public void OnActionFinished()
+    public void ActivateTargets()
     {
-        isPlayerTurn = !isPlayerTurn;
+        bool selectFirst = true;
+        for(int i = 0;i < entityListLenght+1; i++)
+        {
+            if (entityList[i].entityData.entityID != -1)
+            {
+                entityList[i].SetTarget(true, selectFirst);
+                selectFirst = false;
+            }
+
+        }
+
+    }
+
+    public void OnTurnFinished()
+    {
+        
         StartCoroutine(NextTurn());
     }
 
@@ -57,36 +125,29 @@ public class CombatManager : MonoBehaviour
 
     private IEnumerator NextTurn()
     {
-        
+        entityTurn++;
+        if (entityTurn > entityListLenght) entityTurn = -1;
         yield return new WaitForSeconds(nextTurnDelay);
         // Tell the enemy to perform a skill.
 
-        if (isPlayerTurn)
+        if(entityTurn == -1)
         {
-            
-            // Means the enemy already attacked so it should make the on Round and apply effects.
-            OnRoundFinished();
+            StartCoroutine(OnRoundFinished());
         }
         else
         {
-            Debug.Log("Entity turn!");
-            currentEntity.PerformAttack();
+            entityList[entityTurn].OnEntityTurn();
         }
     }
 
-    public void OnRoundFinished()
-    {
-        // Apply effects, and reset UI
-        StartCoroutine(RoundFinishedAnimation());
-    }
-
-    private IEnumerator RoundFinishedAnimation()
+    private IEnumerator OnRoundFinished()
     {
         // Tell any effect to do its effect.
         Debug.Log("Round finished! Applying effects");
         yield return new WaitForSeconds(0.5f);
+        entityTurn = 0;
         Debug.Log("Player turn!");
-        CombatPlayer.Instance.OnPlayerTurn();
+        entityList[entityTurn].OnEntityTurn();
     }
 
     

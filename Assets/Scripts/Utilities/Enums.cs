@@ -8,4 +8,6 @@ namespace Enums
     public enum CombatTurn { playerTurn,enemyTurn}
 
     public enum ResourceType { none,ammo, energy, health}
+
+    public enum DamageType { physical,magical}
 }

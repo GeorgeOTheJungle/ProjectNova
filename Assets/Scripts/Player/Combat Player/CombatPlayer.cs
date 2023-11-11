@@ -27,6 +27,7 @@ public class CombatPlayer : MonoBehaviour, IDamageable
     private const string ENTRANCE_ANIMATION = "Entrance";
     private const string HIT_ANIMATION = "Hit";
     private const string END_GUARD_ANIMATION = "endGuard";
+    private const string GUARD_HIT_ANIMATION = "GuardHit";
 
     private void Awake()
     {
@@ -178,7 +179,7 @@ public class CombatPlayer : MonoBehaviour, IDamageable
 
     #region Damage Logic
 
-    private const string GUARD_HIT_ANIMATION = "GuardHit";
+
 
     public void ReceiveDamage(int damage,bool isMagic)
     {

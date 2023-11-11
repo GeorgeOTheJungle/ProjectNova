@@ -2,15 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Enums;
+using Structs;
+
 public class EncounterHandler : MonoBehaviour, IInteractable
 {
     [Header("Encounter Handler"), Space(10)]
-    [SerializeField] private EntityData enemyData;
+    [SerializeField] private List<EntityData> encounter;
     public void OnInteraction()
     {
         // Tell the combat manager to enter combat mode and give the list to them. Also register to a combat event for when the combat
         // ended.
-        CombatManager.Instance.EnterCombat(enemyData.enemyID);
+        CombatManager.Instance.EnterCombat(encounter);
     }
 
     public void OnPlayerEnter()
@@ -28,4 +30,8 @@ public class EncounterHandler : MonoBehaviour, IInteractable
     {
         if (result == CombatResult.victory) gameObject.SetActive(false);
     }
+
+
 }
+
+

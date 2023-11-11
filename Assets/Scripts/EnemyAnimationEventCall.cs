@@ -4,28 +4,16 @@ using UnityEngine;
 
 public class EnemyAnimationEventCall : EventCall
 {
-    private Entity entity;
-
-    protected override void Awake()
+    public override void DealDamageCall()
     {
-        base.Awake();
-        entity = GetComponentInParent<Entity>();
-    }
-    public override void DealMagicDamage()
-    {
-        CombatPlayer.Instance.ReceiveDamage(entity.GetDamage(true),true);
-    }
-
-    public override void DealPhysicalDamage()
-    {
-        CombatPlayer.Instance.ReceiveDamage(entity.GetDamage(false), false);
+        throw new System.NotImplementedException();
     }
 
     public override void OnActionFinished()
     {
         if (!animator) return;
         animator.Play(IDLE_ANIMATION);
-        CombatManager.Instance.OnActionFinished();
+        CombatManager.Instance.OnTurnFinished();
     }
 
     public override void OnAnimationFinish()

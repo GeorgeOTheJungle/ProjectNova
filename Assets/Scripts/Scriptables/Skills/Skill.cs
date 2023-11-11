@@ -9,7 +9,8 @@ public class Skill : ScriptableObject
     public bool unlocked;
     public string skillName; // Use it for UI.
     public float baseDamage;
-    public float critChance;
+    public DamageType damageType;
+    [Range(0.0f,0.1f)] public float critChance;
     public ResourceType resourceType;
     public int resourceAmount;
 

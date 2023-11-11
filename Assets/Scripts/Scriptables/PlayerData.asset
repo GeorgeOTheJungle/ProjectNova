@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   entityName: Catherine
-  enemyID: 0
+  entityID: -1
   stats:
     health: 100
     energy: 50
@@ -22,6 +22,8 @@ MonoBehaviour:
     physicalArmor: 5
     magicDamage: 5
     magicArmor: 5
+    defenseBonus: 0
+    buffBonus: 0
     accuracy: 5
     critRate: 0
     xpYield: 0

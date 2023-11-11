@@ -14,7 +14,7 @@ public class CombatUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI ammoText;
 
     [SerializeField] private TextMeshPro actionText;
-    [SerializeField] private CombatPlayer player;
+    [SerializeField] private Entity player;
 
     string maxHealth;
     string maxEnergy;
@@ -45,17 +45,17 @@ public class CombatUI : MonoBehaviour
         visual.SetActive(true);
         actionText.gameObject.SetActive(true);
         // Initialize stats on texts
-        maxHealth = player.playerStats.health.ToString();
-        maxEnergy = player.playerStats.energy.ToString();
-        maxAmmo = player.playerStats.ammo.ToString();
+        maxHealth = player.entityStats.health.ToString();
+        maxEnergy = player.entityStats.energy.ToString();
+        maxAmmo = player.entityStats.ammo.ToString();
 
         UpdateCombatStats();
     }
 
     public void UpdateCombatStats()
     {
-        healthText.SetText($"{player.playerStats.health} / {maxHealth}");
-        energyText.SetText($"{player.playerStats.energy} / {maxEnergy}");
-        ammoText.SetText($"{player.playerStats.ammo} / {maxAmmo}");
+        healthText.SetText($"{player.entityStats.health} / {maxHealth}");
+        energyText.SetText($"{player.entityStats.energy} / {maxEnergy}");
+        ammoText.SetText($"{player.entityStats.ammo} / {maxAmmo}");
     }
 }
