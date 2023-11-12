@@ -12,6 +12,10 @@ public class EntityData : ScriptableObject
     public int entityID;
     public Stats stats;
 
+    [Header("Avaliable Skills"), Space(10)]
+    public List<Skill> avaliableSkills;
+
     [Header("References: "), Space(10)]
     public RuntimeAnimatorController entityAnimator;
+
 }

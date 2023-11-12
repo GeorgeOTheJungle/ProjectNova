@@ -42,6 +42,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Entities
+    uniqueID: 246511721
+    locked: 0
+  - name: CombatUI
+    uniqueID: 1595334539
+    locked: 0
   - name: VFXs
     uniqueID: 479133459
     locked: 0

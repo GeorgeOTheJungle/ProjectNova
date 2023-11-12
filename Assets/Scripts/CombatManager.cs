@@ -66,6 +66,9 @@ public class CombatManager : MonoBehaviour
                 //    entityList.Add(doubleEntity[i]);
                 //}
 
+                doubleEntity[0].gameObject.SetActive(true);
+                doubleEntity[1].gameObject.SetActive(true);
+
                 doubleEntity[0].SetEntityData(listOfEnemies[0]);
                 doubleEntity[1].SetEntityData(listOfEnemies[1]);
 
@@ -112,7 +115,7 @@ public class CombatManager : MonoBehaviour
         {
             if (entityList[i].entityData.entityID != -1)
             {
-                entityList[i].SetTarget(true, selectFirst);
+                entityList[i].OpenTargetWindow(true, selectFirst);
                 selectFirst = false;
             }
 
@@ -133,15 +136,31 @@ public class CombatManager : MonoBehaviour
         // Start stopping everything and call the transition manager.
     }
 
+    public void SetTarget(int target)
+    {
+        target++;
+        playerEntity.TargetEntity(target);
+        for (int i = 0; i < entityListLenght + 1; i++)
+        {
+            if (entityList[i].entityData.entityID != -1)
+            {
+                entityList[i].CloseTargetWindow();
+                //entityList[i].OpenTargetWindow(true, selectFirst);
+               //selectFirst = false;
+            }
+
+        }
+    }
+
+    #region Corutines
     private IEnumerator DelayedCleanup()
     {
         yield return new WaitForSeconds(0.75f);
         onCombatFinish?.Invoke(CombatResult.escape);
         yield return new WaitForSeconds(0.15f);
         onCombatCleanup?.Invoke();
-    }
+    } 
 
-    #region Corutines
     private IEnumerator NextEntityTurn()
     {
         yield return new WaitForSeconds(nextTurnDelay);

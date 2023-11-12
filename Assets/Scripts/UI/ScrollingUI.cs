@@ -39,6 +39,14 @@ public class ScrollingUI : MonoBehaviour
         playerSkillLenght = avaliablePlayerSkills.Count - 1;
         Scroll(0);
     }
+
+    private void OnEnable()
+    {
+        avaliablePlayerSkills.Clear();
+        avaliablePlayerSkills = SkillManager.Instance.GetAvaliableSkills();
+        playerSkillLenght = avaliablePlayerSkills.Count - 1;
+        Scroll(0);
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.D))

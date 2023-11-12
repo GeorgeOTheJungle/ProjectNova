@@ -8,13 +8,10 @@ using UnityEngine.UI;
 public class EnemyEntity : Entity
 {
     [Header("Enemy Specifics: "), Space(10)]
-
+    [SerializeField] private int targetID;
     [Header("References: "), Space(10)]
     [SerializeField] private GameObject statsGO;
     [SerializeField] private TextMeshProUGUI lifeText;
-
-    [Header("Avaliable Skills: "), Space(10)]
-    public Skill[] skills;
 
     private int skillLenght;
     public override void AttackEntity()
@@ -39,9 +36,10 @@ public class EnemyEntity : Entity
             case GameState.combatReady:
                 StartCoroutine(DelayEntrance());
                 StartCoroutine(TurnCommandsVisuals(true, 0.0f));
+                skills = entityData.avaliableSkills;
                 break;
         }
-        skillLenght = skills.Length;
+        skillLenght = skills.Count;
         UpdateEntityStatsUI();
     }
 
@@ -86,4 +84,11 @@ public class EnemyEntity : Entity
     {
         statsGO.SetActive(active);
     }
+
+    public void OnEntitySelected()
+    {
+        CombatManager.Instance.SetTarget(targetID);
+    }
+
+
 }

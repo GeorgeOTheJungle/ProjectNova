@@ -15,7 +15,7 @@ public abstract class Entity : MonoBehaviour
     public Stats entityStats;
     [SerializeField] protected bool isInvencible = false;
     //[SerializeField] protected List<Effect> effectLists;
-    [SerializeField] private GameObject targetUI;
+    [SerializeField] protected GameObject targetUI;
     [SerializeField] private Button targetButton;
     [Header("Particles Visuals: "), Space(10)]
     [SerializeField] protected ParticleSystem buffParticles;
@@ -26,6 +26,8 @@ public abstract class Entity : MonoBehaviour
     protected const string GUARD_HIT_ANIMATION = "GuardHit";
     //protected const string END_GUARD_ANIMATION = "endGuard"; // <-- Not global
     protected const string IDLE_OUT = "IdleOut";
+
+    protected List<Skill> skills;
 
     protected Skill currentSkill;
     protected Animator animator;
@@ -42,7 +44,7 @@ public abstract class Entity : MonoBehaviour
 
     private IEnumerator Start()
     {
-        entityStats = new Stats();
+        //entityStats = new Stats();
         yield return new WaitForEndOfFrame();
         GameManager.Instance.onGameStateChangeTrigger += OnCombatStart;
         CombatManager.Instance.onCombatCleanup += HandleCombatCleanup;
@@ -65,6 +67,7 @@ public abstract class Entity : MonoBehaviour
     public abstract void OnAwake(); // Runs in the awake
 
     public abstract void OnStart(); // Runs after the first frame in the start corutine
+
 
     public abstract void OnCombatStart(GameState gameState);
     
@@ -235,17 +238,21 @@ public abstract class Entity : MonoBehaviour
 
     #region Enemy Entity ONLY
 
-    public virtual void SetTarget(bool active,bool preSelect)
+    public virtual void OpenTargetWindow(bool active,bool preSelect)
     {
         if (entityData.entityID == -1) return;
  
         targetUI.SetActive(active);
         if(preSelect) targetButton.Select();
     }
-
+    public void CloseTargetWindow()
+    {
+        targetUI.SetActive(false);
+    }
     public void SetEntityData(EntityData data)
     {
         entityData = data;
+        skills = entityData.avaliableSkills;
         animator.runtimeAnimatorController = data.entityAnimator;
     }
 
