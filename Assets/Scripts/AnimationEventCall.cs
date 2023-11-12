@@ -7,40 +7,41 @@ public class AnimationEventCall : EventCall
 
     public void OnGuard()
     {
-        CombatPlayer.Instance.GuardFromDamage();
+        m_entity.OnBuff(Enums.BuffType.defense);
     }
 
     public void OnEscape()
     {
-        CombatPlayer.Instance.Escape();
+        CombatManager.Instance.OnPlayerEscape();
     }
 
     public void OnReload()
     {
-        CombatPlayer.Instance.Reload();
+        m_entity.OnResourceGain(Enums.ResourceType.ammo, 999);
     }
 
     public void OnHeal()
     {
-        CombatPlayer.Instance.Heal();
+        m_entity.OnHeal();
     }
 
     public void OnBuffReceived()
     {
-        CombatPlayer.Instance.Buff();
+        m_entity.OnBuff(Enums.BuffType.offense);
     }
 
     public override void OnActionFinished()
     {
         if (!animator) return;
-        animator.Play(IDLE_ANIMATION);
-        CombatManager.Instance.OnTurnFinished();
+        m_entity.PlayAnimation(IDLE_ANIMATION);
+        m_entity.Next();
+        //CombatManager.Instance.OnTurnFinished();
     }
 
     public override void OnAnimationFinish()
     {
         if (!animator) return;
-        animator.Play(IDLE_ANIMATION);
+        m_entity.PlayAnimation(IDLE_ANIMATION);
     }
 
     public override void DealDamageCall()

@@ -1,22 +1,32 @@
 using Enums;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class EnemyEntity : Entity
 {
     [Header("Enemy Specifics: "), Space(10)]
-    [SerializeField] private GameObject a;
+
+    [Header("References: "), Space(10)]
+    [SerializeField] private GameObject statsGO;
+    [SerializeField] private TextMeshProUGUI lifeText;
+
+    [Header("Avaliable Skills: "), Space(10)]
+    public Skill[] skills;
+
+    private int skillLenght;
     public override void AttackEntity()
     {
-        throw new System.NotImplementedException();
+        CombatManager.Instance.GetPlayerEntity().OnDamageTaken(CalculateDamageDealt(), currentSkill.damageType);
     }
 
     public override void OnAwake()
     {
         
     }
+
 
     public override void OnCombatStart(GameState gameState)
     {
@@ -27,48 +37,53 @@ public class EnemyEntity : Entity
                 entityStats = entityData.stats;
                 break;
             case GameState.combatReady:
-                Debug.Log("Entity Ready for combat!");
                 StartCoroutine(DelayEntrance());
+                StartCoroutine(TurnCommandsVisuals(true, 0.0f));
                 break;
         }
+        skillLenght = skills.Length;
+        UpdateEntityStatsUI();
     }
 
     public override void OnEntityTurn()
     {
-        Debug.Log($"Its my turn: {transform.name}");
+        currentSkill = null;
+
+        // Choose skill to use
+        currentSkill = skills[Random.Range(0, skillLenght)];
+        PerformAction(currentSkill);
     }
 
     public override void OnStart()
     {
-     
+        
     }
 
 
 
     public override void PerformAction(Skill skill)
     {
-        throw new System.NotImplementedException();
+        // Do visuals
+        PlayAnimation(currentSkill.animationKey);
+
     }
 
-
-
-
-    protected override void UpdateEntityUI()
+    protected override void UpdateEntityStatsUI()
     {
-        throw new System.NotImplementedException();
+        lifeText.SetText($"{entityStats.health} / {entityData.stats.health}");
     }
 
     public override void TargetEntity(int entitySlot)
     {
 
     }
-
-    #region Corutines
-    private IEnumerator DelayEntrance()
+    public override void CombatUICleanUp()
     {
-        yield return new WaitForSeconds(0.25f);
-        PlayAnimation(ENTRANCE_ANIMATION);
+        statsGO.SetActive(false);
     }
 
-    #endregion
+    protected override void UpdateEntityUI(bool active)
+    {
+        statsGO.SetActive(active);
+    }
 }

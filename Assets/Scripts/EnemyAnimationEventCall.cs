@@ -6,20 +6,20 @@ public class EnemyAnimationEventCall : EventCall
 {
     public override void DealDamageCall()
     {
-        throw new System.NotImplementedException();
+        m_entity.AttackEntity();
     }
 
     public override void OnActionFinished()
     {
         if (!animator) return;
-        animator.Play(IDLE_ANIMATION);
+        m_entity.PlayAnimation(IDLE_ANIMATION);
         CombatManager.Instance.OnTurnFinished();
     }
 
     public override void OnAnimationFinish()
     {
         if (!animator) return;
-        animator.Play(IDLE_ANIMATION);
+       m_entity.PlayAnimation(IDLE_ANIMATION);
     }
 
     //public override void OnAnimationFinish()

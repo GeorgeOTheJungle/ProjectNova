@@ -18,14 +18,13 @@ MonoBehaviour:
     health: 100
     energy: 50
     ammo: 1
-    physicalDamage: 5
+    physicalDamage: 50
     physicalArmor: 5
     magicDamage: 5
     magicArmor: 5
     defenseBonus: 0
     buffBonus: 0
     accuracy: 5
-    critRate: 0
+    critRate: 0.5
     xpYield: 0
-  soon: Soon
   entityAnimator: {fileID: 0}

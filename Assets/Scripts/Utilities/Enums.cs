@@ -10,4 +10,6 @@ namespace Enums
     public enum ResourceType { none,ammo, energy, health}
 
     public enum DamageType { physical,magical}
+
+    public enum BuffType { offense, defense }
 }

@@ -220,14 +220,14 @@ public class CombatPlayer : MonoBehaviour, IDamageable
 
     public int GetDamage(bool isMagic)
     {
-        int baseDamage = isMagic ? playerStats.magicDamage : playerStats.physicalDamage ;
-        float skillDamage = currentAction.baseDamage;
+        //int baseDamage = isMagic ? playerStats.magicDamage : playerStats.physicalDamage ;
+        //float skillDamage = currentAction.baseDamage;
 
-        bool isCrit = Random.Range(0.0f, 1.0f) < 0.05f + currentAction.critChance;
-        float buffDamage = baseDamage * playerStats.buffBonus;
-        float totalDamage = ((baseDamage + skillDamage) + buffDamage) * (isCrit?2.5f:1);
-        Debug.Log("Damage sent to entity is: " + totalDamage);
-        return Mathf.CeilToInt(totalDamage);
+        ////bool isCrit = Random.Range(0.0f, 1.0f) < 0.05f + currentAction.critChance;
+        //float buffDamage = baseDamage * playerStats.buffBonus;
+        ////float totalDamage = ((baseDamage + skillDamage) + buffDamage) * (isCrit?2.5f:1);
+        //Debug.Log("Damage sent to entity is: " + totalDamage);
+        return 0;
     }
     #endregion
 

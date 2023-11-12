@@ -7,7 +7,7 @@ using Structs;
 public class EncounterHandler : MonoBehaviour, IInteractable
 {
     [Header("Encounter Handler"), Space(10)]
-    [SerializeField] private List<EntityData> encounter;
+    [SerializeField] private EntityData[] encounter;
     public void OnInteraction()
     {
         // Tell the combat manager to enter combat mode and give the list to them. Also register to a combat event for when the combat

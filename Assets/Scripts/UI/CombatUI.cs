@@ -26,24 +26,26 @@ public class CombatUI : MonoBehaviour
         actionText.SetText(string.Empty);
 
         yield return new WaitForEndOfFrame();
-        GameManager.Instance.onGameStateChangeTrigger += HandleCombatStart;
+        GameManager.Instance.onGameStateChangeTrigger += HandleCombatUpdate;
     }
 
     private void OnEnable()
     {
         if (GameManager.Instance == null) return;
-        GameManager.Instance.onGameStateChangeTrigger += HandleCombatStart;
+        GameManager.Instance.onGameStateChangeTrigger += HandleCombatUpdate;
     }
 
     private void OnDisable()
     {
-        GameManager.Instance.onGameStateChangeTrigger -= HandleCombatStart;
+        GameManager.Instance.onGameStateChangeTrigger -= HandleCombatUpdate;
     }
 
-    private void HandleCombatStart(GameState state)
+    private void HandleCombatUpdate(GameState state)
     {
-        visual.SetActive(true);
-        actionText.gameObject.SetActive(true);
+        bool active = state == GameState.combatReady;
+
+        visual.SetActive(active);
+        actionText.gameObject.SetActive(active);
         // Initialize stats on texts
         maxHealth = player.entityStats.health.ToString();
         maxEnergy = player.entityStats.energy.ToString();

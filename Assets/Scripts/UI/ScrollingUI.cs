@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class ScrollingUI : MonoBehaviour
 {
@@ -18,12 +19,18 @@ public class ScrollingUI : MonoBehaviour
 
     [SerializeField] private GameObject[] unavaliableIcons;
 
+    private PlayerEntity entity;
     private bool canSelectSkill = false;
     private int lastSkill;
     private int currentSkill;
     private int nextSkill;
 
     private int playerSkillLenght;
+
+    private void Awake()
+    {
+        entity = GetComponentInParent<PlayerEntity>();
+    }
 
     private void Start()
     {
@@ -74,14 +81,14 @@ public class ScrollingUI : MonoBehaviour
         switch (avaliablePlayerSkills[currentSkill].resourceType)
         {
             case Enums.ResourceType.ammo:
-                if (CombatPlayer.Instance.HasAmmo(avaliablePlayerSkills[currentSkill].resourceAmount) == false)
+                if (entity.HasAmmo(avaliablePlayerSkills[currentSkill].resourceAmount) == false)
                 {
                     unavaliableIcons[0].SetActive(true);
                     canSelectSkill = false;
                 }
                 break;
             case Enums.ResourceType.energy:
-                if (CombatPlayer.Instance.HasEnergy(avaliablePlayerSkills[currentSkill].resourceAmount) == false)
+                if (entity.HasEnergy(avaliablePlayerSkills[currentSkill].resourceAmount) == false)
                 {
                     unavaliableIcons[1].SetActive(true);
                     canSelectSkill = false;
@@ -96,6 +103,19 @@ public class ScrollingUI : MonoBehaviour
     public void UseSkill()
     {
         if (canSelectSkill == false) return;
-        CombatPlayer.Instance.PerformAction(avaliablePlayerSkills[currentSkill]);
+
+        if (avaliablePlayerSkills[currentSkill].isSelfTarget)
+        {
+            entity.PerformAction(avaliablePlayerSkills[currentSkill]);
+            CombatNavigation.Instance.HideAllWindows();
+        }
+        else
+        {
+            entity.PreSelectSkill(avaliablePlayerSkills[currentSkill]);
+            CombatNavigation.Instance.HideAllWindows();
+            CombatManager.Instance.ActivateTargets();
+        }
+
+        //CombatPlayer.Instance.PerformAction(avaliablePlayerSkills[currentSkill]);
     }
 }

@@ -45,6 +45,7 @@ public abstract class Entity : MonoBehaviour
         entityStats = new Stats();
         yield return new WaitForEndOfFrame();
         GameManager.Instance.onGameStateChangeTrigger += OnCombatStart;
+        CombatManager.Instance.onCombatCleanup += HandleCombatCleanup;
         OnStart();
     }
 
@@ -52,11 +53,13 @@ public abstract class Entity : MonoBehaviour
     private void OnEnable()
     {
         if(GameManager.Instance) GameManager.Instance.onGameStateChangeTrigger += OnCombatStart;
+        if(CombatManager.Instance) CombatManager.Instance.onCombatCleanup += HandleCombatCleanup;
     }
 
     private void OnDisable()
     {
         if (GameManager.Instance) GameManager.Instance.onGameStateChangeTrigger -= OnCombatStart;
+        CombatManager.Instance.onCombatCleanup -= HandleCombatCleanup;
     }
 
     public abstract void OnAwake(); // Runs in the awake
@@ -67,7 +70,9 @@ public abstract class Entity : MonoBehaviour
     
     public abstract void OnEntityTurn();
 
-    protected abstract void UpdateEntityUI();
+    protected abstract void UpdateEntityStatsUI(); // Update entity stats UI
+
+    protected abstract void UpdateEntityUI(bool active);
     
     public virtual void OnDamageTaken(int damage,DamageType damageType)
     {
@@ -85,27 +90,30 @@ public abstract class Entity : MonoBehaviour
             // TODO Add death animation call here!
         }
 
-        //playerStats.health -= CalculateDamageReceived(damage, isMagic);
-        //if (isGuarding == false) animator.PlayAnimation(HIT_ANIMATION);
-        //else animator.PlayAnimation(GUARD_HIT_ANIMATION); <- Player Only?
-
-        UpdateEntityUI();
-        //combatUI.UpdateCombatStats(); <- Entity specific
+        UpdateEntityStatsUI();
     }
 
     public virtual void OnHeal()
     {
-        entityStats.health += CalculateHealing(Mathf.CeilToInt(currentSkill.baseDamage));
-        if (entityStats.health > entityData.stats.health) entityStats.health = entityData.stats.health;
-
-        UpdateEntityUI();
+        OnResourceGain(ResourceType.health, CalculateHealing(Mathf.CeilToInt(currentSkill.baseDamage)));
+        UpdateEntityStatsUI();
+        // TODO ADD HEALING VISUALS HERE.
     }
 
-    public virtual void OnBuff()
+    public virtual void OnBuff(BuffType buffType)
     {
-        if (buffParticles) buffParticles.Play();
-        else Debug.LogWarning("No buff particles found, did you forgot to add them?");
-        entityStats.buffBonus = currentSkill.baseDamage;
+        switch (buffType)
+        {
+            case BuffType.offense:
+                if (buffParticles) buffParticles.Play();
+                else Debug.LogWarning("No buff particles found, did you forgot to add them?");
+                entityStats.buffBonus = 1f;
+                break; 
+            case BuffType.defense:
+                entityStats.defenseBonus = 1;
+                break;
+        }
+
     }
     
     public virtual void PreSelectSkill(Skill skill)
@@ -124,25 +132,46 @@ public abstract class Entity : MonoBehaviour
 
     public abstract void AttackEntity();
 
+    public abstract void CombatUICleanUp();
+
     public int CalculateDamageDealt()
     {
-        float baseDamage = currentSkill.damageType == DamageType.physical ? entityStats.physicalDamage : entityStats.magicDamage;
-        float skillDamage = currentSkill.baseDamage;
-        bool isCrit = Random.Range(0.0f, 1.0f) < 0.05 + currentSkill.critChance;
-        float bonusDamage = baseDamage * entityStats.buffBonus;
+        // Calculate the initial damage
+        float baseDamageMultiplier = currentSkill.damageType == DamageType.physical ? entityStats.physicalDamage : entityStats.magicDamage ;
+        baseDamageMultiplier /= 100;
+        float baseSkillDamage = currentSkill.baseDamage;
+        float baseDamage = baseSkillDamage * baseDamageMultiplier;
 
-        baseDamage += skillDamage;
-        float totalDamage = (baseDamage + bonusDamage) * (isCrit ? 2.5f : 1);
-        Debug.Log($"Damage calculated by {transform.name} is {totalDamage}");
-        return Mathf.CeilToInt(totalDamage);
+        // Check if its crit or not
+        bool isCrit = Random.Range(0.0f, 1.0f) < entityStats.critRate;
+        baseDamage *= isCrit?2.5f:1.0f;
+
+        // Check if there is a damage buff and apply it
+        float bonusDamage = baseSkillDamage * entityStats.buffBonus;
+        baseDamage += bonusDamage;
+
+        // Round it and send it.
+        int totalDamage = Mathf.CeilToInt(baseDamage);
+
+        //Debug.Log($"Damage calculated by {transform.name} is {totalDamage}, and it was crit? {isCrit}");
+        return totalDamage;
     }
 
     public int CalculateDamageReceived(int damageReceived,DamageType damageReceivedType)
     {
-        float baseDefenseRate = damageReceivedType == DamageType.physical ? entityStats.physicalArmor : entityStats.magicArmor / 100.0f;
+        float totalDamage = damageReceived;
+        float defenseRate;
+        // Calculate Initial defense Rating
+        float baseDefenseRate = damageReceivedType == DamageType.physical ? entityStats.physicalArmor : entityStats.magicArmor ;
+        defenseRate = baseDefenseRate / 100;
+
+        // Calculate bonus defense rate 
         float bonusDefenseRate = entityStats.defenseBonus;
-        float totalDamage = damageReceived - (damageReceived * (baseDefenseRate + bonusDefenseRate));
+        defenseRate += bonusDefenseRate;
+        totalDamage = totalDamage - (totalDamage * defenseRate);
+        //Debug.Log($"Damage result: Defense Rate: {defenseRate}, Bonus Defense Rate: {bonusDefenseRate}, Total Damage: {totalDamage}");
         totalDamage = Mathf.Abs(totalDamage);
+       
         return Mathf.CeilToInt(totalDamage);
     }
 
@@ -155,20 +184,59 @@ public abstract class Entity : MonoBehaviour
     private void HandleCombatCleanup()
     {
         PlayAnimation(IDLE_OUT);
+        CombatUICleanUp();
     }
 
-    protected void PlayAnimation(string nextAnimation)
+    public void PlayAnimation(string nextAnimation)
     {
-        if (currentAnimation == nextAnimation) return;
-        animator.Play(nextAnimation);
+        animator.Play(nextAnimation,0,0.0f);
         currentAnimation = nextAnimation;
     }
+
+    public virtual void OnResourceGain(ResourceType resourceType, int resourceGain)
+    {
+        switch (resourceType)
+        {
+            case ResourceType.energy:
+                entityStats.energy += resourceGain;
+                if (entityStats.energy > entityData.stats.energy) entityStats.energy = entityData.stats.energy;
+                break;
+            case ResourceType.ammo:
+                entityStats.ammo += resourceGain;
+                if(entityStats.ammo > entityData.stats.ammo) entityStats.ammo = entityData.stats.ammo;
+                break;
+            case ResourceType.health:
+                entityStats.health += resourceGain;
+                if (entityStats.health > entityData.stats.health) entityStats.health = entityData.stats.health;
+                break;
+        }
+        UpdateEntityStatsUI();
+    }
+
+    #region Corutines
+    protected IEnumerator DelayEntrance()
+    {
+        yield return new WaitForSeconds(0.25f);
+        PlayAnimation(ENTRANCE_ANIMATION);
+    }
+
+    protected IEnumerator TurnCommandsVisuals(bool active, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        //commandsVisuals.SetActive(active);
+        //combatNavigation.StartCombatWindows();
+        UpdateEntityUI(active);
+
+        //if (active) EventSystem.current.SetSelectedGameObject(firstCommandSelected);
+        //EventSystem.current.UpdateModules();
+    }
+
+    #endregion
 
     #region Enemy Entity ONLY
 
     public virtual void SetTarget(bool active,bool preSelect)
     {
-        Debug.Log("Opening target menu" + entityData.entityID);
         if (entityData.entityID == -1) return;
  
         targetUI.SetActive(active);
@@ -179,10 +247,15 @@ public abstract class Entity : MonoBehaviour
     {
         entityData = data;
         animator.runtimeAnimatorController = data.entityAnimator;
-        Debug.Log("Entity data set!");
+    }
+
+    public void Next()
+    {
+        CombatManager.Instance.OnTurnFinished();
     }
 
     #endregion
+
     //[SerializeField] private bool invencible; <-- Global
     //[SerializeField] private EntityData data; <-- Global
     //[SerializeField] private Stats entityStats; <-- Global

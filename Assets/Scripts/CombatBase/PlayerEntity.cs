@@ -19,20 +19,19 @@ public class PlayerEntity : Entity
 
     public override void OnCombatStart(GameState gameState)
     {
-        Debug.Log(gameState);
         currentSkill = null;
         switch (gameState)
         {
             case GameState.combatPreparation:
-                Debug.Log("Setting up Player");
                 entityStats = entityData.stats;
                 break;
             case GameState.combatReady:
-                Debug.Log("Player Ready for combat!");
                 StartCoroutine(DelayEntrance());
                 StartCoroutine(TurnCommandsVisuals(true, 1.0f));
                 break;
         }
+
+        UpdateEntityStatsUI();
     }
 
     public override void OnEntityTurn()
@@ -48,7 +47,6 @@ public class PlayerEntity : Entity
 
     public override void OnStart()
     {
-        Debug.Log("Starting!");
         StartCoroutine(TurnCommandsVisuals(false, 0.0f));
     }
 
@@ -59,7 +57,6 @@ public class PlayerEntity : Entity
         // Use resource
         UseResource();    
         // Do visuals
-        Debug.Log("Performing action: " + currentSkill.skillName);
         PlayAnimation(currentSkill.animationKey);
 
         // Perform action
@@ -79,14 +76,19 @@ public class PlayerEntity : Entity
         // Perform action.
         // Deal damage.
         // Pass to next turn.
-        Debug.Log("Dealing Damage");
         CombatManager.Instance.entityList[targetEntity].OnDamageTaken(CalculateDamageDealt(), currentSkill.damageType);
     }
 
-    protected override void UpdateEntityUI()
+    protected override void UpdateEntityStatsUI()
     {
         combatUI.UpdateCombatStats();
     }
+
+    public override void CombatUICleanUp()
+    {
+        StartCoroutine(TurnCommandsVisuals(false, 0.0f));
+    }
+
     private void UseResource()
     {
         switch (currentSkill.resourceType)
@@ -103,6 +105,14 @@ public class PlayerEntity : Entity
                 entityStats.energy -= currentSkill.resourceAmount;
                 break;
         }
+        combatUI.UpdateCombatStats();
+    }
+
+    protected override void UpdateEntityUI(bool active)
+    {
+        commandsVisuals.SetActive(active);
+
+        if(active) combatNavigation.StartCombatWindows();
     }
 
     #region Resource Methods
@@ -118,22 +128,22 @@ public class PlayerEntity : Entity
     }
     #endregion
 
-    #region Corutines
-    private IEnumerator DelayEntrance()
-    {
-        yield return new WaitForSeconds(0.25f);
-        PlayAnimation(ENTRANCE_ANIMATION);
-    }
+    //#region Corutines
+    //private IEnumerator DelayEntrance()
+    //{
+    //    yield return new WaitForSeconds(0.25f);
+    //    PlayAnimation(ENTRANCE_ANIMATION);
+    //}
 
-    private IEnumerator TurnCommandsVisuals(bool active, float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        commandsVisuals.SetActive(active);
-        combatNavigation.StartCombatWindows();
-        //if (active) EventSystem.current.SetSelectedGameObject(firstCommandSelected);
-        //EventSystem.current.UpdateModules();
-    }
+    //private IEnumerator TurnCommandsVisuals(bool active, float delay)
+    //{
+    //    yield return new WaitForSeconds(delay);
+    //    commandsVisuals.SetActive(active);
+    //    combatNavigation.StartCombatWindows();
+    //    //if (active) EventSystem.current.SetSelectedGameObject(firstCommandSelected);
+    //    //EventSystem.current.UpdateModules();
+    //}
 
-    #endregion
+    //#endregion
 
 }

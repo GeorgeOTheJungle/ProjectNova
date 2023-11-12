@@ -13,7 +13,12 @@ public class CombatManager : MonoBehaviour
 
     [Header("Entity Slots: "), Space(10)]
     [SerializeField] private Entity singleEntity;
+    [Space(5)]
 
+    [SerializeField] private Entity[] doubleEntity;
+    [Space(5)]
+
+    [SerializeField] private List<Entity> tripleEntity;
     public List<Entity> entityList = new List<Entity>(); // This list is for targeting
     // TODO IF YOU ARE GOING TO MAKE A SPEED STAT THEN YOU NEED A DIFFERENT LIST THAT CONTAINS THE ACTUAL ORDER
 
@@ -38,12 +43,12 @@ public class CombatManager : MonoBehaviour
     }
 
     // TODO maybe sort them by speed stat?
-    public void EnterCombat(List<EntityData> listOfEnemies)
+    public void EnterCombat(EntityData[] listOfEnemies)
     {
         entityList.Clear();
         entityList.Add(playerEntity);
 
-        totalEnemies = listOfEnemies.Count;
+        totalEnemies = listOfEnemies.Length;
 
         //Check total enemies to assign an array (1, 2 or 3 enemies in total is supported)
         switch (totalEnemies)
@@ -54,6 +59,18 @@ public class CombatManager : MonoBehaviour
                 
                 break;
             case 2:
+                //Debug.Log(totalEnemies);
+                //for (int i = 0;i < totalEnemies - 1; i++)
+                //{
+                //    doubleEntity[i].SetEntityData(listOfEnemies[i]);
+                //    entityList.Add(doubleEntity[i]);
+                //}
+
+                doubleEntity[0].SetEntityData(listOfEnemies[0]);
+                doubleEntity[1].SetEntityData(listOfEnemies[1]);
+
+                entityList.Add(doubleEntity[0]);
+                entityList.Add(doubleEntity[1]);
                 break;
             case 3:
                 break;
@@ -105,8 +122,9 @@ public class CombatManager : MonoBehaviour
 
     public void OnTurnFinished()
     {
-        
-        StartCoroutine(NextTurn());
+
+        StartCoroutine(NextEntityTurn());
+
     }
 
     public void OnPlayerEscape()
@@ -123,14 +141,16 @@ public class CombatManager : MonoBehaviour
         onCombatCleanup?.Invoke();
     }
 
-    private IEnumerator NextTurn()
+    #region Corutines
+    private IEnumerator NextEntityTurn()
     {
+        yield return new WaitForSeconds(nextTurnDelay);
         entityTurn++;
         if (entityTurn > entityListLenght) entityTurn = -1;
-        yield return new WaitForSeconds(nextTurnDelay);
+        // yield return new WaitForSeconds(nextTurnDelay);
         // Tell the enemy to perform a skill.
 
-        if(entityTurn == -1)
+        if (entityTurn == -1)
         {
             StartCoroutine(OnRoundFinished());
         }
@@ -146,11 +166,15 @@ public class CombatManager : MonoBehaviour
         Debug.Log("Round finished! Applying effects");
         yield return new WaitForSeconds(0.5f);
         entityTurn = 0;
-        Debug.Log("Player turn!");
         entityList[entityTurn].OnEntityTurn();
     }
+    #endregion
 
-    
+
+    public Entity GetPlayerEntity()
+    {
+        return playerEntity;
+    }
     /*
      * USE A POOL OF ENEMIES OR DIFERENT PREFABS, ITS NOT GONNA BE POSIBLE RIGHT NOW TO HAVE MULTIPLE ENEMIES AT THE SAME TIME 
      * SO, BETTER HAVE IT LIKE THAT.

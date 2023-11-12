@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b85157119d06342a2aa45366ec1399, type: 3}
   m_Name: AttackSkill
   m_EditorClassIdentifier: 
+  unlocked: 0
   skillName: Shoot
-  baseDamage: 25
-  critChance: 0
+  baseDamage: 15
+  damageType: 0
   resourceType: 1
   resourceAmount: 1
   animationKey: Atk_0
+  smallIcon: {fileID: 0}
+  largeIcon: {fileID: 0}

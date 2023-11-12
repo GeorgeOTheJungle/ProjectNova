@@ -7,10 +7,10 @@ public class Skill : ScriptableObject
 {
     [Header("Skill data"), Space(10)]
     public bool unlocked;
+    public bool isSelfTarget;
     public string skillName; // Use it for UI.
-    public float baseDamage;
+    public float baseDamage; // Total damage the skill will do,
     public DamageType damageType;
-    [Range(0.0f,0.1f)] public float critChance;
     public ResourceType resourceType;
     public int resourceAmount;
 

@@ -37,7 +37,8 @@ public class CommandUI : MonoBehaviour,ISelectHandler
             return;
         }
         //CombatPlayer.Instance.PerformAction(assignedAction);
-        CombatManager.Instance.ActivateTargets();
+        entity.PerformAction(assignedAction);
+        //CombatManager.Instance.ActivateTargets();
     }
 
     

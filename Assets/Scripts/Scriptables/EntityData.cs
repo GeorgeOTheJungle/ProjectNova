@@ -12,8 +12,6 @@ public class EntityData : ScriptableObject
     public int entityID;
     public Stats stats;
 
-    [Header("Avaliable Skills: "), Space(10)]
-    public string soon = "Soon";
     [Header("References: "), Space(10)]
     public RuntimeAnimatorController entityAnimator;
 }

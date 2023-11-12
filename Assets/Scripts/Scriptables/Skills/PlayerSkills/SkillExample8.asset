@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: SkillExample8
   m_EditorClassIdentifier: 
   unlocked: 1
+  isSelfTarget: 1
   skillName: Chicken!
   baseDamage: 15
-  critChance: 0
+  damageType: 0
   resourceType: 2
   resourceAmount: 25
   animationKey: Eat
