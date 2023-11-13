@@ -17,4 +17,14 @@ public abstract class EventCall : MonoBehaviour
     public abstract void OnActionFinished();
 
     public abstract void OnAnimationFinish();
+
+    public virtual void OnMeleeReady()
+    {
+        m_entity.MoveEntityToTarget();
+    }
+
+    public virtual void OnMeleeReturn()
+    {
+        m_entity.ReturnToOriginalPosition();
+    }
 }

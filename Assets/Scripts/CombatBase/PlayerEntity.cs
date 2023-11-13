@@ -3,12 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
 public class PlayerEntity : Entity
 {
     [Header("Player Specific Visuals: "), Space(10)]
     [SerializeField] private GameObject commandsVisuals;
 
+    [SerializeField] private float minimumPunchDistance = 0.1f;
+    [SerializeField] private float punchMovementSpeed = 20.0f;
+
+    private const string PUNCH_END_ANIMATION = "PunchEnd";
     private CombatNavigation combatNavigation;
     private CombatUI combatUI;
     public override void OnAwake()
@@ -48,6 +53,8 @@ public class PlayerEntity : Entity
     public override void OnStart()
     {
         StartCoroutine(TurnCommandsVisuals(false, 0.0f));
+        Vector3 originalPlayerPosition = entityVisual.position;
+
     }
 
     public override void PerformAction(Skill skill)
@@ -55,13 +62,27 @@ public class PlayerEntity : Entity
         currentSkill = skill;
 
         // Use resource
-        UseResource();    
+        UseResource();
         // Do visuals
+        //if (currentSkill.skillName == "Punch") StartCoroutine(PunchMovement(CombatManager.Instance.GetEntityTransform(targetEntity)));
+        //else
         PlayAnimation(currentSkill.animationKey);
 
         // Perform action
         if (currentSkill.baseDamage >= 0) combatNavigation.OnSkillSelected();
         else StartCoroutine(TurnCommandsVisuals(false, 0.0f));
+    }
+
+  
+    private IEnumerator PunchMovement(Transform target)
+    {
+        // Play travel animation here
+        while(Vector3.Distance(entityVisual.position, target.position) > minimumPunchDistance)
+        {
+            entityVisual.position = Vector3.MoveTowards(entityVisual.position,target.position, punchMovementSpeed * Time.deltaTime);
+            yield return new WaitForEndOfFrame();
+        }
+        PlayAnimation(PUNCH_END_ANIMATION);
     }
 
     public override void TargetEntity(int entitySlot) // Set entity to attack and deal damage
@@ -126,24 +147,12 @@ public class PlayerEntity : Entity
     {
         return entityStats.energy >= energy;
     }
+
+    public override void MoveEntityToTarget()
+    {
+        StartCoroutine(PunchMovement(CombatManager.Instance.GetEntityTransform(targetEntity)));
+    }
     #endregion
 
-    //#region Corutines
-    //private IEnumerator DelayEntrance()
-    //{
-    //    yield return new WaitForSeconds(0.25f);
-    //    PlayAnimation(ENTRANCE_ANIMATION);
-    //}
-
-    //private IEnumerator TurnCommandsVisuals(bool active, float delay)
-    //{
-    //    yield return new WaitForSeconds(delay);
-    //    commandsVisuals.SetActive(active);
-    //    combatNavigation.StartCombatWindows();
-    //    //if (active) EventSystem.current.SetSelectedGameObject(firstCommandSelected);
-    //    //EventSystem.current.UpdateModules();
-    //}
-
-    //#endregion
-
+    // TODO MAKE THE PUNCH MOVEMENT NOT ANIMATION DEPENDANT.
 }

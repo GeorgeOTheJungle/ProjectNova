@@ -17,7 +17,7 @@ MonoBehaviour:
   stats:
     health: 100
     energy: 50
-    ammo: 1
+    ammo: 0
     physicalDamage: 50
     physicalArmor: 5
     magicDamage: 5
@@ -27,4 +27,5 @@ MonoBehaviour:
     accuracy: 5
     critRate: 0.5
     xpYield: 0
+  avaliableSkills: []
   entityAnimator: {fileID: 0}

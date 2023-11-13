@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b85157119d06342a2aa45366ec1399, type: 3}
   m_Name: Punch
   m_EditorClassIdentifier: 
+  unlocked: 0
+  isSelfTarget: 0
   skillName: Punch
-  baseDamage: 1
-  critChance: 0
+  baseDamage: 500
+  damageType: 0
   resourceType: 0
   resourceAmount: 0
   animationKey: Melee
+  smallIcon: {fileID: 0}
+  largeIcon: {fileID: 0}

@@ -18,20 +18,20 @@ public class TransitionManager : MonoBehaviour
         transitionScreen.SetActive(false);
         yield return new WaitForEndOfFrame();
         CombatManager.Instance.onCombatStart += HandleStartingCombatTransition;
-        CombatManager.Instance.onCombatFinish += HandleEndingCombatTransition;
+        CombatManager.Instance.onCombatCleanup += HandleEndingCombatTransition;
     }
 
     private void OnEnable()
     {
         if (CombatManager.Instance == null) return;
         CombatManager.Instance.onCombatStart += HandleStartingCombatTransition;
-        CombatManager.Instance.onCombatFinish += HandleEndingCombatTransition;
+        CombatManager.Instance.onCombatCleanup += HandleEndingCombatTransition;
     }
 
     private void OnDisable()
     {
         CombatManager.Instance.onCombatStart -= HandleStartingCombatTransition;
-        CombatManager.Instance.onCombatFinish -= HandleEndingCombatTransition;
+        CombatManager.Instance.onCombatCleanup += HandleEndingCombatTransition;
 
     }
 
@@ -40,7 +40,7 @@ public class TransitionManager : MonoBehaviour
         StartCoroutine(CombatTransitionAnimation());
     }
 
-    public void HandleEndingCombatTransition(CombatResult result)
+    public void HandleEndingCombatTransition()
     {
         StartCoroutine(EndingCombatTransitionAnimation());
     }

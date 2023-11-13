@@ -40,16 +40,23 @@ public class EnemyEntity : Entity
                 break;
         }
         skillLenght = skills.Count;
+        entityState = EntityState.idle;
         UpdateEntityStatsUI();
     }
 
     public override void OnEntityTurn()
     {
-        currentSkill = null;
+        if(entityState == EntityState.dead)
+        {
+            CombatManager.Instance.OnTurnFinished();
+            return;
+        }
 
-        // Choose skill to use
-        currentSkill = skills[Random.Range(0, skillLenght)];
-        PerformAction(currentSkill);
+        currentSkill = null;
+        entityState = EntityState.thinking;
+        float thinkTime = Random.Range(0.25f, 0.5f);
+
+        Invoke(nameof(ChooseRandomAction), thinkTime);
     }
 
     public override void OnStart()
@@ -57,7 +64,12 @@ public class EnemyEntity : Entity
         
     }
 
-
+    private void ChooseRandomAction()
+    {
+        currentSkill = skills[Random.Range(0, skillLenght)];
+        entityState = EntityState.acting;
+        PerformAction(currentSkill);
+    }
 
     public override void PerformAction(Skill skill)
     {
@@ -90,5 +102,8 @@ public class EnemyEntity : Entity
         CombatManager.Instance.SetTarget(targetID);
     }
 
-
+    public override void MoveEntityToTarget()
+    {
+        
+    }
 }

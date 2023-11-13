@@ -139,6 +139,37 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &2808212904417400850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2034805681412528928}
+  m_Layer: 0
+  m_Name: Projectile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2034805681412528928
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2808212904417400850}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3162225190788775111}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3571299655354244405
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,6 +201,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3998810886076888200}
+  - {fileID: 2034805681412528928}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4859793446942059978
@@ -201,7 +233,9 @@ MonoBehaviour:
   isInvencible: 1
   targetUI: {fileID: 4405568125427919137}
   targetButton: {fileID: 2633846159541435503}
+  entityVisual: {fileID: 4689082800914069183}
   buffParticles: {fileID: 0}
+  animator: {fileID: 888739142684226865}
   targetID: 0
   statsGO: {fileID: 2205413762094419878}
   lifeText: {fileID: 669303109261785884}
@@ -546,12 +580,12 @@ SpriteRenderer:
   m_SortingLayerID: 246511721
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1826703456, guid: 747955d9126a81e41aa87b1d42221b99, type: 3}
+  m_Sprite: {fileID: 434061113, guid: 747955d9126a81e41aa87b1d42221b99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2, y: 3}
+  m_Size: {x: 4, y: 3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -567,7 +601,7 @@ Animator:
   m_GameObject: {fileID: 5093565406375337852}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e63d7bd22e7dc0f488ecac979acd74c1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

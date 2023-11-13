@@ -6,11 +6,19 @@ public class SkillManager : MonoBehaviour
 {
     public static SkillManager Instance;
 
+    [SerializeField] private int currentXP;
+    [SerializeField] private int totalXPStored;
     [SerializeField] private List<Skill> allPlayerSkills;
 
     private void Awake()
     {
         Instance = this;
+    }
+
+    public void GetXP(int total)
+    {
+        currentXP += total;
+        totalXPStored += total;
     }
 
     public List<Skill> GetAvaliableSkills()

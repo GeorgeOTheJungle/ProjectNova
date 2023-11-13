@@ -4,6 +4,8 @@ using UnityEngine;
 using Enums;
 using System.Linq;
 using Structs;
+using UnityEditor.Tilemaps;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 public class CombatManager : MonoBehaviour
 {
@@ -25,7 +27,7 @@ public class CombatManager : MonoBehaviour
     [Header("Combat settings: "), Space(10)]
     [SerializeField] private int entityTurn = 0;
     [SerializeField] private float nextTurnDelay = 0.75f;
-
+    [SerializeField] private int xpStored = 0;
     private Entity currentEntity;
     public delegate void CombatCleanupEvent();
     public delegate void CombatStartEvent();
@@ -54,23 +56,19 @@ public class CombatManager : MonoBehaviour
         switch (totalEnemies)
         {
             case 1:
-                singleEntity.SetEntityData(listOfEnemies[0]);
+  
                 entityList.Add(singleEntity);
-                
+                singleEntity.SetEntityData(listOfEnemies[0], 1);
                 break;
             case 2:
-                //Debug.Log(totalEnemies);
-                //for (int i = 0;i < totalEnemies - 1; i++)
-                //{
-                //    doubleEntity[i].SetEntityData(listOfEnemies[i]);
-                //    entityList.Add(doubleEntity[i]);
-                //}
-
                 doubleEntity[0].gameObject.SetActive(true);
                 doubleEntity[1].gameObject.SetActive(true);
 
-                doubleEntity[0].SetEntityData(listOfEnemies[0]);
-                doubleEntity[1].SetEntityData(listOfEnemies[1]);
+                doubleEntity[0].SetEntityData(listOfEnemies[0],1);
+                doubleEntity[1].SetEntityData(listOfEnemies[1],2);
+
+                xpStored += doubleEntity[0].entityData.stats.xpYield;
+                xpStored += doubleEntity[1].entityData.stats.xpYield;
 
                 entityList.Add(doubleEntity[0]);
                 entityList.Add(doubleEntity[1]);
@@ -78,34 +76,12 @@ public class CombatManager : MonoBehaviour
             case 3:
                 break;
         }
+  
 
-        
-        
-        // Set Enemy list
-        // Tell each enemy to set itself with the entity Data
-
-        //foreach(EntityData entity in listOfEnemies)
-        //{
-        //    entityList.Add(entity);
-        //}
-        //currentEntity = enemiesInCombat[index];
         entityListLenght = entityList.Count - 1;
         onCombatStart?.Invoke();
         GameManager.Instance.ChangeGameState(GameState.combatPreparation);
         //isPlayerTurn = true;
-    }
-
-    // TODO Remove this function from here! Player should be able to target enemies by itself, same for enemies.
-    public void DealDamageToTargetEntity(int targetEntity,int damage,DamageType damageType)
-    {
-        entityList[targetEntity].OnDamageTaken(damage, damageType);
-    }
-
-    public void DealDamageToCurrentEntity(int damage,DamageType damageType)
-    {
-        // THIS IS OBSOLETE
-        if (currentEntity == null) return;
-      //  currentEntity.OnDamageTaken(damage,isMagic);
     }
 
     public void ActivateTargets()
@@ -115,25 +91,25 @@ public class CombatManager : MonoBehaviour
         {
             if (entityList[i].entityData.entityID != -1)
             {
-                entityList[i].OpenTargetWindow(true, selectFirst);
-                selectFirst = false;
+                if (entityList[i].EntityDead() == false)
+                {
+                    entityList[i].OpenTargetWindow(true, selectFirst);
+                    selectFirst = false;
+                }
             }
-
         }
 
     }
 
     public void OnTurnFinished()
-    {
-
-        StartCoroutine(NextEntityTurn());
-
+    {      
+        StartNextEntityTurn();
     }
 
     public void OnPlayerEscape()
     {
-        StartCoroutine(DelayedCleanup());
-        // Start stopping everything and call the transition manager.
+        Debug.LogWarning("TODO ESCAPE CLEANUP");
+       // StartCoroutine(DelayedCleanup());
     }
 
     public void SetTarget(int target)
@@ -152,23 +128,20 @@ public class CombatManager : MonoBehaviour
         }
     }
 
-    #region Corutines
-    private IEnumerator DelayedCleanup()
+    public void OnEnemyDefeated()
     {
-        yield return new WaitForSeconds(0.75f);
-        onCombatFinish?.Invoke(CombatResult.escape);
-        yield return new WaitForSeconds(0.15f);
-        onCombatCleanup?.Invoke();
-    } 
+        totalEnemies--;
+    }
+    private void StartNextEntityTurn()
+    {
+        if (totalEnemies == 0)
+        {
+            Invoke(nameof(VictoryCall), 1.0f);
+            return;
+        }
 
-    private IEnumerator NextEntityTurn()
-    {
-        yield return new WaitForSeconds(nextTurnDelay);
         entityTurn++;
         if (entityTurn > entityListLenght) entityTurn = -1;
-        // yield return new WaitForSeconds(nextTurnDelay);
-        // Tell the enemy to perform a skill.
-
         if (entityTurn == -1)
         {
             StartCoroutine(OnRoundFinished());
@@ -179,6 +152,26 @@ public class CombatManager : MonoBehaviour
         }
     }
 
+    private void VictoryCall()
+    {
+        // Add here victory music
+        GameManager.Instance.ChangeGameState(GameState.combatEnded);
+        onCombatFinish?.Invoke(CombatResult.victory);
+    }
+
+    public int GetXPStored() => xpStored;
+
+    public void StartCleanup() => onCombatCleanup?.Invoke();
+
+    #region Corutines
+    private IEnumerator DelayedCleanup()
+    {
+        yield return new WaitForSeconds(0.75f);
+        onCombatFinish?.Invoke(CombatResult.escape);
+        yield return new WaitForSeconds(0.15f);
+        onCombatCleanup?.Invoke();
+    } 
+
     private IEnumerator OnRoundFinished()
     {
         // Tell any effect to do its effect.
@@ -187,40 +180,18 @@ public class CombatManager : MonoBehaviour
         entityTurn = 0;
         entityList[entityTurn].OnEntityTurn();
     }
+
     #endregion
 
+    #region Get Methods
+    public Transform GetEntityTransform(int entityId)
+    {
+        return entityList[entityId].transform;
+    }
 
     public Entity GetPlayerEntity()
     {
         return playerEntity;
     }
-    /*
-     * USE A POOL OF ENEMIES OR DIFERENT PREFABS, ITS NOT GONNA BE POSIBLE RIGHT NOW TO HAVE MULTIPLE ENEMIES AT THE SAME TIME 
-     * SO, BETTER HAVE IT LIKE THAT.
-     * 
-     * - Player enters combat when interacting with an encounter entity [*]
-     * - Entity tells the combat manager what character to use. [ ]
-     * COMBAT LOOP:
-     * - Initialization. [*]
-     * - Enemy initialization [*]
-     * - UI turns on and player can use it. [*]
-     * - Player navigate throught UI [*]
-     * - Selects skill [*]
-     * - On selects, UI turns off. [*]
-     * - Catherine does the attack. [*]
-     * - Deal damage to enemy and update UIs. [*]
-     * - Apply effect if any.
-     * ----------------------------------------------------------------- ENEMY TURN
-     * - Enemy selects attack. [*]
-     * - Does animation. [*]
-     * - Deals damage and update UIs. [*]
-     * - Apply effect if any
-     * ----------------------------------------------------------------- EFFECTS TURN
-     * - Calls an event of "On Combat round ended" and apply all effects (poison or regen). [ ]
-     * 
-     * 
-     * -----------------------------------------------------------------
-     * TODO:
-     * - Move Action text features to combat navigation
-     */
+    #endregion
 }

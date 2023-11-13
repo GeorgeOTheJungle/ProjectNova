@@ -7,6 +7,7 @@ using Enums;
 using UnityEngine.EventSystems;
 using Unity.VisualScripting;
 using UnityEngine.UI;
+using System.Runtime.CompilerServices;
 
 public abstract class Entity : MonoBehaviour
 {
@@ -14,9 +15,13 @@ public abstract class Entity : MonoBehaviour
     public EntityData entityData;
     public Stats entityStats;
     [SerializeField] protected bool isInvencible = false;
+    [SerializeField] protected EntityState entityState;
     //[SerializeField] protected List<Effect> effectLists;
     [SerializeField] protected GameObject targetUI;
     [SerializeField] private Button targetButton;
+    [SerializeField] protected Transform entityVisual;
+
+    private Vector3 originalPosition;
     [Header("Particles Visuals: "), Space(10)]
     [SerializeField] protected ParticleSystem buffParticles;
     private string currentAnimation;
@@ -26,51 +31,60 @@ public abstract class Entity : MonoBehaviour
     protected const string GUARD_HIT_ANIMATION = "GuardHit";
     //protected const string END_GUARD_ANIMATION = "endGuard"; // <-- Not global
     protected const string IDLE_OUT = "IdleOut";
+    protected const string DEATH_ANIMATION = "Death";
 
     protected List<Skill> skills;
 
     protected Skill currentSkill;
-    protected Animator animator;
+    
+    [SerializeField] protected Animator animator;
 
     protected int targetEntity;
     protected Skill preSelectedSkill;
 
+
+    #region Initialization
+
     private void Awake()
     {
-        animator = GetComponentInChildren<Animator>();
-
         OnAwake();
     }
 
     private IEnumerator Start()
     {
         //entityStats = new Stats();
+        originalPosition = entityVisual.position;
+        entityState = EntityState.inactive;
         yield return new WaitForEndOfFrame();
         GameManager.Instance.onGameStateChangeTrigger += OnCombatStart;
         CombatManager.Instance.onCombatCleanup += HandleCombatCleanup;
+        CombatManager.Instance.onCombatFinish += HandleCombatEnd;
         OnStart();
     }
-
 
     private void OnEnable()
     {
         if(GameManager.Instance) GameManager.Instance.onGameStateChangeTrigger += OnCombatStart;
         if(CombatManager.Instance) CombatManager.Instance.onCombatCleanup += HandleCombatCleanup;
+        if (CombatManager.Instance) CombatManager.Instance.onCombatFinish += HandleCombatEnd;
     }
 
     private void OnDisable()
     {
         if (GameManager.Instance) GameManager.Instance.onGameStateChangeTrigger -= OnCombatStart;
         CombatManager.Instance.onCombatCleanup -= HandleCombatCleanup;
+        CombatManager.Instance.onCombatFinish -= HandleCombatEnd;
     }
 
     public abstract void OnAwake(); // Runs in the awake
 
     public abstract void OnStart(); // Runs after the first frame in the start corutine
 
+    public abstract void OnCombatStart(GameState gameState); // Event called from game manager.
 
-    public abstract void OnCombatStart(GameState gameState);
-    
+    #endregion
+
+
     public abstract void OnEntityTurn();
 
     protected abstract void UpdateEntityStatsUI(); // Update entity stats UI
@@ -90,7 +104,9 @@ public abstract class Entity : MonoBehaviour
         if(entityStats.health <= 0)
         {
             entityStats.health = 0;
-            // TODO Add death animation call here!
+            PlayAnimation(DEATH_ANIMATION);
+            CombatManager.Instance.OnEnemyDefeated();
+            entityState = EntityState.dead;
         }
 
         UpdateEntityStatsUI();
@@ -137,6 +153,41 @@ public abstract class Entity : MonoBehaviour
 
     public abstract void CombatUICleanUp();
 
+    public void PlayAnimation(string nextAnimation)
+    {
+        animator.Play(nextAnimation, 0, 0.0f);
+        currentAnimation = nextAnimation;
+    }
+
+    public virtual void OnResourceGain(ResourceType resourceType, int resourceGain)
+    {
+        switch (resourceType)
+        {
+            case ResourceType.energy:
+                entityStats.energy += resourceGain;
+                if (entityStats.energy > entityData.stats.energy) entityStats.energy = entityData.stats.energy;
+                break;
+            case ResourceType.ammo:
+                entityStats.ammo += resourceGain;
+                if (entityStats.ammo > entityData.stats.ammo) entityStats.ammo = entityData.stats.ammo;
+                break;
+            case ResourceType.health:
+                entityStats.health += resourceGain;
+                if (entityStats.health > entityData.stats.health) entityStats.health = entityData.stats.health;
+                break;
+        }
+        UpdateEntityStatsUI();
+    }
+
+    public abstract void MoveEntityToTarget(); // Use this for melee attacks
+
+    public void ReturnToOriginalPosition()
+    {
+        StartCoroutine(ReturnToPositionAnimation());
+    }
+
+
+    #region Entity Calculations
     public int CalculateDamageDealt()
     {
         // Calculate the initial damage
@@ -183,38 +234,32 @@ public abstract class Entity : MonoBehaviour
         float healAmount = baseHealing + (entityStats.magicDamage * 0.2f);
         return Mathf.CeilToInt(healAmount);
     }
+    #endregion
 
+    #region Combat END Methods
     private void HandleCombatCleanup()
     {
+        entityState = EntityState.inactive;
         PlayAnimation(IDLE_OUT);
         CombatUICleanUp();
     }
 
-    public void PlayAnimation(string nextAnimation)
+    private void HandleCombatEnd(CombatResult result)
     {
-        animator.Play(nextAnimation,0,0.0f);
-        currentAnimation = nextAnimation;
-    }
-
-    public virtual void OnResourceGain(ResourceType resourceType, int resourceGain)
-    {
-        switch (resourceType)
+        if (entityData.entityID != -1) return;
+        switch (result)
         {
-            case ResourceType.energy:
-                entityStats.energy += resourceGain;
-                if (entityStats.energy > entityData.stats.energy) entityStats.energy = entityData.stats.energy;
+            case CombatResult.escape:
                 break;
-            case ResourceType.ammo:
-                entityStats.ammo += resourceGain;
-                if(entityStats.ammo > entityData.stats.ammo) entityStats.ammo = entityData.stats.ammo;
+            case CombatResult.defeat:
                 break;
-            case ResourceType.health:
-                entityStats.health += resourceGain;
-                if (entityStats.health > entityData.stats.health) entityStats.health = entityData.stats.health;
+            case CombatResult.victory:
+                PlayAnimation("Celebration");
                 break;
         }
-        UpdateEntityStatsUI();
     }
+
+    #endregion
 
     #region Corutines
     protected IEnumerator DelayEntrance()
@@ -226,12 +271,20 @@ public abstract class Entity : MonoBehaviour
     protected IEnumerator TurnCommandsVisuals(bool active, float delay)
     {
         yield return new WaitForSeconds(delay);
-        //commandsVisuals.SetActive(active);
-        //combatNavigation.StartCombatWindows();
         UpdateEntityUI(active);
+    }
 
-        //if (active) EventSystem.current.SetSelectedGameObject(firstCommandSelected);
-        //EventSystem.current.UpdateModules();
+    private IEnumerator ReturnToPositionAnimation()
+    {
+        PlayAnimation("MeleeReturn");
+        float returnSpeed = 15.0f;
+        while (Vector3.Distance(entityVisual.position, originalPosition) > 0.03f)
+        {
+            entityVisual.position = Vector3.MoveTowards(entityVisual.position, originalPosition, returnSpeed * Time.deltaTime);
+            yield return new WaitForEndOfFrame();
+        }
+        entityVisual.position = originalPosition;
+        PlayAnimation("MeleeEnd");
     }
 
     #endregion
@@ -240,8 +293,8 @@ public abstract class Entity : MonoBehaviour
 
     public virtual void OpenTargetWindow(bool active,bool preSelect)
     {
-        if (entityData.entityID == -1) return;
- 
+        if (entityData.entityID == -1) return; // This is to exclude the player from this.
+        if (entityState == EntityState.dead) return;
         targetUI.SetActive(active);
         if(preSelect) targetButton.Select();
     }
@@ -249,18 +302,24 @@ public abstract class Entity : MonoBehaviour
     {
         targetUI.SetActive(false);
     }
-    public void SetEntityData(EntityData data)
+    public void SetEntityData(EntityData data,int id)
     {
         entityData = data;
+        entityState = EntityState.idle;
         skills = entityData.avaliableSkills;
         animator.runtimeAnimatorController = data.entityAnimator;
     }
 
     public void Next()
     {
+        entityState = EntityState.idle;
         CombatManager.Instance.OnTurnFinished();
     }
 
+    public bool EntityDead()
+    {
+        return entityState == EntityState.dead;
+    }
     #endregion
 
     //[SerializeField] private bool invencible; <-- Global

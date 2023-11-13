@@ -1,7 +1,7 @@
 namespace Enums
 {
 
-    public enum GameState { exploration, combatPreparation,combatReady, paused }
+    public enum GameState { exploration, combatPreparation,combatReady,combatEnded, paused }
 
     public enum CombatResult { victory, defeat,escape}
 
@@ -12,4 +12,6 @@ namespace Enums
     public enum DamageType { physical,magical}
 
     public enum BuffType { offense, defense }
+
+    public enum EntityState { inactive, idle,thinking,acting, dead }
 }
