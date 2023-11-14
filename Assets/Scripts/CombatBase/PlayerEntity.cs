@@ -87,17 +87,27 @@ public class PlayerEntity : Entity
 
     public override void TargetEntity(int entitySlot) // Set entity to attack and deal damage
     {
-        targetEntity = entitySlot;
+        if(entitySlot != -1)
+        {
+            targetEntity = entitySlot;
+        } else
+        {
+            targetEntity = -1;
+        }
+
         PerformAction(preSelectedSkill);
-       // CombatManager.Instance.ActivateTargets();
     }
     public override void AttackEntity()
     {
-        // Once the player targets the enemy
-        // Perform action.
-        // Deal damage.
-        // Pass to next turn.
-        CombatManager.Instance.entityList[targetEntity].OnDamageTaken(CalculateDamageDealt(), currentSkill.damageType);
+        int damage = CalculateDamageDealt();
+        if(targetEntity == -1)
+        {
+            CombatManager.Instance.AttackAllEntities(damage, currentSkill.damageType);
+        } else
+        {
+            CombatManager.Instance.entityList[targetEntity].OnDamageTaken(damage, currentSkill.damageType);
+        }
+
     }
 
     protected override void UpdateEntityStatsUI()
@@ -108,6 +118,31 @@ public class PlayerEntity : Entity
     public override void CombatUICleanUp()
     {
         StartCoroutine(TurnCommandsVisuals(false, 0.0f));
+    }
+
+    protected override void UpdateEntityUI(bool active)
+    {
+        commandsVisuals.SetActive(active);
+
+        if(active) combatNavigation.StartCombatWindows();
+    }
+
+    public override void MoveEntityToTarget()
+    {
+        StartCoroutine(PunchMovement(CombatManager.Instance.GetEntityTransform(targetEntity)));
+    }
+
+
+    #region Resource Methods
+
+    public bool HasAmmo(int amount)
+    {
+        return entityStats.ammo >= amount;
+    }
+
+    public bool HasEnergy(int energy)
+    {
+        return entityStats.energy >= energy;
     }
 
     private void UseResource()
@@ -129,29 +164,6 @@ public class PlayerEntity : Entity
         combatUI.UpdateCombatStats();
     }
 
-    protected override void UpdateEntityUI(bool active)
-    {
-        commandsVisuals.SetActive(active);
-
-        if(active) combatNavigation.StartCombatWindows();
-    }
-
-    #region Resource Methods
-
-    public bool HasAmmo(int amount)
-    {
-        return entityStats.ammo >= amount;
-    }
-
-    public bool HasEnergy(int energy)
-    {
-        return entityStats.energy >= energy;
-    }
-
-    public override void MoveEntityToTarget()
-    {
-        StartCoroutine(PunchMovement(CombatManager.Instance.GetEntityTransform(targetEntity)));
-    }
     #endregion
 
     // TODO MAKE THE PUNCH MOVEMENT NOT ANIMATION DEPENDANT.

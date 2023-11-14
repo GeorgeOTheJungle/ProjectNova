@@ -100,12 +100,9 @@ public class ScrollingUI : MonoBehaviour
                 {
                     unavaliableIcons[1].SetActive(true);
                     canSelectSkill = false;
-
                 }
                 break;
         }
-
-
     }
 
     public void UseSkill()
@@ -121,7 +118,7 @@ public class ScrollingUI : MonoBehaviour
         {
             entity.PreSelectSkill(avaliablePlayerSkills[currentSkill]);
             CombatNavigation.Instance.HideAllWindows();
-            CombatManager.Instance.ActivateTargets();
+            CombatManager.Instance.OpenTargetWindow(avaliablePlayerSkills[currentSkill].targetingStyle);
         }
 
         //CombatPlayer.Instance.PerformAction(avaliablePlayerSkills[currentSkill]);

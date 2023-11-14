@@ -2,12 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Structs;
-using TMPro;
 using Enums;
-using UnityEngine.EventSystems;
-using Unity.VisualScripting;
 using UnityEngine.UI;
-using System.Runtime.CompilerServices;
+using System;
 
 public abstract class Entity : MonoBehaviour
 {
@@ -17,8 +14,7 @@ public abstract class Entity : MonoBehaviour
     [SerializeField] protected bool isInvencible = false;
     [SerializeField] protected EntityState entityState;
     //[SerializeField] protected List<Effect> effectLists;
-    [SerializeField] protected GameObject targetUI;
-    [SerializeField] private Button targetButton;
+    [SerializeField] protected Animator targetUI;
     [SerializeField] protected Transform entityVisual;
 
     private Vector3 originalPosition;
@@ -97,6 +93,7 @@ public abstract class Entity : MonoBehaviour
         else PlayAnimation(GUARD_HIT_ANIMATION);
 
         if (isInvencible) return;
+        if(entityState == EntityState.dead || entityState == EntityState.inactive) return;
         entityStats.health -= CalculateDamageReceived(damage,damageType);
 
     
@@ -197,7 +194,7 @@ public abstract class Entity : MonoBehaviour
         float baseDamage = baseSkillDamage * baseDamageMultiplier;
 
         // Check if its crit or not
-        bool isCrit = Random.Range(0.0f, 1.0f) < entityStats.critRate;
+        bool isCrit = UnityEngine.Random.Range(0.0f, 1.0f) < entityStats.critRate;
         baseDamage *= isCrit?2.5f:1.0f;
 
         // Check if there is a damage buff and apply it
@@ -294,14 +291,12 @@ public abstract class Entity : MonoBehaviour
 
     public virtual void OpenTargetWindow(bool active,bool preSelect)
     {
-        if (entityData.entityID == -1) return; // This is to exclude the player from this.
-        if (entityState == EntityState.dead) return;
-        targetUI.SetActive(active);
-        if(preSelect) targetButton.Select();
+
     }
     public void CloseTargetWindow()
     {
-        targetUI.SetActive(false);
+        targetUI.SetBool("isActive", false);
+        targetUI.SetBool("isTargeted", false);
     }
     public void SetEntityData(EntityData data,int id)
     {
@@ -321,6 +316,8 @@ public abstract class Entity : MonoBehaviour
     {
         return entityState == EntityState.dead;
     }
+
+
     #endregion
 
     //[SerializeField] private bool invencible; <-- Global

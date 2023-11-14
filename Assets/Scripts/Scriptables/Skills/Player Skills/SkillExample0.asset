@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: SkillExample0
   m_EditorClassIdentifier: 
   unlocked: 1
+  isSelfTarget: 0
   skillName: Triple shot
   baseDamage: 1
-  critChance: 0
+  damageType: 0
   resourceType: 2
+  targetingStyle: 1
   resourceAmount: 5
   animationKey: TripleShot
   smallIcon: {fileID: 1651433977, guid: c7e3ae9abd9a9ef439fa900586ab321d, type: 3}

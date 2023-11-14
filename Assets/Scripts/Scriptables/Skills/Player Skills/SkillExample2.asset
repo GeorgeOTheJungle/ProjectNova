@@ -10,14 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 49b85157119d06342a2aa45366ec1399, type: 3}
-  m_Name: SkillExample4
+  m_Name: SkillExample2
   m_EditorClassIdentifier: 
   unlocked: 1
-  skillName: Infusion_Fire
-  baseDamage: 15
-  critChance: 0
-  resourceType: 2
-  resourceAmount: 25
-  animationKey: Infused_Fire
-  smallIcon: {fileID: 609978833, guid: c7e3ae9abd9a9ef439fa900586ab321d, type: 3}
-  largeIcon: {fileID: 1526145115, guid: 3224aa7800b2c5f40af292498410a2ac, type: 3}
+  isSelfTarget: 0
+  skillName: Shoot&Reload
+  baseDamage: 0
+  damageType: 0
+  resourceType: 0
+  targetingStyle: 1
+  resourceAmount: 0
+  animationKey: ShootAndReload
+  smallIcon: {fileID: -1338334708, guid: c7e3ae9abd9a9ef439fa900586ab321d, type: 3}
+  largeIcon: {fileID: -384587725, guid: 3224aa7800b2c5f40af292498410a2ac, type: 3}

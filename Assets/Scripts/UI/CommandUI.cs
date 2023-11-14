@@ -26,7 +26,7 @@ public class CommandUI : MonoBehaviour,ISelectHandler
         // Close player UI here.
         entity.PreSelectSkill(assignedAction);
         CombatNavigation.Instance.HideAllWindows();
-        CombatManager.Instance.ActivateTargets();
+        CombatManager.Instance.OpenTargetWindow(assignedAction.targetingStyle);
     }
 
     public void DoAction()

@@ -24,6 +24,7 @@ MonoBehaviour:
     magicArmor: 1
     defenseBonus: 0
     buffBonus: 0
+    speed: 15
     accuracy: 1
     critRate: 0
     xpYield: 50

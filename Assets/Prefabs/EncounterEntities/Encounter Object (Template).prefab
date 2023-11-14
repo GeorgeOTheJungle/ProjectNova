@@ -222,10 +222,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d355568ab3f23b43bd045299202fbfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  combatID: 0
   arenaId: 1
-  encounter:
-  - {fileID: 11400000, guid: 9c13befc56185e9479462207055f11e4, type: 2}
-  - {fileID: 11400000, guid: 9c13befc56185e9479462207055f11e4, type: 2}
+  encounter: []
 --- !u!65 &2799215365372764715
 BoxCollider:
   m_ObjectHideFlags: 0

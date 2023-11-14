@@ -12,10 +12,12 @@ public class Skill : ScriptableObject
     public float baseDamage; // Total damage the skill will do,
     public DamageType damageType;
     public ResourceType resourceType;
+    public TargetingStyle targetingStyle;
     public int resourceAmount;
 
     public string animationKey = ""; // Use this to call the animation you need on the entity
 
+    [Space(10)]
     public Sprite smallIcon;
     public Sprite largeIcon;
 }

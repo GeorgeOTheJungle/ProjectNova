@@ -18,6 +18,7 @@ MonoBehaviour:
   baseDamage: 500
   damageType: 0
   resourceType: 0
+  targetingStyle: 1
   resourceAmount: 0
   animationKey: Melee
   smallIcon: {fileID: 0}
