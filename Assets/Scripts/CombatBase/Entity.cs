@@ -242,9 +242,10 @@ public abstract class Entity : MonoBehaviour
         entityState = EntityState.inactive;
         PlayAnimation(IDLE_OUT);
         CombatUICleanUp();
+        entityData = null;
     }
 
-    private void HandleCombatEnd(CombatResult result)
+    private void HandleCombatEnd(CombatResult result,int id)
     {
         if (entityData.entityID != -1) return;
         switch (result)

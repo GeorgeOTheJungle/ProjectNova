@@ -37,7 +37,7 @@ public class VictoryUI : MonoBehaviour
         if (InputComponent.Instance) InputComponent.Instance.interactTrigger -= HandleEndTransition;
     }
 
-    private void HandleCombatVictoryResult(CombatResult result)
+    private void HandleCombatVictoryResult(CombatResult result,int id)
     {
         if (result != CombatResult.victory) return;
         StartCoroutine(VictoryWindowAnimation());
@@ -72,7 +72,6 @@ public class VictoryUI : MonoBehaviour
         while (xpShow < xpGained)
         {
             xpShow += Mathf.CeilToInt(Time.deltaTime * 1.0f);
-            Debug.Log(xpShow);
             xpGainedText.SetText(xpShow.ToString());
             yield return new WaitForEndOfFrame();
         }

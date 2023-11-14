@@ -7,6 +7,8 @@ using Structs;
 public class EncounterHandler : MonoBehaviour, IInteractable
 {
     [Header("Encounter Handler"), Space(10)]
+    [SerializeField] private int combatID = 0;
+    [SerializeField] private int arenaId;
     [SerializeField] private EntityData[] encounter;
 
     private IEnumerator Start()
@@ -30,7 +32,8 @@ public class EncounterHandler : MonoBehaviour, IInteractable
     {
         // Tell the combat manager to enter combat mode and give the list to them. Also register to a combat event for when the combat
         // ended.
-        CombatManager.Instance.EnterCombat(encounter);
+        CombatArenaManager.Instance.SetArena(arenaId);
+        CombatManager.Instance.EnterCombat(encounter, combatID);
     }
 
     public void OnPlayerEnter()
@@ -44,8 +47,9 @@ public class EncounterHandler : MonoBehaviour, IInteractable
     }
 
     
-    private void HandleCombatResults(CombatResult result)
+    private void HandleCombatResults(CombatResult result,int id)
     {
+        if (id != combatID) return;
         if (result == CombatResult.victory) gameObject.SetActive(false);
     }
 

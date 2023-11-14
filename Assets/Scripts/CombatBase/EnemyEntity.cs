@@ -27,6 +27,7 @@ public class EnemyEntity : Entity
 
     public override void OnCombatStart(GameState gameState)
     {
+        if (entityData == null) return;
         currentSkill = null;
         switch (gameState)
         {
@@ -37,11 +38,13 @@ public class EnemyEntity : Entity
                 StartCoroutine(DelayEntrance());
                 StartCoroutine(TurnCommandsVisuals(true, 0.0f));
                 skills = entityData.avaliableSkills;
+
+                skillLenght = skills.Count;
+                entityState = EntityState.idle;
+                UpdateEntityStatsUI();
                 break;
         }
-        skillLenght = skills.Count;
-        entityState = EntityState.idle;
-        UpdateEntityStatsUI();
+
     }
 
     public override void OnEntityTurn()
@@ -80,6 +83,7 @@ public class EnemyEntity : Entity
 
     protected override void UpdateEntityStatsUI()
     {
+
         lifeText.SetText($"{entityStats.health} / {entityData.stats.health}");
     }
 

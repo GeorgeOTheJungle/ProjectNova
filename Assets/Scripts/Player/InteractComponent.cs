@@ -7,7 +7,7 @@ public class InteractComponent : MonoBehaviour
 {
     [SerializeField] private LayerMask interactableMask;
     [SerializeField] private float detectionRadius = 3.0f;
-    
+    [SerializeField] private Animator interactQueueAnimator;
 
     private int frames = 0;
     private IInteractable targetInteractable;
@@ -61,6 +61,7 @@ public class InteractComponent : MonoBehaviour
         if (numberColliders == 0)
         {
             targetInteractable = null;
+            interactQueueAnimator.SetBool("isActive", false);
             return;
         }
         for (int i = 0;i < numberColliders;i++)
@@ -69,6 +70,7 @@ public class InteractComponent : MonoBehaviour
             if (hitColliders[i].TryGetComponent(out IInteractable interactable))
             {
                 targetInteractable = interactable;
+                interactQueueAnimator.SetBool("isActive", true);
             }
         }     
     }

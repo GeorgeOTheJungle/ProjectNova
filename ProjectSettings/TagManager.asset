@@ -51,3 +51,6 @@ TagManager:
   - name: VFXs
     uniqueID: 479133459
     locked: 0
+  - name: ExplorationUI
+    uniqueID: 4008308155
+    locked: 0
