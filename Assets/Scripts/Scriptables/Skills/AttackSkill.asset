@@ -15,7 +15,7 @@ MonoBehaviour:
   unlocked: 0
   isSelfTarget: 0
   skillName: Shoot
-  baseDamage: 15
+  baseDamage: 35
   damageType: 0
   resourceType: 1
   targetingStyle: 1
