@@ -58,5 +58,10 @@ public class AnimationEventCall : EventCall
         m_entity.OnResourceGain(Enums.ResourceType.energy, 15, regenStyle);
     }
 
+    public void OnPlayerDeath()
+    {
+        CombatManager.Instance.OnPlayerDefeat();
+    }
+
 
 }

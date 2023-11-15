@@ -3,7 +3,7 @@ namespace Enums
 
     public enum GameState { exploration, combatPreparation,combatReady,combatEnded, paused }
 
-    public enum CombatResult { victory, defeat,escape}
+    public enum CombatResult {none, victory, defeat,escape}
 
     public enum CombatTurn { playerTurn,enemyTurn}
 

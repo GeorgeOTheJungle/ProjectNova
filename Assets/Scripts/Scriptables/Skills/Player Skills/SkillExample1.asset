@@ -15,7 +15,7 @@ MonoBehaviour:
   unlocked: 1
   isSelfTarget: 0
   skillName: Energy Bomb
-  baseDamage: 5
+  baseDamage: 17
   damageType: 0
   resourceType: 2
   targetingStyle: 2

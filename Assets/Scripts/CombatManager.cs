@@ -8,6 +8,7 @@ public class CombatManager : MonoBehaviour
 {
     public static CombatManager Instance;
     [Header("Combat manager: "), Space(10)]
+    [SerializeField] private CombatResult combatResult;
     [SerializeField] private int currentCombatID;
     [SerializeField] private Entity playerEntity;
 
@@ -68,21 +69,20 @@ public class CombatManager : MonoBehaviour
         }
         entityListLenght = entityList.Count - 1;
         combatListLenght = combatOrder.Count - 1;
+
+        // Tell entities to initialize
         onCombatStart?.Invoke();
         GameManager.Instance.ChangeGameState(GameState.combatPreparation);
 
+        // Try and order entities
         combatOrder.OrderBy(w => w.entityData.stats.speed).ToList();
+
+        combatResult = CombatResult.none;
     }
 
     public void OnTurnFinished()
     {      
         StartNextEntityTurn();
-    }
-
-    public void OnPlayerEscape()
-    {
-        Debug.LogWarning("TODO ESCAPE CLEANUP");
-        StartCoroutine(DelayedCleanup());
     }
 
     public void OnEnemyDefeated()
@@ -92,6 +92,7 @@ public class CombatManager : MonoBehaviour
 
     private void StartNextEntityTurn()
     {
+        if (combatResult == CombatResult.defeat) return;
         if (totalEnemies == 0)
         {
             Invoke(nameof(VictoryCall), 1.0f);
@@ -106,15 +107,32 @@ public class CombatManager : MonoBehaviour
         }
         else
         {
+           if (combatResult == CombatResult.defeat) return;
             combatOrder[combatTurn].OnEntityTurn();
         }
     }
 
+    public void OnPlayerDefeat()
+    {
+        combatResult = CombatResult.defeat;
+        StartCoroutine(DelayedCleanup());
+    }
+    public void OnPlayerEscape()
+    {
+        combatResult = CombatResult.escape;
+        StartCoroutine(DelayedCleanup());
+    }
+
     private void VictoryCall()
     {
-        // Add here victory music
-        GameManager.Instance.ChangeGameState(GameState.combatEnded);
-        onCombatFinish?.Invoke(CombatResult.victory, currentCombatID);
+        combatResult = CombatResult.victory;
+        onCombatFinish?.Invoke(combatResult, currentCombatID);
+    }
+
+    public void VictoryEnd()
+    {
+        combatResult = CombatResult.none;
+        StartCoroutine(DelayedCleanup());
     }
 
     public int GetXPStored() => xpStored;
@@ -127,19 +145,6 @@ public class CombatManager : MonoBehaviour
     }
 
     #region Targeting
-
-    /*
-     * Player chooses a skill, if it requires a target, open target system
-     * [*] Check if player requires a global target or a single target.
-     * [*] Pre select the one in the middle.
-     * [?] Open health ui of the enemy.
-     * [*] Navigate using up and down buttons. It shouldnt be a button. Should be a int 
-     * [*] On player target slection, set target using what i already have for targeting.
-     * [*] Do animation.
-     * 
-     * ------------------
-     * [*] The player should be able to return to skill/attack selection if K is pressed.
-    */
 
     private int currentTarget = 0;
     private bool targeting;
@@ -170,6 +175,7 @@ public class CombatManager : MonoBehaviour
                 bool selectFirst = true;
                 for (int i = 0; i < entityListLenght + 1; i++)
                 {
+                    if (selectFirst == false) break;
                     if (entityList[i].EntityDead() == false)
                     {
                         entityList[i].OpenTargetWindow(true, selectFirst);
@@ -204,6 +210,7 @@ public class CombatManager : MonoBehaviour
     private void HandleTargetNavigation(int navigationIndex)
     {
         if(targeting == false) return;
+   
         entityList[currentTarget].OpenTargetWindow(false, false);
         currentTarget += navigationIndex;
 
@@ -243,8 +250,9 @@ public class CombatManager : MonoBehaviour
     #region Corutines
     private IEnumerator DelayedCleanup()
     {
-        yield return new WaitForSeconds(0.75f);
-        onCombatFinish?.Invoke(CombatResult.escape, currentCombatID);
+        yield return new WaitForSeconds(2.0f);
+        GameManager.Instance.ChangeGameState(GameState.combatEnded);
+        onCombatFinish?.Invoke(combatResult, currentCombatID);
         yield return new WaitForSeconds(0.15f);
         StartCleanup();
     } 

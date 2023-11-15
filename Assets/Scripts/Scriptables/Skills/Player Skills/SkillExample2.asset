@@ -15,7 +15,7 @@ MonoBehaviour:
   unlocked: 1
   isSelfTarget: 0
   skillName: Shoot&Reload
-  baseDamage: 0
+  baseDamage: 5
   damageType: 0
   resourceType: 0
   targetingStyle: 1
