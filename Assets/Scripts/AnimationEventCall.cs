@@ -1,13 +1,21 @@
+using Enums;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimationEventCall : EventCall
 {
+    private PlayerEntity player;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        player = GetComponentInParent<PlayerEntity>();
+    }
     public void OnGuard()
     {
         m_entity.OnBuff(Enums.BuffType.defense);
+        m_entity.Next();
     }
 
     public void OnEscape()
@@ -17,7 +25,7 @@ public class AnimationEventCall : EventCall
 
     public void OnReload()
     {
-        m_entity.OnResourceGain(Enums.ResourceType.ammo, 999);
+        m_entity.OnResourceGain(Enums.ResourceType.ammo, 999, RegenStyle.None);
     }
 
     public void OnHeal()
@@ -35,7 +43,6 @@ public class AnimationEventCall : EventCall
         if (!animator) return;
         m_entity.PlayAnimation(IDLE_ANIMATION);
         m_entity.Next();
-        //CombatManager.Instance.OnTurnFinished();
     }
 
     public override void OnAnimationFinish()
@@ -44,10 +51,12 @@ public class AnimationEventCall : EventCall
         m_entity.PlayAnimation(IDLE_ANIMATION);
     }
 
-    public override void DealDamageCall()
+    public override void DealDamageCall() => m_entity.AttackEntity();
+
+    public void RegenEnergy(RegenStyle regenStyle)
     {
-        m_entity.AttackEntity();
+        m_entity.OnResourceGain(Enums.ResourceType.energy, 15, regenStyle);
     }
 
-    
+
 }

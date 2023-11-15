@@ -15,7 +15,7 @@ MonoBehaviour:
   unlocked: 0
   isSelfTarget: 0
   skillName: Punch
-  baseDamage: 500
+  baseDamage: 5
   damageType: 0
   resourceType: 0
   targetingStyle: 1

@@ -16,4 +16,6 @@ namespace Enums
     public enum EntityState { inactive, idle,thinking,acting, dead }
 
     public enum TargetingStyle { self, single, multiple}
+
+    public enum RegenStyle { None, Punch, Shoot }
 }

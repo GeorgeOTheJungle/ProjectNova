@@ -10,10 +10,12 @@ public class EnemyEntity : Entity
     [Header("Enemy Specifics: "), Space(10)]
     [SerializeField] private int targetID;
     [Header("References: "), Space(10)]
+    [SerializeField] private GameObject uiVisuals;
     [SerializeField] private GameObject statsGO;
     [SerializeField] private GameObject healthBarGO;
     [SerializeField] private Image healthBar;
     [SerializeField] private Image followBar;
+    [SerializeField] private Animator fakeHealthBar;
 
     private int skillLenght;
 
@@ -23,7 +25,7 @@ public class EnemyEntity : Entity
     }
     public override void OnStart()
     {
-
+        StartCoroutine(TurnCommandsVisuals(false, 0.0f));
     }
     public override void AttackEntity()
     {
@@ -43,10 +45,12 @@ public class EnemyEntity : Entity
                 StartCoroutine(DelayEntrance());
                 StartCoroutine(TurnCommandsVisuals(true, 0.0f));
                 skills = entityData.avaliableSkills;
-
                 skillLenght = skills.Count;
                 entityState = EntityState.idle;
                 UpdateEntityStatsUI();
+
+                statsGO.SetActive(true);
+                fakeHealthBar.Play("IdleOut");
                 break;
         }
 
@@ -81,6 +85,11 @@ public class EnemyEntity : Entity
     {
         float fill = (float)entityStats.health / (float)entityData.stats.health;
         healthBar.fillAmount = fill;
+        if(entityStats.health <= 0)
+        {
+            statsGO.SetActive(false);
+            fakeHealthBar.SetTrigger("endTrigger");
+        }
     }
     public override void TargetEntity(int entitySlot)
     {
@@ -88,7 +97,7 @@ public class EnemyEntity : Entity
     }
     public override void CombatUICleanUp()
     {
-       // statsGO.SetActive(false);
+        statsGO.SetActive(false);
     }
     protected override void UpdateEntityUI(bool active)
     {

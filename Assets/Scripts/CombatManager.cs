@@ -21,7 +21,6 @@ public class CombatManager : MonoBehaviour
 
     [Header("Combat settings: "), Space(10)]
     [SerializeField] private int combatTurn = 0;
-    [SerializeField] private float nextTurnDelay = 0.75f;
     [SerializeField] private int xpStored = 0;
     [SerializeField] private Animator targetAllAnimator;
     private Entity currentEntity;
@@ -247,7 +246,7 @@ public class CombatManager : MonoBehaviour
         yield return new WaitForSeconds(0.75f);
         onCombatFinish?.Invoke(CombatResult.escape, currentCombatID);
         yield return new WaitForSeconds(0.15f);
-        onCombatCleanup?.Invoke();
+        StartCleanup();
     } 
 
     private IEnumerator OnRoundFinished()

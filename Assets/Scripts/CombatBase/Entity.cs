@@ -48,7 +48,6 @@ public abstract class Entity : MonoBehaviour
 
     private IEnumerator Start()
     {
-        //entityStats = new Stats();
         originalPosition = entityVisual.position;
         entityState = EntityState.inactive;
         yield return new WaitForEndOfFrame();
@@ -80,7 +79,6 @@ public abstract class Entity : MonoBehaviour
 
     #endregion
 
-
     public abstract void OnEntityTurn();
 
     protected abstract void UpdateEntityStatsUI(); // Update entity stats UI
@@ -90,7 +88,11 @@ public abstract class Entity : MonoBehaviour
     public virtual void OnDamageTaken(int damage,DamageType damageType)
     {
         if (entityStats.defenseBonus == 0) PlayAnimation(HIT_ANIMATION);
-        else PlayAnimation(GUARD_HIT_ANIMATION);
+        else
+        {
+            Debug.LogWarning("TODO MAKE A GUARD HIT ANIMATION");
+            //PlayAnimation(GUARD_HIT_ANIMATION);
+        }
 
         if (isInvencible) return;
         if(entityState == EntityState.dead || entityState == EntityState.inactive) return;
@@ -111,7 +113,7 @@ public abstract class Entity : MonoBehaviour
 
     public virtual void OnHeal()
     {
-        OnResourceGain(ResourceType.health, CalculateHealing(Mathf.CeilToInt(currentSkill.baseDamage)));
+        OnResourceGain(ResourceType.health, CalculateHealing(Mathf.CeilToInt(currentSkill.baseDamage)), RegenStyle.None);
         UpdateEntityStatsUI();
         // TODO ADD HEALING VISUALS HERE.
     }
@@ -156,11 +158,12 @@ public abstract class Entity : MonoBehaviour
         currentAnimation = nextAnimation;
     }
 
-    public virtual void OnResourceGain(ResourceType resourceType, int resourceGain)
+    public virtual void OnResourceGain(ResourceType resourceType, int resourceGain,RegenStyle regenStyle)
     {
         switch (resourceType)
         {
             case ResourceType.energy:
+                resourceGain *= regenStyle == RegenStyle.Punch ? 2 : 1;
                 entityStats.energy += resourceGain;
                 if (entityStats.energy > entityData.stats.energy) entityStats.energy = entityData.stats.energy;
                 break;
@@ -239,11 +242,15 @@ public abstract class Entity : MonoBehaviour
         entityState = EntityState.inactive;
         PlayAnimation(IDLE_OUT);
         CombatUICleanUp();
+
+        if (entityData == null) return;
+        if (entityData.entityID == -1) return;
         entityData = null;
     }
 
     private void HandleCombatEnd(CombatResult result,int id)
     {
+        if(entityData == null) return;
         if (entityData.entityID != -1) return;
         switch (result)
         {

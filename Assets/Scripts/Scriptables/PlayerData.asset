@@ -17,7 +17,7 @@ MonoBehaviour:
   stats:
     health: 100
     energy: 50
-    ammo: 0
+    ammo: 15
     physicalDamage: 50
     physicalArmor: 5
     magicDamage: 5

@@ -164,6 +164,27 @@ public class PlayerEntity : Entity
         combatUI.UpdateCombatStats();
     }
 
+    public void GetResource(ResourceType resourceType,int amount)
+    {
+        if(currentSkill.skillName == "Punch")
+        {
+            amount *= 2;
+        }
+
+        switch(resourceType)
+        {
+            case ResourceType.ammo:
+                entityStats.ammo += amount;
+                if (entityStats.ammo > entityData.stats.ammo) entityStats.ammo = entityData.stats.ammo;
+                break;
+            case ResourceType.energy:
+                entityStats.energy += amount;
+                if (entityStats.energy > entityData.stats.energy) entityStats.energy = entityData.stats.energy;
+                break;
+
+        }
+    }
+
     #endregion
 
     // TODO MAKE THE PUNCH MOVEMENT NOT ANIMATION DEPENDANT.
