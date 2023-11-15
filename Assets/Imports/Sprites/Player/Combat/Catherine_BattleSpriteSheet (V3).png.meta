@@ -1,0 +1,6608 @@
+fileFormatVersion: 2
+guid: 09748f0572f57b745af1aebcb79271a1
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1536
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3be75b52300cc64d9479590bfcbaed0
+      internalID: -532547650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_1
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1536
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6f6e907fa85ca74f8b66682b70f1219
+      internalID: -1932164458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_2
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1536
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34d1208d62247d64b9243b5074ae225e
+      internalID: 1222683801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_3
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1536
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6084b78ac518dfd4483982968e0e928f
+      internalID: -569179522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_4
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 1536
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5efeac636a2862a4ba69e0f585fcf4a2
+      internalID: -455465880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_5
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 1536
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c9a79a2c35cf0f4fb2441529b4577c0
+      internalID: -1759190057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_6
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 1536
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3f4682243e479b47a59f3b706af9e72
+      internalID: 661361781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_7
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 1536
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6a93ae8697d4b04395521239794541c
+      internalID: -236648124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_8
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 1536
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cb142efdd71b694cb6cc49ffd3db8b8
+      internalID: 923180624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_9
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 1536
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 918eec570bdf8d44ca296efc367e3081
+      internalID: -1131471910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_10
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 1536
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8a54945337ab114b8c231f88f5112ee
+      internalID: 1885250822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_11
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 1536
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d85e0c8e6d84a9f4881d77767d851cd0
+      internalID: 942905448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1472
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd1cbbda1eb02ef428ff44a9093e7401
+      internalID: -6028552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_13
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1472
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab8bc95836851a84ba54924aa8122fe4
+      internalID: 1630786036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_14
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1472
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1eca8b04f31e8d4aa15993a3183dc97
+      internalID: 63082227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_15
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1472
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb8bdc7740121d646b69faba2e27773c
+      internalID: -486179141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_16
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 1472
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd1fdeb49f730cb4d8c05359b4f25ead
+      internalID: 632070796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_17
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 1472
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbcc22cf4bc960a40b868235f737acc8
+      internalID: -357783024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_18
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 1472
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a82341116ea5250448d447d01874fa24
+      internalID: -1799431855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_19
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 1472
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eefc1c60d8cd83e4d90670a0ec009275
+      internalID: -659004396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_20
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 1472
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c019985a97c3cb64c89beb80587d9bcc
+      internalID: 1825014988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_21
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 1472
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3dc09543c209994c95916208ecabed5
+      internalID: -749046178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_22
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 1472
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0f36fdeb1ac9e345b690dbcde0829c8
+      internalID: 468140382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_23
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 1472
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70f5ddda75a9bdd42ad7b223544adbbb
+      internalID: -1176256541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1408
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64e1f00e93278e24d976e8ecbd4aafb5
+      internalID: -1277430395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_25
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1408
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77f1b3de0f8f859449d9bc9a0a98198b
+      internalID: -153263345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_26
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1408
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5018cf5282e97dd4ab6278e703d72be1
+      internalID: -1116756333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_27
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1408
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 824cf44d5558355468955e9122cb3fb0
+      internalID: 331021841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_28
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 1408
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ec31488dc71acb4fa81294835b6bc82
+      internalID: 355373796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_29
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 1408
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a40a9e29f777e044a5b76fa94e72f48
+      internalID: 1321104937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_30
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 1408
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 767cd191f7f459e438022ded91bd9248
+      internalID: 1168892818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_31
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 1408
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55f0a808797ceb84db654aebc18a3206
+      internalID: 665065995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_32
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 1408
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57adc2221e083a142b016461eb9d38e5
+      internalID: 1009424836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_33
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 1408
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9d4811f194f4734b974ec56d2dc4412
+      internalID: 500841335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_34
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 1408
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b0797fadce09534db2c4c0b42e124b4
+      internalID: 1249177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_35
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 1408
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6033a9b0e158b2349a57bb9b89c2659e
+      internalID: 1106381437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1344
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4e89b5776b37ae42acb86ed5c7c6f70
+      internalID: 995356194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_37
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1344
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbe25956724df0a479af92054b9aa47c
+      internalID: -508631401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_38
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1344
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16efb247c97c1ce4f801085133d53976
+      internalID: -1450623815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_39
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1344
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 586e45eff6110e94580b6e4220e34dcc
+      internalID: 1172347189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_40
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 1344
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb5c4e270c725fc498a2739f97c6b5b3
+      internalID: 913254847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_41
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 1344
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6ea4ef2ba34a6543ad9e4f636d956d0
+      internalID: -1868215151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_42
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 1344
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 968ad8f334cc5b34aaa55f47f621d2c5
+      internalID: -1349206325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_43
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 1344
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b98408f74a1d6447a5bd5ea0cfa5f63
+      internalID: -1769793473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_44
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 1344
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b96de5a3298c2c479defff6c01971c4
+      internalID: 1337410633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_45
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 1344
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 067e3e64dc511f84fbc8101d6be8bf6e
+      internalID: -251864248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_46
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 1344
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e38ec91f824c2e4db714060a425f5b6
+      internalID: 1847459866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_47
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 1344
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1030644e2de5f094da21337cbfaa1ee6
+      internalID: 723229213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1280
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cbade3590cf9864f9aa07fa6f48be6d
+      internalID: 2008893566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_49
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1280
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7da6280681b4d83488532cca306ebf45
+      internalID: 1215452880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_50
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1280
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e71ca556999339458de3f86181882dd
+      internalID: 1404884152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_51
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1280
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fcfc4fe8cf2870469ce14e523cbc5c4
+      internalID: -1793465328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_52
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 1280
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab0c0a279fca75347ae7a0a464b25b88
+      internalID: 1349127246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_53
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 1280
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2a0506f5df6a6241acca66984710333
+      internalID: 264213695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_54
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 1280
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da56d6eac1de1584f94ff1a0331325b0
+      internalID: 1690366661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_55
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 1280
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0d04bdc898be1044899f55c7ae525ba
+      internalID: -1600886185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_56
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 1280
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1607ff9d53a68ce4b971e54a1b46926d
+      internalID: -1144327242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_57
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 1280
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3422aa8b2fb580b47939c563e32c2e87
+      internalID: -43674512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_58
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 1280
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f590ace1a9c271e4c879e8792bf6e39b
+      internalID: 1569827799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_59
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 1280
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d32b75c330afcdf42a36fa228bd72df7
+      internalID: -464563960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1216
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c5b67159b007ac498b04fb1d618a457
+      internalID: -255654387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_61
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1216
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cab8c8f1656613949bcdbff46cd4bad3
+      internalID: -1590994983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_62
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1216
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9711f9e990e4ff146a50ebccd676c8ee
+      internalID: -38906305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_63
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1216
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf0f5c76dc607184e915357f8054e20d
+      internalID: 333478015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_64
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 1216
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffee0b5e1ad566a4688a25b2a259123d
+      internalID: 504675350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_65
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 1216
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec3d52c2c1f4b144184f641d57bf165e
+      internalID: 1485521522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_66
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 1216
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c838fb49850cfcb418e2bad872278df0
+      internalID: 1422992598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_67
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 1216
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 098bb310ab1b2ba4fb5a5b68d95625b1
+      internalID: -1143771996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_68
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 1216
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cde548409dcbde744a68d0c66058ce03
+      internalID: -1940965673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_69
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 1216
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df76d4f22708fab4e82023412fa5d3bd
+      internalID: 1000290527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1152
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ce8e54c13d6a9148b3bdb1cdb26419d
+      internalID: 1794694102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_71
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1152
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4295f7145e5f5514ea24e9ff6b5d97b7
+      internalID: -1227550975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_72
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1152
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a5b9dd4d016910468aecf2ca60a9794
+      internalID: 2124641769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_73
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1152
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07a10595873935c4b917cae043e41110
+      internalID: 1757360803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_74
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 1152
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecea0526b6341334d88e5796def7a80b
+      internalID: 417649161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_75
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 1152
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 770e34df787e84c439db288871834b17
+      internalID: -1808083116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_76
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 1152
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1abfed73e5fbe3f4ea2223b97c3ea9ea
+      internalID: 978754402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_77
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 1152
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46c63e10f7a19d94e8ea343c30a7b7b9
+      internalID: 1028197486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_78
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 1152
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88671aef3cd8f4d45839caf270ebe3ce
+      internalID: 1080145701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_79
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 1152
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6004f7ee302d03040b73873bdbf56fae
+      internalID: -495295944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_80
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 1152
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ce48560b280c7340b59a000b35fe009
+      internalID: -1341242501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_81
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 1152
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e554388e08c7aac499cdaffa84715940
+      internalID: -826409245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_82
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1088
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1dc1af161ba9674789f85f115e8025d
+      internalID: 839887493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_83
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1088
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfd3411a494b8514c9b3ce04bbf30df9
+      internalID: 36651567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_84
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1088
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d521d9c24a75954eb2af9962756aa9b
+      internalID: -16394612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_85
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1088
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6ef79ef8c284b642ba35e2c4ef6e99a
+      internalID: 1927841332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_86
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 1088
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b14312c1f4d3bb44ace99ba27440802
+      internalID: 1041874476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_87
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 1088
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07fbba65e1e1ce74b8d872414740e7fb
+      internalID: 1206383181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_88
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 1088
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db832c4dcecbec548a49c5f0c8ae5a18
+      internalID: 1848859785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_89
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 1088
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba64d5958281a8244802404861fc9827
+      internalID: -1595878587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_90
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 1088
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6402cbe23efa234ba79bba2d2e97245
+      internalID: 1562253332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_91
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 1088
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f42c815dc4eefac49abeee13887ce1d2
+      internalID: -299059158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_92
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 1088
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1989795ac2caf048ac7d8eea7d0eb78
+      internalID: -1311783095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_93
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 1088
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfe55521ccb1e7b4598aae8e15699de4
+      internalID: -2063856923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_94
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 361accbd2300c0b43973daab50968820
+      internalID: 511932607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_95
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1024
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d1f6e43bab1679488a109a0d7a92d16
+      internalID: 361028184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_96
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1024
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce3a200c1c326284eaedca78261038fc
+      internalID: 1803075881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_97
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1024
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a44eb43e9ed9b2d4e90bbba1f6647605
+      internalID: 1775824530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_98
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 1024
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 048b124c83ab5204894737c6a1812bfd
+      internalID: -501234278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_99
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 1024
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c22a58b89a9bb94d8f9a6ffc35f5b75
+      internalID: 134954714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_100
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 1024
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31b97b804fe87194a926e01242e5e160
+      internalID: 414576189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_101
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 1024
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90096f8f938ef214f8959307851546d1
+      internalID: 1380858479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_102
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 1024
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24784bedafc1d5847a3171d2c08a1cad
+      internalID: -320494761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_103
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 1024
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e11c5f5d1030144abde83b6ca237abd
+      internalID: -122663249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_104
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 1024
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef19d21c1e2ad494ab54c312bd523f1d
+      internalID: 1845276854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_105
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 1024
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57aa0ba7a468d624abbe2332d3d3503c
+      internalID: 1034229180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_106
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f5bf37288e49bd4eb62945abaa8c471
+      internalID: -850392059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_107
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 960
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce2fd2ab549b75244956089f816e2623
+      internalID: -497694171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_108
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 960
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a15a0bbd9c7b3ad4199dd1b874d6d7b2
+      internalID: -526405839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_109
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 960
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56318c6d8f18f1d48b07e8746f6d107d
+      internalID: 480448495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_110
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 960
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27f9b3e48d6858143ab821f750150c77
+      internalID: 699813168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_111
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 960
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18d2779c46267494ea8e99917f12c571
+      internalID: -817120696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_112
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 960
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bd0491cfbd5caa418708f522907ac4e
+      internalID: 626177677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_113
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 960
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c92ecc45fe10af649a4073cde0f1ec25
+      internalID: -873983816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_114
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 960
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf6f1046cf44ce343b3ce5267c09eb45
+      internalID: 1846204931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_115
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 960
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bb9a01ad49518945b7b31fec42d3647
+      internalID: 514706604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_116
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 960
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6bb59277e7d05e449162b74158484a7
+      internalID: 2029373696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_117
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 960
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc6548dded65ee044bdeba14422efc2e
+      internalID: 781328471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_118
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 896
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa80cc25a9752f64b874412f81ee7962
+      internalID: -750077009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_119
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 896
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a148c103bc8a545448eef2fd049df85f
+      internalID: 1175652109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_120
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 896
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64d8b96f443e4e640bcdedcf228f1e53
+      internalID: 655924840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_121
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 896
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ca13292fade53946bd4c00a9a687aac
+      internalID: 772487599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_122
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 896
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a2b9047dca35584c80eeeecab17736c
+      internalID: -109304564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_123
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 896
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f74d0ff9f33b84a43b9193d362a4cd0b
+      internalID: 1140909701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_124
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 896
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66f728e7a5b3aa541bcb86b1001d64a2
+      internalID: 1241516497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_125
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 896
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eebe04edd743b0748afe97481cad7d0a
+      internalID: 596764378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_126
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 896
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83cfe394b3f060f46aeabdc6cced877a
+      internalID: 543394401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_127
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 896
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78508cf76e550514782bf417b80b4543
+      internalID: -619245683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_128
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 896
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 194c2506541b446448686d3a3068bec4
+      internalID: 1860917519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_129
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 896
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0710fe45be1ca9842901c522f50843a1
+      internalID: -1856076042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_130
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 832
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c17a98797e63f604e803f28356511869
+      internalID: 450378216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_131
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 832
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d19f93c18961804faba8576041f6c27
+      internalID: -783034327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_132
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 832
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c64f9b52375ff7a479537ae382ebe748
+      internalID: 113823468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_133
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 832
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e5b977a4e1a7fa48945abdc3b99f394
+      internalID: 1936889787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_134
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 832
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce9212762cab8824eb4a24dc779c76cf
+      internalID: 751214287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_135
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 832
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3753c66301097de40a6fa00fd2006724
+      internalID: -228640558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_136
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 832
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d25d341cd9b49aa42a3566a3bdcf34a4
+      internalID: -2144055179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_137
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 832
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd8d272e8ff9d6e418813be2bf78bed9
+      internalID: -1886467334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_138
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 832
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dd55edf340f0a041bec10459f46e286
+      internalID: -717129614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_139
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 832
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 621b86a643302b645b8329889a0f3482
+      internalID: 1526728786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_140
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 832
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbfcafd923f22374492d687187025d35
+      internalID: -1472060686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_141
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 832
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b32d34815e7e7d641a8fb13339772cc4
+      internalID: -1415547452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_142
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e92a65ef36c836c4bb36b9a687dacee4
+      internalID: 935953706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_143
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 768
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 929d7ad581d1da24a97d26ae12e6eaf9
+      internalID: 1642223926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_144
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 768
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7728632e69cf1af4c86bca3276d985ae
+      internalID: 1140999190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_145
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 768
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab213dde3ea35be42bab9d93e0496cb1
+      internalID: -341960147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_146
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 768
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b4a132118a3e074dbc451349b1ed8b0
+      internalID: 1858557747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_147
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 768
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08d9b27a553a81944ab7d15b9dd60129
+      internalID: 957057320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_148
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 768
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c85c98f41ecc4f14493b37d13341f67d
+      internalID: -1292018982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_149
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 768
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e900ca42aeb16bc41acf1b13acffe589
+      internalID: 580418803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_150
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 768
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 010f8c0c52dfe3c48a2d581f842a0681
+      internalID: -540552627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_151
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 768
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7235f59502f4c1e4484aed5d5adf42dc
+      internalID: -1183845126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_152
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 768
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f2825c4af8b03e40b474294751d5c36
+      internalID: 2090585885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_153
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 768
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2269b528963d8d4a81b743c881e1915
+      internalID: -1859733307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_154
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 704
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85f34bceba5c38d419ffb60ef73e1c35
+      internalID: 1929398289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_155
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 704
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e666937cd5e83d3479be03852b9a4deb
+      internalID: 661944010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_156
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 704
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2ee8c67b0e3f054199a2deb22477787
+      internalID: 409692950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_157
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 704
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5b5efda6101101419ce948591a9affc
+      internalID: 1915006356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_158
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 704
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1d617827e33c8846b038703ab1df005
+      internalID: -866835489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_159
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 704
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b64970f7060a22946bc3bd9979840404
+      internalID: 1439040486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_160
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 704
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39287b34e47add54aa96946c2dfdc4dd
+      internalID: 836280401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_161
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 704
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d85f02c24a600649a4677d2818f5d9c
+      internalID: 1229561113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_162
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 704
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5975730053a14ea4c9733790131506fb
+      internalID: -660805991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_163
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 704
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cfb3064340d83246ba19659d2f19ec0
+      internalID: -345019404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_164
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 704
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa3b11ad664d5d54babd976034156291
+      internalID: 1659729697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_165
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 704
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5b829fa8ea57f64d9f8be0838954650
+      internalID: 299622732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_166
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e787fc4ddc443cd4c8d937cc3e248a53
+      internalID: 1391512356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_167
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 640
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3684c9388eb0e1f4f870e07e0daf3140
+      internalID: 1914250604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_168
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 640
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aadf2c3f1517ff44bc3ed8a4385ee13
+      internalID: 1674012583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_169
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 640
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0c02665140a8d94ead769af67e39541
+      internalID: -1827501554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_170
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 640
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7559aaaa584f92e4d9567d12a95ad25d
+      internalID: 665251989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_171
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 640
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 591c48cdb6ebe484d983718f8f00db50
+      internalID: 2087479963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_172
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 640
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33399d09947e84f469aba74f3ac3a4d4
+      internalID: 2051804339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_173
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 640
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39d0dadf5186bb64199f63640f783c12
+      internalID: -173769569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_174
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 640
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00b156e1204a47e4a952a3e1e9bc6f86
+      internalID: -992228834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_175
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 640
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 188499d95c5b2d440be8abfb63d7cc39
+      internalID: 998780302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_176
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 640
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc339b3e5af53ad4c99635d9cdb2e46b
+      internalID: -259914858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_177
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 640
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e8dbcd8133ec0445a7b37aae8a7e929
+      internalID: 1272655953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_178
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f13f3331df37b9048b625b83d729f972
+      internalID: -730859861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_179
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 576
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f27f28c51282c0649959063f9a83c817
+      internalID: -1514146482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_180
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 576
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e4a061d5f87ca3479f9142fcce3bea6
+      internalID: -1899242114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_181
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 576
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8441faeeac9dc3438c54e88f314a61d
+      internalID: 1939252969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_182
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 576
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a0ad1f57a107d640815378914c7e2d6
+      internalID: 830520481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_183
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 576
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc8f958db7a29dc4c97a441b6b31e8da
+      internalID: 1624479470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_184
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 576
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba140676839b9994285f33479272cb24
+      internalID: 1094250940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_185
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 576
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9ef4b995a7c50849918d69a5cb7f2c0
+      internalID: 1687595198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_186
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 576
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 146a1d6aafdecdd498c366fc1108d154
+      internalID: -218214197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_187
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 576
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e81fbb8d90957834893d04c0046fa4dd
+      internalID: -1018070289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_188
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 576
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 015741074c7211f49b1626624a350221
+      internalID: 1423047357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_189
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 576
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d27f53306e2b57499ce4642bfffda92
+      internalID: 789058578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_190
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ff711a814428a44ea5ddc9a23c28e48
+      internalID: -1578745612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_191
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 512
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7431ee68ba1c7af45837065b8eee1ccb
+      internalID: 1255607961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_192
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 512
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54dc1ae86af93424d87787453da1d536
+      internalID: -514048467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_193
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 512
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ad78df90d284484bb1b1d662acce361
+      internalID: -837633192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_194
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 512
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb59d357e369d8748b811616d264e0a7
+      internalID: -1461729747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_195
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 512
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5099f224a2255984dbc88d6804213246
+      internalID: 1890564586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_196
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 512
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 366942b9882eded4fa836a72b2b7f35b
+      internalID: -1166670121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_197
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 512
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1f98df7ef73f8e42aef4ed3254df39c
+      internalID: 2099901140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_198
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 512
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8e259599df079943819c26c1794d941
+      internalID: -1573106991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_199
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 512
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68a69456422c06d4483be42c02964fee
+      internalID: -733642482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_200
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 512
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac999574f311387468b3710b6e5c32bb
+      internalID: -1769299019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_201
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 512
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 911584b409675eb449c350c0c73da092
+      internalID: -969801603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_202
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e6a93223e76ab74ca36e7c8a76b4203
+      internalID: -1905662402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_203
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 448
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 391216e3a1d077d42a0af3a81f69076d
+      internalID: -1589773218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_204
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 448
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9081a850ba50d6844833d69bdac9fd3b
+      internalID: 1473871095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_205
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 448
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62d821e24600ed74c97fe81dd1ee8d00
+      internalID: -325650149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_206
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 448
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac5bb3995bfcad7408078cdf96ab0fce
+      internalID: 142384614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_207
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 448
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2529f3037f58b474fb04a0ab65361083
+      internalID: -1586032616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_208
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 448
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 764b6137cb72d7141812018f826341a4
+      internalID: -973502278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_209
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 448
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 993e8c56fd2bbfe449484c980a8aa022
+      internalID: -1534350290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_210
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 448
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bc96e3a28848204fa3e93031b580f2c
+      internalID: -186042710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_211
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 448
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f5b3d6acf6a6824395111bb1ac0917f
+      internalID: -1449631975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_212
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 448
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d999e3e7d89da2e41a818fec15872cf8
+      internalID: 1993366736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_213
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 448
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8ed4057bde96134ba4e7e14ea1b1dd5
+      internalID: -905427879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_214
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf4eaf80124bc204e844ccfbb306e025
+      internalID: 1146615776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_215
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 384
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a910661952c53f244b5c86622e55ae2b
+      internalID: 1599377105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_216
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 384
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acaa0cf9539eb0b4ca9dabe7a5775b09
+      internalID: 1384573985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_217
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 384
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21026ce6f9b522c419f22f73b9f226c1
+      internalID: 1731486459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_218
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 384
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de48e666fb9fc5146a73cbbdf8b72c8f
+      internalID: 1088369847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_219
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 384
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29a70c493afb4444d8c6ab29148cb4b5
+      internalID: 433459353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_220
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 384
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1aa754ca25ad90469fc1d5526a0e9a6
+      internalID: 434204480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_221
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 384
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ef426d650a159148ba428cb2e26abc5
+      internalID: 1165067602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_222
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 384
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ede333db45e0c9445a9561106accf574
+      internalID: 1569859621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_223
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 384
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52eb46019abb9da49b691032b99ceb10
+      internalID: 70174022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_224
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 384
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86b3470d52535754abe4468585f90f59
+      internalID: 981624527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_225
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 384
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f87b5c338044bc4d8b062c07f7ea737
+      internalID: -971825463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_226
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d907abf640e78a444a36adcef3955325
+      internalID: 1769856998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_227
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 320
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f6a8f0bb3ee7c440aa68706ce6f1c87
+      internalID: -2095955563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_228
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 320
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c58079d03c3bdc046ad700734709e7c4
+      internalID: -2042442187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_229
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 320
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4587a7d6ad8ac4443860d83a009b68db
+      internalID: -532297151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_230
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 320
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acace00cfdffe9e41b11af27eae3b981
+      internalID: 1408977542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_231
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 320
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1ca607489cf17c4e97bbea6db4a86c8
+      internalID: 1978852714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_232
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 320
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d61025fb84ef09441a75de747b25c045
+      internalID: 1060836555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_233
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 320
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 248b2eb643eef854db879100ce856c17
+      internalID: -1062190013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_234
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 320
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9876d2ba1ace2624ba8f551560e0ebd3
+      internalID: -1918895835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_235
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 320
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51c8501a95c7c964aac5048975b39300
+      internalID: -1884106547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_236
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 320
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dde61e46f39660419f881ca615ac4fe
+      internalID: 1497434096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_237
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 320
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55cf4b0506074944e8fc8d963f48c0d6
+      internalID: 1710587428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_238
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3a78665c565a6945b4bca58cfd423a7
+      internalID: 1898183965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_239
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 256
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75cc3ec324e27f84bb34e93034cf9de1
+      internalID: -1551972715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_240
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 256
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9724f7ab0cfed840a7c9e4cba5ae95b
+      internalID: -1793785142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_241
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 256
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26177ec99a6301e4e8ed796d577e9fc7
+      internalID: 812305168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_242
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 256
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fce85778e14a13242a589a80b33caa96
+      internalID: 1073149988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_243
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 256
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5f079e6cd6e1334487e67284e96a4d0
+      internalID: -1199503645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_244
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 256
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75f61e76af991704fa137ebbdefc5220
+      internalID: -1640908377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_245
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 256
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a723ec81cca70fb4380819a463a6ffdf
+      internalID: 1861467287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_246
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 256
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdfcf6f813a510346abfcaee785761db
+      internalID: 1915935188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_247
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 256
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fb032922bf572742a0608ff90079a56
+      internalID: 119637317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_248
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 256
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 754dff87ab3f18d479acf051b03e5971
+      internalID: -564497271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_249
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 256
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1d808d2414153746bee84037d1d1732
+      internalID: 1698984926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_250
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4f2d4ee502e8654a8f673d58c04dc86
+      internalID: 1898908512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_251
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 192
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f41345ade1cc5a34685364397b187e7d
+      internalID: 1025550276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_252
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 192
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 292df8aa51c1ca34e988b68f23681e8b
+      internalID: 2054492987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_253
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 192
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7901b32d45244d8448062d16b0b9c386
+      internalID: -2095292544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_254
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 192
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1afad59664140e48853f5923db26ff3
+      internalID: 20113233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_255
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 192
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c9dbcabbf884c040a170a277b2e5c06
+      internalID: 618835677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_256
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 192
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcb33fb0250e0514a80cff1787063383
+      internalID: 416791763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_257
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 192
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6a67b821eb79944d9b80aa22d274d90
+      internalID: -171871840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_258
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 192
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3b92f13765dc904e936cf6cc0a16f37
+      internalID: 765841103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_259
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 192
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e0d3bb154d9e46478bb5f94f415ccfe
+      internalID: 462310390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_260
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 192
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 102df5e3efbbc6b4f9fcf2748e6bad52
+      internalID: 175647168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_261
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 192
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f2a477fca52e2c46b1735796f94a0eb
+      internalID: 1810317201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_262
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0371f8cb65c302e4b9fa339c5a8cc952
+      internalID: -1057145388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_263
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 128
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0828520ba387c3845b6e74756d3e8de8
+      internalID: 622672205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_264
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 128
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6281872c0ef0d774b97bf54228f208cb
+      internalID: 2043700555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_265
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 128
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ceb017e3936ff147b65f070b77b75ba
+      internalID: -1102454515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_266
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 128
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc905fbb978733c47a1d24f7a0297f81
+      internalID: 1134359556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_267
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 128
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b934caa0c256e494195adba0c50fa321
+      internalID: 600574034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_268
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 128
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a09e253a08e77584ba0f4a5d02ee1e93
+      internalID: -1246159523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_269
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 128
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec1c1dd8e8849984fbdbda32ba357eb1
+      internalID: 156541648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_270
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 128
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7431ce3ce70c4dc4790545c57f1314fe
+      internalID: 1682681161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_271
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 128
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46f3fb70ec5822e49b0d13197893b1db
+      internalID: -1120927832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_272
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 128
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97ff854f8a0d85c42a392d3240dfde38
+      internalID: 942887307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_273
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 128
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40aaf3dee36030849adfff0a098e1a8b
+      internalID: 451908159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_274
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9356a32ec57d29469fdeeed1704cfe9
+      internalID: 2114323774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_275
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 64
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b43f75a0ae112f5478f587abbc3fee3a
+      internalID: -41621531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_276
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 64
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 353dc73a7d0f0d744a472a2bd5f33065
+      internalID: 1398552361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_277
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 64
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54968eedbc521fc4bbaa4967a2c8186f
+      internalID: 1852816911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_278
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 64
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9cc129740f3fd44c877aa394dfd4d50
+      internalID: 33169738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_279
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 64
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd0b1eeb003686242b09125990afb0be
+      internalID: -1856079068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_280
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 64
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c276bc0cfd723de4a9e8adec77383292
+      internalID: -222277106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_281
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 64
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3106b74210347104ea9e05c1259ead28
+      internalID: -701316030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_282
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 64
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da7aafaa160902a439e5ecc46a7b1a98
+      internalID: -2008707847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_283
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 64
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc654b5695f8a35409eea3e258f083d2
+      internalID: -1082242715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_284
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 64
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e27226b8d7fb5d8478e8c625b58ba3c2
+      internalID: 838006611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_285
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 64
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f96f89f6671743c4584bc004e1bb4fab
+      internalID: 1446507850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_286
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05eb4b36b25f54a4588df7e97e0482d1
+      internalID: 592726357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_287
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 0
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c0b2ec2cf6b12340a193e0296081159
+      internalID: 868462475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_288
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 0
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 539fc31817e45f0468d6275f842caca9
+      internalID: 1718146630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_289
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 0
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76a0b61a655467148a9b28645301d84b
+      internalID: -757320424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_290
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 0
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b60fa07a3d1e9945bf19d30c9b7755e
+      internalID: 828714891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_291
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 0
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a76c597fa77101d46bab0d264f693fbe
+      internalID: 731630962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_292
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 0
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 697ae1f2ba96cec42999545ff5cbe2a5
+      internalID: -1226417768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Catherine_BattleSpriteSheet (V3)_293
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 0
+        width: 146
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 998994c19ac59de4f916350d66c14c80
+      internalID: -2082116383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 2d6fb616f8ca0f7458f8a452b89468db
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Catherine_BattleSpriteSheet (V3)_0: -532547650
+      Catherine_BattleSpriteSheet (V3)_1: -1932164458
+      Catherine_BattleSpriteSheet (V3)_10: 1885250822
+      Catherine_BattleSpriteSheet (V3)_100: 414576189
+      Catherine_BattleSpriteSheet (V3)_101: 1380858479
+      Catherine_BattleSpriteSheet (V3)_102: -320494761
+      Catherine_BattleSpriteSheet (V3)_103: -122663249
+      Catherine_BattleSpriteSheet (V3)_104: 1845276854
+      Catherine_BattleSpriteSheet (V3)_105: 1034229180
+      Catherine_BattleSpriteSheet (V3)_106: -850392059
+      Catherine_BattleSpriteSheet (V3)_107: -497694171
+      Catherine_BattleSpriteSheet (V3)_108: -526405839
+      Catherine_BattleSpriteSheet (V3)_109: 480448495
+      Catherine_BattleSpriteSheet (V3)_11: 942905448
+      Catherine_BattleSpriteSheet (V3)_110: 699813168
+      Catherine_BattleSpriteSheet (V3)_111: -817120696
+      Catherine_BattleSpriteSheet (V3)_112: 626177677
+      Catherine_BattleSpriteSheet (V3)_113: -873983816
+      Catherine_BattleSpriteSheet (V3)_114: 1846204931
+      Catherine_BattleSpriteSheet (V3)_115: 514706604
+      Catherine_BattleSpriteSheet (V3)_116: 2029373696
+      Catherine_BattleSpriteSheet (V3)_117: 781328471
+      Catherine_BattleSpriteSheet (V3)_118: -750077009
+      Catherine_BattleSpriteSheet (V3)_119: 1175652109
+      Catherine_BattleSpriteSheet (V3)_12: -6028552
+      Catherine_BattleSpriteSheet (V3)_120: 655924840
+      Catherine_BattleSpriteSheet (V3)_121: 772487599
+      Catherine_BattleSpriteSheet (V3)_122: -109304564
+      Catherine_BattleSpriteSheet (V3)_123: 1140909701
+      Catherine_BattleSpriteSheet (V3)_124: 1241516497
+      Catherine_BattleSpriteSheet (V3)_125: 596764378
+      Catherine_BattleSpriteSheet (V3)_126: 543394401
+      Catherine_BattleSpriteSheet (V3)_127: -619245683
+      Catherine_BattleSpriteSheet (V3)_128: 1860917519
+      Catherine_BattleSpriteSheet (V3)_129: -1856076042
+      Catherine_BattleSpriteSheet (V3)_13: 1630786036
+      Catherine_BattleSpriteSheet (V3)_130: 450378216
+      Catherine_BattleSpriteSheet (V3)_131: -783034327
+      Catherine_BattleSpriteSheet (V3)_132: 113823468
+      Catherine_BattleSpriteSheet (V3)_133: 1936889787
+      Catherine_BattleSpriteSheet (V3)_134: 751214287
+      Catherine_BattleSpriteSheet (V3)_135: -228640558
+      Catherine_BattleSpriteSheet (V3)_136: -2144055179
+      Catherine_BattleSpriteSheet (V3)_137: -1886467334
+      Catherine_BattleSpriteSheet (V3)_138: -717129614
+      Catherine_BattleSpriteSheet (V3)_139: 1526728786
+      Catherine_BattleSpriteSheet (V3)_14: 63082227
+      Catherine_BattleSpriteSheet (V3)_140: -1472060686
+      Catherine_BattleSpriteSheet (V3)_141: -1415547452
+      Catherine_BattleSpriteSheet (V3)_142: 935953706
+      Catherine_BattleSpriteSheet (V3)_143: 1642223926
+      Catherine_BattleSpriteSheet (V3)_144: 1140999190
+      Catherine_BattleSpriteSheet (V3)_145: -341960147
+      Catherine_BattleSpriteSheet (V3)_146: 1858557747
+      Catherine_BattleSpriteSheet (V3)_147: 957057320
+      Catherine_BattleSpriteSheet (V3)_148: -1292018982
+      Catherine_BattleSpriteSheet (V3)_149: 580418803
+      Catherine_BattleSpriteSheet (V3)_15: -486179141
+      Catherine_BattleSpriteSheet (V3)_150: -540552627
+      Catherine_BattleSpriteSheet (V3)_151: -1183845126
+      Catherine_BattleSpriteSheet (V3)_152: 2090585885
+      Catherine_BattleSpriteSheet (V3)_153: -1859733307
+      Catherine_BattleSpriteSheet (V3)_154: 1929398289
+      Catherine_BattleSpriteSheet (V3)_155: 661944010
+      Catherine_BattleSpriteSheet (V3)_156: 409692950
+      Catherine_BattleSpriteSheet (V3)_157: 1915006356
+      Catherine_BattleSpriteSheet (V3)_158: -866835489
+      Catherine_BattleSpriteSheet (V3)_159: 1439040486
+      Catherine_BattleSpriteSheet (V3)_16: 632070796
+      Catherine_BattleSpriteSheet (V3)_160: 836280401
+      Catherine_BattleSpriteSheet (V3)_161: 1229561113
+      Catherine_BattleSpriteSheet (V3)_162: -660805991
+      Catherine_BattleSpriteSheet (V3)_163: -345019404
+      Catherine_BattleSpriteSheet (V3)_164: 1659729697
+      Catherine_BattleSpriteSheet (V3)_165: 299622732
+      Catherine_BattleSpriteSheet (V3)_166: 1391512356
+      Catherine_BattleSpriteSheet (V3)_167: 1914250604
+      Catherine_BattleSpriteSheet (V3)_168: 1674012583
+      Catherine_BattleSpriteSheet (V3)_169: -1827501554
+      Catherine_BattleSpriteSheet (V3)_17: -357783024
+      Catherine_BattleSpriteSheet (V3)_170: 665251989
+      Catherine_BattleSpriteSheet (V3)_171: 2087479963
+      Catherine_BattleSpriteSheet (V3)_172: 2051804339
+      Catherine_BattleSpriteSheet (V3)_173: -173769569
+      Catherine_BattleSpriteSheet (V3)_174: -992228834
+      Catherine_BattleSpriteSheet (V3)_175: 998780302
+      Catherine_BattleSpriteSheet (V3)_176: -259914858
+      Catherine_BattleSpriteSheet (V3)_177: 1272655953
+      Catherine_BattleSpriteSheet (V3)_178: -730859861
+      Catherine_BattleSpriteSheet (V3)_179: -1514146482
+      Catherine_BattleSpriteSheet (V3)_18: -1799431855
+      Catherine_BattleSpriteSheet (V3)_180: -1899242114
+      Catherine_BattleSpriteSheet (V3)_181: 1939252969
+      Catherine_BattleSpriteSheet (V3)_182: 830520481
+      Catherine_BattleSpriteSheet (V3)_183: 1624479470
+      Catherine_BattleSpriteSheet (V3)_184: 1094250940
+      Catherine_BattleSpriteSheet (V3)_185: 1687595198
+      Catherine_BattleSpriteSheet (V3)_186: -218214197
+      Catherine_BattleSpriteSheet (V3)_187: -1018070289
+      Catherine_BattleSpriteSheet (V3)_188: 1423047357
+      Catherine_BattleSpriteSheet (V3)_189: 789058578
+      Catherine_BattleSpriteSheet (V3)_19: -659004396
+      Catherine_BattleSpriteSheet (V3)_190: -1578745612
+      Catherine_BattleSpriteSheet (V3)_191: 1255607961
+      Catherine_BattleSpriteSheet (V3)_192: -514048467
+      Catherine_BattleSpriteSheet (V3)_193: -837633192
+      Catherine_BattleSpriteSheet (V3)_194: -1461729747
+      Catherine_BattleSpriteSheet (V3)_195: 1890564586
+      Catherine_BattleSpriteSheet (V3)_196: -1166670121
+      Catherine_BattleSpriteSheet (V3)_197: 2099901140
+      Catherine_BattleSpriteSheet (V3)_198: -1573106991
+      Catherine_BattleSpriteSheet (V3)_199: -733642482
+      Catherine_BattleSpriteSheet (V3)_2: 1222683801
+      Catherine_BattleSpriteSheet (V3)_20: 1825014988
+      Catherine_BattleSpriteSheet (V3)_200: -1769299019
+      Catherine_BattleSpriteSheet (V3)_201: -969801603
+      Catherine_BattleSpriteSheet (V3)_202: -1905662402
+      Catherine_BattleSpriteSheet (V3)_203: -1589773218
+      Catherine_BattleSpriteSheet (V3)_204: 1473871095
+      Catherine_BattleSpriteSheet (V3)_205: -325650149
+      Catherine_BattleSpriteSheet (V3)_206: 142384614
+      Catherine_BattleSpriteSheet (V3)_207: -1586032616
+      Catherine_BattleSpriteSheet (V3)_208: -973502278
+      Catherine_BattleSpriteSheet (V3)_209: -1534350290
+      Catherine_BattleSpriteSheet (V3)_21: -749046178
+      Catherine_BattleSpriteSheet (V3)_210: -186042710
+      Catherine_BattleSpriteSheet (V3)_211: -1449631975
+      Catherine_BattleSpriteSheet (V3)_212: 1993366736
+      Catherine_BattleSpriteSheet (V3)_213: -905427879
+      Catherine_BattleSpriteSheet (V3)_214: 1146615776
+      Catherine_BattleSpriteSheet (V3)_215: 1599377105
+      Catherine_BattleSpriteSheet (V3)_216: 1384573985
+      Catherine_BattleSpriteSheet (V3)_217: 1731486459
+      Catherine_BattleSpriteSheet (V3)_218: 1088369847
+      Catherine_BattleSpriteSheet (V3)_219: 433459353
+      Catherine_BattleSpriteSheet (V3)_22: 468140382
+      Catherine_BattleSpriteSheet (V3)_220: 434204480
+      Catherine_BattleSpriteSheet (V3)_221: 1165067602
+      Catherine_BattleSpriteSheet (V3)_222: 1569859621
+      Catherine_BattleSpriteSheet (V3)_223: 70174022
+      Catherine_BattleSpriteSheet (V3)_224: 981624527
+      Catherine_BattleSpriteSheet (V3)_225: -971825463
+      Catherine_BattleSpriteSheet (V3)_226: 1769856998
+      Catherine_BattleSpriteSheet (V3)_227: -2095955563
+      Catherine_BattleSpriteSheet (V3)_228: -2042442187
+      Catherine_BattleSpriteSheet (V3)_229: -532297151
+      Catherine_BattleSpriteSheet (V3)_23: -1176256541
+      Catherine_BattleSpriteSheet (V3)_230: 1408977542
+      Catherine_BattleSpriteSheet (V3)_231: 1978852714
+      Catherine_BattleSpriteSheet (V3)_232: 1060836555
+      Catherine_BattleSpriteSheet (V3)_233: -1062190013
+      Catherine_BattleSpriteSheet (V3)_234: -1918895835
+      Catherine_BattleSpriteSheet (V3)_235: -1884106547
+      Catherine_BattleSpriteSheet (V3)_236: 1497434096
+      Catherine_BattleSpriteSheet (V3)_237: 1710587428
+      Catherine_BattleSpriteSheet (V3)_238: 1898183965
+      Catherine_BattleSpriteSheet (V3)_239: -1551972715
+      Catherine_BattleSpriteSheet (V3)_24: -1277430395
+      Catherine_BattleSpriteSheet (V3)_240: -1793785142
+      Catherine_BattleSpriteSheet (V3)_241: 812305168
+      Catherine_BattleSpriteSheet (V3)_242: 1073149988
+      Catherine_BattleSpriteSheet (V3)_243: -1199503645
+      Catherine_BattleSpriteSheet (V3)_244: -1640908377
+      Catherine_BattleSpriteSheet (V3)_245: 1861467287
+      Catherine_BattleSpriteSheet (V3)_246: 1915935188
+      Catherine_BattleSpriteSheet (V3)_247: 119637317
+      Catherine_BattleSpriteSheet (V3)_248: -564497271
+      Catherine_BattleSpriteSheet (V3)_249: 1698984926
+      Catherine_BattleSpriteSheet (V3)_25: -153263345
+      Catherine_BattleSpriteSheet (V3)_250: 1898908512
+      Catherine_BattleSpriteSheet (V3)_251: 1025550276
+      Catherine_BattleSpriteSheet (V3)_252: 2054492987
+      Catherine_BattleSpriteSheet (V3)_253: -2095292544
+      Catherine_BattleSpriteSheet (V3)_254: 20113233
+      Catherine_BattleSpriteSheet (V3)_255: 618835677
+      Catherine_BattleSpriteSheet (V3)_256: 416791763
+      Catherine_BattleSpriteSheet (V3)_257: -171871840
+      Catherine_BattleSpriteSheet (V3)_258: 765841103
+      Catherine_BattleSpriteSheet (V3)_259: 462310390
+      Catherine_BattleSpriteSheet (V3)_26: -1116756333
+      Catherine_BattleSpriteSheet (V3)_260: 175647168
+      Catherine_BattleSpriteSheet (V3)_261: 1810317201
+      Catherine_BattleSpriteSheet (V3)_262: -1057145388
+      Catherine_BattleSpriteSheet (V3)_263: 622672205
+      Catherine_BattleSpriteSheet (V3)_264: 2043700555
+      Catherine_BattleSpriteSheet (V3)_265: -1102454515
+      Catherine_BattleSpriteSheet (V3)_266: 1134359556
+      Catherine_BattleSpriteSheet (V3)_267: 600574034
+      Catherine_BattleSpriteSheet (V3)_268: -1246159523
+      Catherine_BattleSpriteSheet (V3)_269: 156541648
+      Catherine_BattleSpriteSheet (V3)_27: 331021841
+      Catherine_BattleSpriteSheet (V3)_270: 1682681161
+      Catherine_BattleSpriteSheet (V3)_271: -1120927832
+      Catherine_BattleSpriteSheet (V3)_272: 942887307
+      Catherine_BattleSpriteSheet (V3)_273: 451908159
+      Catherine_BattleSpriteSheet (V3)_274: 2114323774
+      Catherine_BattleSpriteSheet (V3)_275: -41621531
+      Catherine_BattleSpriteSheet (V3)_276: 1398552361
+      Catherine_BattleSpriteSheet (V3)_277: 1852816911
+      Catherine_BattleSpriteSheet (V3)_278: 33169738
+      Catherine_BattleSpriteSheet (V3)_279: -1856079068
+      Catherine_BattleSpriteSheet (V3)_28: 355373796
+      Catherine_BattleSpriteSheet (V3)_280: -222277106
+      Catherine_BattleSpriteSheet (V3)_281: -701316030
+      Catherine_BattleSpriteSheet (V3)_282: -2008707847
+      Catherine_BattleSpriteSheet (V3)_283: -1082242715
+      Catherine_BattleSpriteSheet (V3)_284: 838006611
+      Catherine_BattleSpriteSheet (V3)_285: 1446507850
+      Catherine_BattleSpriteSheet (V3)_286: 592726357
+      Catherine_BattleSpriteSheet (V3)_287: 868462475
+      Catherine_BattleSpriteSheet (V3)_288: 1718146630
+      Catherine_BattleSpriteSheet (V3)_289: -757320424
+      Catherine_BattleSpriteSheet (V3)_29: 1321104937
+      Catherine_BattleSpriteSheet (V3)_290: 828714891
+      Catherine_BattleSpriteSheet (V3)_291: 731630962
+      Catherine_BattleSpriteSheet (V3)_292: -1226417768
+      Catherine_BattleSpriteSheet (V3)_293: -2082116383
+      Catherine_BattleSpriteSheet (V3)_3: -569179522
+      Catherine_BattleSpriteSheet (V3)_30: 1168892818
+      Catherine_BattleSpriteSheet (V3)_31: 665065995
+      Catherine_BattleSpriteSheet (V3)_32: 1009424836
+      Catherine_BattleSpriteSheet (V3)_33: 500841335
+      Catherine_BattleSpriteSheet (V3)_34: 1249177
+      Catherine_BattleSpriteSheet (V3)_35: 1106381437
+      Catherine_BattleSpriteSheet (V3)_36: 995356194
+      Catherine_BattleSpriteSheet (V3)_37: -508631401
+      Catherine_BattleSpriteSheet (V3)_38: -1450623815
+      Catherine_BattleSpriteSheet (V3)_39: 1172347189
+      Catherine_BattleSpriteSheet (V3)_4: -455465880
+      Catherine_BattleSpriteSheet (V3)_40: 913254847
+      Catherine_BattleSpriteSheet (V3)_41: -1868215151
+      Catherine_BattleSpriteSheet (V3)_42: -1349206325
+      Catherine_BattleSpriteSheet (V3)_43: -1769793473
+      Catherine_BattleSpriteSheet (V3)_44: 1337410633
+      Catherine_BattleSpriteSheet (V3)_45: -251864248
+      Catherine_BattleSpriteSheet (V3)_46: 1847459866
+      Catherine_BattleSpriteSheet (V3)_47: 723229213
+      Catherine_BattleSpriteSheet (V3)_48: 2008893566
+      Catherine_BattleSpriteSheet (V3)_49: 1215452880
+      Catherine_BattleSpriteSheet (V3)_5: -1759190057
+      Catherine_BattleSpriteSheet (V3)_50: 1404884152
+      Catherine_BattleSpriteSheet (V3)_51: -1793465328
+      Catherine_BattleSpriteSheet (V3)_52: 1349127246
+      Catherine_BattleSpriteSheet (V3)_53: 264213695
+      Catherine_BattleSpriteSheet (V3)_54: 1690366661
+      Catherine_BattleSpriteSheet (V3)_55: -1600886185
+      Catherine_BattleSpriteSheet (V3)_56: -1144327242
+      Catherine_BattleSpriteSheet (V3)_57: -43674512
+      Catherine_BattleSpriteSheet (V3)_58: 1569827799
+      Catherine_BattleSpriteSheet (V3)_59: -464563960
+      Catherine_BattleSpriteSheet (V3)_6: 661361781
+      Catherine_BattleSpriteSheet (V3)_60: -255654387
+      Catherine_BattleSpriteSheet (V3)_61: -1590994983
+      Catherine_BattleSpriteSheet (V3)_62: -38906305
+      Catherine_BattleSpriteSheet (V3)_63: 333478015
+      Catherine_BattleSpriteSheet (V3)_64: 504675350
+      Catherine_BattleSpriteSheet (V3)_65: 1485521522
+      Catherine_BattleSpriteSheet (V3)_66: 1422992598
+      Catherine_BattleSpriteSheet (V3)_67: -1143771996
+      Catherine_BattleSpriteSheet (V3)_68: -1940965673
+      Catherine_BattleSpriteSheet (V3)_69: 1000290527
+      Catherine_BattleSpriteSheet (V3)_7: -236648124
+      Catherine_BattleSpriteSheet (V3)_70: 1794694102
+      Catherine_BattleSpriteSheet (V3)_71: -1227550975
+      Catherine_BattleSpriteSheet (V3)_72: 2124641769
+      Catherine_BattleSpriteSheet (V3)_73: 1757360803
+      Catherine_BattleSpriteSheet (V3)_74: 417649161
+      Catherine_BattleSpriteSheet (V3)_75: -1808083116
+      Catherine_BattleSpriteSheet (V3)_76: 978754402
+      Catherine_BattleSpriteSheet (V3)_77: 1028197486
+      Catherine_BattleSpriteSheet (V3)_78: 1080145701
+      Catherine_BattleSpriteSheet (V3)_79: -495295944
+      Catherine_BattleSpriteSheet (V3)_8: 923180624
+      Catherine_BattleSpriteSheet (V3)_80: -1341242501
+      Catherine_BattleSpriteSheet (V3)_81: -826409245
+      Catherine_BattleSpriteSheet (V3)_82: 839887493
+      Catherine_BattleSpriteSheet (V3)_83: 36651567
+      Catherine_BattleSpriteSheet (V3)_84: -16394612
+      Catherine_BattleSpriteSheet (V3)_85: 1927841332
+      Catherine_BattleSpriteSheet (V3)_86: 1041874476
+      Catherine_BattleSpriteSheet (V3)_87: 1206383181
+      Catherine_BattleSpriteSheet (V3)_88: 1848859785
+      Catherine_BattleSpriteSheet (V3)_89: -1595878587
+      Catherine_BattleSpriteSheet (V3)_9: -1131471910
+      Catherine_BattleSpriteSheet (V3)_90: 1562253332
+      Catherine_BattleSpriteSheet (V3)_91: -299059158
+      Catherine_BattleSpriteSheet (V3)_92: -1311783095
+      Catherine_BattleSpriteSheet (V3)_93: -2063856923
+      Catherine_BattleSpriteSheet (V3)_94: 511932607
+      Catherine_BattleSpriteSheet (V3)_95: 361028184
+      Catherine_BattleSpriteSheet (V3)_96: 1803075881
+      Catherine_BattleSpriteSheet (V3)_97: 1775824530
+      Catherine_BattleSpriteSheet (V3)_98: -501234278
+      Catherine_BattleSpriteSheet (V3)_99: 134954714
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

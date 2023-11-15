@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - CombatUI
   layers:
   - Default
   - TransparentFX
@@ -40,4 +41,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Entities
+    uniqueID: 246511721
+    locked: 0
+  - name: CombatUI
+    uniqueID: 1595334539
+    locked: 0
+  - name: VFXs
+    uniqueID: 479133459
+    locked: 0
+  - name: ExplorationUI
+    uniqueID: 4008308155
     locked: 0
