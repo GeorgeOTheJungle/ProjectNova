@@ -108,7 +108,7 @@ public class EnemyEntity : Entity
     {
         if (entityData.entityID == -1) return; // This is to exclude the player from this.
         if (entityState == EntityState.dead) return;
-        targetUI.SetBool("isActive", true);
+        targetUI.SetBool("isActive", active);
         targetUI.SetBool("isTargeted", preSelect);
     }
 

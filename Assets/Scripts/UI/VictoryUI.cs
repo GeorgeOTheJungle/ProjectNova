@@ -47,8 +47,8 @@ public class VictoryUI : MonoBehaviour
     {
         if (!promptDisplayed) return;
         promptDisplayed = false;
-        CombatManager.Instance.StartCleanup();
-        Invoke(nameof(UIReset), 0.5f);
+        CombatManager.Instance.VictoryEnd();
+        Invoke(nameof(UIReset), 1.0f);
         // Reset things here after cleanup
     }
 

@@ -15,7 +15,7 @@ MonoBehaviour:
   unlocked: 1
   isSelfTarget: 0
   skillName: Infused_Weaken
-  baseDamage: 3
+  baseDamage: 10
   damageType: 0
   resourceType: 2
   targetingStyle: 1

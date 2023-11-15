@@ -15,9 +15,9 @@ MonoBehaviour:
   entityName: Catherine
   entityID: -1
   stats:
-    health: 100
+    health: 35
     energy: 50
-    ammo: 15
+    ammo: 5
     physicalDamage: 50
     physicalArmor: 5
     magicDamage: 5

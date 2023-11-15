@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     [SerializeField] private float movementSpeed = 5.0f;
+    [SerializeField] private Transform spawnPoint;
     private Vector3 input;
     private CharacterController m_characterController;
 
@@ -87,6 +88,19 @@ public class CharacterMovement : MonoBehaviour
         // Movement
         if (NearEdge()) return;
         m_characterController.Move(movementDirection * movementSpeed * Time.deltaTime);
+    }
+
+    public void SetRespawn(Transform spawn)
+    {
+
+    }
+
+    public void HandleRespawn()
+    {
+        // Respawn Player in nearest sanctuary;
+        if(spawnPoint == null) return;
+        m_characterController.Move(spawnPoint.position);
+       // transform.position = spawnPoint.position;
     }
 
     private void FixedUpdate()

@@ -29,6 +29,7 @@ public class PlayerEntity : Entity
         {
             case GameState.combatPreparation:
                 entityStats = entityData.stats;
+                PlayAnimation(IDLE_OUT);
                 break;
             case GameState.combatReady:
                 StartCoroutine(DelayEntrance());

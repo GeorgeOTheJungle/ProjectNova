@@ -15,7 +15,7 @@ MonoBehaviour:
   unlocked: 1
   isSelfTarget: 0
   skillName: Infusion_Fire
-  baseDamage: 15
+  baseDamage: 10
   damageType: 0
   resourceType: 2
   targetingStyle: 1

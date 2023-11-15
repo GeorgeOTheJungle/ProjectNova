@@ -8,6 +8,7 @@ public class TransitionManager : MonoBehaviour
     public static TransitionManager Instance;
 
     [SerializeField] private GameObject transitionScreen; // TODO MAKE A COOL ANIMATION
+    [SerializeField] private CharacterMovement characterMovement;
     private void Awake()
     {
         Instance = this;
@@ -18,46 +19,76 @@ public class TransitionManager : MonoBehaviour
         transitionScreen.SetActive(false);
         yield return new WaitForEndOfFrame();
         CombatManager.Instance.onCombatStart += HandleStartingCombatTransition;
-        CombatManager.Instance.onCombatCleanup += HandleEndingCombatTransition;
+        CombatManager.Instance.onCombatFinish += HandleCombatEndingTransition;
     }
 
     private void OnEnable()
     {
         if (CombatManager.Instance == null) return;
         CombatManager.Instance.onCombatStart += HandleStartingCombatTransition;
-        CombatManager.Instance.onCombatCleanup += HandleEndingCombatTransition;
+        CombatManager.Instance.onCombatFinish += HandleCombatEndingTransition;
     }
 
     private void OnDisable()
     {
         CombatManager.Instance.onCombatStart -= HandleStartingCombatTransition;
-        CombatManager.Instance.onCombatCleanup += HandleEndingCombatTransition;
+        CombatManager.Instance.onCombatFinish += HandleCombatEndingTransition;
 
     }
 
     public void HandleStartingCombatTransition()
     {
-        StartCoroutine(CombatTransitionAnimation());
+        StartCoroutine(TransitionToCombat());
     }
 
-    public void HandleEndingCombatTransition()
+    public void HandleCombatEndingTransition(CombatResult result, int id)
     {
-        StartCoroutine(EndingCombatTransitionAnimation());
+        if (result == CombatResult.victory) return;
+        StartCoroutine(TransitionToExploration(result == CombatResult.defeat));
     }
 
-    private IEnumerator CombatTransitionAnimation()
+    //private void HandleDefeatCombatTransition(CombatResult result,int id)
+    //{
+    //    if (result != CombatResult.defeat) return;
+    //    StartCoroutine(EndingCombatTransitionAnimation(2.5f));
+    //}
+
+    private IEnumerator TransitionToCombat()
     {
+        // This will be replaced later with actual animation
         transitionScreen.SetActive(true);
         yield return new WaitForSeconds(2.0f);
         transitionScreen.SetActive(false);
         GameManager.Instance.ChangeGameState(Enums.GameState.combatReady);
     }
 
-    private IEnumerator EndingCombatTransitionAnimation()
+    private IEnumerator TransitionToExploration(bool playerDefeat)
     {
+
         transitionScreen.SetActive(true);
         yield return new WaitForSeconds(2.0f);
         transitionScreen.SetActive(false);
         GameManager.Instance.ChangeGameState(Enums.GameState.exploration);
+        if(playerDefeat) characterMovement.HandleRespawn();
     }
+
+    //private IEnumerator CombatTransitionAnimation()
+    //{
+    //    transitionScreen.SetActive(true);
+    //    yield return new WaitForSeconds(2.0f);
+    //    transitionScreen.SetActive(false);
+    //    GameManager.Instance.ChangeGameState(Enums.GameState.combatReady);
+    //}
+
+    //private IEnumerator EndingCombatTransitionAnimation(float delay)
+    //{
+    //    yield return new WaitForSeconds(delay);
+    //    transitionScreen.SetActive(true);
+    //    yield return new WaitForSeconds(2.0f);
+    //    transitionScreen.SetActive(false);
+    //    GameManager.Instance.ChangeGameState(Enums.GameState.exploration);
+    //    characterMovement.HandleRespawn();
+    //}
+
+    
 }
