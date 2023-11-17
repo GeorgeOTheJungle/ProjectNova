@@ -132,6 +132,7 @@ public class CombatManager : MonoBehaviour
     public void VictoryEnd()
     {
         combatResult = CombatResult.none;
+        SkillManager.Instance.GetXP(xpStored);
         StartCoroutine(DelayedCleanup());
     }
 
@@ -251,6 +252,7 @@ public class CombatManager : MonoBehaviour
     private IEnumerator DelayedCleanup()
     {
         yield return new WaitForSeconds(2.0f);
+        xpStored = 0;
         GameManager.Instance.ChangeGameState(GameState.combatEnded);
         onCombatFinish?.Invoke(combatResult, currentCombatID);
         yield return new WaitForSeconds(0.15f);

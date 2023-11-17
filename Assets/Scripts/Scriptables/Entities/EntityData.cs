@@ -9,6 +9,7 @@ public class EntityData : ScriptableObject
 {
     [Header("Entity Data:"), Space(10)]
     public string entityName;
+    
     public int entityID;
     public Stats stats;
 

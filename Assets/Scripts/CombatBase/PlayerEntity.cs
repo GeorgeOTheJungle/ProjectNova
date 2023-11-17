@@ -1,4 +1,5 @@
 using Enums;
+using Structs;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,7 @@ public class PlayerEntity : Entity
 
     [SerializeField] private float minimumPunchDistance = 0.1f;
     [SerializeField] private float punchMovementSpeed = 20.0f;
+
 
     private const string PUNCH_END_ANIMATION = "PunchEnd";
     private CombatNavigation combatNavigation;
@@ -28,7 +30,8 @@ public class PlayerEntity : Entity
         switch (gameState)
         {
             case GameState.combatPreparation:
-                entityStats = entityData.stats;
+                //entityStats = entityData.stats;
+                entityStats = PlayerStatsManager.Instance.GetPlayerStats();
                 PlayAnimation(IDLE_OUT);
                 break;
             case GameState.combatReady:
@@ -74,7 +77,6 @@ public class PlayerEntity : Entity
         else StartCoroutine(TurnCommandsVisuals(false, 0.0f));
     }
 
-  
     private IEnumerator PunchMovement(Transform target)
     {
         // Play travel animation here

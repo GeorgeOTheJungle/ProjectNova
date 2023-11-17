@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b85157119d06342a2aa45366ec1399, type: 3}
   m_Name: SkillExample7
   m_EditorClassIdentifier: 
-  unlocked: 1
+  unlocked: 0
+  level: 1
   isSelfTarget: 1
   skillName: Buff of strenght
+  skillDescription: 
+  initialUnlockCost: 150
   baseDamage: 15
+  damageUpgradeAmount: 0
   damageType: 0
   resourceType: 2
   targetingStyle: 1

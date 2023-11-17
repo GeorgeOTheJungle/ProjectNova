@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: SkillExample8
   m_EditorClassIdentifier: 
   unlocked: 1
+  level: 1
   isSelfTarget: 1
   skillName: Chicken!
+  skillDescription: 
+  initialUnlockCost: 0
   baseDamage: 15
+  damageUpgradeAmount: 0
   damageType: 0
   resourceType: 2
   targetingStyle: 1

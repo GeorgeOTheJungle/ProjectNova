@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: SkillExample4
   m_EditorClassIdentifier: 
   unlocked: 1
+  level: 2
   isSelfTarget: 0
   skillName: Infusion_Fire
+  skillDescription: 
+  initialUnlockCost: 0
   baseDamage: 10
+  damageUpgradeAmount: 0
   damageType: 0
   resourceType: 2
   targetingStyle: 1

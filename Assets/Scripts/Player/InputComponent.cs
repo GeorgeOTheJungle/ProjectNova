@@ -14,7 +14,9 @@ public class InputComponent : MonoBehaviour
     public VectorEvent movementTrigger;
     public IntEvent cameraRotationTrigger;
     public SingleEvent interactTrigger;
+    public SingleEvent pauseTrigger;
     private UserInputs inputActions;
+
 
     private void Awake()
     {
@@ -27,6 +29,7 @@ public class InputComponent : MonoBehaviour
     {
         inputActions.Gameplay.Interact.performed += _ => interactTrigger?.Invoke();
         inputActions.Gameplay.CameraControl.performed += _ => cameraRotationTrigger?.Invoke(inputActions.Gameplay.CameraControl.ReadValue<float>());
+        inputActions.Gameplay.Pause.performed += _ => pauseTrigger?.Invoke() ;
     }
 
     private void Update()

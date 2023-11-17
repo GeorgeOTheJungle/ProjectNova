@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: SkillExample1
   m_EditorClassIdentifier: 
   unlocked: 1
+  level: 1
   isSelfTarget: 0
   skillName: Energy Bomb
+  skillDescription: 
+  initialUnlockCost: 0
   baseDamage: 17
+  damageUpgradeAmount: 0
   damageType: 0
   resourceType: 2
   targetingStyle: 2

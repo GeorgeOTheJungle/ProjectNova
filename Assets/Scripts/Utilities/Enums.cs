@@ -18,4 +18,6 @@ namespace Enums
     public enum TargetingStyle { self, single, multiple}
 
     public enum RegenStyle { None, Punch, Shoot }
+
+    public enum PlayerStat { health,energy,ammo,physicalDmg,physicalArmor,magicalDmg,magicalArmor,critRate,shoot,punch}
 }
