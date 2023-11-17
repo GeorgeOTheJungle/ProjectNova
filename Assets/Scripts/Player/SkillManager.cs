@@ -13,12 +13,57 @@ public class SkillManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+
+        foreach(Skill skill in allPlayerSkills)
+        {
+            skill.Initialize();
+        }
     }
 
     public void GetXP(int total)
     {
         currentXP += total;
         totalXPStored += total;
+    }
+
+    public void ResetXP()
+    {
+        currentXP = totalXPStored;
+        foreach(Skill skill in allPlayerSkills)
+        {
+            skill.ResetToLevel1();
+        }
+    }
+
+    public bool SkillCanBeUpgraded(Skill skill)
+    {
+        if (skill.unlocked == false) return false;
+        else if (skill.level > 3) return false; 
+        else if (skill.RequiredXp() <= currentXP) return true;
+        else return false;
+    }
+
+    public bool SkillCanBeUnlocked(Skill skill)
+    {
+        return skill.initialUnlockCost <= currentXP;
+    }
+
+    public bool HaveEnoughXP(int xpNeed)
+    {
+        return currentXP >= xpNeed;
+    }
+
+    public void UpgradeSkill(Skill skillToUpgrade)
+    {
+        currentXP -= skillToUpgrade.RequiredXp();
+        skillToUpgrade.UpdgradeSkill();
+    }
+
+    public void UnlockSkill(Skill skillToUnlock)
+    {
+        currentXP -= skillToUnlock.initialUnlockCost;
+        skillToUnlock.unlocked = true;
+        skillToUnlock.level = 1;
     }
 
     public List<Skill> GetAvaliableSkills()
@@ -33,5 +78,8 @@ public class SkillManager : MonoBehaviour
         return package;
     }
 
+    public List<Skill> GetAllSkills() => allPlayerSkills;
+
+    public string GetCurrentXP() => currentXP.ToString();
 
 }

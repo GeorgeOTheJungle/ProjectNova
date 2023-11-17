@@ -35,5 +35,7 @@ public class GameManager : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
+
+    public GameState CurrentGameState() => _gameState;
 }
 

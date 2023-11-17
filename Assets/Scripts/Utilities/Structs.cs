@@ -26,6 +26,21 @@ namespace Structs
     }
 
     [System.Serializable]
+    public struct StatsLevel
+    {
+        public int healthLevel;
+        public int energyLevel;
+        public int ammoLevel;
+
+        public int physicalDamageLevel;
+        public int physicalArmorLevel;
+        public int magicDamageLevel;
+        public int magicArmorLevel;
+
+        public int critRateLevel;
+    }
+
+    [System.Serializable]
     public struct Encounter
     {
         public List<Entity> entites;
