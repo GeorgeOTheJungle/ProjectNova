@@ -61,6 +61,15 @@ public class SkillUpgradeUI : MonoBehaviour
         returnButton.gameObject.SetActive(false);
     }
 
+    private void OnDisable()
+    {
+        skillPreviewWindow.SetActive(true);
+        skillUpgradeWindow.SetActive(false);
+
+        backButton.gameObject.SetActive(true);
+        returnButton.gameObject.SetActive(false);
+    }
+
     public void OnSkillSelected(Skill skillSelected,int id)
     {
         skillPreviewWindow.SetActive(false);

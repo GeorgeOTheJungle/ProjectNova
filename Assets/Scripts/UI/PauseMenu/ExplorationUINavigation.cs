@@ -36,6 +36,8 @@ public class ExplorationUINavigation : MonoBehaviour
         GameManager.Instance.ChangeGameState(Enums.GameState.paused);
         pauseMenu.SetActive(uiOpen);
         mainMenu.SetActive(uiOpen);
+        characterWindow.SetActive(false);
+        skillUpgradeMenu.SetActive(false);
         mainMenuFirstButton.Select();
     }
 
