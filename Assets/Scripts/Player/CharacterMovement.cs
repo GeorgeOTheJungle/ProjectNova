@@ -27,6 +27,7 @@ public class CharacterMovement : MonoBehaviour
     {
         m_characterController = GetComponent<CharacterController>();
         m_animatorController = GetComponent<PlayerAnimatorController>();
+        cam = Camera.main.transform;
     }
 
     private IEnumerator Start()
@@ -45,7 +46,9 @@ public class CharacterMovement : MonoBehaviour
     {
         InputComponent.Instance.movementTrigger -= HandleMovementInput;
     }
-
+    Vector3 forwardRelative;
+    Vector3 rightRelative;
+    Vector3 movementDirection;
     private void HandleMovementInput(Vector3 value)
     {
         // Check if we are in exploration
@@ -62,10 +65,10 @@ public class CharacterMovement : MonoBehaviour
         camRight.y = 0.0f;
 
         // Create relative camera direction
-        Vector3 forwardRelative = input.z * camForward;
-        Vector3 rightRelative = input.x * camRight;
+        forwardRelative = input.z * camForward;
+        rightRelative = input.x * camRight;
 
-        Vector3 movementDirection = forwardRelative + rightRelative;
+         movementDirection = forwardRelative + rightRelative;
 
         // Gravity
         if (m_characterController.isGrounded && _velocity <= 0.0f) _velocity = -1f;
@@ -111,7 +114,7 @@ public class CharacterMovement : MonoBehaviour
     private bool NearEdge()
     {
         RaycastHit hit;
-        Vector3 facingDir = new Vector3(0f + input.x/3, 0f, 0f + input.z/3);
+        Vector3 facingDir = new Vector3(0f + rightRelative.x/3, 0f, 0f + forwardRelative.z/3);
         if (Physics.Raycast(transform.position + facingDir, transform.TransformDirection(Vector3.down), out hit, hitDetection, layerMask))
         {
             Debug.DrawRay(transform.position + facingDir, transform.TransformDirection(Vector3.down) * hit.distance, Color.yellow);

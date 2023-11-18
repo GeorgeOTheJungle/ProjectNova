@@ -1,0 +1,200 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1757322290825994668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1757322290825994669}
+  m_Layer: 0
+  m_Name: Exploration Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1757322290825994669
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757322290825994668}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1757322291147258445}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1757322291147258435
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1757322291147258445}
+  - component: {fileID: 1757322291147258444}
+  - component: {fileID: 1757322291147258446}
+  - component: {fileID: 1757322291147258447}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1757322291147258445
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757322291147258435}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1757322290825994669}
+  - {fileID: 1757322292503427426}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1757322291147258444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757322291147258435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42e068313c57cc94c987a3d6f6c79508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameState: 0
+--- !u!114 &1757322291147258446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757322291147258435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 450cfa7931d9d3c47b6286605d7df859, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentXP: 1555555555
+  totalXPStored: 0
+  allPlayerSkills:
+  - {fileID: 11400000, guid: d91d90c3585a9b547883c01a89ae0f80, type: 2}
+  - {fileID: 11400000, guid: 93e217bb628dcab43a1257817bada216, type: 2}
+  - {fileID: 11400000, guid: e41228d4b6404a249aa6522e51551000, type: 2}
+  - {fileID: 11400000, guid: 2b878056ae9858e48bb9d024ed9fb2f1, type: 2}
+  - {fileID: 11400000, guid: 9bceda8d6e98495408d9d0ac0478dbf5, type: 2}
+  - {fileID: 11400000, guid: 66a3e0f1b55f57647b3306198c9f4c01, type: 2}
+  - {fileID: 11400000, guid: 1ccfc59e9b862784995ae679e8d55c3b, type: 2}
+  - {fileID: 11400000, guid: e1ea7b54af1ab2849bb068250d06aa5f, type: 2}
+  - {fileID: 11400000, guid: 1f95ef33aed432c4184d2496f877ae43, type: 2}
+--- !u!114 &1757322291147258447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757322291147258435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b5b1121f53b53d47a8707a565ebe8cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerData: {fileID: 11400000, guid: f0b278124bab62b44aa2a5534f4379ac, type: 2}
+  playerStats:
+    health: 0
+    energy: 0
+    ammo: 0
+    physicalDamage: 0
+    physicalArmor: 0
+    magicDamage: 0
+    magicArmor: 0
+    defenseBonus: 0
+    buffBonus: 0
+    speed: 0
+    accuracy: 0
+    critRate: 0
+    xpYield: 0
+  statsLevel:
+    healthLevel: 1
+    energyLevel: 1
+    ammoLevel: 1
+    physicalDamageLevel: 1
+    physicalArmorLevel: 1
+    magicDamageLevel: 1
+    magicArmorLevel: 1
+    critRateLevel: 1
+  shootSkill: {fileID: 0}
+  punchSkill: {fileID: 0}
+--- !u!1 &1757322292503427425
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1757322292503427426}
+  - component: {fileID: 1757322292503427427}
+  m_Layer: 0
+  m_Name: Combat Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1757322292503427426
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757322292503427425}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1757322291147258445}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1757322292503427427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757322292503427425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37a761e03c60d714886ae06173bffc04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combatResult: 0
+  currentCombatID: 0
+  playerEntity: {fileID: 0}
+  entitiesPlacement:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  entityList: []
+  combatOrder: []
+  combatTurn: 0
+  xpStored: 0
+  targetAllAnimator: {fileID: 0}
