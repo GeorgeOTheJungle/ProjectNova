@@ -407,7 +407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b959b8a0795294c8ebc91ecd51501b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 4
+  movementSpeed: 3
   spawnPoint: {fileID: 0}
   gravityMultiplier: 0.5
   cam: {fileID: 0}

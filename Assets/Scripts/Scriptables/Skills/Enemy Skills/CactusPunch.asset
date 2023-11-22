@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a14a3cf33e87d444a04d8bf69d8289e, type: 3}
+  m_Name: CactusPunch
+  m_EditorClassIdentifier: 
+  unlocked: 0
+  level: 0
+  isSelfTarget: 0
+  skillName: 
+  skillDescription: 
+  initialUnlockCost: 0
+  baseDamage: 15
+  damageUpgradeAmount: 0
+  damageType: 0
+  resourceType: 0
+  targetingStyle: 0
+  resourceAmount: 0
+  animationKey: Atk_1
+  smallIcon: {fileID: 0}
+  largeIcon: {fileID: 0}

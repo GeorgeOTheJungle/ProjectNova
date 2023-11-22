@@ -17,6 +17,8 @@ public class EnemyEntity : Entity
     [SerializeField] private Image followBar;
     [SerializeField] private Animator fakeHealthBar;
 
+    [Space(10)]
+    [SerializeField] private EnemySkill skillObject;
     private int skillLenght;
 
     public override void OnAwake()
@@ -80,6 +82,17 @@ public class EnemyEntity : Entity
         // Do visuals
         PlayAnimation(currentSkill.animationKey);
 
+    }
+
+    public void PerformSkill(int id)
+    {
+        if(id == -1)
+        {
+            //int i = Random.Range(0, skillObjects.Length);
+            //skillObjects[i].DoAttack();
+            return;
+        }
+        skillObject.DoAttack(id);
     }
     protected override void UpdateEntityStatsUI()
     {

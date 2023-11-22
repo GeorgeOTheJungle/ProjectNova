@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class EnemyAnimationEventCall : EventCall
 {
+    private EnemyEntity enemyEntity;
+
+
+    protected override void Awake()
+    {
+        base.Awake();
+        enemyEntity = GetComponentInParent<EnemyEntity>();
+    }
     public override void DealDamageCall()
     {
         m_entity.AttackEntity();
@@ -22,6 +30,11 @@ public class EnemyAnimationEventCall : EventCall
        m_entity.PlayAnimation(IDLE_ANIMATION);
     }
 
+
+    public void OnSpellCast(int spellID)
+    {
+        enemyEntity.PerformSkill(spellID);
+    }
     //public override void OnAnimationFinish()
     //{
     //    throw new System.NotImplementedException();

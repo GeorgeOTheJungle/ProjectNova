@@ -24,6 +24,9 @@ public class SkillManager : MonoBehaviour
     {
         currentXP += total;
         totalXPStored += total;
+
+        if(currentXP < 0)currentXP = 0;
+        if(totalXPStored < 0)totalXPStored = 0;
     }
 
     public void ResetXP()
@@ -81,5 +84,7 @@ public class SkillManager : MonoBehaviour
     public List<Skill> GetAllSkills() => allPlayerSkills;
 
     public string GetCurrentXP() => currentXP.ToString();
+
+    public int GetCurXP() => currentXP;
 
 }
