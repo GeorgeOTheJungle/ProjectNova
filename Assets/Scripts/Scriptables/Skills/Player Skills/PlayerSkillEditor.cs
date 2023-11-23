@@ -20,18 +20,21 @@ public class PlayerSkillEditor : Editor
     protected static bool ShowOffTargetingSettings = true;
     protected static bool ShowOffUIReferences = true;
 
+    PlayerSkill skill;
     private void OnEnable()
     {
         smallIconProperty = serializedObject.FindProperty("smallIcon");
         largeIconProperty = serializedObject.FindProperty("largeIcon");
-        
+
+        skill = (PlayerSkill)target;
+        EditorUtility.SetDirty(skill);
     }
 
     public override void OnInspectorGUI()
     {
         DrawDefaultInspector();
         serializedObject.Update();
-        var skill = (PlayerSkill)target;
+
         const int WIDTH = 145;
 
         EditorGUILayout.BeginHorizontal();

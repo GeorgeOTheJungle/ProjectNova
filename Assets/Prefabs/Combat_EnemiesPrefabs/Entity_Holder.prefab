@@ -158,7 +158,7 @@ MonoBehaviour:
   - {fileID: 2054182962, guid: 0aca61b6f4eb56e4782dcf8a6d940cb5, type: 3}
   - {fileID: 50730304, guid: 0aca61b6f4eb56e4782dcf8a6d940cb5, type: 3}
   - {fileID: 1730427354, guid: 0aca61b6f4eb56e4782dcf8a6d940cb5, type: 3}
-  dealDamageOnFrame: 1
+  dealDamageOnFrame: 5
 --- !u!1 &1902992813718291700
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,7 +489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d74686c3545251346a3aa59544b7d729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityID: 0
+  entityID: 3
 --- !u!1 &2808212904417400850
 GameObject:
   m_ObjectHideFlags: 0
@@ -1530,7 +1530,7 @@ MonoBehaviour:
   - {fileID: -1951536327, guid: a91e7f0289d0e7440b235e3ec42a868f, type: 3}
   - {fileID: -1984363853, guid: a91e7f0289d0e7440b235e3ec42a868f, type: 3}
   - {fileID: 747271733, guid: a91e7f0289d0e7440b235e3ec42a868f, type: 3}
-  dealDamageOnFrame: 1
+  dealDamageOnFrame: 5
 --- !u!1 &9097997025892640924
 GameObject:
   m_ObjectHideFlags: 0

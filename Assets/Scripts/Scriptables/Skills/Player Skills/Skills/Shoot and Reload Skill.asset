@@ -22,8 +22,8 @@ MonoBehaviour:
   damageUpgradeAmount: 0
   skillName: Shoot & Reload
   skillDescription: 
-  smallIcon: {fileID: 0}
-  largeIcon: {fileID: 0}
+  smallIcon: {fileID: -445554888, guid: c7e3ae9abd9a9ef439fa900586ab321d, type: 3}
+  largeIcon: {fileID: 996732956, guid: 3224aa7800b2c5f40af292498410a2ac, type: 3}
   targetingStyle: 1
   resourceType: 2
   resourceAmount: 15

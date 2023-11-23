@@ -22,8 +22,8 @@ MonoBehaviour:
   damageUpgradeAmount: 0
   skillName: Eat Chicken
   skillDescription: 
-  smallIcon: {fileID: 0}
-  largeIcon: {fileID: 0}
+  smallIcon: {fileID: 915841950, guid: c7e3ae9abd9a9ef439fa900586ab321d, type: 3}
+  largeIcon: {fileID: 2032203404, guid: 3224aa7800b2c5f40af292498410a2ac, type: 3}
   targetingStyle: 0
   resourceType: 2
   resourceAmount: 20

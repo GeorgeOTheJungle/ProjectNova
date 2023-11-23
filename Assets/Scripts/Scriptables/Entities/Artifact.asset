@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityName: Artifact
   entityType: 1
-  entityID: 2
+  entityID: 3
   stats:
     health: 50
     energy: 0
@@ -30,6 +30,5 @@ MonoBehaviour:
     critRate: 0
     xpYield: 50
   avaliableSkills:
-  - {fileID: 0}
-  - {fileID: 0}
-  entityAnimator: {fileID: 9100000, guid: 6fa92e2570a42284f9ce57d7666b1100, type: 2}
+  - {fileID: 11400000, guid: a4a5bef26518aa84ca2deeb1475456da, type: 2}
+  entityAnimator: {fileID: 9100000, guid: f82a2d8d08de21743b288616a630a14e, type: 2}

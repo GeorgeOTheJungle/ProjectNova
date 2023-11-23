@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Catherine
   m_EditorClassIdentifier: 
   entityName: Catherine
+  entityType: 0
   entityID: -1
   stats:
     health: 35

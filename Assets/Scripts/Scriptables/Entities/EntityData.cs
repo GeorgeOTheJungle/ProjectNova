@@ -158,6 +158,12 @@ public class EntityDataEditor : Editor
         EditorGUILayout.LabelField("Entity Type:", GUILayout.Width(LABEL_WIDTH));
         entity.entityType = (EntityType)EditorGUILayout.EnumPopup(entity.entityType, GUILayout.MaxWidth(FIELD_WIDTH));
         EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.LabelField("Entity ID:",GUILayout.Width(LABEL_WIDTH));
+        entity.entityID = EditorGUILayout.IntField(entity.entityID, GUILayout.Width(FIELD_WIDTH));
+
+        EditorGUILayout.EndHorizontal();
         DrawEntityStats(entity);
         EditorGUILayout.Space(5);
 
@@ -167,7 +173,7 @@ public class EntityDataEditor : Editor
 
                 break;
             case EntityType.enemy:
-
+               
                 EditorGUILayout.LabelField("REFERENCES:", GUILayout.Width(LABEL_WIDTH));
                 ShowSkillList = EditorGUILayout.Foldout(ShowSkillList, "Skill List", true);
 

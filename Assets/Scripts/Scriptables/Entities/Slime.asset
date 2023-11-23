@@ -30,5 +30,6 @@ MonoBehaviour:
     critRate: 0
     xpYield: 50
   avaliableSkills:
-  - {fileID: 11400000, guid: d6fb72b23832b474e9c2bee7e41f0514, type: 2}
+  - {fileID: 11400000, guid: e30bd310ff4219c4da476064e3a95452, type: 2}
+  - {fileID: 11400000, guid: 367cf61d927aa9948a2bd0dc600f944e, type: 2}
   entityAnimator: {fileID: 9100000, guid: 6fa92e2570a42284f9ce57d7666b1100, type: 2}
