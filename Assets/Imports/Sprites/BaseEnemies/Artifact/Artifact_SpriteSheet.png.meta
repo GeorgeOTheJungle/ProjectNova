@@ -1,0 +1,1455 @@
+fileFormatVersion: 2
+guid: 976f92099e58f40498cb1d1d2006c7bc
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 444
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a96395d22a648ad4cb6030e7c56f0767
+      internalID: 485716416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 444
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6d85009a9df99845af23b0bcc80153a
+      internalID: 1090504456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 444
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 029cedc91a805744d9e6b2743e4d946f
+      internalID: -951293645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 444
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fccdffa012f587a41ba9e8fcb691a492
+      internalID: -1209926556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 444
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1a1bb5b24a5e85489210c6edecc2364
+      internalID: -1547629012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 444
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 579e3f86cf71b3f4380e77189a592946
+      internalID: 499502475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 444
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d00daa7e4c976d4597fb4871892f875
+      internalID: 1675999985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 444
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8618ebeea195624589bd85e70826178
+      internalID: 1212101828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 444
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9d52e8371c8bf34ba3ba4a507f5b71f
+      internalID: -1214804125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 444
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e0bf2266a3455a468853f13a4e07c06
+      internalID: 224934870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 370
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 218c5d01fe836324ab62127296a0945a
+      internalID: 2045187286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 370
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f42cf6c9a1582642a0fb591810937c0
+      internalID: -1425028615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 370
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ca5ed0263619994391c235a479c2abc
+      internalID: 577280315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 370
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b82e1bfeb2fad2f49971563b202034e6
+      internalID: 2004293355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 370
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 557182994f82fdb42822d6ed59164a23
+      internalID: 1930305682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 370
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ace0c3157fe31504eb2a1ddd7a7676a4
+      internalID: 1513367012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 370
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb0c9248a7964bc41ad6a6fa1f820de3
+      internalID: -588459375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 370
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fe14c60970d92e41844e71b433d4595
+      internalID: -356931973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 370
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 962ebc17e556a66408c1a86ca02e5f1d
+      internalID: 301143369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 370
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a076175ea5f86b4d902f2f1feeee16a
+      internalID: -1817441268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 296
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c14c7606803067e4ab14f19fb0d6db04
+      internalID: 811792093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 296
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b209b2424668399489607e53a29176c2
+      internalID: -1269151807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 296
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd7d8255082c4c24889cc806e24863a7
+      internalID: -1594250841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 296
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69761a0c98b9a4140be8cf6e2b587403
+      internalID: -891740307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 296
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7df90efe631a3554ea0701ba1b0efcff
+      internalID: -193703014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 296
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f42623ad96fbe0548860e7fa49af7f27
+      internalID: -1941459466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 296
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 374fcc827b7f9834aafa4200cdb9d57b
+      internalID: 1497034654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 296
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af2803deab7c99a409e2e8e14582d19c
+      internalID: -1502029620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 296
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc3401675b07cfc4da789ccbbebc0641
+      internalID: -693823130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 296
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 294ca118c9749354482a74cb3e6d59cf
+      internalID: 2137378129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 222
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8703f90773d66547a10cb2eb3d13051
+      internalID: -562413432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 222
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9adf8dba6b1f7646972360c4c894ed8
+      internalID: 1578021052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 222
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c5eb382d59fbb940a3fee9a2a2adbbd
+      internalID: 864607092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 222
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 788b94bf4156414409c627525fc3343c
+      internalID: 1361195906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 222
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d94fd30e6ea603e49b7d3ff0579454b3
+      internalID: -1408372649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_35
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 222
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02d1cf64d654eb34586645795286c09f
+      internalID: -1627808423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_36
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 222
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbb4938252574144d9d97083fcff32a0
+      internalID: 1974264103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_37
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 222
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bef9869f548dd204ab7564893ed4ce85
+      internalID: 1637947227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_38
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 222
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4403a674c084c834c9e97b7a029ff6d5
+      internalID: 94582932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_39
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 222
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07056e4ecd73f0046943c90d42c6cb4b
+      internalID: -1180725306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 148
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ef7c903195331947902e4f2bbcd93e9
+      internalID: 1824479185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_41
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 148
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 966cc33334503a947a80892c5f6db24c
+      internalID: 1232200592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_42
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 148
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd4b40d552f912a43923175e1c76d1e7
+      internalID: -934409940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_43
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 148
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e22eb315c0cdb8244a5200bf7b6b2b33
+      internalID: -130304503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_44
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 148
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 329daaba76a68ad4f87bc636c6309595
+      internalID: -2085785969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_45
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 148
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23dfd32336e37ab4ba8c7b7b5b5ee477
+      internalID: 558381907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_46
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 148
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e7daf5ec61daab4f95bfe0c64009c8d
+      internalID: -1981322015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_47
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 148
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1021a32f76cdb764c95503dac036b414
+      internalID: -918863766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_48
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 148
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8591b6a6b3f1b3469955a27b0d4c249
+      internalID: 61734421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_49
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 148
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcf2ddccadb86c4498855659808af3c0
+      internalID: 267331988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 74
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9386175b1dc5d94ea2f480fb6f58ecb
+      internalID: -245776972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_51
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 74
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ca1055327f2289489b33127a1b9028b
+      internalID: 636998333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_52
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 74
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dbe8e4a1e1d4ac489f393b6f7b162ec
+      internalID: -1567773125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_53
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 74
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5107007763e8274eaf9484706a842d7
+      internalID: -1207474233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_54
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 74
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a7bea58aa9c59b4c8edd3b8ed625668
+      internalID: 2031950723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_55
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 74
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d43dbce851819024fab951e3cd47c5b5
+      internalID: -1322617381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_56
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 74
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6a8892db37e38441ac24b20efa61b22
+      internalID: -942499233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_57
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 74
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f790d367d63e9c344b3c9a1eb626e0e6
+      internalID: 1157098081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_58
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 74
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f4614cbf2ecc5e47926cdfb322fe2f4
+      internalID: 331324768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artifact_SpriteSheet_59
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 74
+        width: 48
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94998bf8cc8532e48b6102d9d3a83751
+      internalID: 1328456516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 25cad195495bdbf4fb28a590c2aa5ed7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Artifact_SpriteSheet_0: 485716416
+      Artifact_SpriteSheet_1: 1090504456
+      Artifact_SpriteSheet_10: 2045187286
+      Artifact_SpriteSheet_11: -1425028615
+      Artifact_SpriteSheet_12: 577280315
+      Artifact_SpriteSheet_13: 2004293355
+      Artifact_SpriteSheet_14: 1930305682
+      Artifact_SpriteSheet_15: 1513367012
+      Artifact_SpriteSheet_16: -588459375
+      Artifact_SpriteSheet_17: -356931973
+      Artifact_SpriteSheet_18: 301143369
+      Artifact_SpriteSheet_19: -1817441268
+      Artifact_SpriteSheet_2: -951293645
+      Artifact_SpriteSheet_20: 811792093
+      Artifact_SpriteSheet_21: -1269151807
+      Artifact_SpriteSheet_22: -1594250841
+      Artifact_SpriteSheet_23: -891740307
+      Artifact_SpriteSheet_24: -193703014
+      Artifact_SpriteSheet_25: -1941459466
+      Artifact_SpriteSheet_26: 1497034654
+      Artifact_SpriteSheet_27: -1502029620
+      Artifact_SpriteSheet_28: -693823130
+      Artifact_SpriteSheet_29: 2137378129
+      Artifact_SpriteSheet_3: -1209926556
+      Artifact_SpriteSheet_30: -562413432
+      Artifact_SpriteSheet_31: 1578021052
+      Artifact_SpriteSheet_32: 864607092
+      Artifact_SpriteSheet_33: 1361195906
+      Artifact_SpriteSheet_34: -1408372649
+      Artifact_SpriteSheet_35: -1627808423
+      Artifact_SpriteSheet_36: 1974264103
+      Artifact_SpriteSheet_37: 1637947227
+      Artifact_SpriteSheet_38: 94582932
+      Artifact_SpriteSheet_39: -1180725306
+      Artifact_SpriteSheet_4: -1547629012
+      Artifact_SpriteSheet_40: 1824479185
+      Artifact_SpriteSheet_41: 1232200592
+      Artifact_SpriteSheet_42: -934409940
+      Artifact_SpriteSheet_43: -130304503
+      Artifact_SpriteSheet_44: -2085785969
+      Artifact_SpriteSheet_45: 558381907
+      Artifact_SpriteSheet_46: -1981322015
+      Artifact_SpriteSheet_47: -918863766
+      Artifact_SpriteSheet_48: 61734421
+      Artifact_SpriteSheet_49: 267331988
+      Artifact_SpriteSheet_5: 499502475
+      Artifact_SpriteSheet_50: -245776972
+      Artifact_SpriteSheet_51: 636998333
+      Artifact_SpriteSheet_52: -1567773125
+      Artifact_SpriteSheet_53: -1207474233
+      Artifact_SpriteSheet_54: 2031950723
+      Artifact_SpriteSheet_55: -1322617381
+      Artifact_SpriteSheet_56: -942499233
+      Artifact_SpriteSheet_57: 1157098081
+      Artifact_SpriteSheet_58: 331324768
+      Artifact_SpriteSheet_59: 1328456516
+      Artifact_SpriteSheet_6: 1675999985
+      Artifact_SpriteSheet_7: 1212101828
+      Artifact_SpriteSheet_8: -1214804125
+      Artifact_SpriteSheet_9: 224934870
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

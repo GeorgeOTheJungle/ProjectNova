@@ -13,8 +13,8 @@ public class PlayerStatsManager : MonoBehaviour
     [SerializeField] private Stats playerStats;
     [Space(10)]
     [SerializeField] private StatsLevel statsLevel;
-    [SerializeField] private Skill shootSkill;
-    [SerializeField] private Skill punchSkill;
+    [SerializeField] private PlayerSkill shootSkill;
+    [SerializeField] private PlayerSkill punchSkill;
 
     private int initialCost = 150;
 

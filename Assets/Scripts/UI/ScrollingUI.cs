@@ -8,7 +8,7 @@ using static UnityEngine.EventSystems.EventTrigger;
 public class ScrollingUI : MonoBehaviour
 {
     [Header("Skills"), Space(10)]
-    [SerializeField] private List<Skill> avaliablePlayerSkills = new List<Skill>();
+    [SerializeField] private List<PlayerSkill> avaliablePlayerSkills = new List<PlayerSkill>();
     [Header("References: "), Space(10)]
     [SerializeField] private Image middleSkillDisplay;
     [SerializeField] private Image leftSkillDisplay;
@@ -109,7 +109,7 @@ public class ScrollingUI : MonoBehaviour
     {
         if (canSelectSkill == false) return;
 
-        if (avaliablePlayerSkills[currentSkill].isSelfTarget)
+        if (avaliablePlayerSkills[currentSkill].targetingStyle == Enums.TargetingStyle.self)
         {
             entity.PerformAction(avaliablePlayerSkills[currentSkill]);
             CombatNavigation.Instance.HideAllWindows();

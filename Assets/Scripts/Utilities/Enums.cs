@@ -13,6 +13,7 @@ namespace Enums
 
     public enum BuffType { offense, defense }
 
+    public enum EntityType { player,enemy,boss}
     public enum EntityState { inactive, idle,thinking,acting, dead }
 
     public enum TargetingStyle { self, single, multiple}

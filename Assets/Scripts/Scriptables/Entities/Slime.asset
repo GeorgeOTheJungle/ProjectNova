@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Slime
   m_EditorClassIdentifier: 
   entityName: Slime
+  entityType: 1
   entityID: 1
   stats:
     health: 25

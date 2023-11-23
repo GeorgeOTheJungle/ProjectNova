@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86f776940a0ace54ab2dd37b9fc2828f, type: 3}
   m_Name: Cactus
   m_EditorClassIdentifier: 
-  entityName: Slime
-  entityID: 1
+  entityName: Cactus
+  entityType: 1
+  entityID: 2
   stats:
     health: 25
     energy: 0
@@ -30,5 +31,5 @@ MonoBehaviour:
     xpYield: 50
   avaliableSkills:
   - {fileID: 11400000, guid: d6fb72b23832b474e9c2bee7e41f0514, type: 2}
-  - {fileID: 11400000, guid: 216b0600a301a384ea1414cdce59adc9, type: 2}
+  - {fileID: 0}
   entityAnimator: {fileID: 9100000, guid: 9f09bd8d419c2b64a8ba41a314286329, type: 2}

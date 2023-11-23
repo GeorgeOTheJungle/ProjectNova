@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Dummy
   m_EditorClassIdentifier: 
   entityName: Dummy Test
+  entityType: 1
   entityID: 0
   stats:
     health: 25

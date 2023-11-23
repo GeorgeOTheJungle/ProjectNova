@@ -9,6 +9,7 @@ public class EnemyEntity : Entity
 {
     [Header("Enemy Specifics: "), Space(10)]
     [SerializeField] private int targetID;
+    [SerializeField] private List<SkillEnemy> skills;
     [Header("References: "), Space(10)]
     [SerializeField] private GameObject uiVisuals;
     [SerializeField] private GameObject statsGO;
@@ -18,26 +19,32 @@ public class EnemyEntity : Entity
     [SerializeField] private Animator fakeHealthBar;
 
     [Space(10)]
-    [SerializeField] private EnemySkill skillObject;
     private int skillLenght;
+    private EnemySkill currentEnemySkill;
+    private EnemySkillManager enemySkillManager;
+
+    private SkillEnemy currentSkill;
 
     public override void OnAwake()
     {
-
+        enemySkillManager = GetComponentInChildren<EnemySkillManager>();
     }
     public override void OnStart()
     {
         StartCoroutine(TurnCommandsVisuals(false, 0.0f));
     }
     public override void AttackEntity()
-    {
-        CombatManager.Instance.GetPlayerEntity().OnDamageTaken(CalculateDamageDealt(), currentSkill.damageType);
+    {      
+        float damageMultiplier = currentSkill.damageType == DamageType.physical ? entityStats.physicalDamage : entityStats.magicDamage;
+
+        CombatManager.Instance.GetPlayerEntity().OnDamageTaken(CalculateDamageDealt(damageMultiplier,currentSkill.baseDamage), currentSkill.damageType);
     }
 
     public override void OnCombatStart(GameState gameState)
     {
         if (entityData == null) return;
-        currentSkill = null;
+        //currentSkill = null;
+        currentEnemySkill = null;
         switch (gameState)
         {
             case GameState.combatPreparation:
@@ -50,6 +57,7 @@ public class EnemyEntity : Entity
                 skillLenght = skills.Count;
                 entityState = EntityState.idle;
                 UpdateEntityStatsUI();
+                currentEnemySkill = enemySkillManager.GetEnemySkill(entityData.entityID);
 
                 statsGO.SetActive(true);
                 fakeHealthBar.Play("IdleOut");
@@ -77,7 +85,7 @@ public class EnemyEntity : Entity
         entityState = EntityState.acting;
         PerformAction(currentSkill);
     }
-    public override void PerformAction(Skill skill)
+    public override void PerformAction(SkillEnemy skill)
     {
         // Do visuals
         PlayAnimation(currentSkill.animationKey);
@@ -88,11 +96,10 @@ public class EnemyEntity : Entity
     {
         if(id == -1)
         {
-            //int i = Random.Range(0, skillObjects.Length);
-            //skillObjects[i].DoAttack();
+            currentEnemySkill.DoRandomSkill();
             return;
         }
-        skillObject.DoAttack(id);
+        currentEnemySkill.DoSkill(id);
     }
     protected override void UpdateEntityStatsUI()
     {

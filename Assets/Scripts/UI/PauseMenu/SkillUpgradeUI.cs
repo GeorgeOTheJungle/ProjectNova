@@ -24,7 +24,7 @@ public class SkillUpgradeUI : MonoBehaviour
     [SerializeField] private GameObject skillUpgradeWindow;
     [Space(10)]
     [SerializeField] private List<SkillDisplay> skillDisplayList;
-    [SerializeField] private List<Skill> skillList;
+    [SerializeField] private List<PlayerSkill> skillList;
     [SerializeField] private List<LevelIndicatorUI> levelIndicatorUIs;
     [Space(10)]
     [Header("Skill description references: ")]
@@ -32,7 +32,7 @@ public class SkillUpgradeUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI skillDescriptionText;
     private int skillCount;
     private int currentSkill;
-    private Skill currentSkillSelected;
+    private PlayerSkill currentSkillSelected;
 
     private void Start()
     {
@@ -70,7 +70,7 @@ public class SkillUpgradeUI : MonoBehaviour
         returnButton.gameObject.SetActive(false);
     }
 
-    public void OnSkillSelected(Skill skillSelected,int id)
+    public void OnSkillSelected(PlayerSkill skillSelected,int id)
     {
         skillPreviewWindow.SetActive(false);
         skillUpgradeWindow.SetActive(true);

@@ -2051,6 +2051,14 @@ PrefabInstance:
       propertyPath: currentXP
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1757322291147258447, guid: b007e32ab93198f4c85e8cff7548dc59, type: 3}
+      propertyPath: punchSkill
+      value: 
+      objectReference: {fileID: 11400000, guid: 37d1562cfab19a448afa1fb04cbba236, type: 2}
+    - target: {fileID: 1757322291147258447, guid: b007e32ab93198f4c85e8cff7548dc59, type: 3}
+      propertyPath: shootSkill
+      value: 
+      objectReference: {fileID: 11400000, guid: 114fef578db66e148b83451a97fa837e, type: 2}
     - target: {fileID: 1757322292503427427, guid: b007e32ab93198f4c85e8cff7548dc59, type: 3}
       propertyPath: playerEntity
       value: 
@@ -2282,6 +2290,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 963194227}
+    - target: {fileID: 6736420293795384065, guid: 6b3d357cafc7e13458419c4b95b1944a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6736420293916658674, guid: 6b3d357cafc7e13458419c4b95b1944a, type: 3}
       propertyPath: m_Name
       value: Combat Room
@@ -2329,6 +2341,10 @@ PrefabInstance:
     - target: {fileID: 6736420293916658675, guid: 6b3d357cafc7e13458419c4b95b1944a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9099971548287748592, guid: 6b3d357cafc7e13458419c4b95b1944a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b3d357cafc7e13458419c4b95b1944a, type: 3}
