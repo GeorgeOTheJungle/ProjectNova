@@ -6,7 +6,7 @@ using UnityEngine;
 public class AnimationEventCall : EventCall
 {
     private PlayerEntity player;
-
+    [SerializeField] private VFXManager vFXManager;
     protected override void Awake()
     {
         base.Awake();
@@ -63,5 +63,9 @@ public class AnimationEventCall : EventCall
         CombatManager.Instance.OnPlayerDefeat();
     }
 
+    public void PlayVFXs(int id)
+    {
+        vFXManager.PlayVFX(id);
+    }
 
 }

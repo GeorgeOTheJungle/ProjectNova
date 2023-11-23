@@ -88,7 +88,7 @@ public class SkillUpgradeUI : MonoBehaviour
     public void NavigateSkills(int dir)
     {
         currentSkill += dir;
-        if (currentSkill < 0) currentSkill = skillList.Count;
+        if (currentSkill < 0) currentSkill = skillList.Count - 1;
         else if (currentSkill > skillList.Count - 1) currentSkill = 0;
 
         currentSkillSelected = skillList[currentSkill];
