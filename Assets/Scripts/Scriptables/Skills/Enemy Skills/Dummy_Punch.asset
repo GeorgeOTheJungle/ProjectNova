@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0428cb515da02243bd2d0cbff5c0a24, type: 3}
-  m_Name: DummySkill_1
+  m_Name: Dummy_Punch
   m_EditorClassIdentifier: 
-  baseDamage: 10
+  baseDamage: 0
   damageType: 0
-  animationKey: Atk_0
+  animationKey: Atk_1

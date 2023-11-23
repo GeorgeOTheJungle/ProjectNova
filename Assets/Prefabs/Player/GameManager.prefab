@@ -97,6 +97,13 @@ MonoBehaviour:
   allPlayerSkills:
   - {fileID: 11400000, guid: abb8801f194437b498012bc3ce95d43e, type: 2}
   - {fileID: 11400000, guid: a8ce04e49230ba34eb17227fe1463405, type: 2}
+  - {fileID: 11400000, guid: 6ad72f56bc5e978488eb413945181765, type: 2}
+  - {fileID: 11400000, guid: 61321eb094660454aa0e27248e657bff, type: 2}
+  - {fileID: 11400000, guid: f5abb0a1c1170734091414ffab4d12ba, type: 2}
+  - {fileID: 11400000, guid: e3be51dd9c8803d48bd6757f3d99da7d, type: 2}
+  - {fileID: 11400000, guid: 6cc6ef9c1bf311b4092f2dd16b47a02f, type: 2}
+  - {fileID: 11400000, guid: 6e226d7d6a0754b44a08cb580a0e2c0d, type: 2}
+  - {fileID: 11400000, guid: 61c8caf4bc2d4ab46a9f46a131dced52, type: 2}
 --- !u!114 &1757322291147258447
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a14a3cf33e87d444a04d8bf69d8289e, type: 3}
-  m_Name: TripleShotSkill
+  m_Name: Shoot and Reload Skill
   m_EditorClassIdentifier: 
-  baseDamage: 0
-  damageType: 0
-  animationKey: TripleShot
+  baseDamage: 15
+  damageType: 1
+  animationKey: ShootAndReload
   canBeUpgraded: 1
-  unlocked: 1
+  unlocked: 0
   level: 0
-  initialUnlockCost: 0
-  damageUpgradeAmount: 5
-  skillName: Triple shot
+  initialUnlockCost: 25
+  damageUpgradeAmount: 0
+  skillName: Shoot & Reload
   skillDescription: 
   smallIcon: {fileID: 0}
   largeIcon: {fileID: 0}
   targetingStyle: 1
   resourceType: 2
-  resourceAmount: 10
+  resourceAmount: 15

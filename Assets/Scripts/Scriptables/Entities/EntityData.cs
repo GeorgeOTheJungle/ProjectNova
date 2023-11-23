@@ -17,7 +17,7 @@ public class EntityData : ScriptableObject
     [HideInInspector] public EntityType entityType;
     [HideInInspector] public int entityID;
     [HideInInspector] public Stats stats;
-    [HideInInspector] public List<SkillEnemy> avaliableSkills;
+    [HideInInspector,SerializeField] public List<SkillEnemy> avaliableSkills;
 
     [HideInInspector] public RuntimeAnimatorController entityAnimator;
 
@@ -27,8 +27,8 @@ public class EntityData : ScriptableObject
 [CustomEditor(typeof(EntityData))]
 public class EntityDataEditor : Editor
 {
-    private SerializedProperty statsProperties;
-
+    private SerializedProperty avaliableSkills;
+    protected EntityData entity;
     const int LABEL_WIDTH = 145;
     const int FIELD_WIDTH = 100;
 
@@ -36,23 +36,26 @@ public class EntityDataEditor : Editor
 
     private void OnEnable()
     {
-        statsProperties = serializedObject.FindProperty("stats");
+        entity =  (EntityData)target;
+        EditorUtility.SetDirty(target);
+        avaliableSkills = serializedObject.FindProperty("avaliableSkills");
     }
 
     public override void OnInspectorGUI()
     {
         DrawDefaultInspector();
-        serializedObject.Update();
 
-        var entity = (EntityData)target;
+
+
 
         // DRAW ENTITY TYPE SELECTOR
         DrawEntityName(entity);
 
         DrawEntitySelect(entity);
 
-       // DrawEntityStats(entity);
-
+        // DrawEntityStats(entity);
+       // EditorGUILayout.PropertyField(avaliableSkills);
+        serializedObject.Update();
         serializedObject.ApplyModifiedProperties();
     }
 
@@ -170,6 +173,7 @@ public class EntityDataEditor : Editor
 
                 if (ShowSkillList)
                 {
+
                     EditorGUI.indentLevel++;
                     List<SkillEnemy> list = entity.avaliableSkills;
                     int size = Mathf.Max(0, EditorGUILayout.IntField("Size", list.Count));

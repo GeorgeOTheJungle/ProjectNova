@@ -42,7 +42,7 @@ public class PlayerSkillEditor : Editor
         {
             DrawUpgradeGUI(skill, WIDTH);
         }
-
+        serializedObject.ApplyModifiedProperties();
     }
 
     private void DrawUpgradeGUI(PlayerSkill skill, int WIDTH)
@@ -145,8 +145,6 @@ public class PlayerSkillEditor : Editor
             }
             EditorGUI.indentLevel--;
         }
-
-        serializedObject.ApplyModifiedProperties();
     }
 }
 
