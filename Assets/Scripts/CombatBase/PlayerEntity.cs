@@ -14,6 +14,8 @@ public class PlayerEntity : Entity
     [SerializeField] private float minimumPunchDistance = 0.1f;
     [SerializeField] private float punchMovementSpeed = 20.0f;
 
+    private PlayerSkill currentSkill;
+    private PlayerSkill preSelectedSkill;
 
     private const string PUNCH_END_ANIMATION = "PunchEnd";
     private CombatNavigation combatNavigation;
@@ -61,15 +63,13 @@ public class PlayerEntity : Entity
 
     }
 
-    public override void PerformAction(Skill skill)
+    public override void PerformAction(PlayerSkill skill)
     {
         currentSkill = skill;
 
         // Use resource
         UseResource();
         // Do visuals
-        //if (currentSkill.skillName == "Punch") StartCoroutine(PunchMovement(CombatManager.Instance.GetEntityTransform(targetEntity)));
-        //else
         PlayAnimation(currentSkill.animationKey);
 
         // Perform action
@@ -77,6 +77,7 @@ public class PlayerEntity : Entity
         else StartCoroutine(TurnCommandsVisuals(false, 0.0f));
     }
 
+    
     private IEnumerator PunchMovement(Transform target)
     {
         // Play travel animation here
@@ -102,7 +103,9 @@ public class PlayerEntity : Entity
     }
     public override void AttackEntity()
     {
-        int damage = CalculateDamageDealt();
+        float damageMultiplier = currentSkill.damageType == DamageType.physical ? entityStats.physicalDamage : entityStats.magicDamage;
+
+        int damage = CalculateDamageDealt(damageMultiplier,currentSkill.baseDamage);
         if(targetEntity == -1)
         {
             CombatManager.Instance.AttackAllEntities(damage, currentSkill.damageType);
@@ -134,7 +137,18 @@ public class PlayerEntity : Entity
     {
         StartCoroutine(PunchMovement(CombatManager.Instance.GetEntityTransform(targetEntity)));
     }
+    public virtual void PreSelectSkill(PlayerSkill skill)
+    {
+        preSelectedSkill = skill;
+    }
 
+    public override void OnHeal()
+    {
+        // base.OnHeal(baseDamage);
+        float baseHealing = currentSkill.baseDamage;
+        OnResourceGain(ResourceType.health, CalculateHealing(Mathf.CeilToInt(baseHealing)), RegenStyle.None);
+        base.OnHeal();
+    }
 
     #region Resource Methods
 

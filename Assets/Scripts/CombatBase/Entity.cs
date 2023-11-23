@@ -5,6 +5,7 @@ using Structs;
 using Enums;
 using UnityEngine.UI;
 using System;
+using JetBrains.Annotations;
 
 public abstract class Entity : MonoBehaviour
 {
@@ -29,14 +30,14 @@ public abstract class Entity : MonoBehaviour
     protected const string IDLE_OUT = "IdleOut";
     protected const string DEATH_ANIMATION = "Death";
 
-    protected List<Skill> skills;
+    //protected List<Skill> skills;
 
-    protected Skill currentSkill;
+    //protected Skill currentSkill;
     
     [SerializeField] protected Animator animator;
 
     protected int targetEntity;
-    protected Skill preSelectedSkill;
+    //protected Skill preSelectedSkill;
 
 
     #region Initialization
@@ -113,7 +114,7 @@ public abstract class Entity : MonoBehaviour
 
     public virtual void OnHeal()
     {
-        OnResourceGain(ResourceType.health, CalculateHealing(Mathf.CeilToInt(currentSkill.baseDamage)), RegenStyle.None);
+       // OnResourceGain(ResourceType.health, CalculateHealing(Mathf.CeilToInt(baseDamage)), RegenStyle.None);
         UpdateEntityStatsUI();
         // TODO ADD HEALING VISUALS HERE.
     }
@@ -134,12 +135,15 @@ public abstract class Entity : MonoBehaviour
 
     }
     
-    public virtual void PreSelectSkill(Skill skill)
+    public virtual void PerformAction(SkillEnemy skill)
     {
-        preSelectedSkill = skill;
+
     }
 
-    public abstract void PerformAction(Skill skill);
+    public virtual void PerformAction(PlayerSkill skill)
+    {
+
+    }
 
     public virtual void OnRoundFinish()
     {
@@ -188,12 +192,12 @@ public abstract class Entity : MonoBehaviour
 
 
     #region Entity Calculations
-    public int CalculateDamageDealt()
+    public int CalculateDamageDealt(float _damageMultiplier,float _skillDamage)
     {
         // Calculate the initial damage
-        float baseDamageMultiplier = currentSkill.damageType == DamageType.physical ? entityStats.physicalDamage : entityStats.magicDamage ;
+        float baseDamageMultiplier = _damageMultiplier;
         baseDamageMultiplier /= 100;
-        float baseSkillDamage = currentSkill.baseDamage;
+        float baseSkillDamage = _skillDamage;
         float baseDamage = baseSkillDamage * baseDamageMultiplier;
 
         // Check if its crit or not
@@ -309,11 +313,11 @@ public abstract class Entity : MonoBehaviour
     {
         entityData = data;
         entityState = EntityState.idle;
-        skills = entityData.avaliableSkills;
+        //skills = entityData.avaliableSkills;
         animator.runtimeAnimatorController = data.entityAnimator;
     }
 
-    public void Next()
+    public void OnTurnEnd()
     {
         entityState = EntityState.idle;
         CombatManager.Instance.OnTurnFinished();

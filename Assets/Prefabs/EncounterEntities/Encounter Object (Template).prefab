@@ -120,7 +120,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1023789410, guid: 76adaba84f032bd4f96456087ad39cd0, type: 3}
+  m_Sprite: {fileID: -875169368, guid: b4dc3adbdcc5a8645a5d64c1cc53f3bb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -215,8 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   combatID: 0
-  arenaId: 1
-  encounter: []
+  encounterData: {fileID: 0}
 --- !u!65 &2799215365372764715
 BoxCollider:
   m_ObjectHideFlags: 0

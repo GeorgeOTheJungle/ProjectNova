@@ -10,11 +10,17 @@ public class StatUpgrade : MonoBehaviour
     [SerializeField] private PlayerStat stat;
     [SerializeField] private LevelIndicatorUI[] levelIndicatorUIs;
 
-    [SerializeField] private GameObject upgradeButton;
+    [SerializeField] private Button upgradeButton;
 
+    private CharacterUpgradeUI characterUpgradeUI;
     private int level;
     private bool maxed = false;
-    
+
+    private void Awake()
+    {
+        characterUpgradeUI = GetComponentInParent<CharacterUpgradeUI>();
+    }
+
     private void Start()
     {
         level = PlayerStatsManager.Instance.GetCurrentPlayerStat(stat);
@@ -22,10 +28,22 @@ public class StatUpgrade : MonoBehaviour
         UpdateUI();
     }
 
+    private void OnEnable()
+    {
+        Invoke(nameof(UpdateUI),0.1f);
+    }
+
     private void UpdateUI()
     {
-        maxed = level >= 6;
-        upgradeButton.SetActive(!maxed);
+        if (PlayerStatsManager.Instance.HaveEnoughExp(stat))
+        {
+            maxed = level >= 6;
+            upgradeButton.interactable = !maxed;
+        } else
+        {
+            upgradeButton.interactable = false;
+        }
+
 
         foreach (var indicator in levelIndicatorUIs)
         {
@@ -46,5 +64,6 @@ public class StatUpgrade : MonoBehaviour
         level = PlayerStatsManager.Instance.GetCurrentPlayerStat(stat);
 
         UpdateUI();
+        characterUpgradeUI.UpdateXPUI();
     }
 }

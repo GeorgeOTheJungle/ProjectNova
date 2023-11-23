@@ -9,11 +9,12 @@ using UnityEngine.UI;
 public class CharacterUpgradeUI : MonoBehaviour
 {
     [Header("Main Windows")]
-    [SerializeField] private TextMeshProUGUI characterNameText;
+  //  [SerializeField] private TextMeshProUGUI characterNameText;
     [SerializeField] private Button firstSelectedButton;
     [SerializeField] private Button[] upgradeButtons;
    // private void currentButtonPressed;
     private bool inCharacterWindow = true;
+    [SerializeField] private TextMeshProUGUI xpText;
 
     [SerializeField] private GameObject defaultSelection;
     private EventSystem eventSystem;
@@ -47,12 +48,12 @@ public class CharacterUpgradeUI : MonoBehaviour
     public void SwapWindows()
     {
         inCharacterWindow = !inCharacterWindow;
-        characterNameText.SetText(inCharacterWindow ? "Catherine" : "Nova Gun");
+       // characterNameText.SetText(inCharacterWindow ? "Catherine" : "Nova Gun");
     }
 
-    public void OnUpgradeFinished()
+    public void UpdateXPUI()
     {
-
+        xpText.SetText($"XP: {SkillManager.Instance.GetCurrentXP()}");
     }
 
     /* 0 - Health;

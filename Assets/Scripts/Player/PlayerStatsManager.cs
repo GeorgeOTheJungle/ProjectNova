@@ -13,8 +13,11 @@ public class PlayerStatsManager : MonoBehaviour
     [SerializeField] private Stats playerStats;
     [Space(10)]
     [SerializeField] private StatsLevel statsLevel;
-    [SerializeField] private Skill shootSkill;
-    [SerializeField] private Skill punchSkill;
+    [SerializeField] private PlayerSkill shootSkill;
+    [SerializeField] private PlayerSkill punchSkill;
+
+    private int initialCost = 150;
+
     private void Awake()
     {
         Instance = this;
@@ -42,41 +45,87 @@ public class PlayerStatsManager : MonoBehaviour
         playerStats.critRate = playerData.stats.critRate + (5 * statsLevel.critRateLevel);
     }
 
+    public bool HaveEnoughExp(PlayerStat stat)
+    {
+        int cost = 0;
+        switch (stat)
+        {
+            case PlayerStat.health:
+                cost = statsLevel.healthLevel * initialCost;
+                break;
+            case PlayerStat.energy:
+                cost = statsLevel.energyLevel * initialCost;
+                break;
+            case PlayerStat.ammo:
+                cost = statsLevel.ammoLevel * initialCost;
+                break;
+            case PlayerStat.physicalDmg:
+                cost = statsLevel.physicalDamageLevel * initialCost;
+                break;
+            case PlayerStat.physicalArmor:
+                cost = statsLevel.physicalArmorLevel * initialCost;
+                break;
+            case PlayerStat.magicalDmg:
+                cost = statsLevel.magicDamageLevel * initialCost;
+                break;
+            case PlayerStat.magicalArmor:
+                cost = statsLevel.magicArmorLevel * initialCost;
+                break;
+            case PlayerStat.critRate:
+                cost = statsLevel.critRateLevel * initialCost;
+                break;
+        }
+        return SkillManager.Instance.GetCurXP() > cost;
+    }
+
     public void UpgradePlayerStat(PlayerStat stat)
     {
+        int cost = 0;
         switch (stat)
         {
             case PlayerStat.health:
                 statsLevel.healthLevel++;
+                cost = statsLevel.healthLevel * initialCost;
                 break;
             case PlayerStat.energy:
                 statsLevel.energyLevel++;
+                cost = statsLevel.energyLevel * initialCost;
                 break;
             case PlayerStat.ammo:
                 statsLevel.ammoLevel++;
+                cost = statsLevel.ammoLevel * initialCost;
                 break;
             case PlayerStat.physicalDmg:
                 statsLevel.physicalDamageLevel++;
+                cost = statsLevel.physicalDamageLevel * initialCost;
                 break;
             case PlayerStat.physicalArmor:
                 statsLevel.physicalArmorLevel++;
+                cost = statsLevel.physicalArmorLevel * initialCost;
                 break;
             case PlayerStat.magicalDmg:
                 statsLevel.magicDamageLevel++;
+                cost = statsLevel.magicDamageLevel * initialCost;
                 break;
             case PlayerStat.magicalArmor:
                 statsLevel.magicArmorLevel++;
+                cost = statsLevel.magicArmorLevel * initialCost;
                 break;
             case PlayerStat.critRate:
                 statsLevel.critRateLevel++;
+                cost = statsLevel.critRateLevel * initialCost;
                 break;
             case PlayerStat.shoot:
                 shootSkill.UpdgradeSkill();
+                cost = shootSkill.level * initialCost;
                 break;
             case PlayerStat.punch:
                 punchSkill.UpdgradeSkill();
+                cost = punchSkill.level * initialCost;
                 break;
         }
+
+        SkillManager.Instance.GetXP(-cost);
         UpdatePlayerStats();
     }
 
