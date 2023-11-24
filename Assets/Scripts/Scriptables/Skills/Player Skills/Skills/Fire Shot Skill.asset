@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseDamage: 15
   damageType: 1
+  statusEffectType: 1
   animationKey: Infused_Fire
   canBeUpgraded: 1
-  unlocked: 0
-  level: 0
+  unlocked: 1
+  level: 1
   initialUnlockCost: 0
   damageUpgradeAmount: 0
   skillName: Fire Shot
