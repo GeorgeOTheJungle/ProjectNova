@@ -16,7 +16,6 @@ public class EnemyEntity : Entity
     [SerializeField] private GameObject healthBarGO;
     [SerializeField] private Image healthBar;
     [SerializeField] private Image followBar;
-    [SerializeField] private Animator fakeHealthBar;
 
     [Space(10)]
     private int skillLenght;
@@ -37,7 +36,12 @@ public class EnemyEntity : Entity
     {      
         float damageMultiplier = currentSkill.damageType == DamageType.physical ? entityStats.physicalDamage : entityStats.magicDamage;
 
-        CombatManager.Instance.GetPlayerEntity().OnDamageTaken(CalculateDamageDealt(damageMultiplier,currentSkill.baseDamage), currentSkill.damageType);
+        int damage = CalculateDamageDealt(damageMultiplier, currentSkill.baseDamage);
+        bool isCrit = UnityEngine.Random.Range(0.0f, 1.0f) < entityStats.critRate;
+        damage *= Mathf.CeilToInt(isCrit ? 2.5f : 1.0f);
+
+        CombatManager.Instance.GetPlayerEntity().OnDamageTaken(damage, 
+            currentSkill.damageType, currentSkill.statusEffectType, isCrit);
     }
 
     public override void OnCombatStart(GameState gameState)
@@ -45,6 +49,7 @@ public class EnemyEntity : Entity
         if (entityData == null) return;
         //currentSkill = null;
         currentEnemySkill = null;
+        onFireEffect.RemoveEffect();
         switch (gameState)
         {
             case GameState.combatPreparation:
@@ -58,9 +63,9 @@ public class EnemyEntity : Entity
                 entityState = EntityState.idle;
                 UpdateEntityStatsUI();
                 currentEnemySkill = enemySkillManager.GetEnemySkill(entityData.entityID);
-
+                //onFireEffect.OnEffectStart();
                 statsGO.SetActive(true);
-                fakeHealthBar.Play("IdleOut");
+
                 break;
         }
 
@@ -104,11 +109,11 @@ public class EnemyEntity : Entity
     protected override void UpdateEntityStatsUI()
     {
         float fill = (float)entityStats.health / (float)entityData.stats.health;
+        Debug.Log(fill);
         healthBar.fillAmount = fill;
         if(entityStats.health <= 0)
         {
             statsGO.SetActive(false);
-            fakeHealthBar.SetTrigger("endTrigger");
         }
     }
     public override void TargetEntity(int entitySlot)

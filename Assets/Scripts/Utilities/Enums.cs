@@ -11,6 +11,7 @@ namespace Enums
 
     public enum DamageType { physical,magical}
 
+    public enum StatusEffectType { none, fire, ice, weaken}
     public enum BuffType { offense, defense }
 
     public enum EntityType { player,enemy,boss}

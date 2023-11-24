@@ -29,6 +29,7 @@ public class PlayerEntity : Entity
     public override void OnCombatStart(GameState gameState)
     {
         currentSkill = null;
+        onFireEffect.RemoveEffect();
         switch (gameState)
         {
             case GameState.combatPreparation:
@@ -37,6 +38,7 @@ public class PlayerEntity : Entity
                 PlayAnimation(IDLE_OUT);
                 break;
             case GameState.combatReady:
+              
                 StartCoroutine(DelayEntrance());
                 StartCoroutine(TurnCommandsVisuals(true, 1.0f));
                 break;
@@ -106,12 +108,16 @@ public class PlayerEntity : Entity
         float damageMultiplier = currentSkill.damageType == DamageType.physical ? entityStats.physicalDamage : entityStats.magicDamage;
 
         int damage = CalculateDamageDealt(damageMultiplier,currentSkill.baseDamage);
-        if(targetEntity == -1)
+
+        // Check if its crit or not
+        bool isCrit = UnityEngine.Random.Range(0.0f, 1.0f) < entityStats.critRate;
+        damage *= Mathf.CeilToInt(isCrit ? 2.5f : 1.0f);
+        if (targetEntity == -1)
         {
-            CombatManager.Instance.AttackAllEntities(damage, currentSkill.damageType);
+            CombatManager.Instance.AttackAllEntities(damage, currentSkill.damageType, isCrit);
         } else
         {
-            CombatManager.Instance.entityList[targetEntity].OnDamageTaken(damage, currentSkill.damageType);
+            CombatManager.Instance.entityList[targetEntity].OnDamageTaken(damage, currentSkill.damageType,currentSkill.statusEffectType, isCrit);
         }
 
     }
@@ -149,6 +155,8 @@ public class PlayerEntity : Entity
         OnResourceGain(ResourceType.health, CalculateHealing(Mathf.CeilToInt(baseHealing)), RegenStyle.None);
         base.OnHeal();
     }
+
+
 
     #region Resource Methods
 
