@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
+    public static CharacterMovement Instance;
     [SerializeField] private float movementSpeed = 5.0f;
     [SerializeField] private Transform spawnPoint;
     private Vector3 input;
@@ -17,14 +18,17 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private Transform visual;
     [SerializeField] private float hitDetection = 1.0f;
     [SerializeField] private LayerMask layerMask;
-    
 
+    Vector3 forwardRelative;
+    Vector3 rightRelative;
+    Vector3 movementDirection;
     private PlayerAnimatorController m_animatorController;
 
     private float lastMovement = 0;
     private bool isFacingRight = true;
     private void Awake()
     {
+        Instance = this;
         m_characterController = GetComponent<CharacterController>();
         m_animatorController = GetComponent<PlayerAnimatorController>();
         cam = Camera.main.transform;
@@ -46,9 +50,7 @@ public class CharacterMovement : MonoBehaviour
     {
         InputComponent.Instance.movementTrigger -= HandleMovementInput;
     }
-    Vector3 forwardRelative;
-    Vector3 rightRelative;
-    Vector3 movementDirection;
+
     private void HandleMovementInput(Vector3 value)
     {
         // Check if we are in exploration
@@ -93,9 +95,9 @@ public class CharacterMovement : MonoBehaviour
         m_characterController.Move(movementDirection * movementSpeed * Time.deltaTime);
     }
 
-    public void SetRespawn(Transform spawn)
+    private void SetRespawn(Transform spawn)
     {
-
+        spawnPoint = spawn;
     }
 
     public void HandleRespawn()
@@ -104,6 +106,18 @@ public class CharacterMovement : MonoBehaviour
         if(spawnPoint == null) return;
         m_characterController.Move(spawnPoint.position);
        // transform.position = spawnPoint.position;
+    }
+
+    public void MovePlayerToSpawn(Transform spawn)
+    {
+        SetRespawn(spawn);
+        if (spawnPoint == null) return;
+        m_characterController.enabled = false;
+        Vector3 newPosition = spawnPoint.position;
+        newPosition.y = transform.position.y;
+        //m_characterController.Move(spawnPoint.position);
+        transform.position = newPosition;
+        m_characterController.enabled = true;
     }
 
     private void FixedUpdate()

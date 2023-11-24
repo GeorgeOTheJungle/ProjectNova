@@ -1,7 +1,7 @@
 namespace Enums
 {
 
-    public enum GameState { exploration, combatPreparation,combatReady,combatEnded, paused }
+    public enum GameState { exploration,explorationTransition, combatPreparation,combatReady,combatEnded, paused }
 
     public enum CombatResult {none, victory, defeat,escape}
 

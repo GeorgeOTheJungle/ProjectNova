@@ -7,6 +7,8 @@ public class TransitionManager : MonoBehaviour
 {
     public static TransitionManager Instance;
 
+    [SerializeField] private Transition fadeToBlack;
+
     [SerializeField] private GameObject transitionScreen; // TODO MAKE A COOL ANIMATION
     [SerializeField] private CharacterMovement characterMovement;
     private void Awake()
@@ -47,11 +49,15 @@ public class TransitionManager : MonoBehaviour
         StartCoroutine(TransitionToExploration(result == CombatResult.defeat));
     }
 
-    //private void HandleDefeatCombatTransition(CombatResult result,int id)
-    //{
-    //    if (result != CombatResult.defeat) return;
-    //    StartCoroutine(EndingCombatTransitionAnimation(2.5f));
-    //}
+    public void DoTransition(string transition)
+    {
+        switch (transition)
+        {
+            case Constants.FADE_TO_BLACK:
+                fadeToBlack.StartTransition();
+                break;
+        }
+    }
 
     private IEnumerator TransitionToCombat()
     {
@@ -71,24 +77,5 @@ public class TransitionManager : MonoBehaviour
         GameManager.Instance.ChangeGameState(Enums.GameState.exploration);
         if(playerDefeat) characterMovement.HandleRespawn();
     }
-
-    //private IEnumerator CombatTransitionAnimation()
-    //{
-    //    transitionScreen.SetActive(true);
-    //    yield return new WaitForSeconds(2.0f);
-    //    transitionScreen.SetActive(false);
-    //    GameManager.Instance.ChangeGameState(Enums.GameState.combatReady);
-    //}
-
-    //private IEnumerator EndingCombatTransitionAnimation(float delay)
-    //{
-    //    yield return new WaitForSeconds(delay);
-    //    transitionScreen.SetActive(true);
-    //    yield return new WaitForSeconds(2.0f);
-    //    transitionScreen.SetActive(false);
-    //    GameManager.Instance.ChangeGameState(Enums.GameState.exploration);
-    //    characterMovement.HandleRespawn();
-    //}
-
-    
+  
 }
