@@ -79,6 +79,7 @@ public class CameraManager : MonoBehaviour
 
     public void HandleCameraChange(GameState gameState)
     {
+        if (gameState == GameState.paused || gameState == GameState.messagePrompt) return;
         explorationVCamera.gameObject.SetActive(false);
         combatVCamera.gameObject.SetActive(false);
         switch (gameState)

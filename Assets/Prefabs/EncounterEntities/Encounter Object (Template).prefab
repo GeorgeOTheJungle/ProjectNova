@@ -216,6 +216,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   combatID: 0
   encounterData: {fileID: 0}
+  chibiPreview: {fileID: 0}
+  chibiAnimator: {fileID: 0}
+  visualAnimator: {fileID: 6562533078737587870}
+  visualRenderer: {fileID: 1932922535222845706}
 --- !u!65 &2799215365372764715
 BoxCollider:
   m_ObjectHideFlags: 0

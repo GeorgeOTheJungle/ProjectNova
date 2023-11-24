@@ -29,6 +29,7 @@ public class ExplorationUINavigation : MonoBehaviour
     }
     private void HandlePauseMenu()
     {
+        if (GameManager.Instance.CurrentGameState() == Enums.GameState.messagePrompt) return;
         if (GameManager.Instance.CurrentGameState() != Enums.GameState.exploration &&
             GameManager.Instance.CurrentGameState() != Enums.GameState.paused) return;
 

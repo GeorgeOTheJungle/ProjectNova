@@ -15,7 +15,7 @@ public class PlayerStatsManager : MonoBehaviour
     [SerializeField] private StatsLevel statsLevel;
     [SerializeField] private PlayerSkill shootSkill;
     [SerializeField] private PlayerSkill punchSkill;
-
+    [SerializeField] private int totalKeys;
     private int initialCost = 150;
 
     private void Awake()
@@ -166,5 +166,11 @@ public class PlayerStatsManager : MonoBehaviour
         return 0;
     }
 
+    public void GetKey() => totalKeys++;
+    public int GetCurrentKeys() => totalKeys;
 
+    public void UseKey()
+    {
+        totalKeys--;
+    }
 }

@@ -11,6 +11,13 @@ public class EncounterHandler : MonoBehaviour, IInteractable
     public int combatID = 0;
     [SerializeField] private EncounterData encounterData;
 
+    [SerializeField] private Sprite chibiPreview;
+    [SerializeField] private RuntimeAnimatorController chibiAnimator;
+
+    [SerializeField] private Animator visualAnimator;
+    [SerializeField] private SpriteRenderer visualRenderer;
+
+
     private IEnumerator Start()
     {
         combatID = Guid.NewGuid().GetHashCode();
@@ -28,6 +35,15 @@ public class EncounterHandler : MonoBehaviour, IInteractable
         if(CombatManager.Instance) CombatManager.Instance.onCombatFinish -= HandleCombatResults;
     }
 
+    [ContextMenu("Update Visuals")]
+    public void UpdateVisuals()
+    {
+        if (chibiAnimator == null) return;
+        visualAnimator.runtimeAnimatorController = chibiAnimator;
+
+        if (!chibiPreview) return;
+        visualRenderer.sprite = chibiPreview;
+    }
 
     public void OnInteraction()
     {
