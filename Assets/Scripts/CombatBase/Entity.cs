@@ -4,8 +4,7 @@ using UnityEngine;
 using Structs;
 using Enums;
 using UnityEngine.UI;
-using System;
-using JetBrains.Annotations;
+
 
 public abstract class Entity : MonoBehaviour
 {
@@ -20,25 +19,24 @@ public abstract class Entity : MonoBehaviour
 
     private Vector3 originalPosition;
     [Header("Particles Visuals: "), Space(10)]
+    [SerializeField] protected GameObject damageNumbers;
+    [SerializeField] protected Transform damageNumbersSpawn;
     [SerializeField] protected ParticleSystem buffParticles;
+
+    [SerializeField] protected StatusEffect onFireEffect;
+    [SerializeField] protected StatusEffect onIceEffect;
+
     private string currentAnimation;
 
     protected const string ENTRANCE_ANIMATION = "Entrance";
     protected const string HIT_ANIMATION = "Hit";
     protected const string GUARD_HIT_ANIMATION = "GuardHit";
-    //protected const string END_GUARD_ANIMATION = "endGuard"; // <-- Not global
     protected const string IDLE_OUT = "IdleOut";
     protected const string DEATH_ANIMATION = "Death";
-
-    //protected List<Skill> skills;
-
-    //protected Skill currentSkill;
-    
+ 
     [SerializeField] protected Animator animator;
 
     protected int targetEntity;
-    //protected Skill preSelectedSkill;
-
 
     #region Initialization
 
@@ -86,8 +84,11 @@ public abstract class Entity : MonoBehaviour
 
     protected abstract void UpdateEntityUI(bool active);
     
-    public virtual void OnDamageTaken(int damage,DamageType damageType)
+    public virtual void OnDamageTaken(int damage,DamageType damageType,StatusEffectType statusEffectType,bool wasCrit)
     {
+        if (isInvencible) return;
+        if(entityState == EntityState.dead || entityState == EntityState.inactive) return;
+
         if (entityStats.defenseBonus == 0) PlayAnimation(HIT_ANIMATION);
         else
         {
@@ -95,11 +96,33 @@ public abstract class Entity : MonoBehaviour
             //PlayAnimation(GUARD_HIT_ANIMATION);
         }
 
-        if (isInvencible) return;
-        if(entityState == EntityState.dead || entityState == EntityState.inactive) return;
-        entityStats.health -= CalculateDamageReceived(damage,damageType);
+        int dmg = CalculateDamageReceived(damage, damageType, wasCrit);
+        if(statusEffectType == StatusEffectType.fire && onIceEffect.EffectActive() ||
+            statusEffectType == StatusEffectType.ice && onFireEffect.EffectActive())
+        {
+            Debug.Log("Combo!");
+            dmg += Mathf.CeilToInt(dmg * 0.5f);
+        }
+        entityStats.health -= dmg;
 
-    
+        if(statusEffectType != StatusEffectType.none)
+        {
+            float r = Random.Range(0.0f, 1.0f);
+            if(r < Constants.FIRE_EFFECT_CHANCE)
+            {
+                switch(statusEffectType)
+                {
+                    case StatusEffectType.fire:
+                        onFireEffect.OnEffectStart(this);
+                        break;
+                    case StatusEffectType.ice:
+                        onIceEffect.OnEffectStart(this);
+                        break;
+                    case StatusEffectType.weaken:
+                        break;
+                }
+            }
+        }
 
         if(entityStats.health <= 0)
         {
@@ -107,8 +130,9 @@ public abstract class Entity : MonoBehaviour
             PlayAnimation(DEATH_ANIMATION);
             CombatManager.Instance.OnEnemyDefeated();
             entityState = EntityState.dead;
+            onFireEffect.RemoveEffect();
+            onIceEffect.RemoveEffect();
         }
-
         UpdateEntityStatsUI();
     }
 
@@ -147,7 +171,7 @@ public abstract class Entity : MonoBehaviour
 
     public virtual void OnRoundFinish()
     {
-
+        onFireEffect.ApplyEffect();
     }
 
     public abstract void TargetEntity(int entitySlot);
@@ -200,10 +224,6 @@ public abstract class Entity : MonoBehaviour
         float baseSkillDamage = _skillDamage;
         float baseDamage = baseSkillDamage * baseDamageMultiplier;
 
-        // Check if its crit or not
-        bool isCrit = UnityEngine.Random.Range(0.0f, 1.0f) < entityStats.critRate;
-        baseDamage *= isCrit?2.5f:1.0f;
-
         // Check if there is a damage buff and apply it
         float bonusDamage = baseSkillDamage * entityStats.buffBonus;
         baseDamage += bonusDamage;
@@ -215,7 +235,7 @@ public abstract class Entity : MonoBehaviour
         return totalDamage;
     }
 
-    public int CalculateDamageReceived(int damageReceived,DamageType damageReceivedType)
+    public int CalculateDamageReceived(int damageReceived,DamageType damageReceivedType,bool wasCrit)
     {
         float totalDamage = damageReceived;
         float defenseRate;
@@ -229,7 +249,9 @@ public abstract class Entity : MonoBehaviour
         totalDamage = totalDamage - (totalDamage * defenseRate);
         //Debug.Log($"Damage result: Defense Rate: {defenseRate}, Bonus Defense Rate: {bonusDefenseRate}, Total Damage: {totalDamage}");
         totalDamage = Mathf.Abs(totalDamage);
-       
+
+        DamageNumbers dmgNumbers = Instantiate(damageNumbers, damageNumbersSpawn.position, Quaternion.identity).GetComponent<DamageNumbers>();
+        dmgNumbers.SetDamage(Mathf.CeilToInt(totalDamage), wasCrit, damageReceivedType == DamageType.magical);
         return Mathf.CeilToInt(totalDamage);
     }
 
@@ -247,6 +269,9 @@ public abstract class Entity : MonoBehaviour
         PlayAnimation(IDLE_OUT);
         CombatUICleanUp();
 
+        onFireEffect.RemoveEffect();
+        onIceEffect.RemoveEffect();
+        //onWeakenEffect.RemoveEffect();
         if (entityData == null) return;
         if (entityData.entityID == -1) return;
         entityData = null;
@@ -328,6 +353,7 @@ public abstract class Entity : MonoBehaviour
         return entityState == EntityState.dead;
     }
 
+    public bool IsAfflictedByFire() => onFireEffect.EffectActive();
 
     #endregion
 

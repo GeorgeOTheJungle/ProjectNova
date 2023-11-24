@@ -238,11 +238,11 @@ public class CombatManager : MonoBehaviour
         targetAllAnimator.SetBool("isActive", false);
     }
 
-    public void AttackAllEntities(int damage, DamageType damageType)
+    public void AttackAllEntities(int damage, DamageType damageType,bool crit)
     {
         foreach(var entity in entityList)
         {
-            entity.OnDamageTaken(damage,damageType);
+            entity.OnDamageTaken(damage,damageType,StatusEffectType.none,crit);
         }
     }
 
@@ -262,10 +262,38 @@ public class CombatManager : MonoBehaviour
     private IEnumerator OnRoundFinished()
     {
         // Tell any effect to do its effect.
-        Debug.Log("Round finished! Applying effects");
-        yield return new WaitForSeconds(0.5f);
+
+        bool entityAfflicted = EntityAfflictCheck();
+
+        if (entityAfflicted)
+        {
+            yield return new WaitForSeconds(0.75f);
+
+            foreach (var entity in combatOrder)
+            {
+                entity.OnRoundFinish();
+                yield return new WaitForSeconds(0.5f);
+            }
+        }
+
+        yield return new WaitForSeconds(1.0f);
         combatTurn = 0;
         combatOrder[combatTurn].OnEntityTurn();
+    }
+
+    private bool EntityAfflictCheck()
+    {
+        bool entityAfflicted = false;
+        foreach (var entity in combatOrder)
+        {
+            if (entity.IsAfflictedByFire())
+            {
+                entityAfflicted = true;
+                break;
+            }
+        }
+
+        return entityAfflicted;
     }
 
     #endregion

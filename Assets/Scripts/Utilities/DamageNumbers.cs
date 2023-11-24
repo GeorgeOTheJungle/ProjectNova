@@ -33,5 +33,15 @@ public class DamageNumbers : MonoBehaviour
         }
 
         icon.sprite = icons[id];
+        Invoke(nameof(SelfDestroy), 1.25f);
+
+        Vector3 position = transform.position;
+        position.y += 1.0f;
+        LeanTween.move(gameObject, position, 0.5f);
+    }
+
+    private void SelfDestroy()
+    {
+        Destroy(gameObject);
     }
 }

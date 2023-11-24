@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseDamage: 15
   damageType: 1
+  statusEffectType: 0
   animationKey: Infused_Weaken
   canBeUpgraded: 1
   unlocked: 1
