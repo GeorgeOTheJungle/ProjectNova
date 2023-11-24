@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a14a3cf33e87d444a04d8bf69d8289e, type: 3}
-  m_Name: TripleShot Skill
+  m_Name: Weaken Shot Skill 1
   m_EditorClassIdentifier: 
-  baseDamage: 10
-  damageType: 0
-  animationKey: TripleShot
+  baseDamage: 15
+  damageType: 1
+  animationKey: Infused_Weaken
   canBeUpgraded: 1
   unlocked: 1
   level: 0
   initialUnlockCost: 0
-  damageUpgradeAmount: 5
-  skillName: Triple shot
+  damageUpgradeAmount: 0
+  skillName: Weaken Shot
   skillDescription: 
-  smallIcon: {fileID: 1651433977, guid: c7e3ae9abd9a9ef439fa900586ab321d, type: 3}
-  largeIcon: {fileID: -1651739352, guid: 3224aa7800b2c5f40af292498410a2ac, type: 3}
+  smallIcon: {fileID: 915841950, guid: c7e3ae9abd9a9ef439fa900586ab321d, type: 3}
+  largeIcon: {fileID: 2032203404, guid: 3224aa7800b2c5f40af292498410a2ac, type: 3}
   targetingStyle: 1
-  resourceType: 2
-  resourceAmount: 10
+  resourceType: 0
+  resourceAmount: 15
