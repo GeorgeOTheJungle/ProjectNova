@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.139, y: -0.0086}
-  m_SizeDelta: {x: 1.0701, y: 0.32}
+  m_AnchoredPosition: {x: 0.123, y: -0.0086}
+  m_SizeDelta: {x: 0.3453, y: 0.32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &1980875950433513759
 MeshRenderer:
@@ -127,8 +127,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 3
-  m_fontSizeBase: 3
+  m_fontSize: 5
+  m_fontSizeBase: 5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -185,7 +185,7 @@ GameObject:
   m_Layer: 0
   m_Name: DamageNumbers
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -248,8 +248,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1980875951623357307}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.8, y: 0, z: 0}
-  m_LocalScale: {x: 0.31535852, y: 0.31535852, z: 0.31535852}
+  m_LocalPosition: {x: -0.2089, y: 0.0333, z: 0}
+  m_LocalScale: {x: 0.38202533, y: 0.38202533, z: 0.38202533}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1980875950597545992}

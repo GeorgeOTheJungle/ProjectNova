@@ -16,6 +16,7 @@ public class OnIceStatus : StatusEffect
 
     public override void ApplyEffect()
     {
+        if (currentEntity == null) return;
         OnEffectUse();
         currentEntity.entityStats.physicalArmor -= Mathf.CeilToInt(currentEntity.entityStats.physicalArmor * Constants.ICE_RESISTANCE_REDUCTION);
         currentEntity.entityStats.magicArmor -= Mathf.CeilToInt(currentEntity.entityStats.magicArmor * Constants.ICE_RESISTANCE_REDUCTION);

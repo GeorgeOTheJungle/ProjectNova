@@ -25,7 +25,7 @@ public abstract class Entity : MonoBehaviour
 
     [SerializeField] protected StatusEffect onFireEffect;
     [SerializeField] protected StatusEffect onIceEffect;
-
+    [SerializeField] protected StatusEffect onWeakEffect;
     private string currentAnimation;
 
     protected const string ENTRANCE_ANIMATION = "Entrance";
@@ -33,7 +33,7 @@ public abstract class Entity : MonoBehaviour
     protected const string GUARD_HIT_ANIMATION = "GuardHit";
     protected const string IDLE_OUT = "IdleOut";
     protected const string DEATH_ANIMATION = "Death";
- 
+
     [SerializeField] protected Animator animator;
 
     protected int targetEntity;
@@ -58,8 +58,8 @@ public abstract class Entity : MonoBehaviour
 
     private void OnEnable()
     {
-        if(GameManager.Instance) GameManager.Instance.onGameStateChangeTrigger += OnCombatStart;
-        if(CombatManager.Instance) CombatManager.Instance.onCombatCleanup += HandleCombatCleanup;
+        if (GameManager.Instance) GameManager.Instance.onGameStateChangeTrigger += OnCombatStart;
+        if (CombatManager.Instance) CombatManager.Instance.onCombatCleanup += HandleCombatCleanup;
         if (CombatManager.Instance) CombatManager.Instance.onCombatFinish += HandleCombatEnd;
     }
 
@@ -83,11 +83,11 @@ public abstract class Entity : MonoBehaviour
     protected abstract void UpdateEntityStatsUI(); // Update entity stats UI
 
     protected abstract void UpdateEntityUI(bool active);
-    
-    public virtual void OnDamageTaken(int damage,DamageType damageType,StatusEffectType statusEffectType,bool wasCrit)
+
+    public virtual void OnDamageTaken(int damage, DamageType damageType, StatusEffectType statusEffectType, bool wasCrit)
     {
         if (isInvencible) return;
-        if(entityState == EntityState.dead || entityState == EntityState.inactive) return;
+        if (entityState == EntityState.dead || entityState == EntityState.inactive) return;
 
         if (entityStats.defenseBonus == 0) PlayAnimation(HIT_ANIMATION);
         else
@@ -97,7 +97,7 @@ public abstract class Entity : MonoBehaviour
         }
 
         int dmg = CalculateDamageReceived(damage, damageType, wasCrit);
-        if(statusEffectType == StatusEffectType.fire && onIceEffect.EffectActive() ||
+        if (statusEffectType == StatusEffectType.fire && onIceEffect.EffectActive() ||
             statusEffectType == StatusEffectType.ice && onFireEffect.EffectActive())
         {
             Debug.Log("Combo!");
@@ -105,26 +105,9 @@ public abstract class Entity : MonoBehaviour
         }
         entityStats.health -= dmg;
 
-        if(statusEffectType != StatusEffectType.none)
-        {
-            float r = Random.Range(0.0f, 1.0f);
-            if(r < Constants.FIRE_EFFECT_CHANCE)
-            {
-                switch(statusEffectType)
-                {
-                    case StatusEffectType.fire:
-                        onFireEffect.OnEffectStart(this);
-                        break;
-                    case StatusEffectType.ice:
-                        onIceEffect.OnEffectStart(this);
-                        break;
-                    case StatusEffectType.weaken:
-                        break;
-                }
-            }
-        }
+        CheckIfStatusEffect(statusEffectType);
 
-        if(entityStats.health <= 0)
+        if (entityStats.health <= 0)
         {
             entityStats.health = 0;
             PlayAnimation(DEATH_ANIMATION);
@@ -136,9 +119,46 @@ public abstract class Entity : MonoBehaviour
         UpdateEntityStatsUI();
     }
 
+    private void CheckIfStatusEffect(StatusEffectType statusEffectType)
+    {
+        if (statusEffectType != StatusEffectType.none)
+        {
+            float f = Random.Range(0.0f, 1.0f);
+            float chance;
+            switch (statusEffectType)
+            {
+                case StatusEffectType.fire:
+                    chance = Constants.FIRE_EFFECT_CHANCE;
+                    break;
+                case StatusEffectType.ice:
+                    chance = Constants.ICE_EFFECT_CHANCE;
+                    break;
+                case StatusEffectType.weaken:
+                    chance = Constants.WEAK_EFFECT_CHANCE;
+                    break;
+                default: chance = 0.0f; break;
+            }
+            if (f < chance)
+            {
+                switch (statusEffectType)
+                {
+                    case StatusEffectType.fire:
+                        onFireEffect.OnEffectStart(this);
+                        break;
+                    case StatusEffectType.ice:
+                        onIceEffect.OnEffectStart(this);
+                        break;
+                    case StatusEffectType.weaken:
+                        onWeakEffect.OnEffectStart(this);
+                        break;
+                }
+            }
+        }
+    }
+
     public virtual void OnHeal()
     {
-       // OnResourceGain(ResourceType.health, CalculateHealing(Mathf.CeilToInt(baseDamage)), RegenStyle.None);
+        // OnResourceGain(ResourceType.health, CalculateHealing(Mathf.CeilToInt(baseDamage)), RegenStyle.None);
         UpdateEntityStatsUI();
         // TODO ADD HEALING VISUALS HERE.
     }
@@ -151,14 +171,14 @@ public abstract class Entity : MonoBehaviour
                 if (buffParticles) buffParticles.Play();
                 else Debug.LogWarning("No buff particles found, did you forgot to add them?");
                 entityStats.buffBonus = 1f;
-                break; 
+                break;
             case BuffType.defense:
                 entityStats.defenseBonus = 1;
                 break;
         }
 
     }
-    
+
     public virtual void PerformAction(SkillEnemy skill)
     {
 
@@ -172,6 +192,8 @@ public abstract class Entity : MonoBehaviour
     public virtual void OnRoundFinish()
     {
         onFireEffect.ApplyEffect();
+        onIceEffect.ApplyEffect();
+        onWeakEffect.ApplyEffect();
     }
 
     public abstract void TargetEntity(int entitySlot);
@@ -186,7 +208,7 @@ public abstract class Entity : MonoBehaviour
         currentAnimation = nextAnimation;
     }
 
-    public virtual void OnResourceGain(ResourceType resourceType, int resourceGain,RegenStyle regenStyle)
+    public virtual void OnResourceGain(ResourceType resourceType, int resourceGain, RegenStyle regenStyle)
     {
         switch (resourceType)
         {
@@ -216,7 +238,7 @@ public abstract class Entity : MonoBehaviour
 
 
     #region Entity Calculations
-    public int CalculateDamageDealt(float _damageMultiplier,float _skillDamage)
+    public int CalculateDamageDealt(float _damageMultiplier, float _skillDamage)
     {
         // Calculate the initial damage
         float baseDamageMultiplier = _damageMultiplier;
@@ -235,12 +257,12 @@ public abstract class Entity : MonoBehaviour
         return totalDamage;
     }
 
-    public int CalculateDamageReceived(int damageReceived,DamageType damageReceivedType,bool wasCrit)
+    public int CalculateDamageReceived(int damageReceived, DamageType damageReceivedType, bool wasCrit)
     {
         float totalDamage = damageReceived;
         float defenseRate;
         // Calculate Initial defense Rating
-        float baseDefenseRate = damageReceivedType == DamageType.physical ? entityStats.physicalArmor : entityStats.magicArmor ;
+        float baseDefenseRate = damageReceivedType == DamageType.physical ? entityStats.physicalArmor : entityStats.magicArmor;
         defenseRate = baseDefenseRate / 100;
 
         // Calculate bonus defense rate 
@@ -271,15 +293,15 @@ public abstract class Entity : MonoBehaviour
 
         onFireEffect.RemoveEffect();
         onIceEffect.RemoveEffect();
-        //onWeakenEffect.RemoveEffect();
+        onWeakEffect.RemoveEffect();
         if (entityData == null) return;
         if (entityData.entityID == -1) return;
         entityData = null;
     }
 
-    private void HandleCombatEnd(CombatResult result,int id)
+    private void HandleCombatEnd(CombatResult result, int id)
     {
-        if(entityData == null) return;
+        if (entityData == null) return;
         if (entityData.entityID != -1) return;
         switch (result)
         {
@@ -325,7 +347,7 @@ public abstract class Entity : MonoBehaviour
 
     #region Enemy Entity ONLY
 
-    public virtual void OpenTargetWindow(bool active,bool preSelect)
+    public virtual void OpenTargetWindow(bool active, bool preSelect)
     {
 
     }
@@ -334,7 +356,7 @@ public abstract class Entity : MonoBehaviour
         targetUI.SetBool("isActive", false);
         targetUI.SetBool("isTargeted", false);
     }
-    public void SetEntityData(EntityData data,int id)
+    public void SetEntityData(EntityData data, int id)
     {
         entityData = data;
         entityState = EntityState.idle;
