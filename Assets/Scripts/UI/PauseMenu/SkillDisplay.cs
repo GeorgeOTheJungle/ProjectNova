@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SkillDisplay : MonoBehaviour
 {
-    [SerializeField] private Skill m_Skill;
+    [SerializeField] private PlayerSkill m_Skill;
     [SerializeField] private int m_id;
     private SkillUpgradeUI skillUpgrade;
 
@@ -13,7 +13,7 @@ public class SkillDisplay : MonoBehaviour
         skillUpgrade = GetComponentInParent<SkillUpgradeUI>();
     }
 
-    public void SetDisplay(Skill skill,int id)
+    public void SetDisplay(PlayerSkill skill,int id)
     {
         m_Skill = skill;
         m_id = id;

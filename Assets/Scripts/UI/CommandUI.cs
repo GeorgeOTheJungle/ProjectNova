@@ -6,13 +6,13 @@ using UnityEngine.EventSystems;
 public class CommandUI : MonoBehaviour,ISelectHandler
 {
     [SerializeField] private string defaultName;
-    [SerializeField] private Skill assignedAction;
+    [SerializeField] private PlayerSkill assignedAction;
 
-    private Entity entity;
+    private PlayerEntity entity;
 
     private void Awake()
     {
-        entity = GetComponentInParent<Entity>();
+        entity = GetComponentInParent<PlayerEntity>();
     }
     public void OnSelect(BaseEventData eventData)
     {

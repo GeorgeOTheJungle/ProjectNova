@@ -95,15 +95,15 @@ MonoBehaviour:
   currentXP: 1555555555
   totalXPStored: 0
   allPlayerSkills:
-  - {fileID: 11400000, guid: d91d90c3585a9b547883c01a89ae0f80, type: 2}
-  - {fileID: 11400000, guid: 93e217bb628dcab43a1257817bada216, type: 2}
-  - {fileID: 11400000, guid: e41228d4b6404a249aa6522e51551000, type: 2}
-  - {fileID: 11400000, guid: 2b878056ae9858e48bb9d024ed9fb2f1, type: 2}
-  - {fileID: 11400000, guid: 9bceda8d6e98495408d9d0ac0478dbf5, type: 2}
-  - {fileID: 11400000, guid: 66a3e0f1b55f57647b3306198c9f4c01, type: 2}
-  - {fileID: 11400000, guid: 1ccfc59e9b862784995ae679e8d55c3b, type: 2}
-  - {fileID: 11400000, guid: e1ea7b54af1ab2849bb068250d06aa5f, type: 2}
-  - {fileID: 11400000, guid: 1f95ef33aed432c4184d2496f877ae43, type: 2}
+  - {fileID: 11400000, guid: abb8801f194437b498012bc3ce95d43e, type: 2}
+  - {fileID: 11400000, guid: a8ce04e49230ba34eb17227fe1463405, type: 2}
+  - {fileID: 11400000, guid: 6ad72f56bc5e978488eb413945181765, type: 2}
+  - {fileID: 11400000, guid: 61321eb094660454aa0e27248e657bff, type: 2}
+  - {fileID: 11400000, guid: f5abb0a1c1170734091414ffab4d12ba, type: 2}
+  - {fileID: 11400000, guid: e3be51dd9c8803d48bd6757f3d99da7d, type: 2}
+  - {fileID: 11400000, guid: 6cc6ef9c1bf311b4092f2dd16b47a02f, type: 2}
+  - {fileID: 11400000, guid: 6e226d7d6a0754b44a08cb580a0e2c0d, type: 2}
+  - {fileID: 11400000, guid: 61c8caf4bc2d4ab46a9f46a131dced52, type: 2}
 --- !u!114 &1757322291147258447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,8 +140,8 @@ MonoBehaviour:
     magicDamageLevel: 1
     magicArmorLevel: 1
     critRateLevel: 1
-  shootSkill: {fileID: 0}
-  punchSkill: {fileID: 0}
+  shootSkill: {fileID: 11400000, guid: 114fef578db66e148b83451a97fa837e, type: 2}
+  punchSkill: {fileID: 11400000, guid: 37d1562cfab19a448afa1fb04cbba236, type: 2}
 --- !u!1 &1757322292503427425
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,13 +8,13 @@ public class SkillManager : MonoBehaviour
 
     [SerializeField] private int currentXP;
     [SerializeField] private int totalXPStored;
-    [SerializeField] private List<Skill> allPlayerSkills;
+    [SerializeField] private List<PlayerSkill> allPlayerSkills;
 
     private void Awake()
     {
         Instance = this;
 
-        foreach(Skill skill in allPlayerSkills)
+        foreach(PlayerSkill skill in allPlayerSkills)
         {
             skill.Initialize();
         }
@@ -24,18 +24,21 @@ public class SkillManager : MonoBehaviour
     {
         currentXP += total;
         totalXPStored += total;
+
+        if(currentXP < 0)currentXP = 0;
+        if(totalXPStored < 0)totalXPStored = 0;
     }
 
     public void ResetXP()
     {
         currentXP = totalXPStored;
-        foreach(Skill skill in allPlayerSkills)
+        foreach(PlayerSkill skill in allPlayerSkills)
         {
             skill.ResetToLevel1();
         }
     }
 
-    public bool SkillCanBeUpgraded(Skill skill)
+    public bool SkillCanBeUpgraded(PlayerSkill skill)
     {
         if (skill.unlocked == false) return false;
         else if (skill.level > 3) return false; 
@@ -43,7 +46,7 @@ public class SkillManager : MonoBehaviour
         else return false;
     }
 
-    public bool SkillCanBeUnlocked(Skill skill)
+    public bool SkillCanBeUnlocked(PlayerSkill skill)
     {
         return skill.initialUnlockCost <= currentXP;
     }
@@ -53,24 +56,24 @@ public class SkillManager : MonoBehaviour
         return currentXP >= xpNeed;
     }
 
-    public void UpgradeSkill(Skill skillToUpgrade)
+    public void UpgradeSkill(PlayerSkill skillToUpgrade)
     {
         currentXP -= skillToUpgrade.RequiredXp();
         skillToUpgrade.UpdgradeSkill();
     }
 
-    public void UnlockSkill(Skill skillToUnlock)
+    public void UnlockSkill(PlayerSkill skillToUnlock)
     {
         currentXP -= skillToUnlock.initialUnlockCost;
         skillToUnlock.unlocked = true;
         skillToUnlock.level = 1;
     }
 
-    public List<Skill> GetAvaliableSkills()
+    public List<PlayerSkill> GetAvaliableSkills()
     {
-        List<Skill> package = new List<Skill>();
+        List<PlayerSkill> package = new List<PlayerSkill>();
 
-        foreach(Skill skill in allPlayerSkills)
+        foreach(PlayerSkill skill in allPlayerSkills)
         {
             if(skill.unlocked == true) package.Add(skill);
         }
@@ -78,8 +81,10 @@ public class SkillManager : MonoBehaviour
         return package;
     }
 
-    public List<Skill> GetAllSkills() => allPlayerSkills;
+    public List<PlayerSkill> GetAllSkills() => allPlayerSkills;
 
     public string GetCurrentXP() => currentXP.ToString();
+
+    public int GetCurXP() => currentXP;
 
 }

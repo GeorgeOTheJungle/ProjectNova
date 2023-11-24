@@ -29,6 +29,7 @@ public class CameraManager : MonoBehaviour
     {
         if (InputComponent.Instance == null) return;
         InputComponent.Instance.cameraRotationTrigger += HandleCameraRotation;
+        if (GameManager.Instance == null) return;
         GameManager.Instance.onGameStateChangeTrigger += HandleCameraChange;
 
     }

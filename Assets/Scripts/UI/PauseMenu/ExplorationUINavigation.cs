@@ -33,7 +33,14 @@ public class ExplorationUINavigation : MonoBehaviour
             GameManager.Instance.CurrentGameState() != Enums.GameState.paused) return;
 
         uiOpen = !uiOpen;
-        GameManager.Instance.ChangeGameState(Enums.GameState.paused);
+        if(GameManager.Instance.CurrentGameState() == Enums.GameState.paused)
+        {
+            GameManager.Instance.ChangeGameState(Enums.GameState.exploration);
+        } else
+        {
+            GameManager.Instance.ChangeGameState(Enums.GameState.paused);
+        }
+
         pauseMenu.SetActive(uiOpen);
         mainMenu.SetActive(uiOpen);
         characterWindow.SetActive(false);
