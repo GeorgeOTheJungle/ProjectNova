@@ -31,6 +31,7 @@ public abstract class Entity : MonoBehaviour
     protected const string ENTRANCE_ANIMATION = "Entrance";
     protected const string HIT_ANIMATION = "Hit";
     protected const string GUARD_HIT_ANIMATION = "GuardHit";
+    protected const string GUARD_END_ANIMATION = "Idle"; // TODO MAKE TRANSITIONS FROM GUARD TO IDLE
     protected const string IDLE_OUT = "IdleOut";
     protected const string DEATH_ANIMATION = "Death";
 
@@ -93,7 +94,7 @@ public abstract class Entity : MonoBehaviour
         else
         {
             Debug.LogWarning("TODO MAKE A GUARD HIT ANIMATION");
-            //PlayAnimation(GUARD_HIT_ANIMATION);
+            PlayAnimation(GUARD_HIT_ANIMATION);
         }
 
         int dmg = CalculateDamageReceived(damage, damageType, wasCrit);
@@ -158,7 +159,7 @@ public abstract class Entity : MonoBehaviour
 
     public virtual void OnHeal()
     {
-        // OnResourceGain(ResourceType.health, CalculateHealing(Mathf.CeilToInt(baseDamage)), RegenStyle.None);
+        
         UpdateEntityStatsUI();
         // TODO ADD HEALING VISUALS HERE.
     }
@@ -291,12 +292,17 @@ public abstract class Entity : MonoBehaviour
         PlayAnimation(IDLE_OUT);
         CombatUICleanUp();
 
-        onFireEffect.RemoveEffect();
-        onIceEffect.RemoveEffect();
-        onWeakEffect.RemoveEffect();
+        RemoveStatusEffects();
         if (entityData == null) return;
         if (entityData.entityID == -1) return;
         entityData = null;
+    }
+
+    protected void RemoveStatusEffects()
+    {
+        onFireEffect.RemoveEffect();
+        onIceEffect.RemoveEffect();
+        onWeakEffect.RemoveEffect();
     }
 
     private void HandleCombatEnd(CombatResult result, int id)
