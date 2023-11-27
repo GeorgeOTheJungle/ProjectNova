@@ -14,9 +14,12 @@ public class EnemyEntity : Entity
     [SerializeField] private GameObject uiVisuals;
     [SerializeField] private GameObject statsGO;
     [SerializeField] private GameObject healthBarGO;
+    [Header("Entity UI refereneces:"), Space(10)]
     [SerializeField] private Image healthBar;
     [SerializeField] private Image followBar;
-
+    [Header("Boss UI references:"), Space(10)]
+    [SerializeField] private List<int> skillPattern;
+    private int currentSkillPattern;
     [Space(10)]
     private int skillLenght;
     private EnemySkill currentEnemySkill;
@@ -33,23 +36,24 @@ public class EnemyEntity : Entity
         StartCoroutine(TurnCommandsVisuals(false, 0.0f));
     }
     public override void AttackEntity()
-    {      
+    {
         float damageMultiplier = currentSkill.damageType == DamageType.physical ? entityStats.physicalDamage : entityStats.magicDamage;
 
         int damage = CalculateDamageDealt(damageMultiplier, currentSkill.baseDamage);
         bool isCrit = UnityEngine.Random.Range(0.0f, 1.0f) < entityStats.critRate;
         damage *= Mathf.CeilToInt(isCrit ? 2.5f : 1.0f);
 
-        CombatManager.Instance.GetPlayerEntity().OnDamageTaken(damage, 
+        CombatManager.Instance.GetPlayerEntity().OnDamageTaken(damage,
             currentSkill.damageType, currentSkill.statusEffectType, isCrit);
     }
 
     public override void OnCombatStart(GameState gameState)
     {
         if (entityData == null) return;
-        //currentSkill = null;
+        // Reset data and stats effects 
         currentEnemySkill = null;
-        onFireEffect.RemoveEffect();
+        RemoveStatusEffects();
+        currentSkillPattern = 0;
         switch (gameState)
         {
             case GameState.combatPreparation:
@@ -57,33 +61,77 @@ public class EnemyEntity : Entity
                 break;
             case GameState.combatReady:
                 StartCoroutine(DelayEntrance());
-                StartCoroutine(TurnCommandsVisuals(true, 0.0f));
+
                 skills = entityData.avaliableSkills;
                 skillLenght = skills.Count;
-                entityState = EntityState.idle;
-                UpdateEntityStatsUI();
                 currentEnemySkill = enemySkillManager.GetEnemySkill(entityData.entityID);
-                //onFireEffect.OnEffectStart();
-                statsGO.SetActive(true);
 
+                UpdateEntityStatsUI();
+
+                if (entityData.entityType == EntityType.enemy)
+                {
+                    // statsGO.SetActive(true);
+                    StartCoroutine(TurnCommandsVisuals(true, 0.0f));
+                }
+                else if (entityData.entityType == EntityType.boss)
+                {
+                    // Create pattern
+
+                    int patternLenght = Random.Range(6, 12);
+                    for (int i = 0;i < patternLenght;i++)
+                    {
+                        skillPattern.Add(Random.Range(0, skillLenght));
+                    }
+
+                    // Set UI
+                    BossUI.Instance.OpenBossUI();
+                    BossUI.Instance.SetBossUI(entityStats.health);
+                }
+
+                entityState = EntityState.idle;
                 break;
         }
 
     }
     public override void OnEntityTurn()
     {
-        if(entityState == EntityState.dead)
+        if (entityState == EntityState.dead)
         {
             CombatManager.Instance.OnTurnFinished();
             return;
         }
 
+        if (entityStats.defenseBonus > 0.0f)
+        {
+            Debug.LogWarning("TODO: GUARD TO IDLE ANIMATIONS");
+            PlayAnimation(GUARD_END_ANIMATION);
+            entityStats.defenseBonus = 0.0f;
+        }
         currentSkill = null;
         entityState = EntityState.thinking;
         float thinkTime = Random.Range(0.25f, 0.5f);
 
-        Invoke(nameof(ChooseRandomAction), thinkTime);
+        if(entityData.entityType == EntityType.boss)
+        {
+            DoActionPattern();
+        }
+        else
+        {
+            Invoke(nameof(ChooseRandomAction), thinkTime);
+        }
+
     }
+
+    private void DoActionPattern()
+    {
+
+        currentSkill = skills[skillPattern[currentSkillPattern]];
+        currentSkillPattern++;
+        if (currentSkillPattern >= skillPattern.Count) currentSkillPattern = 0;
+        entityState = EntityState.acting;
+        PerformAction(currentSkill);
+    }
+
     private void ChooseRandomAction()
     {
         currentSkill = skills[Random.Range(0, skillLenght)];
@@ -99,22 +147,32 @@ public class EnemyEntity : Entity
 
     public void PerformSkill(int id)
     {
-        if(id == -1)
+        if (id == -1)
         {
             currentEnemySkill.DoRandomSkill();
             return;
         }
         currentEnemySkill.DoSkill(id);
     }
+
     protected override void UpdateEntityStatsUI()
     {
-        float fill = (float)entityStats.health / (float)entityData.stats.health;
-        Debug.Log(fill);
-        healthBar.fillAmount = fill;
-        if(entityStats.health <= 0)
+        switch (entityData.entityType)
         {
-            statsGO.SetActive(false);
+            case EntityType.enemy:
+                float fill = (float)entityStats.health / (float)entityData.stats.health;
+                healthBar.fillAmount = fill;
+                if (entityStats.health <= 0)
+                {
+                    statsGO.SetActive(false);
+                }
+                break;
+            case EntityType.boss:
+                BossUI.Instance.UpdateBossUI(entityStats.health);
+                break;
         }
+
+
     }
     public override void TargetEntity(int entitySlot)
     {
@@ -139,10 +197,16 @@ public class EnemyEntity : Entity
 
     public void OnEntitySelected()
     {
-       // CombatManager.Instance.SetTarget(targetID);
+        // CombatManager.Instance.SetTarget(targetID);
     }
     public override void MoveEntityToTarget()
     {
-        
+
+    }
+
+    public override void OnHeal()
+    {
+        OnResourceGain(ResourceType.health, CalculateHealing(Mathf.CeilToInt(currentSkill.baseDamage)), RegenStyle.None);
+        base.OnHeal();
     }
 }

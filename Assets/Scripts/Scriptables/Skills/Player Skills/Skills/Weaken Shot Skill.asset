@@ -19,12 +19,12 @@ MonoBehaviour:
   canBeUpgraded: 1
   unlocked: 1
   level: 1
-  initialUnlockCost: 0
+  initialUnlockCost: 500
   damageUpgradeAmount: 0
   skillName: Weaken Shot
   skillDescription: 
   smallIcon: {fileID: 915841950, guid: c7e3ae9abd9a9ef439fa900586ab321d, type: 3}
   largeIcon: {fileID: 2032203404, guid: 3224aa7800b2c5f40af292498410a2ac, type: 3}
   targetingStyle: 1
-  resourceType: 2
+  resourceType: 0
   resourceAmount: 15

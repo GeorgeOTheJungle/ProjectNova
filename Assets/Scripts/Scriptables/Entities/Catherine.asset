@@ -16,12 +16,12 @@ MonoBehaviour:
   entityType: 0
   entityID: -1
   stats:
-    health: 35
+    health: 50
     energy: 50
     ammo: 5
-    physicalDamage: 50
+    physicalDamage: 75
     physicalArmor: 5
-    magicDamage: 5
+    magicDamage: 50
     magicArmor: 5
     defenseBonus: 0
     buffBonus: 0

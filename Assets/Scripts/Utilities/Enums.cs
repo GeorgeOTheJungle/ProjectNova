@@ -22,4 +22,6 @@ namespace Enums
     public enum RegenStyle { None, Punch, Shoot }
 
     public enum PlayerStat { health,energy,ammo,physicalDmg,physicalArmor,magicalDmg,magicalArmor,critRate,shoot,punch}
+
+    public enum FrameEvent { doNothing,playParticles,damagePlayer,stopParticles}
 }

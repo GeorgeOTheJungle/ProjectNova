@@ -271,6 +271,7 @@ public class CombatManager : MonoBehaviour
 
             foreach (var entity in combatOrder)
             {
+                Debug.Log("Player has fire?");
                 entity.OnRoundFinish();
                 yield return new WaitForSeconds(0.5f);
             }
@@ -286,6 +287,7 @@ public class CombatManager : MonoBehaviour
         bool entityAfflicted = false;
         foreach (var entity in combatOrder)
         {
+  
             if (entity.IsAfflictedByFire())
             {
                 entityAfflicted = true;
