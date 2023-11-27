@@ -39,4 +39,15 @@ public class EnemyAnimationEventCall : EventCall
     //{
     //    throw new System.NotImplementedException();
     //}
+
+    public void OnHeal()
+    {
+        enemyEntity.OnHeal();
+    }
+
+    public void OnGuard()
+    {
+        m_entity.OnBuff(Enums.BuffType.defense);
+        m_entity.OnTurnEnd();
+    }
 }

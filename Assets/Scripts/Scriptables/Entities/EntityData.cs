@@ -45,9 +45,6 @@ public class EntityDataEditor : Editor
     {
         DrawDefaultInspector();
 
-
-
-
         // DRAW ENTITY TYPE SELECTOR
         DrawEntityName(entity);
 
@@ -173,42 +170,49 @@ public class EntityDataEditor : Editor
 
                 break;
             case EntityType.enemy:
-               
-                EditorGUILayout.LabelField("REFERENCES:", GUILayout.Width(LABEL_WIDTH));
-                ShowSkillList = EditorGUILayout.Foldout(ShowSkillList, "Skill List", true);
 
-                if (ShowSkillList)
-                {
-
-                    EditorGUI.indentLevel++;
-                    List<SkillEnemy> list = entity.avaliableSkills;
-                    int size = Mathf.Max(0, EditorGUILayout.IntField("Size", list.Count));
-
-                    while (size > list.Count)
-                    {
-                        list.Add(null);
-                    }
-
-                    while (size < list.Count)
-                    {
-                        list.RemoveAt(list.Count - 1);
-                    }
-
-                    for (int i = 0; i < list.Count; i++)
-                    {
-                        list[i] = (SkillEnemy)EditorGUILayout.ObjectField("Skill " + i, list[i], typeof(SkillEnemy), false);
-                    }
-                    EditorGUI.indentLevel--;
-                }
-
-                EditorGUILayout.Space();
-                EditorGUILayout.LabelField("Enemy Animator:", GUILayout.Width(LABEL_WIDTH));
-                entity.entityAnimator = (RuntimeAnimatorController)EditorGUILayout.ObjectField(entity.entityAnimator, typeof(RuntimeAnimatorController), false);
+                DrawEntityReferences(entity);
 
                 break;
             case EntityType.boss:
+                DrawEntityReferences(entity);
+
                 break;
         }
+    }
+
+    private static void DrawEntityReferences(EntityData entity)
+    {
+        EditorGUILayout.LabelField("REFERENCES:", GUILayout.Width(LABEL_WIDTH));
+        ShowSkillList = EditorGUILayout.Foldout(ShowSkillList, "Skill List", true);
+
+        if (ShowSkillList)
+        {
+
+            EditorGUI.indentLevel++;
+            List<SkillEnemy> list = entity.avaliableSkills;
+            int size = Mathf.Max(0, EditorGUILayout.IntField("Size", list.Count));
+
+            while (size > list.Count)
+            {
+                list.Add(null);
+            }
+
+            while (size < list.Count)
+            {
+                list.RemoveAt(list.Count - 1);
+            }
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                list[i] = (SkillEnemy)EditorGUILayout.ObjectField("Skill " + i, list[i], typeof(SkillEnemy), false);
+            }
+            EditorGUI.indentLevel--;
+        }
+
+        EditorGUILayout.Space();
+        EditorGUILayout.LabelField("Enemy Animator:", GUILayout.Width(LABEL_WIDTH));
+        entity.entityAnimator = (RuntimeAnimatorController)EditorGUILayout.ObjectField(entity.entityAnimator, typeof(RuntimeAnimatorController), false);
     }
 }
 
