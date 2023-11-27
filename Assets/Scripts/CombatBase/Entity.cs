@@ -93,7 +93,7 @@ public abstract class Entity : MonoBehaviour
         if (entityStats.defenseBonus == 0) PlayAnimation(HIT_ANIMATION);
         else
         {
-            Debug.LogWarning("TODO MAKE A GUARD HIT ANIMATION");
+            Debug.LogWarning("TODO MAKE PLAYER GUARD HIT ANIMATION");
             PlayAnimation(GUARD_HIT_ANIMATION);
         }
 

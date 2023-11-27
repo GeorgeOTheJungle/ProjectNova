@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2906e578add7ea544acb5d902da3ac23, type: 3}
-  m_Name: TestZoneEncounter01
+  m_Script: {fileID: 11500000, guid: f0428cb515da02243bd2d0cbff5c0a24, type: 3}
+  m_Name: Enemy_Guard
   m_EditorClassIdentifier: 
-  arenaId: 0
-  encounter:
-  - {fileID: 11400000, guid: fed2cd5885552574384a639d9a9e1f2e, type: 2}
+  baseDamage: 0
+  damageType: 0
+  statusEffectType: 0
+  animationKey: GuardStart

@@ -45,9 +45,6 @@ public class EntityDataEditor : Editor
     {
         DrawDefaultInspector();
 
-
-
-
         // DRAW ENTITY TYPE SELECTOR
         DrawEntityName(entity);
 

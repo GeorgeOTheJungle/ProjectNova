@@ -23,5 +23,5 @@ namespace Enums
 
     public enum PlayerStat { health,energy,ammo,physicalDmg,physicalArmor,magicalDmg,magicalArmor,critRate,shoot,punch}
 
-    public enum FrameEvent { playParticles,damagePlayer,stopParticles}
+    public enum FrameEvent { doNothing,playParticles,damagePlayer,stopParticles}
 }
