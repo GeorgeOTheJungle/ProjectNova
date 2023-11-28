@@ -10,11 +10,19 @@ public class CameraManager : MonoBehaviour
     private bool Rotating = false;
     [SerializeField] private CinemachineVirtualCamera explorationVCamera;
     [SerializeField] private CinemachineVirtualCamera combatVCamera;
+    [SerializeField] private CinemachineVirtualCamera idleCombatVCamera;
     private CinemachineOrbitalTransposer orbitalTransposer;
+    private CinemachineOrbitalTransposer idleOrbitalTransposer;
 
+    [SerializeField] private float rotationSpeed;
+    private float idleTime = 3.0f;
+    private float currentIdleTime = 0.0f;
+
+    private float currentIdleAmount = 0.0f;
     private void Awake()
     {
         orbitalTransposer = explorationVCamera.GetCinemachineComponent<CinemachineOrbitalTransposer>();
+        idleOrbitalTransposer = idleCombatVCamera.GetCinemachineComponent<CinemachineOrbitalTransposer>();
     }
 
     private IEnumerator Start()
@@ -39,6 +47,27 @@ public class CameraManager : MonoBehaviour
         InputComponent.Instance.cameraRotationTrigger -= HandleCameraRotation;
         GameManager.Instance.onGameStateChangeTrigger -= HandleCameraChange;
 
+    }
+
+    private void Update()
+    {
+        if (GameManager.Instance.CurrentGameState() != GameState.combatReady) return;
+        if (Input.anyKey)
+        {
+            currentIdleTime = 0.0f;
+            combatVCamera.gameObject.SetActive(true);
+            idleCombatVCamera.gameObject.SetActive(false);
+        }
+
+        currentIdleTime += Time.deltaTime;
+        if (currentIdleTime > idleTime)
+        {
+            combatVCamera.gameObject.SetActive(false);
+            idleCombatVCamera.gameObject.SetActive(true);
+
+            currentIdleAmount -= Time.deltaTime * rotationSpeed;
+            idleOrbitalTransposer.m_XAxis.Value = currentIdleAmount;
+        }
     }
 
     private void HandleCameraRotation(float value)
