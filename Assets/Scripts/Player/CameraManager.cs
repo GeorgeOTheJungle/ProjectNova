@@ -15,7 +15,7 @@ public class CameraManager : MonoBehaviour
     private CinemachineOrbitalTransposer idleOrbitalTransposer;
 
     [SerializeField] private float rotationSpeed;
-    private float idleTime = 3.0f;
+    [SerializeField] private float idleTime = 3.0f;
     private float currentIdleTime = 0.0f;
 
     private float currentIdleAmount = 0.0f;
@@ -52,9 +52,12 @@ public class CameraManager : MonoBehaviour
     private void Update()
     {
         if (GameManager.Instance.CurrentGameState() != GameState.combatReady) return;
+        if (CombatManager.Instance.GetCombatResult() != CombatResult.none) return;
+        if (CombatManager.Instance.entityTurn != CombatTurn.playerTurn) return;
         if (Input.anyKey)
         {
             currentIdleTime = 0.0f;
+            currentIdleAmount = 0.0f;
             combatVCamera.gameObject.SetActive(true);
             idleCombatVCamera.gameObject.SetActive(false);
         }

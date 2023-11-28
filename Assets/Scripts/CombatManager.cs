@@ -9,6 +9,7 @@ public class CombatManager : MonoBehaviour
     public static CombatManager Instance;
     [Header("Combat manager: "), Space(10)]
     [SerializeField] private CombatResult combatResult;
+    public CombatTurn entityTurn;
     [SerializeField] private int currentCombatID;
     [SerializeField] private Entity playerEntity;
 
@@ -95,6 +96,7 @@ public class CombatManager : MonoBehaviour
         if (combatResult == CombatResult.defeat) return;
         if (totalEnemies == 0)
         {
+         //   GameManager.Instance.ChangeGameState(GameState.combatEnded);
             Invoke(nameof(VictoryCall), 1.0f);
             return;
         }
@@ -300,6 +302,11 @@ public class CombatManager : MonoBehaviour
 
     #endregion
 
+    public void IsPlayerTurn(bool isPlayerTurn)
+    {
+        entityTurn = isPlayerTurn ? CombatTurn.playerTurn : CombatTurn.enemyTurn;
+    }
+
     #region Get Methods
 
     public Transform GetEntityTransform(int entityId)
@@ -313,5 +320,7 @@ public class CombatManager : MonoBehaviour
     }
 
     private bool IsEven(int amount) => ((amount & 1) == 0);
+
+    public CombatResult GetCombatResult() => combatResult;
     #endregion
 }

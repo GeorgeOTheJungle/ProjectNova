@@ -112,7 +112,7 @@ public abstract class Entity : MonoBehaviour
         {
             entityStats.health = 0;
             PlayAnimation(DEATH_ANIMATION);
-            CombatManager.Instance.OnEnemyDefeated();
+            if(entityData.entityType != EntityType.player) CombatManager.Instance.OnEnemyDefeated();
             entityState = EntityState.dead;
             onFireEffect.RemoveEffect();
             onIceEffect.RemoveEffect();

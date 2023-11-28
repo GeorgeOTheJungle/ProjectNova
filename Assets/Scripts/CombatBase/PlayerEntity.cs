@@ -30,6 +30,7 @@ public class PlayerEntity : Entity
     {
         currentSkill = null;
         onFireEffect.RemoveEffect();
+        entityState = EntityState.idle;
         switch (gameState)
         {
             case GameState.combatPreparation:
@@ -49,11 +50,14 @@ public class PlayerEntity : Entity
 
     public override void OnEntityTurn()
     {
+        if (entityState == EntityState.dead) return;
         if (entityStats.defenseBonus > 0.0f)
         {
             PlayAnimation(GUARD_HIT_ANIMATION);
             entityStats.defenseBonus = 0.0f;
         }
+        CombatManager.Instance.IsPlayerTurn(true);
+        entityState = EntityState.thinking;
         currentSkill = null;
         StartCoroutine(TurnCommandsVisuals(true, 0.0f));
     }
@@ -68,7 +72,7 @@ public class PlayerEntity : Entity
     public override void PerformAction(PlayerSkill skill)
     {
         currentSkill = skill;
-
+        entityState = EntityState.acting;
         // Use resource
         UseResource();
         // Do visuals

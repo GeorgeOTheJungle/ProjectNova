@@ -109,6 +109,7 @@ public class EnemyEntity : Entity
         }
         currentSkill = null;
         entityState = EntityState.thinking;
+        CombatManager.Instance.IsPlayerTurn(false);
         float thinkTime = Random.Range(0.25f, 0.5f);
 
         if(entityData.entityType == EntityType.boss)
