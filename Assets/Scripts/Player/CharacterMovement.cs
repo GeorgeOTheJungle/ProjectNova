@@ -103,8 +103,8 @@ public class CharacterMovement : MonoBehaviour
     public void HandleRespawn()
     {
         // Respawn Player in nearest sanctuary;
-        if(spawnPoint == null) return;
-        m_characterController.Move(spawnPoint.position);
+        //if(spawnPoint == null) return;
+        //m_characterController.Move(spawnPoint.position);
        // transform.position = spawnPoint.position;
     }
 

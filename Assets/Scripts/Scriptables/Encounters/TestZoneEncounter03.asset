@@ -15,5 +15,5 @@ MonoBehaviour:
   arenaId: 1
   encounter:
   - {fileID: 11400000, guid: 9c13befc56185e9479462207055f11e4, type: 2}
-  - {fileID: 11400000, guid: 9c13befc56185e9479462207055f11e4, type: 2}
-  - {fileID: 11400000, guid: 9c13befc56185e9479462207055f11e4, type: 2}
+  - {fileID: 11400000, guid: a5e432ae91a68e8469ccdea974e97985, type: 2}
+  - {fileID: 11400000, guid: a5e432ae91a68e8469ccdea974e97985, type: 2}

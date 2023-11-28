@@ -19,13 +19,21 @@ public class Door : MonoBehaviour,IInteractable
 
     private void Start()
     {
-       // doorSpriteRenderer.sprite = isOpen ? openDoor : closedDoor;
-       foreach(GameObject go in doorGameObjects)
+        // doorSpriteRenderer.sprite = isOpen ? openDoor : closedDoor;
+        foreach (GameObject go in doorGameObjects)
         {
-            go.SetActive(false);   
+            go.SetActive(false);
         }
 
-        doorGameObjects[0].SetActive(true);
+        if (isOpen)
+        {
+
+            doorGameObjects[3].SetActive(true);
+        } else
+        {
+            doorGameObjects[0].SetActive(true);
+        }
+
     }
     private void FloorManagerCall()
     {
