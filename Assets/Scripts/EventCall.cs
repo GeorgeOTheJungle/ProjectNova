@@ -27,4 +27,9 @@ public abstract class EventCall : MonoBehaviour
     {
         m_entity.ReturnToOriginalPosition();
     }
+
+    public void PlaySound(int id)
+    {
+        m_entity.PlaySound(id);
+    }
 }
