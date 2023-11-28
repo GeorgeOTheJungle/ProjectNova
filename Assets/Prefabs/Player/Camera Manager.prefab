@@ -263,8 +263,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1876952635667951832}
-  m_LocalRotation: {x: 0.25666794, y: -0.0000000033791123, z: 8.973711e-10, w: 0.9664997}
-  m_LocalPosition: {x: 0, y: 4.5, z: -7}
+  m_LocalRotation: {x: 0.15610991, y: -0, z: -0, w: 0.9877397}
+  m_LocalPosition: {x: 0, y: -34, z: -21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -296,7 +296,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 40
+  field of view: 57.97
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -410,6 +410,7 @@ MonoBehaviour:
   combatVCamera: {fileID: 1876952634628875255}
   idleCombatVCamera: {fileID: 1161050832747534727}
   rotationSpeed: 1
+  idleTime: 10
 --- !u!1 &1876952636337057258
 GameObject:
   m_ObjectHideFlags: 0
