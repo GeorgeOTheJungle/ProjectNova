@@ -4221,6 +4221,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6610153666636544358, guid: ca909dfb7f8b4ad43a934dbdf627d92d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fbf148af6b8209247a0129f0d1df9a5b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca909dfb7f8b4ad43a934dbdf627d92d, type: 3}
 --- !u!4 &1725448892823644009 stripped
@@ -6289,6 +6293,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prefab_DebugStage_Stairs_Sides
       objectReference: {fileID: 0}
+    - target: {fileID: 5501270124692417642, guid: a7789e27dd7a50845a273fd8a5dd839e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fbf148af6b8209247a0129f0d1df9a5b, type: 2}
     - target: {fileID: 8068128957091427315, guid: a7789e27dd7a50845a273fd8a5dd839e, type: 3}
       propertyPath: m_RootOrder
       value: 13
