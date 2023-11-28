@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arenaId: 0
   encounter:
-  - {fileID: 11400000, guid: fed2cd5885552574384a639d9a9e1f2e, type: 2}
+  - {fileID: 11400000, guid: 9c13befc56185e9479462207055f11e4, type: 2}

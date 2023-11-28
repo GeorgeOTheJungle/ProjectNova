@@ -16,7 +16,7 @@ MonoBehaviour:
   entityType: 1
   entityID: 0
   stats:
-    health: 25
+    health: 1
     energy: 0
     ammo: 0
     physicalDamage: 50
