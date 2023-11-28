@@ -104,7 +104,7 @@ public class EnemyEntity : Entity
         if (entityStats.defenseBonus > 0.0f)
         {
             Debug.LogWarning("TODO: GUARD TO IDLE ANIMATIONS");
-            PlayAnimation(GUARD_END_ANIMATION);
+            PlayAnimation(Constants.GUARD_END_ANIMATION);
             entityStats.defenseBonus = 0.0f;
         }
         currentSkill = null;

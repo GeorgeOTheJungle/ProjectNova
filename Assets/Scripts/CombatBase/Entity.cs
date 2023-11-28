@@ -28,21 +28,15 @@ public abstract class Entity : MonoBehaviour
     [SerializeField] protected StatusEffect onWeakEffect;
     private string currentAnimation;
 
-    protected const string ENTRANCE_ANIMATION = "Entrance";
-    protected const string HIT_ANIMATION = "Hit";
-    protected const string GUARD_HIT_ANIMATION = "GuardHit";
-    protected const string GUARD_END_ANIMATION = "Idle"; // TODO MAKE TRANSITIONS FROM GUARD TO IDLE
-    protected const string IDLE_OUT = "IdleOut";
-    protected const string DEATH_ANIMATION = "Death";
-
     [SerializeField] protected Animator animator;
-
+    [HideInInspector] public SoundHandler soundHandler;
     protected int targetEntity;
 
     #region Initialization
 
     private void Awake()
     {
+        soundHandler = GetComponentInChildren<SoundHandler>();  
         OnAwake();
     }
 
@@ -90,11 +84,16 @@ public abstract class Entity : MonoBehaviour
         if (isInvencible) return;
         if (entityState == EntityState.dead || entityState == EntityState.inactive) return;
 
-        if (entityStats.defenseBonus == 0) PlayAnimation(HIT_ANIMATION);
+        if (entityStats.defenseBonus == 0)
+        {
+     
+            PlayAnimation(Constants.HIT_ANIMATION);
+        }
         else
         {
             Debug.LogWarning("TODO MAKE PLAYER GUARD HIT ANIMATION");
-            PlayAnimation(GUARD_HIT_ANIMATION);
+            //PlaySound(Constants.HIT_SOUND);
+            PlayAnimation(Constants.GUARD_HIT_ANIMATION);
         }
 
         int dmg = CalculateDamageReceived(damage, damageType, wasCrit);
@@ -111,13 +110,31 @@ public abstract class Entity : MonoBehaviour
         if (entityStats.health <= 0)
         {
             entityStats.health = 0;
-            PlayAnimation(DEATH_ANIMATION);
+            PlaySound(Constants.DEATH_SOUND);
+            PlayAnimation(Constants.DEATH_ANIMATION);
             if(entityData.entityType != EntityType.player) CombatManager.Instance.OnEnemyDefeated();
             entityState = EntityState.dead;
             onFireEffect.RemoveEffect();
             onIceEffect.RemoveEffect();
         }
         UpdateEntityStatsUI();
+    }
+
+    public void PlaySound(int id)
+    {
+        if (soundHandler == false) return;
+        Debug.Log("Im being called");
+        if(id == -1)
+        {
+            soundHandler.PlayHitSound();
+        } else if(id == -2)
+        {
+            soundHandler.PlayDeathSound();
+        }
+        else
+        {
+                soundHandler.PlayAudio(id);
+        }
     }
 
     private void CheckIfStatusEffect(StatusEffectType statusEffectType)
@@ -289,7 +306,7 @@ public abstract class Entity : MonoBehaviour
     private void HandleCombatCleanup()
     {
         entityState = EntityState.inactive;
-        PlayAnimation(IDLE_OUT);
+        PlayAnimation(Constants.IDLE_OUT);
         CombatUICleanUp();
 
         RemoveStatusEffects();
@@ -327,7 +344,7 @@ public abstract class Entity : MonoBehaviour
     protected IEnumerator DelayEntrance()
     {
         yield return new WaitForSeconds(0.25f);
-        PlayAnimation(ENTRANCE_ANIMATION);
+        PlayAnimation(Constants.ENTRANCE_ANIMATION);
     }
 
     protected IEnumerator TurnCommandsVisuals(bool active, float delay)

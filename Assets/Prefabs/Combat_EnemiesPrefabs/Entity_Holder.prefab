@@ -1036,6 +1036,7 @@ MonoBehaviour:
   onIceEffect: {fileID: 4703646629752197053}
   onWeakEffect: {fileID: 2081296191778656327}
   animator: {fileID: 888739142684226865}
+  soundHandler: {fileID: 0}
   targetID: 0
   skills: []
   uiVisuals: {fileID: 2205413762094419878}
@@ -1635,7 +1636,7 @@ Animator:
   m_GameObject: {fileID: 5093565406375337852}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ceb72e186b89c6544a76b86ad9f6060f, type: 2}
+  m_Controller: {fileID: 9100000, guid: e63d7bd22e7dc0f488ecac979acd74c1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

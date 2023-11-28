@@ -36,7 +36,7 @@ public class PlayerEntity : Entity
             case GameState.combatPreparation:
                 //entityStats = entityData.stats;
                 entityStats = PlayerStatsManager.Instance.GetPlayerStats();
-                PlayAnimation(IDLE_OUT);
+                PlayAnimation(Constants.IDLE_OUT);
                 break;
             case GameState.combatReady:
               
@@ -53,7 +53,7 @@ public class PlayerEntity : Entity
         if (entityState == EntityState.dead) return;
         if (entityStats.defenseBonus > 0.0f)
         {
-            PlayAnimation(GUARD_HIT_ANIMATION);
+            PlayAnimation(Constants.GUARD_HIT_ANIMATION);
             entityStats.defenseBonus = 0.0f;
         }
         CombatManager.Instance.IsPlayerTurn(true);

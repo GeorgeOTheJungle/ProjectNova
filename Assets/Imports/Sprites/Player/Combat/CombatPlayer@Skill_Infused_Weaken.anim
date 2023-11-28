@@ -7,7 +7,7 @@ AnimationClip:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: CombatPlayer@Skill_Infused_Weaken
-  serializedVersion: 7
+  serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
   m_UseHighQualityCurve: 1
@@ -18,8 +18,7 @@ AnimationClip:
   m_ScaleCurves: []
   m_FloatCurves: []
   m_PPtrCurves:
-  - serializedVersion: 2
-    curve:
+  - curve:
     - time: 0
       value: {fileID: 665251989, guid: 09748f0572f57b745af1aebcb79271a1, type: 3}
     - time: 0.1
@@ -82,7 +81,6 @@ AnimationClip:
     path: 
     classID: 212
     script: {fileID: 0}
-    flags: 2
   m_SampleRate: 10
   m_WrapMode: 0
   m_Bounds:
@@ -97,8 +95,6 @@ AnimationClip:
       typeID: 212
       customType: 23
       isPPtrCurve: 1
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
     pptrCurveMapping:
     - {fileID: 665251989, guid: 09748f0572f57b745af1aebcb79271a1, type: 3}
     - {fileID: 2087479963, guid: 09748f0572f57b745af1aebcb79271a1, type: 3}
@@ -154,12 +150,26 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
+  - time: 0
+    functionName: PlaySound
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 8
+    messageOptions: 0
   - time: 1.3
     functionName: DealDamageCall
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
+    messageOptions: 0
+  - time: 1.3
+    functionName: PlaySound
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 9
     messageOptions: 0
   - time: 2.8
     functionName: OnActionFinished
