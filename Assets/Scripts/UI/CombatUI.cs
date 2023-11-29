@@ -11,15 +11,17 @@ public class CombatUI : MonoBehaviour
 
     [Header("Stats texts references: "), Space(10)]
     [SerializeField] private Image healthBar;
+    [SerializeField] private GameObject hitFeedbackVisual;
     [SerializeField] private Image energyBar;
-    [SerializeField] private Image ammoBar;
+    [SerializeField] private GameObject energyHitFeedbackVisual;
+    [SerializeField] private AmmoBit[] ammoContainer;
 
-    [SerializeField] private TextMeshPro actionText;
+    [SerializeField] private TextMeshProUGUI actionText;
     [SerializeField] private Entity player;
 
     float maxHealth;
     float maxEnergy;
-    float maxAmmo;
+    int ammo;
     private IEnumerator Start()
     {
         visual.SetActive(false);
@@ -43,22 +45,76 @@ public class CombatUI : MonoBehaviour
 
     private void HandleCombatUpdate(GameState state)
     {
-        bool active = state == GameState.combatReady;
+        switch (state)
+        {
+            case GameState.combatPreparation:
+                visual.SetActive(true);
+                actionText.gameObject.SetActive(true);
+                // Initialize stats on texts
+                maxHealth = player.entityStats.health;
+                maxEnergy = player.entityStats.energy;
+                ammo = player.entityStats.ammo;
+                UpdateCombatStats(false,false);
+                break;
+            case GameState.combatReady:
+                foreach (var item in ammoContainer)
+                {
+                    item.SetToStarting();
+                }
 
-        visual.SetActive(active);
-        actionText.gameObject.SetActive(active);
-        // Initialize stats on texts
-        maxHealth = player.entityStats.health;
-        maxEnergy = player.entityStats.energy;
-        maxAmmo = player.entityStats.ammo;
-
-        UpdateCombatStats();
+                StartCoroutine(DoAnimatedAmmoFill(0.5f));
+                break;
+            default:
+                visual.SetActive(false);
+                actionText.gameObject.SetActive(false);
+                break;
+        }
     }
 
-    public void UpdateCombatStats()
+    private IEnumerator DoAnimatedAmmoFill(float delay)
     {
+        yield return new WaitForSeconds(delay);
+        for(int i = 0;i < ammoContainer.Length;i++) 
+        {
+            ammoContainer[i].RestoreAnimation();
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+
+    public void UpdateCombatStats(bool healthFeedback,bool energyFeedback)
+    {
+        if (healthFeedback)
+        {
+            StartCoroutine(HitFeedback(hitFeedbackVisual));
+        } else if(energyFeedback)
+        {
+            StartCoroutine(HitFeedback(energyHitFeedbackVisual));
+        }
         healthBar.fillAmount = player.entityStats.health / maxHealth;
         energyBar.fillAmount = player.entityStats.energy / maxEnergy;
-        ammoBar.fillAmount = player.entityStats.ammo / maxAmmo;
+    }
+
+    private IEnumerator HitFeedback(GameObject visual)
+    {
+        visual.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        visual.SetActive(false);
+    }
+
+    public void OnShot()
+    {
+        ammo--;
+        Invoke(nameof(DelayedAnimation), 0.5f);
+    }
+
+    public void OnReload()
+    {
+        ammo = player.entityStats.ammo;
+        StartCoroutine(DoAnimatedAmmoFill(0.1f));
+    }
+
+    private void DelayedAnimation()
+    {
+        ammoContainer[ammo].UseAnimation();
     }
 }

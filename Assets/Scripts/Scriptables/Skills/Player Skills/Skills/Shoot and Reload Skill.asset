@@ -17,14 +17,13 @@ MonoBehaviour:
   statusEffectType: 0
   animationKey: ShootAndReload
   canBeUpgraded: 1
-  unlocked: 0
-  level: 0
+  unlocked: 1
+  level: 1
   initialUnlockCost: 25
-  damageUpgradeAmount: 0
+  damageUpgradeAmount: 5
   skillName: Shoot & Reload
-  skillDescription: 
-  smallIcon: {fileID: -445554888, guid: c7e3ae9abd9a9ef439fa900586ab321d, type: 3}
-  largeIcon: {fileID: 996732956, guid: 3224aa7800b2c5f40af292498410a2ac, type: 3}
+  skillDescription: Shoot and reload at the same time, no turn wasted!
+  icon: {fileID: -104333708, guid: 0878cbff94743f64f997bb31ec5e9f1c, type: 3}
   targetingStyle: 1
   resourceType: 2
   resourceAmount: 15

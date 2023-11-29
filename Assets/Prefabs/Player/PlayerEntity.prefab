@@ -5747,7 +5747,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3030223934839898228
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5863,7 +5863,7 @@ MonoBehaviour:
   shootCommandGO: {fileID: 6587643055806302773}
   punchCommandGO: {fileID: 6587643056161812972}
   lastWindow: 0
-  actionText: {fileID: 3030223935182235822}
+  actionText: {fileID: 0}
 --- !u!1 &3030223934992101041
 GameObject:
   m_ObjectHideFlags: 0
@@ -10804,7 +10804,7 @@ GameObject:
   - component: {fileID: 3675724406778457248}
   m_Layer: 0
   m_Name: PlayerEntity
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10824,7 +10824,6 @@ Transform:
   - {fileID: 3030223934324337117}
   - {fileID: 2270327943035759561}
   - {fileID: 9088194755612201859}
-  - {fileID: 5503637012353081722}
   - {fileID: 4473763606314544573}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -10943,7 +10942,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3030223935182235821
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11363,8 +11362,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: -2413806693520163455, guid: 1105e25046690bc4284f6561a570fd7c, type: 3}
-  m_Color: {r: 0.047169805, g: 0.047169805, b: 0.047169805, a: 0.5019608}
+  m_Sprite: {fileID: 21300000, guid: 64fda1e4ac826324ca219051a1840165, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5019608}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -11744,7 +11743,7 @@ MonoBehaviour:
   middleSkillDisplay: {fileID: 286839462362123258}
   leftSkillDisplay: {fileID: 3030223935520419647}
   rightSkillDisplay: {fileID: 3030223935198462258}
-  actionText: {fileID: 3030223935182235822}
+  actionText: {fileID: 0}
   skillButton: {fileID: 664423767012256800}
   unavaliableIcons:
   - {fileID: 3030223934169684371}
@@ -17484,37 +17483,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &6000449993107510564
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5503637012353081722}
-  m_Layer: 0
-  m_Name: RotatingCameraHandle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5503637012353081722
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6000449993107510564}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3030223935091459574}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6373185702061214285
 GameObject:
   m_ObjectHideFlags: 0
@@ -17892,7 +17860,7 @@ Transform:
   - {fileID: 5621539571813263420}
   - {fileID: 8941117515247678159}
   m_Father: {fileID: 3030223935091459574}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1560029963532922961
 MonoBehaviour:

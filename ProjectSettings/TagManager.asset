@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - CombatUI
+  - CombatNavigation
   layers:
   - Default
   - TransparentFX

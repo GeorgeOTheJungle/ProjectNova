@@ -31,6 +31,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3386609748487667155}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -65,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1941105190, guid: 03e4fb93abc5bf0429f09e858b75d34d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b9c934318f0e271499dfb0c854ee9b4d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -110,6 +111,7 @@ RectTransform:
   m_Children:
   - {fileID: 43160692796443016}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -144,7 +146,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1110766468, guid: c7e5f68c99fbbe9459cbf9d67b058d22, type: 3}
+  m_Sprite: {fileID: -1474967634, guid: 3ccfa4fc81b429d4281480d9587168c0, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -243,5 +245,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152774d4dd360064b850c0e14011202e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  commandName: Act
+  defaultName: 
   assignedAction: {fileID: 0}

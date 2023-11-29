@@ -40,6 +40,7 @@ public class CombatManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        entityTurn = CombatTurn.none;
     }
 
     public void EnterCombat(EntityData[] listOfEnemies,int combatID)
@@ -78,6 +79,7 @@ public class CombatManager : MonoBehaviour
         // Try and order entities
         combatOrder.OrderBy(w => w.entityData.stats.speed).ToList();
 
+        entityTurn = CombatTurn.playerTurn;
         combatResult = CombatResult.none;
     }
 
@@ -96,7 +98,7 @@ public class CombatManager : MonoBehaviour
         if (combatResult == CombatResult.defeat) return;
         if (totalEnemies == 0)
         {
-         //   GameManager.Instance.ChangeGameState(GameState.combatEnded);
+        
             Invoke(nameof(VictoryCall), 1.0f);
             return;
         }
@@ -253,10 +255,12 @@ public class CombatManager : MonoBehaviour
     #region Corutines
     private IEnumerator DelayedCleanup()
     {
+        entityTurn = CombatTurn.none;
         yield return new WaitForSeconds(2.0f);
         xpStored = 0;
         GameManager.Instance.ChangeGameState(GameState.combatEnded);
         onCombatFinish?.Invoke(combatResult, currentCombatID);
+
         yield return new WaitForSeconds(0.15f);
         StartCleanup();
     } 

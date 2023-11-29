@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseDamage: 10
   damageType: 0
+  statusEffectType: 0
   animationKey: Atk_0
   canBeUpgraded: 1
-  unlocked: 0
+  unlocked: 1
   level: 1
   initialUnlockCost: 0
-  damageUpgradeAmount: 0
+  damageUpgradeAmount: 5
   skillName: Shoot
-  skillDescription: 
-  smallIcon: {fileID: 0}
-  largeIcon: {fileID: 0}
+  skillDescription: Sometimes, they just need a bullet to the face
+  icon: {fileID: 925960684, guid: 0878cbff94743f64f997bb31ec5e9f1c, type: 3}
   targetingStyle: 1
   resourceType: 1
   resourceAmount: 1

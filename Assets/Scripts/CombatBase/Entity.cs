@@ -75,7 +75,7 @@ public abstract class Entity : MonoBehaviour
 
     public abstract void OnEntityTurn();
 
-    protected abstract void UpdateEntityStatsUI(); // Update entity stats UI
+    protected abstract void UpdateEntityStatsUI(bool healthHit); // Update entity stats UI
 
     protected abstract void UpdateEntityUI(bool active);
 
@@ -117,7 +117,7 @@ public abstract class Entity : MonoBehaviour
             onFireEffect.RemoveEffect();
             onIceEffect.RemoveEffect();
         }
-        UpdateEntityStatsUI();
+        UpdateEntityStatsUI(true);
     }
 
     public void PlaySound(int id)
@@ -175,12 +175,12 @@ public abstract class Entity : MonoBehaviour
     }
 
     public virtual void OnHeal()
-    {
-        
-        UpdateEntityStatsUI();
+    { 
+        UpdateEntityStatsUI(true);
         // TODO ADD HEALING VISUALS HERE.
     }
 
+    protected int buffDuration = 0;
     public virtual void OnBuff(BuffType buffType)
     {
         switch (buffType)
@@ -194,6 +194,7 @@ public abstract class Entity : MonoBehaviour
                 entityStats.defenseBonus = 1;
                 break;
         }
+        buffDuration = 3;
 
     }
 
@@ -244,7 +245,7 @@ public abstract class Entity : MonoBehaviour
                 if (entityStats.health > entityData.stats.health) entityStats.health = entityData.stats.health;
                 break;
         }
-        UpdateEntityStatsUI();
+        UpdateEntityStatsUI(false);
     }
 
     public abstract void MoveEntityToTarget(); // Use this for melee attacks

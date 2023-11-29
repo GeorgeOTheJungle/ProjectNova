@@ -5,7 +5,7 @@ namespace Enums
 
     public enum CombatResult {none, victory, defeat,escape}
 
-    public enum CombatTurn { playerTurn,enemyTurn}
+    public enum CombatTurn {none, playerTurn,enemyTurn}
 
     public enum ResourceType { none,ammo, energy, health}
 

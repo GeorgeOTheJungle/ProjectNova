@@ -12,19 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a14a3cf33e87d444a04d8bf69d8289e, type: 3}
   m_Name: Blessing Skill
   m_EditorClassIdentifier: 
-  baseDamage: 25
+  baseDamage: 50
   damageType: 1
   statusEffectType: 0
   animationKey: Buff
   canBeUpgraded: 1
   unlocked: 0
   level: 0
-  initialUnlockCost: 0
-  damageUpgradeAmount: 0
+  initialUnlockCost: 400
+  damageUpgradeAmount: 5
   skillName: Blessing
-  skillDescription: 
-  smallIcon: {fileID: 1651433977, guid: c7e3ae9abd9a9ef439fa900586ab321d, type: 3}
-  largeIcon: {fileID: -1651739352, guid: 3224aa7800b2c5f40af292498410a2ac, type: 3}
+  skillDescription: Get a blessing from the gods! Increase your damage for some turns.
+  icon: {fileID: -1013502437, guid: 0878cbff94743f64f997bb31ec5e9f1c, type: 3}
   targetingStyle: 0
   resourceType: 2
   resourceAmount: 25

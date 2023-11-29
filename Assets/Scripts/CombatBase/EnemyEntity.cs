@@ -19,6 +19,7 @@ public class EnemyEntity : Entity
     [SerializeField] private Image followBar;
     [Header("Boss UI references:"), Space(10)]
     [SerializeField] private List<int> skillPattern;
+    [SerializeField] private GameObject shadow;
     private int currentSkillPattern;
     [Space(10)]
     private int skillLenght;
@@ -49,6 +50,7 @@ public class EnemyEntity : Entity
 
     public override void OnCombatStart(GameState gameState)
     {
+        shadow.SetActive(entityData != null);
         if (entityData == null) return;
         // Reset data and stats effects 
         currentEnemySkill = null;
@@ -66,7 +68,7 @@ public class EnemyEntity : Entity
                 skillLenght = skills.Count;
                 currentEnemySkill = enemySkillManager.GetEnemySkill(entityData.entityID);
 
-                UpdateEntityStatsUI();
+                UpdateEntityStatsUI(false);
 
                 if (entityData.entityType == EntityType.enemy)
                 {
@@ -156,7 +158,7 @@ public class EnemyEntity : Entity
         currentEnemySkill.DoSkill(id);
     }
 
-    protected override void UpdateEntityStatsUI()
+    protected override void UpdateEntityStatsUI(bool healthHit)
     {
         switch (entityData.entityType)
         {

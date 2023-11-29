@@ -27,14 +27,14 @@ public class CombatNavigation : MonoBehaviour
     [Space(10)]
     public int lastWindow; // READ ONLY
 
-    [SerializeField] private TextMeshPro actionText;
+    [SerializeField] private TextMeshProUGUI actionText;
 
     private PlayerEntity playerEntity;
     private bool canReturn = false;
     private void Awake()
     {
         Instance = this;
-        playerEntity = GetComponentInParent<PlayerEntity>();
+        playerEntity = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerEntity>();
     }
 
     private void Update()
