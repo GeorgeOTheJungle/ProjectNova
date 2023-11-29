@@ -21,6 +21,7 @@ public class EncounterHandler : MonoBehaviour, IInteractable
     private IEnumerator Start()
     {
         combatID = Guid.NewGuid().GetHashCode();
+        UpdateVisuals();
         yield return new WaitForEndOfFrame();
         CombatManager.Instance.onCombatFinish += HandleCombatResults;
     }
