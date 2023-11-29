@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseDamage: 25
   damageType: 1
+  statusEffectType: 0
   animationKey: LaunchBomb
   canBeUpgraded: 1
   unlocked: 0
   level: 0
-  initialUnlockCost: 25
-  damageUpgradeAmount: 0
+  initialUnlockCost: 300
+  damageUpgradeAmount: 20
   skillName: Energy Bomb
-  skillDescription: 
-  smallIcon: {fileID: -429353433, guid: c7e3ae9abd9a9ef439fa900586ab321d, type: 3}
-  largeIcon: {fileID: -53217667, guid: 3224aa7800b2c5f40af292498410a2ac, type: 3}
+  skillDescription: Launch a bomb and inflict damage to all enemies.
+  icon: {fileID: 1667092596, guid: 0878cbff94743f64f997bb31ec5e9f1c, type: 3}
   targetingStyle: 2
   resourceType: 2
   resourceAmount: 25

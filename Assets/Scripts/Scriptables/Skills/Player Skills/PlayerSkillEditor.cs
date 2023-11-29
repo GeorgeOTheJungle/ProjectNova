@@ -19,12 +19,12 @@ public class PlayerSkillEditor : Editor
     protected static bool ShowOffUnlockSettings = true;
     protected static bool ShowOffTargetingSettings = true;
     protected static bool ShowOffUIReferences = true;
-
+    const int WIDTH = 145;
     PlayerSkill skill;
     private void OnEnable()
     {
-        smallIconProperty = serializedObject.FindProperty("smallIcon");
-        largeIconProperty = serializedObject.FindProperty("largeIcon");
+       // smallIconProperty = serializedObject.FindProperty("smallIcon");
+        largeIconProperty = serializedObject.FindProperty("icon");
 
         skill = (PlayerSkill)target;
         EditorUtility.SetDirty(skill);
@@ -35,8 +35,19 @@ public class PlayerSkillEditor : Editor
         DrawDefaultInspector();
         serializedObject.Update();
 
-        const int WIDTH = 145;
+        EditorGUILayout.BeginVertical();
+        EditorGUILayout.PropertyField(largeIconProperty);
+     
+        Texture2D texture = AssetPreview.GetAssetPreview(skill.icon);
+        if (texture != null)
+        {
+            texture.filterMode = FilterMode.Point;
+            GUILayout.Label("", GUILayout.Height(125), GUILayout.Width(125));
+            GUI.DrawTexture(GUILayoutUtility.GetLastRect(), texture);
+        }
 
+
+        EditorGUILayout.EndVertical();
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("Can be upgraded",GUILayout.Width(WIDTH));
         skill.canBeUpgraded = EditorGUILayout.Toggle(skill.canBeUpgraded, GUILayout.Width(WIDTH));
@@ -134,18 +145,11 @@ public class PlayerSkillEditor : Editor
             EditorGUILayout.Space(5);
 
             EditorGUILayout.LabelField("Skill Description:", GUILayout.MaxWidth(WIDTH));
-            EditorGUILayout.TextArea(skill.skillDescription, GUILayout.MaxHeight(50));
+            skill.skillDescription = EditorGUILayout.TextArea(skill.skillDescription, GUILayout.MaxHeight(50));
 
             EditorGUILayout.Space(5);
 
-            EditorGUILayout.PropertyField(smallIconProperty);
-            EditorGUILayout.PropertyField(largeIconProperty);
-            Texture2D texture = AssetPreview.GetAssetPreview(skill.largeIcon);
-            if (texture != null)
-            {
-                GUILayout.Label("", GUILayout.Height(80), GUILayout.Width(80));
-                GUI.DrawTexture(GUILayoutUtility.GetLastRect(), texture);
-            }
+
             EditorGUI.indentLevel--;
         }
     }

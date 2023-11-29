@@ -27,6 +27,8 @@ public class SkillUpgradeUI : MonoBehaviour
     [SerializeField] private List<PlayerSkill> skillList;
     [SerializeField] private List<LevelIndicatorUI> levelIndicatorUIs;
     [Space(10)]
+    [SerializeField] private Image skillIconImage;
+    [SerializeField] private RectTransform upgradeFeedback;
     [Header("Skill description references: ")]
     [SerializeField] private TextMeshProUGUI skillNameText;
     [SerializeField] private TextMeshProUGUI skillDescriptionText;
@@ -79,6 +81,7 @@ public class SkillUpgradeUI : MonoBehaviour
         currentSkill = id;
         currentSkillSelected = skillSelected;
 
+        skillIconImage.sprite = currentSkillSelected.icon;
         backButton.gameObject.SetActive(false);
         returnButton.gameObject.SetActive(true);
         
@@ -92,6 +95,7 @@ public class SkillUpgradeUI : MonoBehaviour
         else if (currentSkill > skillList.Count - 1) currentSkill = 0;
 
         currentSkillSelected = skillList[currentSkill];
+        skillIconImage.sprite = currentSkillSelected.icon;
         // Check if skill is capable to be upgrades
         UpdateSkillInfo();
 
@@ -155,6 +159,10 @@ public class SkillUpgradeUI : MonoBehaviour
         {
             SkillManager.Instance.UpgradeSkill(currentSkillSelected);
         }
+        LeanTween.alpha(upgradeFeedback, 1.0f, 0.0f);
+        LeanTween.scale(upgradeFeedback, Vector3.one, 0.0f);
+        LeanTween.scale(upgradeFeedback, new Vector3(1.25f, 1.25f, 1.25f), 0.1f);
+        LeanTween.alpha(upgradeFeedback, 0.0f, 0.1f);
         UpdateSkillInfo();
     }
 

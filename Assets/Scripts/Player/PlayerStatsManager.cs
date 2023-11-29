@@ -30,11 +30,13 @@ public class PlayerStatsManager : MonoBehaviour
 
     public Stats GetPlayerStats() => playerStats;
 
+    public StatsLevel GetStatsLevel() => statsLevel;
+
     public void UpdatePlayerStats()
     {
         playerStats.health = playerData.stats.health + (5 * statsLevel.healthLevel);
         playerStats.energy = playerData.stats.energy + (5 * statsLevel.energyLevel);
-        playerStats.ammo = playerData.stats.ammo + (1 * statsLevel.ammoLevel);
+        //playerStats.ammo = playerData.stats.ammo + (1 * statsLevel.ammoLevel);
 
         playerStats.physicalDamage = playerData.stats.physicalDamage + (5 * statsLevel.physicalDamageLevel);
         playerStats.physicalArmor = playerData.stats.physicalArmor + (5 * statsLevel.physicalArmorLevel);
@@ -101,6 +103,7 @@ public class PlayerStatsManager : MonoBehaviour
                 break;
             case PlayerStat.physicalArmor:
                 statsLevel.physicalArmorLevel++;
+                statsLevel.magicArmorLevel++;
                 cost = statsLevel.physicalArmorLevel * initialCost;
                 break;
             case PlayerStat.magicalDmg:

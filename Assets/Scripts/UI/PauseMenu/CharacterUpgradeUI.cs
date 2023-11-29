@@ -17,6 +17,7 @@ public class CharacterUpgradeUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI xpText;
 
     [SerializeField] private GameObject defaultSelection;
+    [SerializeField] private Button defaultButton;
     private EventSystem eventSystem;
 
     private void Awake()
@@ -33,11 +34,10 @@ public class CharacterUpgradeUI : MonoBehaviour
 
     private void Update()
     {
-        if (eventSystem.currentSelectedGameObject == null) return;
-
-        if(eventSystem.currentSelectedGameObject.activeSelf == false)
+        if(eventSystem.currentSelectedGameObject == null)
         {
-            eventSystem.SetSelectedGameObject(defaultSelection);
+            Debug.Log("AAA");
+            defaultButton.Select();
         }
         //if (eventSystem.currentSelectedGameObject != null && eventSystem.currentSelectedGameObject != defaultSelection)
         //    defaultSelection = eventSystem.currentSelectedGameObject;

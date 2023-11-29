@@ -34,7 +34,7 @@ public static class Constants
     public const string ENTRANCE_ANIMATION = "Entrance";
     public const string HIT_ANIMATION = "Hit";
     public const string GUARD_HIT_ANIMATION = "GuardHit";
-    public const string GUARD_END_ANIMATION = "Idle"; // TODO MAKE TRANSITIONS FROM GUARD TO IDLE
+    public const string GUARD_END_ANIMATION = "GuardEnd"; // TODO MAKE TRANSITIONS FROM GUARD TO IDLE
     public const string IDLE_OUT = "IdleOut";
     public const string DEATH_ANIMATION = "Death";
 }

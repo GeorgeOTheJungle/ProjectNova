@@ -12,11 +12,11 @@ public class CommandUI : MonoBehaviour,ISelectHandler
 
     private void Awake()
     {
-        entity = GetComponentInParent<PlayerEntity>();
+        entity = GameObject.FindGameObjectWithTag("Player").GetComponentInParent<PlayerEntity>();
     }
     public void OnSelect(BaseEventData eventData)
     {
-        if (assignedAction) CombatNavigation.Instance.UpdateActionText(assignedAction.skillName);
+        if (assignedAction && assignedAction.skillName != string.Empty) CombatNavigation.Instance.UpdateActionText(assignedAction.skillName);
         else CombatNavigation.Instance.UpdateActionText(defaultName);
     }
 
