@@ -54,6 +54,7 @@ public class Door : MonoBehaviour,IInteractable
         if (GameManager.Instance.CurrentGameState() != Enums.GameState.exploration) return;
         Invoke(nameof(FloorManagerCall), Constants.TRANSITION_TIME);
         TransitionManager.Instance.DoTransition(Constants.FADE_TO_BLACK);
+        SoundManager.Instance.ChangeFloorMusic(nextFloor);
     }
 
     public void KeyCheck()

@@ -13,6 +13,7 @@ public class ExplorationUINavigation : MonoBehaviour
     [SerializeField] private GameObject skillUpgradeMenu;
     [SerializeField] private Button mainMenuFirstButton;
 
+    [SerializeField] private Animator mainMenuAnimator;
 
     private IEnumerator Start()
     {
@@ -43,7 +44,8 @@ public class ExplorationUINavigation : MonoBehaviour
         }
 
         pauseMenu.SetActive(uiOpen);
-        mainMenu.SetActive(uiOpen);
+        //mainMenu.SetActive(uiOpen);
+        mainMenuAnimator.SetBool("isActive", uiOpen);
         characterWindow.SetActive(false);
         skillUpgradeMenu.SetActive(false);
         mainMenuFirstButton.Select();

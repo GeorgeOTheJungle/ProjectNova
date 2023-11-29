@@ -51,6 +51,7 @@ public class EncounterHandler : MonoBehaviour, IInteractable
         // ended.
         CombatArenaManager.Instance.SetArena(encounterData.arenaId);
         CombatManager.Instance.EnterCombat(encounterData.encounter, combatID);
+       // SoundManager.Instance.ChangeToCombatMusic();
     }
 
     public void OnPlayerEnter()
