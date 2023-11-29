@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3067243213337424859}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Prefab_Desert_Floor_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,9 +87,17 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a2edcff200664654f86d443976c9575f, type: 2}
+    - target: {fileID: -1928510496703343531, guid: e2e16ed07f3a488468c2c19edcea9c50, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e2e16ed07f3a488468c2c19edcea9c50, type: 3}
       propertyPath: m_Name
       value: Model_StageBlock_Floor_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e2e16ed07f3a488468c2c19edcea9c50, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2e16ed07f3a488468c2c19edcea9c50, type: 3}
@@ -98,3 +106,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e2e16ed07f3a488468c2c19edcea9c50, type: 3}
   m_PrefabInstance: {fileID: 3045001527644482064}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5728166591047663173 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -1928510496703343531, guid: e2e16ed07f3a488468c2c19edcea9c50, type: 3}
+  m_PrefabInstance: {fileID: 3045001527644482064}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &5852398351089217342
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5728166591047663173}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0.5, y: 0.5, z: 0.5}

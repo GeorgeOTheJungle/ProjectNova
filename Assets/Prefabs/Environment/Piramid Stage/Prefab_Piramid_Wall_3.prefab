@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 529069900338539891}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Prefab_Piramid_Wall_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,10 +87,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Model_StageBlock_Wall_3
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bb022c1c84fd20943968ab902acb6dec, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7976630038086214415, guid: bb022c1c84fd20943968ab902acb6dec, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 86d25d10fb8c22645a2512d5f9c02516, type: 2}
+    - target: {fileID: 8087665406279336758, guid: bb022c1c84fd20943968ab902acb6dec, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb022c1c84fd20943968ab902acb6dec, type: 3}
 --- !u!1 &3157870958102821965 stripped
