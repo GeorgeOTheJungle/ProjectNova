@@ -12,18 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a14a3cf33e87d444a04d8bf69d8289e, type: 3}
   m_Name: TripleShot Skill
   m_EditorClassIdentifier: 
-  baseDamage: 10
+  baseDamage: 15
   damageType: 0
+  statusEffectType: 0
   animationKey: TripleShot
   canBeUpgraded: 1
-  unlocked: 1
+  unlocked: 0
   level: 0
-  initialUnlockCost: 0
+  initialUnlockCost: 250
   damageUpgradeAmount: 5
   skillName: Triple shot
-  skillDescription: 
-  smallIcon: {fileID: 1651433977, guid: c7e3ae9abd9a9ef439fa900586ab321d, type: 3}
-  largeIcon: {fileID: -1651739352, guid: 3224aa7800b2c5f40af292498410a2ac, type: 3}
+  skillDescription: Shoot triple the bullet for no cost! (Just energy)
+  icon: {fileID: -1656087010, guid: 0878cbff94743f64f997bb31ec5e9f1c, type: 3}
   targetingStyle: 1
   resourceType: 2
   resourceAmount: 10

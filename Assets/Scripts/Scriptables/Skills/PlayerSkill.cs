@@ -21,8 +21,8 @@ public class PlayerSkill : Skill
     [HideInInspector] public string skillName; // Use it for UI.
     [HideInInspector] [TextArea] public string skillDescription;
 
-    [HideInInspector] public Sprite smallIcon;
-    [HideInInspector] public Sprite largeIcon;
+   // [HideInInspector] public Sprite smallIcon;
+    [HideInInspector] public Sprite icon;
 
     //[Header("Targeting and resources:"), Space(10)]
     [HideInInspector] public TargetingStyle targetingStyle;
@@ -30,9 +30,27 @@ public class PlayerSkill : Skill
     [HideInInspector] public ResourceType resourceType;
     [HideInInspector] public int resourceAmount;
     private float initialDamage;
+    private int initialevel;
+    private bool wasUnlocked;
     public void Initialize()
     {
-        if (unlocked) return;
+        initialDamage = baseDamage;
+        //level = 0;
+        initialevel = level;
+        wasUnlocked = unlocked;
+        //unlocked = false;
+    }
+
+    public void RestoreToDefault()
+    {
+        baseDamage = initialDamage;
+        level = initialevel;
+        unlocked = wasUnlocked;
+    }
+
+
+    public void ResetToFactory()
+    {
         initialDamage = baseDamage;
         level = 0;
         unlocked = false;

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Enums;
+using System;
+
+[Serializable]
 [CreateAssetMenu(fileName ="New Skill",menuName ="Skill")]
 public abstract class Skill : ScriptableObject
 {

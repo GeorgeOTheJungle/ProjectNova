@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEngine.EventSystems.EventTrigger;
 
 public class ScrollingUI : MonoBehaviour
 {
@@ -14,7 +13,7 @@ public class ScrollingUI : MonoBehaviour
     [SerializeField] private Image leftSkillDisplay;
     [SerializeField] private Image rightSkillDisplay;
 
-    [SerializeField] private TextMeshPro actionText;
+    [SerializeField] private TextMeshProUGUI actionText;
     [SerializeField] private Button skillButton;
 
     [SerializeField] private GameObject[] unavaliableIcons;
@@ -29,7 +28,7 @@ public class ScrollingUI : MonoBehaviour
 
     private void Awake()
     {
-        entity = GetComponentInParent<PlayerEntity>();
+        entity = GameObject.FindGameObjectWithTag("Player").GetComponentInParent<PlayerEntity>();
     }
 
     private void Start()
@@ -43,7 +42,7 @@ public class ScrollingUI : MonoBehaviour
     private void OnEnable()
     {
         avaliablePlayerSkills.Clear();
-        avaliablePlayerSkills = SkillManager.Instance.GetAvaliableSkills();
+         avaliablePlayerSkills = SkillManager.Instance.GetAvaliableSkills();
         playerSkillLenght = avaliablePlayerSkills.Count - 1;
         Scroll(0);
     }
@@ -82,9 +81,9 @@ public class ScrollingUI : MonoBehaviour
         actionText.SetText(avaliablePlayerSkills[currentSkill].skillName);
 
         // Assign sprites
-        leftSkillDisplay.sprite = avaliablePlayerSkills[lastSkill].smallIcon;
-        middleSkillDisplay.sprite = avaliablePlayerSkills[currentSkill].largeIcon;
-        rightSkillDisplay.sprite = avaliablePlayerSkills[nextSkill].smallIcon;
+        leftSkillDisplay.sprite = avaliablePlayerSkills[lastSkill].icon;
+        middleSkillDisplay.sprite = avaliablePlayerSkills[currentSkill].icon;
+        rightSkillDisplay.sprite = avaliablePlayerSkills[nextSkill].icon;
         canSelectSkill = true;
         switch (avaliablePlayerSkills[currentSkill].resourceType)
         {

@@ -18,13 +18,12 @@ MonoBehaviour:
   animationKey: Eat
   canBeUpgraded: 1
   unlocked: 1
-  level: 0
-  initialUnlockCost: 0
-  damageUpgradeAmount: 0
+  level: 1
+  initialUnlockCost: 100
+  damageUpgradeAmount: 5
   skillName: Eat Chicken
-  skillDescription: 
-  smallIcon: {fileID: 915841950, guid: c7e3ae9abd9a9ef439fa900586ab321d, type: 3}
-  largeIcon: {fileID: 2032203404, guid: 3224aa7800b2c5f40af292498410a2ac, type: 3}
+  skillDescription: Eat a chicken and heal your wounds.
+  icon: {fileID: -563710576, guid: 0878cbff94743f64f997bb31ec5e9f1c, type: 3}
   targetingStyle: 0
   resourceType: 2
   resourceAmount: 20

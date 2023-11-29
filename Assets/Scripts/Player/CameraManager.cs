@@ -8,26 +8,39 @@ public class CameraManager : MonoBehaviour
     [SerializeField] private float orbitTime = 1.0f;
     [SerializeField] private float orbitAmount = 45.0f;
     private bool Rotating = false;
+    [SerializeField] private GameObject uiVisual;
     [SerializeField] private CinemachineVirtualCamera explorationVCamera;
     [SerializeField] private CinemachineVirtualCamera combatVCamera;
-    [SerializeField] private CinemachineVirtualCamera idleCombatVCamera;
+    [SerializeField] private CinemachineVirtualCamera playerIdleCombatVCamera;
+    [SerializeField] private CinemachineVirtualCamera enemyIdleCombatVCamera;
+
     private CinemachineOrbitalTransposer orbitalTransposer;
-    private CinemachineOrbitalTransposer idleOrbitalTransposer;
+    private CinemachineOrbitalTransposer playerIdleOrbitalTransposer;
+    private CinemachineOrbitalTransposer enemyOrbitalTransposer;
 
+    [SerializeField] private CinemachineOrbitalTransposer currentOrbital;
     [SerializeField] private float rotationSpeed;
-    [SerializeField] private float idleTime = 3.0f;
+    [SerializeField] private float idleTime = 3.0f; // Time before entering orbit mode
     private float currentIdleTime = 0.0f;
+    [Space(5)]
+    [SerializeField] private float orbitIdleTime = 15.0f; // Time before changing to another entity
+    private float currentOrbitIdleTime = 0.0f;
+    [SerializeField] private float minIdleOrbitSpeed = -3.0f;
+    [SerializeField] private float maxIdleOrbitSpeed = 3.0f;
 
-    private float currentIdleAmount = 0.0f;
+    private bool isPlayerFocus = false;
+    private float currentOrbitAmount = 0.0f;
     private void Awake()
     {
         orbitalTransposer = explorationVCamera.GetCinemachineComponent<CinemachineOrbitalTransposer>();
-        idleOrbitalTransposer = idleCombatVCamera.GetCinemachineComponent<CinemachineOrbitalTransposer>();
+        playerIdleOrbitalTransposer = playerIdleCombatVCamera.GetCinemachineComponent<CinemachineOrbitalTransposer>();
+        enemyOrbitalTransposer = enemyIdleCombatVCamera.GetCinemachineComponent<CinemachineOrbitalTransposer>();
     }
 
     private IEnumerator Start()
     {
         combatVCamera.gameObject.SetActive(false);
+        isPlayerFocus = Random.Range(0, 2) == 0;
         yield return new WaitForEndOfFrame();
         InputComponent.Instance.cameraRotationTrigger += HandleCameraRotation;
         GameManager.Instance.onGameStateChangeTrigger += HandleCameraChange;
@@ -51,26 +64,62 @@ public class CameraManager : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.Instance.CurrentGameState() != GameState.combatReady) return;
-        if (CombatManager.Instance.GetCombatResult() != CombatResult.none) return;
         if (CombatManager.Instance.entityTurn != CombatTurn.playerTurn) return;
+
+        // Check if any key is being pressed, if yes, then reset timer and everything else.
         if (Input.anyKey)
         {
+
+            Debug.Log("aNY KEY PRESSED");
             currentIdleTime = 0.0f;
-            currentIdleAmount = 0.0f;
+            currentOrbitAmount = 0.0f;
+            currentOrbitIdleTime = 0.0f;
             combatVCamera.gameObject.SetActive(true);
-            idleCombatVCamera.gameObject.SetActive(false);
+            playerIdleCombatVCamera.gameObject.SetActive(false);
+            enemyIdleCombatVCamera.gameObject.SetActive(false);
+            currentOrbital = null;
+            isPlayerFocus = Random.Range(0, 2) == 0;
+            uiVisual.SetActive(true);
         }
 
-        currentIdleTime += Time.deltaTime;
-        if (currentIdleTime > idleTime)
+        // If timer is more than the designated time, then set an orbit timer
+
+        if(currentIdleTime < idleTime) currentIdleTime += Time.deltaTime;
+        else
         {
-            combatVCamera.gameObject.SetActive(false);
-            idleCombatVCamera.gameObject.SetActive(true);
+            if (currentOrbital == null)
+            {
+                GetIdleOrbit();
+                uiVisual.SetActive(false);
+                combatVCamera.gameObject.SetActive(false);
+            }
+            else
+            {
+                currentOrbitAmount -= Time.deltaTime * rotationSpeed;
+                currentOrbital.m_XAxis.Value = currentOrbitAmount;
 
-            currentIdleAmount -= Time.deltaTime * rotationSpeed;
-            idleOrbitalTransposer.m_XAxis.Value = currentIdleAmount;
+
+                if (currentOrbitIdleTime < orbitIdleTime) currentOrbitIdleTime += Time.deltaTime;
+                else
+                {
+                    currentOrbitIdleTime = 0.0f;
+                    GetIdleOrbit();
+                }
+            }
         }
+
+    }
+
+    private void GetIdleOrbit()
+    {
+        isPlayerFocus = !isPlayerFocus;
+        playerIdleCombatVCamera.gameObject.SetActive(isPlayerFocus);
+        enemyIdleCombatVCamera.gameObject.SetActive(!isPlayerFocus);
+
+        currentOrbital = isPlayerFocus ? playerIdleOrbitalTransposer : enemyOrbitalTransposer;
+
+        rotationSpeed = Mathf.CeilToInt(Random.Range(minIdleOrbitSpeed, maxIdleOrbitSpeed));
+        if (rotationSpeed == 0) rotationSpeed = 1;
     }
 
     private void HandleCameraRotation(float value)

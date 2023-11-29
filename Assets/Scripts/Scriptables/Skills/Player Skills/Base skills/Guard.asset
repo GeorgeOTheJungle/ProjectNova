@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseDamage: 15
   damageType: 0
+  statusEffectType: 0
   animationKey: Guard
   canBeUpgraded: 0
   unlocked: 0
@@ -22,8 +23,7 @@ MonoBehaviour:
   damageUpgradeAmount: 0
   skillName: 
   skillDescription: 
-  smallIcon: {fileID: 0}
-  largeIcon: {fileID: 0}
+  icon: {fileID: 892097597, guid: 0878cbff94743f64f997bb31ec5e9f1c, type: 3}
   targetingStyle: 0
   resourceType: 0
   resourceAmount: 0

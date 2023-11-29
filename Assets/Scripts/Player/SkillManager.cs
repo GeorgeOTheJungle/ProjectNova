@@ -13,10 +13,34 @@ public class SkillManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        ResetSkillsToDefault(); // TODO REMOVE THIS LATER?
+ 
+    }
 
-        foreach(PlayerSkill skill in allPlayerSkills)
+    [ContextMenu("Initialize Skills")]
+    public void InitializeSkills()
+    {
+        foreach (PlayerSkill skill in allPlayerSkills)
         {
             skill.Initialize();
+        }
+    }
+
+    [ContextMenu("Reset skills to default")]
+    public void ResetSkillsToDefault()
+    {
+        foreach (PlayerSkill skill in allPlayerSkills)
+        {
+            skill.RestoreToDefault();
+        }
+    }
+
+    [ContextMenu("Skills Factory Reset (WILL RESET TO 0 ALL)")]
+    public void FactoryReset()
+    {
+        foreach (PlayerSkill skill in allPlayerSkills)
+        {
+            skill.ResetToFactory();
         }
     }
 

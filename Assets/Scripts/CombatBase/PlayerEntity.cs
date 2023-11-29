@@ -2,6 +2,7 @@ using Enums;
 using Structs;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
@@ -20,9 +21,11 @@ public class PlayerEntity : Entity
     private const string PUNCH_END_ANIMATION = "PunchEnd";
     private CombatNavigation combatNavigation;
     private CombatUI combatUI;
+    private int lastAmmo;
     public override void OnAwake()
     {
-        combatNavigation = GetComponentInChildren<CombatNavigation>();
+        combatNavigation = GameObject.FindGameObjectWithTag("CombatNavigation").GetComponent<CombatNavigation>();
+        commandsVisuals = combatNavigation.gameObject;
         combatUI = GameObject.FindGameObjectWithTag("CombatUI").GetComponent<CombatUI>();
     }
 
@@ -31,21 +34,23 @@ public class PlayerEntity : Entity
         currentSkill = null;
         onFireEffect.RemoveEffect();
         entityState = EntityState.idle;
+ 
         switch (gameState)
         {
             case GameState.combatPreparation:
                 //entityStats = entityData.stats;
                 entityStats = PlayerStatsManager.Instance.GetPlayerStats();
+                StartCoroutine(TurnCommandsVisuals(true, 0.0f));
                 PlayAnimation(Constants.IDLE_OUT);
                 break;
             case GameState.combatReady:
               
                 StartCoroutine(DelayEntrance());
-                StartCoroutine(TurnCommandsVisuals(true, 1.0f));
+
                 break;
         }
 
-        UpdateEntityStatsUI();
+        UpdateEntityStatsUI(false);
     }
 
     public override void OnEntityTurn()
@@ -53,9 +58,11 @@ public class PlayerEntity : Entity
         if (entityState == EntityState.dead) return;
         if (entityStats.defenseBonus > 0.0f)
         {
-            PlayAnimation(Constants.GUARD_HIT_ANIMATION);
+            PlayAnimation(Constants.GUARD_END_ANIMATION);
             entityStats.defenseBonus = 0.0f;
         }
+        if (buffDuration > 0) buffDuration--;
+        if (buffDuration == 0) entityStats.buffBonus = 0.0f;
         CombatManager.Instance.IsPlayerTurn(true);
         entityState = EntityState.thinking;
         currentSkill = null;
@@ -64,9 +71,8 @@ public class PlayerEntity : Entity
 
     public override void OnStart()
     {
-        StartCoroutine(TurnCommandsVisuals(false, 0.0f));
+        //StartCoroutine(TurnCommandsVisuals(false, 0.0f));
         Vector3 originalPlayerPosition = entityVisual.position;
-
     }
 
     public override void PerformAction(PlayerSkill skill)
@@ -126,9 +132,14 @@ public class PlayerEntity : Entity
 
     }
 
-    protected override void UpdateEntityStatsUI()
+    protected override void UpdateEntityStatsUI(bool healthHit)
     {
-        combatUI.UpdateCombatStats();
+        combatUI.UpdateCombatStats(healthHit, false);
+        if (lastAmmo < entityStats.ammo)
+        {
+            lastAmmo = entityStats.ammo;
+            combatUI.OnReload();
+        }
     }
 
     public override void CombatUICleanUp()
@@ -179,7 +190,9 @@ public class PlayerEntity : Entity
         switch (currentSkill.resourceType)
         {
             case ResourceType.ammo:
+                lastAmmo = entityStats.ammo;
                 entityStats.ammo -= currentSkill.resourceAmount;
+                combatUI.OnShot();
                 if (entityStats.ammo <= 0)
                 {
                     entityStats.ammo = 0;
@@ -188,9 +201,10 @@ public class PlayerEntity : Entity
                 break;
             case ResourceType.energy:
                 entityStats.energy -= currentSkill.resourceAmount;
+                combatUI.UpdateCombatStats(false, true);
                 break;
         }
-        combatUI.UpdateCombatStats();
+
     }
 
     public void GetResource(ResourceType resourceType,int amount)
@@ -205,6 +219,7 @@ public class PlayerEntity : Entity
             case ResourceType.ammo:
                 entityStats.ammo += amount;
                 if (entityStats.ammo > entityData.stats.ammo) entityStats.ammo = entityData.stats.ammo;
+
                 break;
             case ResourceType.energy:
                 entityStats.energy += amount;
