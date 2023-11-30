@@ -8,7 +8,7 @@ public class FloorsManager : MonoBehaviour
 
     [SerializeField] private GameObject[] floors;
     [SerializeField] private Transform[] floorsSpawnPoints;
-
+    [SerializeField] private GameObject finalImage;
     private void Awake()
     {
         Instance = this;
@@ -19,7 +19,12 @@ public class FloorsManager : MonoBehaviour
         {
             go.SetActive(false);
         }
-
+        if(id >= floorsSpawnPoints.Length)
+        {
+            finalImage.SetActive(true);
+            GameManager.Instance.ChangeGameState(Enums.GameState.messagePrompt);
+            return;
+        }
         floors[id].SetActive(true);
         // Set active all visuals.
         CharacterMovement.Instance.MovePlayerToSpawn(floorsSpawnPoints[id]);

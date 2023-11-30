@@ -9,10 +9,11 @@ public class SoundManager : MonoBehaviour
 
     [SerializeField] private AudioSource currentStageSong;
     [SerializeField] private AudioSource currentCombatSong;
-
+    [SerializeField] private AudioSource victoryMusic;
     [SerializeField] private AudioClip[] stageSongs;
     [SerializeField] private AudioClip[] combatSongs;
     private int currentFloor;
+    private GameState lastGameState;
     private void Awake()
     {
         Instance = this;
@@ -24,26 +25,37 @@ public class SoundManager : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
         GameManager.Instance.onGameStateChangeTrigger += HandleMusicMix;
+        CombatManager.Instance.onCombatFinish += HandleVictoryMusic;
     }
 
     private void OnDisable()
     {
         GameManager.Instance.onGameStateChangeTrigger -= HandleMusicMix;
+        CombatManager.Instance.onCombatFinish -= HandleVictoryMusic;
     }
 
     private void HandleMusicMix(GameState gameState)
     {
         if (gameState == GameState.messagePrompt) return;
-        switch(gameState)
+        if (gameState == GameState.paused) return;
+        if (gameState == GameState.explorationTransition) return;
+
+        if (lastGameState == gameState) return;
+        lastGameState = gameState;
+        switch (gameState)
         {
             case GameState.combatPreparation:
                 ChangeToCombatMusic();
                 break;
             case GameState.exploration:
-                Debug.Log("Reached exploration");
                 ReturnToExplorationMusic();
                 break;
         }
+    }
+
+    private void HandleVictoryMusic(CombatResult restult, int id)
+    {
+        if (restult == CombatResult.victory) ChangeToVictoryMusic();
     }
 
     public void ChangeFloorMusic(int id)
@@ -63,6 +75,13 @@ public class SoundManager : MonoBehaviour
         StartCoroutine(ChangeToExplorationMusicFade());
     }
 
+    private void ChangeToVictoryMusic()
+    {
+        Debug.Log("Victory song");
+        currentCombatSong.Stop();
+        victoryMusic.Play();
+    }
+
     private IEnumerator ChangeToCombatMusicFade()
     {
         float volume = currentStageSong.volume;
@@ -72,11 +91,13 @@ public class SoundManager : MonoBehaviour
             volume -= Time.deltaTime;
             combatVolume += Time.deltaTime;
             currentStageSong.volume = volume;
-            currentCombatSong.volume = combatVolume;
+           // currentCombatSong.volume = combatVolume;
             yield return null;
         }
         currentStageSong.volume = 0f;
+        currentStageSong.Pause();
         currentCombatSong.volume = 1.0f;
+        currentCombatSong.Play();
 
     }
 
@@ -92,11 +113,13 @@ public class SoundManager : MonoBehaviour
             combatVolume -= Time.deltaTime;
             currentStageSong.volume = volume;
             currentCombatSong.volume = combatVolume;
+            victoryMusic.volume = combatVolume;
             yield return null;
         }
         currentStageSong.volume = 1.0f;
         currentCombatSong.volume = 0.0f;
-
+        currentStageSong.Play();
+        victoryMusic.Stop();
     }
 
     private IEnumerator ChangeFloorSongFade(int id)
@@ -110,15 +133,19 @@ public class SoundManager : MonoBehaviour
             yield return null;
         }
         currentStageSong.Stop();
-        currentStageSong.clip = stageSongs[id];
-        currentCombatSong.clip = combatSongs[id];
-        yield return new WaitForSeconds(0.2f);
-        currentStageSong.Play();
-        while (volume < 1.0f)
+        if (id <= stageSongs.Length)
         {
-            volume += Time.deltaTime;
-            currentStageSong.volume = volume;
-            yield return null;
+            currentStageSong.clip = stageSongs[id];
+            currentCombatSong.clip = combatSongs[id];
+
+            yield return new WaitForSeconds(0.2f);
+            currentStageSong.Play();
+            while (volume < 1.0f)
+            {
+                volume += Time.deltaTime;
+                currentStageSong.volume = volume;
+                yield return null;
+            }
         }
     }
 
