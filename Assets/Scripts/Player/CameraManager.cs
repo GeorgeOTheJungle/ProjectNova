@@ -69,8 +69,6 @@ public class CameraManager : MonoBehaviour
         // Check if any key is being pressed, if yes, then reset timer and everything else.
         if (Input.anyKey)
         {
-
-            Debug.Log("aNY KEY PRESSED");
             currentIdleTime = 0.0f;
             currentOrbitAmount = 0.0f;
             currentOrbitIdleTime = 0.0f;

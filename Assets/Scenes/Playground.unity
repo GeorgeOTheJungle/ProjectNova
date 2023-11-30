@@ -8140,6 +8140,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e615545371bdc8489e4ac2727164a0f, type: 3}
+--- !u!1 &1169425518 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4530401019704573442, guid: 42c1faaf23af2ac4d9efe12c399e13af, type: 3}
+  m_PrefabInstance: {fileID: 8386774739560577873}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1172974348
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11265,6 +11270,7 @@ MonoBehaviour:
   floorsSpawnPoints:
   - {fileID: 1306202738}
   - {fileID: 19422162}
+  finalImage: {fileID: 1169425518}
 --- !u!4 &1650385576
 Transform:
   m_ObjectHideFlags: 0
@@ -16518,6 +16524,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1114760441}
     m_Modifications:
     - target: {fileID: 7180650762503161428, guid: e5ef5f6a30e75144a8cf283af5c533c2, type: 3}
+      propertyPath: nextFloor
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7180650762503161428, guid: e5ef5f6a30e75144a8cf283af5c533c2, type: 3}
       propertyPath: teleportToNextStage
       value: 1
       objectReference: {fileID: 0}
@@ -17227,6 +17237,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3447614193690963644, guid: 42c1faaf23af2ac4d9efe12c399e13af, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3475173224529353816, guid: 42c1faaf23af2ac4d9efe12c399e13af, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -17257,6 +17271,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3629675106282702633, guid: 42c1faaf23af2ac4d9efe12c399e13af, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4530401019704573442, guid: 42c1faaf23af2ac4d9efe12c399e13af, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4726639965887363852, guid: 42c1faaf23af2ac4d9efe12c399e13af, type: 3}
@@ -17763,13 +17781,17 @@ PrefabInstance:
       propertyPath: characterMovement
       value: 
       objectReference: {fileID: 1278318947}
+    - target: {fileID: 8386774738896680794, guid: 42c1faaf23af2ac4d9efe12c399e13af, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -9.085815
+      objectReference: {fileID: 0}
     - target: {fileID: 8386774739137319521, guid: 42c1faaf23af2ac4d9efe12c399e13af, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8386774739362527650, guid: 42c1faaf23af2ac4d9efe12c399e13af, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8386774739477039697, guid: 42c1faaf23af2ac4d9efe12c399e13af, type: 3}
       propertyPath: m_Pivot.x
@@ -17859,6 +17881,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8386774739477040047, guid: 42c1faaf23af2ac4d9efe12c399e13af, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386774739477040047, guid: 42c1faaf23af2ac4d9efe12c399e13af, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1280
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386774739477040047, guid: 42c1faaf23af2ac4d9efe12c399e13af, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 720
+      objectReference: {fileID: 0}
     - target: {fileID: 8386774739633570164, guid: 42c1faaf23af2ac4d9efe12c399e13af, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -17877,7 +17911,7 @@ PrefabInstance:
       objectReference: {fileID: 1665318233}
     - target: {fileID: 8386774740019888712, guid: 42c1faaf23af2ac4d9efe12c399e13af, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8386774740416212386, guid: 42c1faaf23af2ac4d9efe12c399e13af, type: 3}
       propertyPath: m_IsActive

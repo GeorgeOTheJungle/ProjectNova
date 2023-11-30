@@ -129,6 +129,7 @@ public class CombatManager : MonoBehaviour
 
     private void VictoryCall()
     {
+        GameManager.Instance.ChangeGameState(GameState.combatEnded);
         combatResult = CombatResult.victory;
         onCombatFinish?.Invoke(combatResult, currentCombatID);
     }

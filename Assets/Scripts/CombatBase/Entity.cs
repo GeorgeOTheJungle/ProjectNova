@@ -123,7 +123,6 @@ public abstract class Entity : MonoBehaviour
     public void PlaySound(int id)
     {
         if (soundHandler == false) return;
-        Debug.Log("Im being called");
         if(id == -1)
         {
             soundHandler.PlayHitSound();
