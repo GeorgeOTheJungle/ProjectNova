@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2906e578add7ea544acb5d902da3ac23, type: 3}
   m_Name: Obelisk
   m_EditorClassIdentifier: 
-  arenaId: 1
+  arenaId: 2
   encounter:
   - {fileID: 11400000, guid: 3e9cc55a418ca66429ce65f3c9bb38b5, type: 2}
