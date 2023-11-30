@@ -52,6 +52,7 @@ public class Door : MonoBehaviour,IInteractable
         }
         if (teleportToNextStage == false) return;
         if (GameManager.Instance.CurrentGameState() != Enums.GameState.exploration) return;
+        
         Invoke(nameof(FloorManagerCall), Constants.TRANSITION_TIME);
         TransitionManager.Instance.DoTransition(Constants.FADE_TO_BLACK);
         SoundManager.Instance.ChangeFloorMusic(nextFloor);

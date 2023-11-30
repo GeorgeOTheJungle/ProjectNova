@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private Image blackImage;
+    [SerializeField] private string sceneName;
     public void DoFadeToBlack()
     {
         StartCoroutine(FadeToBlack());
@@ -27,6 +28,6 @@ public class MainMenu : MonoBehaviour
         }
         blackImage.color = fadeColor;
         yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene("Playground");
+        SceneManager.LoadScene(sceneName);
     }
 }

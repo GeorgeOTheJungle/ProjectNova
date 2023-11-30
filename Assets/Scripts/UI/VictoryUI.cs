@@ -1,8 +1,6 @@
 using Enums;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class VictoryUI : MonoBehaviour
@@ -63,7 +61,6 @@ public class VictoryUI : MonoBehaviour
     {
         victoryWindow.SetActive(true);
         int xpGained = CombatManager.Instance.GetXPStored();
-        Debug.Log(xpGained);
         int xpShow = 0;
         yield return new WaitForSeconds(0.25f);
         xpText.SetActive(true);
