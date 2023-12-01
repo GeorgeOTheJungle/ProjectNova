@@ -27,6 +27,7 @@ public class SoundManager : MonoBehaviour
 
     public void ChangeFloorSong(int floor)
     {
+        if (floor > 4) return;
         currentFloor = floor;
         StartCoroutine(FadeOutSong(m_AudioSource, Constants.EXPLORATION_SONG));
     }

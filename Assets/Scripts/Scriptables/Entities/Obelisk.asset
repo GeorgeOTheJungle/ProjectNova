@@ -20,9 +20,9 @@ MonoBehaviour:
     energy: 0
     ammo: 0
     physicalDamage: 50
-    physicalArmor: 1
-    magicDamage: 35
-    magicArmor: 1
+    physicalArmor: 5
+    magicDamage: 40
+    magicArmor: 5
     defenseBonus: 0
     buffBonus: 0
     speed: 15
