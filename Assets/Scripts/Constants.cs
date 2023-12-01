@@ -37,5 +37,11 @@ public static class Constants
     public const string GUARD_END_ANIMATION = "GuardEnd"; // TODO MAKE TRANSITIONS FROM GUARD TO IDLE
     public const string IDLE_OUT = "IdleOut";
     public const string DEATH_ANIMATION = "Death";
+
+    // ------------------------------------------------ CAMERA
+    public const string EXPLORATION_CAMERA = "Exploration";
+    public const string COMBAT_CAMERA = "Combat";
+    public const string PLAYER_ORBIT_CAMERA = "OrbitPlayer";
+    public const string ENEMY_ORBIT_CAMERA = "OrbitEnemy";
 }
 
