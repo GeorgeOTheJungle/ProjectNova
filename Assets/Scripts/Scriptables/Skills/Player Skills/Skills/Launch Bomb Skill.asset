@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a14a3cf33e87d444a04d8bf69d8289e, type: 3}
   m_Name: Launch Bomb Skill
   m_EditorClassIdentifier: 
-  baseDamage: 25
+  baseDamage: 45
   damageType: 1
   statusEffectType: 0
   animationKey: LaunchBomb

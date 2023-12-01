@@ -43,5 +43,13 @@ public static class Constants
     public const string COMBAT_CAMERA = "Combat";
     public const string PLAYER_ORBIT_CAMERA = "OrbitPlayer";
     public const string ENEMY_ORBIT_CAMERA = "OrbitEnemy";
+
+
+    // ------------------------------------------------ SONGS 
+    public const string EXPLORATION_SONG = "Exploration";
+    public const string COMBAT_SONG = "Combat";
+    public const string BOSS_SONG = "Boss";
+    public const string VICTORY_SONG = "Victory";
+
 }
 

@@ -29,11 +29,12 @@ public class ScrollingUI : MonoBehaviour
     private void Awake()
     {
         entity = GameObject.FindGameObjectWithTag("Player").GetComponentInParent<PlayerEntity>();
+        avaliablePlayerSkills = new List<PlayerSkill>(0);
     }
 
     private void Start()
     {
-        avaliablePlayerSkills.Clear();
+        //avaliablePlayerSkills.Clear();
         avaliablePlayerSkills = SkillManager.Instance.GetAvaliableSkills();
         playerSkillLenght = avaliablePlayerSkills.Count - 1;
         Scroll(0);
@@ -41,7 +42,7 @@ public class ScrollingUI : MonoBehaviour
 
     private void OnEnable()
     {
-        avaliablePlayerSkills.Clear();
+       // avaliablePlayerSkills.Clear();
          avaliablePlayerSkills = SkillManager.Instance.GetAvaliableSkills();
         playerSkillLenght = avaliablePlayerSkills.Count - 1;
         Scroll(0);
