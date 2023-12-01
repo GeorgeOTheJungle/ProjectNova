@@ -55,7 +55,7 @@ public class Door : MonoBehaviour,IInteractable
         
         Invoke(nameof(FloorManagerCall), Constants.TRANSITION_TIME);
         TransitionManager.Instance.DoTransition(Constants.FADE_TO_BLACK);
-        SoundManager.Instance.ChangeFloorMusic(nextFloor);
+        SoundManager.Instance.ChangeFloorSong(nextFloor);
     }
 
     public void KeyCheck()

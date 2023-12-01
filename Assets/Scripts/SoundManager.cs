@@ -7,182 +7,82 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance { get; private set; }
 
-    [SerializeField] private AudioSource currentStageSong;
-    [SerializeField] private AudioSource currentCombatSong;
-    [SerializeField] private AudioSource victoryMusic;
+    private AudioSource m_AudioSource;
+    
     [SerializeField] private AudioClip[] stageSongs;
     [SerializeField] private AudioClip combatSong;
     [SerializeField] private AudioClip bossSong;
+    [SerializeField] private AudioClip victorySong;
     private int currentFloor;
-    private GameState lastGameState;
     private void Awake()
     {
-       Instance = this;
-       currentFloor = 0;
-       currentCombatSong.volume = 0;
-        currentStageSong.clip = stageSongs[currentFloor];
-        currentStageSong.Play();
+        Instance = this;
+        m_AudioSource = GetComponentInChildren<AudioSource>();
     }
 
-    private IEnumerator Start()
+    private void Start()
     {
-        yield return new WaitForEndOfFrame();
-        GameManager.Instance.onGameStateChangeTrigger += HandleMusicMix;
-        CombatManager.Instance.onCombatFinish += HandleVictoryMusic;
+        PlaySong(Constants.EXPLORATION_SONG);
     }
 
-    private void OnDisable()
+    public void ChangeFloorSong(int floor)
     {
-        GameManager.Instance.onGameStateChangeTrigger -= HandleMusicMix;
-        CombatManager.Instance.onCombatFinish -= HandleVictoryMusic;
+        currentFloor = floor;
+        StartCoroutine(FadeOutSong(m_AudioSource, Constants.EXPLORATION_SONG));
     }
 
-    private void HandleMusicMix(GameState gameState)
+    public void PlaySong(string songID)
     {
-        if (gameState == GameState.messagePrompt) return;
-        if (gameState == GameState.paused) return;
-        if (gameState == GameState.explorationTransition) return;
-
-        if (lastGameState == gameState) return;
-        lastGameState = gameState;
-        switch (gameState)
-        {
-            case GameState.combatPreparation:
-                StartCoroutine(FadeSongOut(currentStageSong,true));
-                break;
-            case GameState.combatReady:
-                StartCoroutine(FadeSongOut(currentCombatSong, false));
-                break;
-            case GameState.exploration:
-                ReturnToExplorationMusic();
-                break;
-        }
-    }
-    // Do fade out
-    // Change to x Music.
-    // Do victory music.
-    // Do fade out.
-    // Change to x music.
-
-    private IEnumerator FadeSongOut(AudioSource audio, bool fadeOut)
-    {
-        float volume = audio.volume;
-
-        if (fadeOut)
-        {
-            while (volume > 0.0f)
-            {
-                volume -= Time.deltaTime;
-                audio.volume = volume;
-                yield return new WaitForEndOfFrame();
-            }
-            audio.Stop();
-        } else
-        {
-            audio.volume = 0.0f;
-            audio.Play();
-            while (volume < 1.0f)
-            {
-                volume += Time.deltaTime;
-                audio.volume = volume;
-                yield return new WaitForEndOfFrame();
-            }
-
-        }
-
-
+        StartCoroutine(FadeOutSong(m_AudioSource,songID));
     }
 
-    public void ChangeStageMusic()
+    private void ChangeMusic(string song)
     {
-
-    }
-
-    private void ChangeToStateMusic(string song)
-    {
-        switch(song)
+        switch (song)
         {
             case Constants.EXPLORATION_SONG:
-                currentStageSong.Play();
+                m_AudioSource.clip = GetCurrentFloorSong(currentFloor);
                 break;
             case Constants.COMBAT_SONG:
+                m_AudioSource.clip = combatSong;
                 break;
             case Constants.BOSS_SONG:
+                m_AudioSource.clip = bossSong;
+
                 break;
             case Constants.VICTORY_SONG:
+                m_AudioSource.clip = victorySong;
                 break;
         }
+        StartCoroutine(FadeInSong(m_AudioSource));
     }
 
-    private void HandleVictoryMusic(CombatResult restult, int id)
+    private IEnumerator FadeOutSong(AudioSource audio, string nextSong)
     {
-        if (restult == CombatResult.victory) ChangeToVictoryMusic();
-    }
-
-    public void ChangeFloorMusic(int id)
-    {
-        // Fade and then change
-        currentFloor = id;
-        StartCoroutine(ChangeFloorSongFade(id));
-    }
-
-
-    public void ReturnToExplorationMusic()
-    {
-        StartCoroutine(ChangeToExplorationMusicFade());
-    }
-
-    private void ChangeToVictoryMusic()
-    {
-        Debug.Log("Victory song");
-        currentCombatSong.Stop();
-        victoryMusic.Play();
-    }
-
-    private IEnumerator ChangeToExplorationMusicFade()
-    {
-        float volume = 0.0f;
-        float combatVolume = 1.0f;
-        while (volume < 1.0f)
-        {
-            volume += Time.deltaTime;
-            combatVolume -= Time.deltaTime;
-            currentStageSong.volume = volume;
-            currentCombatSong.volume = combatVolume;
-            victoryMusic.volume = combatVolume;
-            yield return null;
-        }
-        currentStageSong.volume = 1.0f;
-        currentCombatSong.volume = 0.0f;
-        currentStageSong.Play();
-        victoryMusic.Stop();
-    }
-
-    private IEnumerator ChangeFloorSongFade(int id)
-    {
-        float volume = currentStageSong.volume;
+        float volume = audio.volume;
 
         while (volume > 0.0f)
         {
             volume -= Time.deltaTime;
-            currentStageSong.volume = volume;
-            yield return null;
+            audio.volume = volume;
+            yield return new WaitForEndOfFrame();
         }
-        currentStageSong.Stop();
-        if (id <= stageSongs.Length)
-        {
-            currentStageSong.clip = stageSongs[id];
-            //currentCombatSong.clip = combatSongs[id];
+        audio.Stop();
+        ChangeMusic(nextSong);
+    }
 
-            yield return new WaitForSeconds(0.2f);
-            currentStageSong.Play();
-            while (volume < 1.0f)
-            {
-                volume += Time.deltaTime;
-                currentStageSong.volume = volume;
-                yield return null;
-            }
+    private IEnumerator FadeInSong(AudioSource audio)
+    {
+        float volume = audio.volume;
+        audio.volume = 0.0f;
+        audio.Play();
+        while (volume < 1.0f)
+        {
+            volume += Time.deltaTime;
+            audio.volume = volume;
+            yield return new WaitForEndOfFrame();
         }
     }
 
+    private AudioClip GetCurrentFloorSong(int id) => stageSongs[id];
 }
