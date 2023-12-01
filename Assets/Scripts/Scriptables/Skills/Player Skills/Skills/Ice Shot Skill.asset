@@ -19,7 +19,7 @@ MonoBehaviour:
   canBeUpgraded: 1
   unlocked: 0
   level: 0
-  initialUnlockCost: 350
+  initialUnlockCost: 400
   damageUpgradeAmount: 5
   skillName: Ice Shot
   skillDescription: Infuse your bullet with ice, that simple!. May mark the target

@@ -27,4 +27,4 @@ MonoBehaviour:
   icon: {fileID: 646709102, guid: 0878cbff94743f64f997bb31ec5e9f1c, type: 3}
   targetingStyle: 1
   resourceType: 2
-  resourceAmount: 50
+  resourceAmount: 60
