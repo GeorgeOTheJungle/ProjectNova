@@ -11,14 +11,17 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioSource currentCombatSong;
     [SerializeField] private AudioSource victoryMusic;
     [SerializeField] private AudioClip[] stageSongs;
-    [SerializeField] private AudioClip[] combatSongs;
+    [SerializeField] private AudioClip combatSong;
+    [SerializeField] private AudioClip bossSong;
     private int currentFloor;
     private GameState lastGameState;
     private void Awake()
     {
-        Instance = this;
+       Instance = this;
        currentFloor = 0;
-        currentCombatSong.volume = 0;
+       currentCombatSong.volume = 0;
+        currentStageSong.clip = stageSongs[currentFloor];
+        currentStageSong.Play();
     }
 
     private IEnumerator Start()
@@ -45,10 +48,68 @@ public class SoundManager : MonoBehaviour
         switch (gameState)
         {
             case GameState.combatPreparation:
-                ChangeToCombatMusic();
+                StartCoroutine(FadeSongOut(currentStageSong,true));
+                break;
+            case GameState.combatReady:
+                StartCoroutine(FadeSongOut(currentCombatSong, false));
                 break;
             case GameState.exploration:
                 ReturnToExplorationMusic();
+                break;
+        }
+    }
+    // Do fade out
+    // Change to x Music.
+    // Do victory music.
+    // Do fade out.
+    // Change to x music.
+
+    private IEnumerator FadeSongOut(AudioSource audio, bool fadeOut)
+    {
+        float volume = audio.volume;
+
+        if (fadeOut)
+        {
+            while (volume > 0.0f)
+            {
+                volume -= Time.deltaTime;
+                audio.volume = volume;
+                yield return new WaitForEndOfFrame();
+            }
+            audio.Stop();
+        } else
+        {
+            audio.volume = 0.0f;
+            audio.Play();
+            while (volume < 1.0f)
+            {
+                volume += Time.deltaTime;
+                audio.volume = volume;
+                yield return new WaitForEndOfFrame();
+            }
+
+        }
+
+
+    }
+
+    public void ChangeStageMusic()
+    {
+
+    }
+
+    private void ChangeToStateMusic(string song)
+    {
+        switch(song)
+        {
+            case Constants.EXPLORATION_SONG:
+                currentStageSong.Play();
+                break;
+            case Constants.COMBAT_SONG:
+                break;
+            case Constants.BOSS_SONG:
+                break;
+            case Constants.VICTORY_SONG:
                 break;
         }
     }
@@ -65,10 +126,6 @@ public class SoundManager : MonoBehaviour
         StartCoroutine(ChangeFloorSongFade(id));
     }
 
-    public void ChangeToCombatMusic()
-    {
-        StartCoroutine(ChangeToCombatMusicFade());
-    }
 
     public void ReturnToExplorationMusic()
     {
@@ -82,33 +139,12 @@ public class SoundManager : MonoBehaviour
         victoryMusic.Play();
     }
 
-    private IEnumerator ChangeToCombatMusicFade()
-    {
-        float volume = currentStageSong.volume;
-        float combatVolume = currentCombatSong.volume;
-        while (volume > 0)
-        {
-            volume -= Time.deltaTime;
-            combatVolume += Time.deltaTime;
-            currentStageSong.volume = volume;
-           // currentCombatSong.volume = combatVolume;
-            yield return null;
-        }
-        currentStageSong.volume = 0f;
-        currentStageSong.Pause();
-        currentCombatSong.volume = 1.0f;
-        currentCombatSong.Play();
-
-    }
-
     private IEnumerator ChangeToExplorationMusicFade()
     {
-        Debug.Log("Starting Corutine");
         float volume = 0.0f;
         float combatVolume = 1.0f;
         while (volume < 1.0f)
         {
-            Debug.Log("doing fade to exploration");
             volume += Time.deltaTime;
             combatVolume -= Time.deltaTime;
             currentStageSong.volume = volume;

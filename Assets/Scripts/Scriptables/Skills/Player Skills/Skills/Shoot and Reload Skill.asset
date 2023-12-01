@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shoot and Reload Skill
   m_EditorClassIdentifier: 
   baseDamage: 15
-  damageType: 1
+  damageType: 0
   statusEffectType: 0
   animationKey: ShootAndReload
   canBeUpgraded: 1

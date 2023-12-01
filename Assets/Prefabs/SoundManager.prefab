@@ -439,5 +439,5 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 66f22c065181b594c91e8a59d321ea29, type: 3}
   - {fileID: 8300000, guid: bf42e864ba5b5a844b876d1b71912140, type: 3}
   - {fileID: 8300000, guid: 1cd6f1907295d944aa02e457d6ebc8e3, type: 3}
-  combatSongs:
-  - {fileID: 8300000, guid: 40e3740bc9fd3d84e89a671806cf36e9, type: 3}
+  combatSong: {fileID: 8300000, guid: 40e3740bc9fd3d84e89a671806cf36e9, type: 3}
+  bossSong: {fileID: 8300000, guid: f8fd52b7a1734db4b83077ad02857de0, type: 3}

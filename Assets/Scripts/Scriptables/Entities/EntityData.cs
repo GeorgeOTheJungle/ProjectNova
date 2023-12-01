@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Structs;
 using Enums;
-using System.Numerics;
-using Unity.VisualScripting;
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
