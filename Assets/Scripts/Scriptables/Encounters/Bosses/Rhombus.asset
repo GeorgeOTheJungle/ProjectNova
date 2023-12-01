@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2906e578add7ea544acb5d902da3ac23, type: 3}
   m_Name: Rhombus
   m_EditorClassIdentifier: 
-  arenaId: 3
+  arenaId: 4
   encounter:
   - {fileID: 11400000, guid: 9c13befc56185e9479462207055f11e4, type: 2}
   - {fileID: 11400000, guid: a5e432ae91a68e8469ccdea974e97985, type: 2}
