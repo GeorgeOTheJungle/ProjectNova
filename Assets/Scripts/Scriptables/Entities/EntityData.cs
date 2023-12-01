@@ -136,6 +136,11 @@ public class EntityDataEditor : Editor
         EditorGUILayout.LabelField("Crit Rate:", GUILayout.Width(LABEL_WIDTH));
         entity.stats.critRate = EditorGUILayout.FloatField(entity.stats.critRate, GUILayout.Width(FIELD_WIDTH));
         EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.LabelField("XP Yield:", GUILayout.Width(LABEL_WIDTH));
+        entity.stats.xpYield = EditorGUILayout.IntField(entity.stats.xpYield, GUILayout.Width(FIELD_WIDTH));
+        EditorGUILayout.EndHorizontal();
     }
 
     private static void DrawEntityName(EntityData entity)
