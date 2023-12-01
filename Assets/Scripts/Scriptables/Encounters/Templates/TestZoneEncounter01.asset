@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2906e578add7ea544acb5d902da3ac23, type: 3}
   m_Name: TestZoneEncounter01
   m_EditorClassIdentifier: 
-  arenaId: 0
+  arenaId: 3
   encounter:
   - {fileID: 11400000, guid: 9c13befc56185e9479462207055f11e4, type: 2}
+  - {fileID: 11400000, guid: a5e432ae91a68e8469ccdea974e97985, type: 2}
+  - {fileID: 11400000, guid: 816c4660448521644951ced6148ff821, type: 2}
