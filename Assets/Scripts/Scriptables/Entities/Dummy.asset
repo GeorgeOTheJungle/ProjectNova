@@ -19,13 +19,13 @@ MonoBehaviour:
     health: 50
     energy: 0
     ammo: 0
-    physicalDamage: 12
+    physicalDamage: 15
     physicalArmor: 1
     magicDamage: 35
     magicArmor: 1
     defenseBonus: 0
     buffBonus: 0
-    speed: 15
+    speed: 13
     accuracy: 1
     critRate: 0
     xpYield: 75

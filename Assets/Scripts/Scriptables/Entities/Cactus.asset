@@ -21,14 +21,14 @@ MonoBehaviour:
     ammo: 0
     physicalDamage: 10
     physicalArmor: 1
-    magicDamage: 35
+    magicDamage: 30
     magicArmor: 1
     defenseBonus: 0
     buffBonus: 0
     speed: 15
     accuracy: 1
     critRate: 0
-    xpYield: 45
+    xpYield: 50
   avaliableSkills:
   - {fileID: 11400000, guid: 07c8585a116c3fc4782dcaf3712c8e1a, type: 2}
   - {fileID: 11400000, guid: 4fbdeec0e4646964e883212311b8a338, type: 2}
