@@ -19,11 +19,11 @@ MonoBehaviour:
   canBeUpgraded: 1
   unlocked: 0
   level: 0
-  initialUnlockCost: 500
+  initialUnlockCost: 400
   damageUpgradeAmount: 5
   skillName: Weaken Shot
   skillDescription: Infuse your bullet with magic, that simple!. May weaken the target.
   icon: {fileID: -2066996964, guid: 0878cbff94743f64f997bb31ec5e9f1c, type: 3}
   targetingStyle: 1
-  resourceType: 0
+  resourceType: 2
   resourceAmount: 15
