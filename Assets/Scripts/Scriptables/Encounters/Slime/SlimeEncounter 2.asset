@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2906e578add7ea544acb5d902da3ac23, type: 3}
   m_Name: SlimeEncounter 2
   m_EditorClassIdentifier: 
-  arenaId: 0
+  arenaId: 2
   encounter:
   - {fileID: 11400000, guid: 5afc3c462e68241418667b1181431528, type: 2}
   - {fileID: 11400000, guid: 5afc3c462e68241418667b1181431528, type: 2}
