@@ -136,7 +136,7 @@ public class SoundManager : MonoBehaviour
         if (id <= stageSongs.Length)
         {
             currentStageSong.clip = stageSongs[id];
-            //currentCombatSong.clip = combatSongs[id];
+            currentCombatSong.clip = combatSongs[id];
 
             yield return new WaitForSeconds(0.2f);
             currentStageSong.Play();

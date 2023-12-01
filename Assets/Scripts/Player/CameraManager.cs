@@ -9,7 +9,6 @@ public class CameraManager : MonoBehaviour
     [SerializeField] private float orbitAmount = 45.0f;
     private bool Rotating = false;
     [SerializeField] private GameObject uiVisual;
-    [Space(10)]
     [SerializeField] private CinemachineVirtualCamera explorationVCamera;
     [SerializeField] private CinemachineVirtualCamera combatVCamera;
     [SerializeField] private CinemachineVirtualCamera playerIdleCombatVCamera;
@@ -19,7 +18,7 @@ public class CameraManager : MonoBehaviour
     private CinemachineOrbitalTransposer playerIdleOrbitalTransposer;
     private CinemachineOrbitalTransposer enemyOrbitalTransposer;
 
-    private CinemachineOrbitalTransposer currentOrbital;
+    [SerializeField] private CinemachineOrbitalTransposer currentOrbital;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float idleTime = 3.0f; // Time before entering orbit mode
     private float currentIdleTime = 0.0f;
@@ -28,14 +27,9 @@ public class CameraManager : MonoBehaviour
     private float currentOrbitIdleTime = 0.0f;
     [SerializeField] private float minIdleOrbitSpeed = -3.0f;
     [SerializeField] private float maxIdleOrbitSpeed = 3.0f;
-    [Space(10)]
-    [SerializeField] private float zoomInTime = 2.5f;
-    [SerializeField] private LeanTweenType zoomEase;
+
     private bool isPlayerFocus = false;
     private float currentOrbitAmount = 0.0f;
-
-    Vector3 initialCombatPosition;
-    Vector3 targetCombatPosition;
     private void Awake()
     {
         orbitalTransposer = explorationVCamera.GetCinemachineComponent<CinemachineOrbitalTransposer>();
@@ -45,13 +39,8 @@ public class CameraManager : MonoBehaviour
 
     private IEnumerator Start()
     {
-        ChangeToCamera(Constants.EXPLORATION_CAMERA);
+        combatVCamera.gameObject.SetActive(false);
         isPlayerFocus = Random.Range(0, 2) == 0;
-
-        initialCombatPosition = combatVCamera.transform.position;
-        targetCombatPosition = combatVCamera.transform.position;
-        targetCombatPosition.z += 3;
-
         yield return new WaitForEndOfFrame();
         InputComponent.Instance.cameraRotationTrigger += HandleCameraRotation;
         GameManager.Instance.onGameStateChangeTrigger += HandleCameraChange;
@@ -83,7 +72,9 @@ public class CameraManager : MonoBehaviour
             currentIdleTime = 0.0f;
             currentOrbitAmount = 0.0f;
             currentOrbitIdleTime = 0.0f;
-            ChangeToCamera(Constants.COMBAT_CAMERA);
+            combatVCamera.gameObject.SetActive(true);
+            playerIdleCombatVCamera.gameObject.SetActive(false);
+            enemyIdleCombatVCamera.gameObject.SetActive(false);
             currentOrbital = null;
             isPlayerFocus = Random.Range(0, 2) == 0;
             uiVisual.SetActive(true);
@@ -98,6 +89,7 @@ public class CameraManager : MonoBehaviour
             {
                 GetIdleOrbit();
                 uiVisual.SetActive(false);
+                combatVCamera.gameObject.SetActive(false);
             }
             else
             {
@@ -119,7 +111,9 @@ public class CameraManager : MonoBehaviour
     private void GetIdleOrbit()
     {
         isPlayerFocus = !isPlayerFocus;
-        ChangeToCamera(isPlayerFocus?Constants.PLAYER_ORBIT_CAMERA:Constants.ENEMY_ORBIT_CAMERA);
+        playerIdleCombatVCamera.gameObject.SetActive(isPlayerFocus);
+        enemyIdleCombatVCamera.gameObject.SetActive(!isPlayerFocus);
+
         currentOrbital = isPlayerFocus ? playerIdleOrbitalTransposer : enemyOrbitalTransposer;
 
         rotationSpeed = Mathf.CeilToInt(Random.Range(minIdleOrbitSpeed, maxIdleOrbitSpeed));
@@ -165,45 +159,15 @@ public class CameraManager : MonoBehaviour
     public void HandleCameraChange(GameState gameState)
     {
         if (gameState == GameState.paused || gameState == GameState.messagePrompt) return;
-        
+        explorationVCamera.gameObject.SetActive(false);
+        combatVCamera.gameObject.SetActive(false);
         switch (gameState)
         {
             case GameState.exploration:
-                ChangeToCamera(Constants.EXPLORATION_CAMERA);
-                combatVCamera.transform.position = initialCombatPosition;
+                explorationVCamera.gameObject.SetActive(true);
                 break;
             case GameState.combatPreparation:
-                ChangeToCamera(Constants.COMBAT_CAMERA);
-                break;
-
-            case GameState.combatReady:
-                LeanTween.move(combatVCamera.gameObject, targetCombatPosition, zoomInTime).setEase(zoomEase);
-                break;
-
-        }
-    }
-
-    private void ChangeToCamera(string targetCamera)
-    {
-        explorationVCamera.Priority = 0;
-        combatVCamera.Priority = 0;
-
-        playerIdleCombatVCamera.Priority=0;
-        enemyIdleCombatVCamera.Priority =0;
-
-        switch (targetCamera)
-        {
-            case "Exploration":
-                explorationVCamera.Priority = 1;
-                break;
-            case "Combat":
-                combatVCamera.Priority = 1;
-                break;
-            case "OrbitPlayer":
-                playerIdleCombatVCamera.Priority = 1;
-                break;
-            case "OrbitEnemy":
-                enemyIdleCombatVCamera.Priority = 1;
+                combatVCamera.gameObject.SetActive(true);
                 break;
         }
     }
