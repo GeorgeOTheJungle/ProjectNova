@@ -19,7 +19,7 @@ MonoBehaviour:
   canBeUpgraded: 1
   unlocked: 0
   level: 0
-  initialUnlockCost: 300
+  initialUnlockCost: 450
   damageUpgradeAmount: 20
   skillName: Energy Bomb
   skillDescription: Launch a bomb and inflict damage to all enemies.

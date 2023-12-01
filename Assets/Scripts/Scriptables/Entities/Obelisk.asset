@@ -16,7 +16,7 @@ MonoBehaviour:
   entityType: 2
   entityID: 15
   stats:
-    health: 65
+    health: 300
     energy: 0
     ammo: 0
     physicalDamage: 50
@@ -28,7 +28,7 @@ MonoBehaviour:
     speed: 15
     accuracy: 1
     critRate: 0
-    xpYield: 50
+    xpYield: 3000
   avaliableSkills:
   - {fileID: 11400000, guid: 06dde56ab503a5543b1af32384582d78, type: 2}
   - {fileID: 11400000, guid: ce2afb2bb72500b4e9d03baf67526ba7, type: 2}

@@ -19,7 +19,7 @@ MonoBehaviour:
   canBeUpgraded: 1
   unlocked: 0
   level: 0
-  initialUnlockCost: 400
+  initialUnlockCost: 300
   damageUpgradeAmount: 5
   skillName: Blessing
   skillDescription: Get a blessing from the gods! Increase your damage for some turns.

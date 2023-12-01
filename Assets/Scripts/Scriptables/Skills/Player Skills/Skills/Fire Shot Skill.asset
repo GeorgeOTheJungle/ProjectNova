@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a14a3cf33e87d444a04d8bf69d8289e, type: 3}
   m_Name: Fire Shot Skill
   m_EditorClassIdentifier: 
-  baseDamage: 25
+  baseDamage: 35
   damageType: 1
   statusEffectType: 1
   animationKey: Infused_Fire
   canBeUpgraded: 1
   unlocked: 0
-  level: 0
-  initialUnlockCost: 350
+  level: 1
+  initialUnlockCost: 400
   damageUpgradeAmount: 5
   skillName: Fire Shot
   skillDescription: Infuse your bullet with fire, that simple!. May burn the target.
