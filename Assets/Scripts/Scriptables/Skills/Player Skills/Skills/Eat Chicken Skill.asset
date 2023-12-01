@@ -17,7 +17,7 @@ MonoBehaviour:
   statusEffectType: 0
   animationKey: Eat
   canBeUpgraded: 1
-  unlocked: 0
+  unlocked: 1
   level: 1
   initialUnlockCost: 100
   damageUpgradeAmount: 6

@@ -17,8 +17,8 @@ MonoBehaviour:
   statusEffectType: 1
   animationKey: Infused_Fire
   canBeUpgraded: 1
-  unlocked: 0
-  level: 1
+  unlocked: 1
+  level: 0
   initialUnlockCost: 400
   damageUpgradeAmount: 5
   skillName: Fire Shot

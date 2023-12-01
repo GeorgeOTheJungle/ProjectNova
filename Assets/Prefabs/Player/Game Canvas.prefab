@@ -11477,7 +11477,7 @@ PrefabInstance:
     - target: {fileID: 7903373222110489017, guid: 8c740fe4e06fa4c459be2a95f13dd246, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6048907927055553385}
     - target: {fileID: 7903373222110489017, guid: 8c740fe4e06fa4c459be2a95f13dd246, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OpenWindow
