@@ -33,7 +33,7 @@ public class StatUpgrade : MonoBehaviour
         Invoke(nameof(UpdateUI),0.1f);
     }
 
-    private void UpdateUI()
+    public void UpdateUI()
     {
         if (PlayerStatsManager.Instance.HaveEnoughExp(stat))
         {
@@ -66,4 +66,6 @@ public class StatUpgrade : MonoBehaviour
         UpdateUI();
         characterUpgradeUI.UpdateXPUI();
     }
+
+    public bool CanBePressed() => upgradeButton.interactable;
 }
