@@ -435,8 +435,9 @@ MonoBehaviour:
   currentCombatSong: {fileID: 5645104306516430842}
   victoryMusic: {fileID: 8160635548353579020}
   stageSongs:
-  - {fileID: 8300000, guid: 3ef1a89eec4b21a439be0f483fb89738, type: 3}
-  - {fileID: 8300000, guid: b0ddb7f7a508fd84aae22911ea5f543a, type: 3}
-  - {fileID: 8300000, guid: 33d331cc060d3bd488cd96f5ad85e787, type: 3}
+  - {fileID: 8300000, guid: e6f5796c6f91b4b4fac683c64e857d85, type: 3}
+  - {fileID: 8300000, guid: 66f22c065181b594c91e8a59d321ea29, type: 3}
+  - {fileID: 8300000, guid: bf42e864ba5b5a844b876d1b71912140, type: 3}
+  - {fileID: 8300000, guid: 1cd6f1907295d944aa02e457d6ebc8e3, type: 3}
   combatSongs:
-  - {fileID: 8300000, guid: ee0f16df98e475b40b92ec0e510ddd2b, type: 3}
+  - {fileID: 8300000, guid: 40e3740bc9fd3d84e89a671806cf36e9, type: 3}
