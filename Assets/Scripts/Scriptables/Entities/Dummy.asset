@@ -28,7 +28,7 @@ MonoBehaviour:
     speed: 15
     accuracy: 1
     critRate: 0
-    xpYield: 50
+    xpYield: 75
   avaliableSkills:
   - {fileID: 11400000, guid: b7e2bab5f3352c84fa41c52b07c46d58, type: 2}
   - {fileID: 11400000, guid: c0663ba954170704a9ce1a1f84ba8294, type: 2}
