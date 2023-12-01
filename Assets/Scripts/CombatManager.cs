@@ -81,6 +81,9 @@ public class CombatManager : MonoBehaviour
 
         entityTurn = CombatTurn.playerTurn;
         combatResult = CombatResult.none;
+
+        if (listOfEnemies[0].entityType == EntityType.enemy) SoundManager.Instance.PlaySong(Constants.COMBAT_SONG);
+        else if (listOfEnemies[0].entityType == EntityType.boss) SoundManager.Instance.PlaySong(Constants.BOSS_SONG);
     }
 
     public void OnTurnFinished()
@@ -131,12 +134,14 @@ public class CombatManager : MonoBehaviour
     {
         GameManager.Instance.ChangeGameState(GameState.combatEnded);
         combatResult = CombatResult.victory;
+        SoundManager.Instance.PlaySong(Constants.VICTORY_SONG);
         onCombatFinish?.Invoke(combatResult, currentCombatID);
     }
 
     public void VictoryEnd()
     {
         combatResult = CombatResult.none;
+
         SkillManager.Instance.GetXP(xpStored);
         StartCoroutine(DelayedCleanup());
     }
@@ -261,7 +266,7 @@ public class CombatManager : MonoBehaviour
         xpStored = 0;
         GameManager.Instance.ChangeGameState(GameState.combatEnded);
         onCombatFinish?.Invoke(combatResult, currentCombatID);
-
+        SoundManager.Instance.PlaySong(Constants.EXPLORATION_SONG);
         yield return new WaitForSeconds(0.15f);
         StartCleanup();
     } 

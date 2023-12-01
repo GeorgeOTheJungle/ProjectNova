@@ -412,13 +412,13 @@ MonoBehaviour:
   combatVCamera: {fileID: 1876952634628875255}
   playerIdleCombatVCamera: {fileID: 1161050832747534727}
   enemyIdleCombatVCamera: {fileID: 1024634576600477864}
-  currentOrbital: {fileID: 0}
-  dollyFollow: {fileID: 0}
   rotationSpeed: 1
   idleTime: 10
   orbitIdleTime: 15
   minIdleOrbitSpeed: -3
   maxIdleOrbitSpeed: 3
+  zoomInTime: 2.5
+  zoomEase: 21
 --- !u!1 &1876952636337057258
 GameObject:
   m_ObjectHideFlags: 0
