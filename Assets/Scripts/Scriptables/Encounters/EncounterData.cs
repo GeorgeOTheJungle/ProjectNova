@@ -10,6 +10,9 @@ public class EncounterData : ScriptableObject
     [Header("Encounter Handler"), Space(10)]
     [Tooltip("Keep this number Unique")]
     public int arenaId;
-    public EntityData[] encounter;
+    public EntityData[] encounter = new EntityData[1];
+
+    public Sprite chibiPreview;
+    public RuntimeAnimatorController chibiAnimator;
 
 }
