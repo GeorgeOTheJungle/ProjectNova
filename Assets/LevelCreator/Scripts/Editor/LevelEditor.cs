@@ -275,6 +275,8 @@ public class LevelEditor : EditorWindow
         if(GUILayout.Button("Finalize level"))
         {
             levelGenerator.FinalizeLevel();
+            levelGenerator = null;
+            m_serializedLevelGenerator = null;
         }
         EditorGUILayout.HelpBox("This button is for when you are done with the whole level as it's going to destroy " +
     "dummies from tiles and leave you with the mesh only! You cannot go back!", MessageType.Warning);
