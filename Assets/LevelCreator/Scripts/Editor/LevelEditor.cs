@@ -55,36 +55,34 @@ public class LevelEditor : EditorWindow
     private void OnEnable()
     {
         levelGenerator = GameObject.FindAnyObjectByType<LevelGenerator>();
-        EditorUtility.SetDirty(levelGenerator);
+       
+
         if (levelGenerator == null) return;
 
+        EditorUtility.SetDirty(levelGenerator);
         m_serializedLevelGenerator = new SerializedObject(levelGenerator);
+
         m_stageNameProperty = m_serializedLevelGenerator.FindProperty("stageName");
         m_stageMapProperty = m_serializedLevelGenerator.FindProperty("map");
         m_stageMaterialProperty = m_serializedLevelGenerator.FindProperty("stageMaterial");
-        //mappingsProperty = serializedLevelGenerator.FindProperty("colorMappings");
-        //EditorUtility.SetDirty(levelGenerator);
+
 
     }
 
     private void OnFocus()
     {
         levelGenerator = GameObject.FindAnyObjectByType<LevelGenerator>();
+        if (levelGenerator == null) return;
         EditorUtility.SetDirty(levelGenerator);
-        if (m_serializedLevelGenerator == null) m_serializedLevelGenerator = new SerializedObject(levelGenerator);
+        if (m_serializedLevelGenerator == null)
+        {
+            m_serializedLevelGenerator = new SerializedObject(levelGenerator);
+        }
     }
 
     private void OnGUI()
     {
-        if (EditorApplication.isPlaying)
-        {
-            if (levelGenerator) lastGenerator = levelGenerator;
-            return;
-        }
-        else
-        {
-            if (lastGenerator) levelGenerator = lastGenerator;
-        }
+        if (EditorApplication.isPlaying) return;
 
         if (levelGenerator == null)
         {
@@ -94,6 +92,7 @@ public class LevelEditor : EditorWindow
                 GameObject tmpObj = new GameObject("Level Generator");
                 levelGenerator = tmpObj.AddComponent<LevelGenerator>();
                 levelGenerator.SetUpParents();
+                OnEnable();
             }
             return;
         }
@@ -160,7 +159,6 @@ public class LevelEditor : EditorWindow
         {
             EditorGUILayout.LabelField("Stage map:", GUILayout.Width(LABEL_WIDTH - 50));
             EditorGUILayout.PropertyField(m_stageMapProperty, GUIContent.none);
-            // levelGenerator.map = EditorGUILayout.ObjectField(levelGenerator.map, typeof(Texture2D), false) as Texture2D;
         }
         finally
         {
@@ -272,12 +270,15 @@ public class LevelEditor : EditorWindow
         {
             levelGenerator.BakeObjects();
         }
-        if (levelGenerator.HasBakedObjects() == false) return;
 
-        if (GUILayout.Button("Clear Baked objects"))
+ 
+        if(GUILayout.Button("Finalize level"))
         {
-            levelGenerator.CleanBakedMeshObjects();
+            levelGenerator.FinalizeLevel();
         }
+        EditorGUILayout.HelpBox("This button is for when you are done with the whole level as it's going to destroy " +
+    "dummies from tiles and leave you with the mesh only! You cannot go back!", MessageType.Warning);
+
     }
 
     private void DrawTileEditor()

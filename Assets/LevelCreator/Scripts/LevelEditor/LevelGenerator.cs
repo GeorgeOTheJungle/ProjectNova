@@ -155,6 +155,17 @@ public class LevelGenerator : MonoBehaviour
         walls.gameObject.SetActive(false);
         if (stageMesh) stageMesh.SetActive(true);
     }
+    public void FinalizeLevel()
+    {
+        DestroyImmediate(grounds.gameObject);
+        DestroyImmediate(walls.gameObject);
+
+        spawnedObjects.Clear();
+        toBakeMeshObjects.Clear();
+        bakedMeshObjects.Clear();
+
+        DestroyImmediate(this);
+    }
     public void CreateEncounterAt(GameObject dummySelected)
     {
         string path = "EncounterObject";
@@ -212,7 +223,7 @@ public class LevelGenerator : MonoBehaviour
         spawnedObjects.Clear();
         toBakeMeshObjects.Clear();
         previousSelectedObject.Clear();
-
+        if(stageMesh) DestroyImmediate(stageMesh);
     }
     public void CleanBakedMeshObjects()
     {
@@ -275,10 +286,6 @@ public class LevelGenerator : MonoBehaviour
             default: return transform;
         }
     }
-
-    public bool HasSpawnedObjects() => spawnedObjects.Count > 0;
-
-    public bool HasBakedObjects() => bakedMeshObjects.Count > 0;
 
     public bool HasParentSetup()
     {

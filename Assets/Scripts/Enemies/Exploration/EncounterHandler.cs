@@ -15,10 +15,16 @@ public class EncounterHandler : MonoBehaviour, IInteractable
     private Animator visualAnimator;
     private SpriteRenderer visualRenderer;
 
+    private void Awake()
+    {
+        if (visualAnimator == null) visualAnimator = GetComponentInChildren<Animator>();
+        if (visualRenderer == null) visualRenderer = GetComponentInChildren<SpriteRenderer>();
+    }
+
     private IEnumerator Start()
     {
         combatID = Guid.NewGuid().GetHashCode();
-        UpdateVisuals();
+        //UpdateVisuals();
         yield return new WaitForEndOfFrame();
         CombatManager.Instance.onCombatFinish += HandleCombatResults;
     }

@@ -9,7 +9,7 @@ public class CommandUI : MonoBehaviour,ISelectHandler
 
     private void Awake()
     {
-        entity = GameObject.FindGameObjectWithTag("Player").GetComponentInParent<PlayerEntity>();
+        entity = GameObject.Find("PlayerEntity").GetComponentInParent<PlayerEntity>();
     }
     public void OnSelect(BaseEventData eventData)
     {

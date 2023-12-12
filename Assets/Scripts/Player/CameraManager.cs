@@ -52,6 +52,13 @@ public class CameraManager : MonoBehaviour
         targetCombatPosition = combatVCamera.transform.position;
         targetCombatPosition.z += 3;
 
+        if (explorationVCamera.m_Follow == null)
+        {
+            Transform follow = GameObject.Find("Player_Exploration").GetComponent<Transform>(); 
+            explorationVCamera.m_Follow = follow;
+            explorationVCamera.m_LookAt = follow;
+        }
+
         yield return new WaitForEndOfFrame();
         InputComponent.Instance.cameraRotationTrigger += HandleCameraRotation;
         GameManager.Instance.onGameStateChangeTrigger += HandleCameraChange;
