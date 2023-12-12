@@ -46,4 +46,15 @@ namespace Structs
         public List<Entity> entites;
         public List<EntityData> entitiesData;
     }
+
+    [System.Serializable]
+    public struct EncounterInfo
+    {
+        public string encounterName;
+        public int arenaId;
+        public EntityData[] encounters;
+
+        public Sprite chibiPreview;
+        public RuntimeAnimatorController chibiAnimator;
+    }
 }

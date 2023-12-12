@@ -28,7 +28,7 @@ public class ScrollingUI : MonoBehaviour
 
     private void Awake()
     {
-        entity = GameObject.FindGameObjectWithTag("Player").GetComponentInParent<PlayerEntity>();
+        entity = GameObject.Find("PlayerEntity").GetComponentInParent<PlayerEntity>();
         avaliablePlayerSkills = new List<PlayerSkill>(0);
     }
 

@@ -22,6 +22,12 @@ public class CombatUI : MonoBehaviour
     float maxHealth;
     float maxEnergy;
     int ammo;
+
+    private void Awake()
+    {
+        player = GameObject.Find("PlayerEntity").GetComponent<Entity>();    
+    }
+
     private IEnumerator Start()
     {
         visual.SetActive(false);

@@ -34,7 +34,7 @@ public class CombatNavigation : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        playerEntity = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerEntity>();
+        playerEntity = GameObject.Find("PlayerEntity").GetComponent<PlayerEntity>();
     }
 
     private void Update()
