@@ -89,14 +89,4 @@ public class Door : MonoBehaviour,IInteractable
         if (teleportToNextStage == false) gameObject.SetActive(false); // TODO CHANGE THIS ONCE WE HAVE THE ART
         else doorGameObjects[lenght - 1].SetActive(true);
     }
-
-    public void OnPlayerEnter()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void OnPlayerExit()
-    {
-        throw new System.NotImplementedException();
-    }
 }
