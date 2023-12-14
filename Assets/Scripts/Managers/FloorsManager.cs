@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FloorsManager : MonoBehaviour
 {
@@ -15,19 +16,20 @@ public class FloorsManager : MonoBehaviour
     }
     public void ActivateFloor(int id)
     {
-        foreach(GameObject go in floors)
-        {
-            go.SetActive(false);
-        }
-        if(id >= floorsSpawnPoints.Length)
-        {
-            finalImage.SetActive(true);
-            GameManager.Instance.ChangeGameState(Enums.GameState.messagePrompt);
-            return;
-        }
-        floors[id].SetActive(true);
+        //foreach(GameObject go in floors)
+        //{
+        //    go.SetActive(false);
+        //}
+        //if(id >= floorsSpawnPoints.Length)
+        //{
+        //    finalImage.SetActive(true);
+        //    GameManager.Instance.ChangeGameState(Enums.GameState.messagePrompt);
+        //    return;
+        //}
+        //floors[id].SetActive(true);
+        SceneManager.LoadSceneAsync(id);
         // Set active all visuals.
-        CharacterMovement.Instance.MovePlayerToSpawn(floorsSpawnPoints[id]);
+       // CharacterMovement.Instance.MovePlayerToSpawn(floorsSpawnPoints[id]);
         // Move player to spawnpoint.
 
     }

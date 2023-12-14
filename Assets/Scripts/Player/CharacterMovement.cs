@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     public static CharacterMovement Instance;
-    [SerializeField] private float movementSpeed = 5.0f;
+    private const float MOVEMENT_SPEED = 5.0f;
     [SerializeField] private Transform spawnPoint;
     private Vector3 input;
     private CharacterController m_characterController;
@@ -14,7 +14,7 @@ public class CharacterMovement : MonoBehaviour
     private float _gravity = -9.81f;
     private float _velocity;
 
-    [SerializeField] private Transform cam;
+    private Transform cam;
     [SerializeField] private Transform visual;
     [SerializeField] private float hitDetection = 1.0f;
     [SerializeField] private LayerMask layerMask;
@@ -31,11 +31,13 @@ public class CharacterMovement : MonoBehaviour
         Instance = this;
         m_characterController = GetComponent<CharacterController>();
         m_animatorController = GetComponent<PlayerAnimatorController>();
-        cam = Camera.main.transform;
+
     }
 
     private IEnumerator Start()
     {
+        cam = Camera.main.transform;
+        Time.timeScale = 1.0f;
         yield return new WaitForEndOfFrame();
         InputComponent.Instance.movementTrigger += HandleMovementInput;
     }
@@ -73,16 +75,20 @@ public class CharacterMovement : MonoBehaviour
          movementDirection = forwardRelative + rightRelative;
 
         // Gravity
-        if (m_characterController.isGrounded && _velocity <= 0.0f) _velocity = -1f;
-        else
-        {
-            _velocity += _gravity * gravityMultiplier * Time.deltaTime;
-            movementDirection.y = _velocity;
-        }
+        //if (m_characterController.isGrounded && _velocity <= 0.0f) _velocity = -1f;
+        //else
+        //{
+        //    _velocity += _gravity * gravityMultiplier * Time.deltaTime;
+        //    movementDirection.y = _velocity;
+        //}
 
- 
+
         movementDirection.Normalize();
-
+        Debug.Log($"Forward Relative: {forwardRelative}");
+        Debug.Log($"Right Relative: {rightRelative}");
+        Debug.Log($"Movement Direction: {movementDirection}");
+        Debug.Log($"Movement Speed: {MOVEMENT_SPEED}");
+        Debug.Log($"Character Controller Speed: {m_characterController.velocity}");
         if (movementDirection.z != 0) lastMovement = movementDirection.z;
 
         // Animations
@@ -92,7 +98,8 @@ public class CharacterMovement : MonoBehaviour
 
         // Movement
         if (NearEdge()) return;
-        m_characterController.Move(movementDirection * movementSpeed * Time.deltaTime);
+        m_characterController.Move(movementDirection * MOVEMENT_SPEED * Time.deltaTime);
+        
     }
 
     private void SetRespawn(Transform spawn)

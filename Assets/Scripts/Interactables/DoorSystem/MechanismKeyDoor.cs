@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime;
+using Enums;
 using UnityEngine;
 
 public class MechanismKeyDoor : DoorBase,IInteractable
@@ -22,7 +20,7 @@ public class MechanismKeyDoor : DoorBase,IInteractable
         if (PlayerStatsManager.Instance.GetCurrentKeys() > 0)
         {
             keyAnimator.Play("Unlock");
-            PlayerStatsManager.Instance.UseKey();
+            PlayerStatsManager.Instance.UseKey(KeyType.none);
             ToggleMechanism(true);
         }
     }

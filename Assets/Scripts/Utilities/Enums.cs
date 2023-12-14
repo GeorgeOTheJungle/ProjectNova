@@ -24,4 +24,6 @@ namespace Enums
     public enum PlayerStat { health,energy,ammo,physicalDmg,physicalArmor,magicalDmg,magicalArmor,critRate,shoot,punch}
 
     public enum FrameEvent { doNothing,playParticles,damagePlayer,stopParticles}
+
+    public enum KeyType { none, desert, piramid, dungeon, scifi }
 }

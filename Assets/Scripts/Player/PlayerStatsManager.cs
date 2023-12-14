@@ -1,7 +1,4 @@
-using JetBrains.Annotations;
 using Structs;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Enums;
 public class PlayerStatsManager : MonoBehaviour
@@ -13,9 +10,11 @@ public class PlayerStatsManager : MonoBehaviour
     [SerializeField] private Stats playerStats;
     [Space(10)]
     [SerializeField] private StatsLevel statsLevel;
+    [SerializeField] private PlayerKeyInventory playerKeyInventory;
     [SerializeField] private PlayerSkill shootSkill;
     [SerializeField] private PlayerSkill punchSkill;
-    [SerializeField] private int totalKeys;
+    [SerializeField] private int normalKeys;
+
     private int initialCost = 150;
 
     private void Awake()
@@ -169,11 +168,62 @@ public class PlayerStatsManager : MonoBehaviour
         return 0;
     }
 
-    public void GetKey() => totalKeys++;
-    public int GetCurrentKeys() => totalKeys;
-
-    public void UseKey()
+    public void GetKey(KeyType keyType)
     {
-        totalKeys--;
+        switch (keyType)
+        {
+            case KeyType.none:
+                normalKeys++;
+                break;
+            case KeyType.desert:
+                playerKeyInventory.desertKey = true;
+                break;
+            case KeyType.piramid:
+                playerKeyInventory.piramidKey = true;
+                break;
+            case KeyType.dungeon:
+                playerKeyInventory.dungeonKey = true;
+                break;
+            case KeyType.scifi:
+                playerKeyInventory.scifiKey = true;
+                break;
+        }
+
+    }
+    public int GetCurrentKeys() => normalKeys;
+
+    public bool HasLevelKey(KeyType keyType)
+    {
+        switch (keyType)
+        {
+            case KeyType.desert:
+                return playerKeyInventory.desertKey;
+            case KeyType.piramid:
+                return playerKeyInventory.piramidKey;
+            case KeyType.dungeon:
+                return playerKeyInventory.dungeonKey;
+            case KeyType.scifi:
+                return playerKeyInventory.scifiKey;
+            default: return false;
+        }
+    }
+    public void UseKey(KeyType keyID)
+    {
+        if (keyID == KeyType.none) normalKeys--;
+        else
+        {
+            switch (keyID)
+            {
+                case KeyType.desert:
+                    break;
+                case KeyType.piramid:
+                    break;
+                case KeyType.dungeon:
+                    break;
+                case KeyType.scifi:
+                    break;
+            }
+        }
+
     }
 }
