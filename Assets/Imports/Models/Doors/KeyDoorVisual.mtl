@@ -1,0 +1,5 @@
+newmtl Mat_ButtonDoor
+map_Kd D:/Users/Zhuckly/Documents/GitHub/ProjectNova/Assets/Materials/ButtonDoor/DoorTexture.png
+Kd 1 1 1
+d 1
+

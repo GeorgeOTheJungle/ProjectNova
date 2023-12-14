@@ -1,15 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
+using Enums;
 using UnityEngine;
 
 public class Key : MonoBehaviour, IInteractable
 {
-    private const string ON_KEY_OBTAINED = "You got a key!";
+    [SerializeField] private KeyType keyType;
+    private string onKeyObtainedMessage = "You got a key!";
     public void OnInteraction()
     {
         gameObject.SetActive(false);
-        PlayerStatsManager.Instance.GetKey();
-        MessageManager.Instance.OpenMessagePrompt(ON_KEY_OBTAINED);
+        string keyName = keyType != KeyType.none ? keyType.ToString() + " " : string.Empty;
+        onKeyObtainedMessage = $"You got a {keyName}key!";
+        PlayerStatsManager.Instance.GetKey(keyType);
+        MessageManager.Instance.OpenMessagePrompt(onKeyObtainedMessage);
     }
 
     public void OnPlayerEnter()

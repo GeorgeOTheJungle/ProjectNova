@@ -38,7 +38,6 @@ public class Door : MonoBehaviour,IInteractable
     private void FloorManagerCall()
     {
         FloorsManager.Instance.ActivateFloor(nextFloor);
-
     }
 
     public void OnInteraction()
@@ -63,7 +62,7 @@ public class Door : MonoBehaviour,IInteractable
         // If player has a key, open the door.
         if(PlayerStatsManager.Instance.GetCurrentKeys() > 0)
         {
-            PlayerStatsManager.Instance.UseKey();
+          //  PlayerStatsManager.Instance.UseKey();
             OpenDoor();
         }
     }
@@ -88,15 +87,5 @@ public class Door : MonoBehaviour,IInteractable
         }
         if (teleportToNextStage == false) gameObject.SetActive(false); // TODO CHANGE THIS ONCE WE HAVE THE ART
         else doorGameObjects[lenght - 1].SetActive(true);
-    }
-
-    public void OnPlayerEnter()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void OnPlayerExit()
-    {
-        throw new System.NotImplementedException();
     }
 }

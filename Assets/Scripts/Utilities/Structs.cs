@@ -57,4 +57,13 @@ namespace Structs
         public Sprite chibiPreview;
         public RuntimeAnimatorController chibiAnimator;
     }
+
+    [System.Serializable]
+    public struct PlayerKeyInventory
+    {
+        public bool desertKey;
+        public bool piramidKey;
+        public bool dungeonKey;
+        public bool scifiKey;
+    }
 }

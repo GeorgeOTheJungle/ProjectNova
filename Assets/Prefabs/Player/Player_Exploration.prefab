@@ -314,7 +314,7 @@ SpriteRenderer:
   m_SortingLayerID: -286659141
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1897461857, guid: 2ae2faca47454654cbd8f939389e9763, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -322,7 +322,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &7396162806351686231
@@ -360,8 +360,6 @@ GameObject:
   - component: {fileID: 7396162806906207400}
   - component: {fileID: 7396162806906207407}
   - component: {fileID: 7396162806906207404}
-  - component: {fileID: 1420258668}
-  - component: {fileID: 8954015260719725928}
   m_Layer: 0
   m_Name: Player_Exploration
   m_TagString: Player
@@ -409,7 +407,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b959b8a0795294c8ebc91ecd51501b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 2.5
   spawnPoint: {fileID: 0}
   gravityMultiplier: 0.5
   cam: {fileID: 0}
@@ -465,31 +462,3 @@ MonoBehaviour:
     m_Bits: 64
   detectionRadius: 1
   interactQueueAnimator: {fileID: 7396162806351686231}
---- !u!136 &1420258668
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7396162806906207402}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  m_Radius: 0.38
-  m_Height: 0.73
-  m_Direction: 1
-  m_Center: {x: 0, y: -0.17, z: 0}
---- !u!136 &8954015260719725928
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7396162806906207402}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  m_Radius: 0.38
-  m_Height: 0.73
-  m_Direction: 1
-  m_Center: {x: 0, y: -0.17, z: 0}

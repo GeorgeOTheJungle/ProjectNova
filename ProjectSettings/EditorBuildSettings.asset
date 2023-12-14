@@ -8,10 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 83f1dadfd029e1344a495ea26eb400ad
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/PlaygroundStages/Playground_Stage_0.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Scenes/PlaygroundStages/Playground_Stage_1.unity
+    guid: 51bd5a2df9b29bf479d8afc7018c4cab
+  - enabled: 0
     path: Assets/Scenes/DesignScene.unity
     guid: 1a961e3f2cd03374d855afb9b445d0e0
   m_configObjects: {}

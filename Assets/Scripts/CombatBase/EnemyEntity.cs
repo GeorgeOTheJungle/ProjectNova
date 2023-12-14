@@ -50,7 +50,7 @@ public class EnemyEntity : Entity
 
     public override void OnCombatStart(GameState gameState)
     {
-        shadow.SetActive(entityData != null);
+        //shadow.SetActive(entityData != null);
         if (entityData == null) return;
         // Reset data and stats effects 
         currentEnemySkill = null;
